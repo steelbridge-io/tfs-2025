@@ -28,7 +28,8 @@
 	<header id="masthead" class="site-header">
 		 <!-- .site-branding -->
 
-        <nav id="site-navigation" class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+
             <div class="container">
                 <!-- Brand/Logo -->
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
