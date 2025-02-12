@@ -912,5 +912,14 @@ textarea {
 
 /* Supports
 --------------------------------------------- */
+/* Carousel */
+#carouselExampleFade img {
+  height: 100vh;
+  width: 100vw;
+}
+
+.admin-bar nav {
+  margin-top: 32px;
+}
 
 /*# sourceMappingURL=style.css.map */
