@@ -47,8 +47,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Utilities
 	- Accessibility
 	- Alignments
+# Supports
+    - Front Page
+    - Nav
 
 --------------------------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
 
 // Import variables and mixins.
 @import "abstracts/abstracts";
@@ -105,3 +109,4 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 --------------------------------------------- */
 @import "supports/front-page";
 @import "supports/nav";
+@import "supports/test";
