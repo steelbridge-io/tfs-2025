@@ -28,7 +28,7 @@
 	<header id="masthead" class="site-header">
 		 <!-- .site-branding -->
 
-        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg">
 
             <div class="container">
                 <!-- Brand/Logo -->
