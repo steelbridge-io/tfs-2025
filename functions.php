@@ -22,13 +22,21 @@ include_once get_template_directory() . '/inc/bootstrap-nav-walker.php';
  * as indicating support for post thumbnails.
  */
 function the_fly_shop_2025_setup() {
-	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on The Fly Shop 2025, use a find and replace
-		* to change 'the-fly-shop-2025' to the name of your theme in all the template files.
-		*/
-	load_theme_textdomain( 'the-fly-shop-2025', get_template_directory() . '/languages' );
+ load_theme_textdomain( 'the-fly-shop-2025', get_template_directory() . '/languages' );
+
+ // Other support functions.
+ add_theme_support( 'automatic-feed-links' );
+ add_theme_support( 'title-tag' );
+ add_theme_support( 'post-thumbnails' );
+
+ // Register navigation menus.
+ register_nav_menus(
+	array(
+	 'menu-1' => esc_html__( 'Primary Menu', 'the-fly-shop-2025' ),
+	)
+ );
+
+ load_theme_textdomain( 'the-fly-shop-2025', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -47,15 +55,6 @@ function the_fly_shop_2025_setup() {
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
 	add_theme_support( 'post-thumbnails' );
-
-	function the_fly_shop_2025_register_menus() {
-		register_nav_menus(
-			array(
-				'menu-1' => esc_html__( 'Primary Menu', 'the-fly-shop-2025' ),
-			)
-		);
-	}
-	add_action( 'after_setup_theme', 'the_fly_shop_2025_register_menus' );
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
@@ -142,13 +141,25 @@ add_action( 'widgets_init', 'the_fly_shop_2025_widgets_init' );
  * Enqueue scripts and styles.
  */
 function the_fly_shop_2025_scripts() {
-	/* CSS */
-	wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all');
+ /* CSS */
+ wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css', array(), '5.3.3', 'all' );
+
+ wp_enqueue_style( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4', 'all' );
+ wp_enqueue_style('lineicons', 'https://cdn.lineicons.com/5.0/lineicons.css', array(), 'all');
+
+ if ( is_front_page() ) {
 	wp_enqueue_style( 'the-fly-shop-2025-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'the-fly-shop-2025-style', 'rtl', 'replace' );
-	/* Scripts */
-	wp_enqueue_script('bootstarp-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array(), '5.3.3', true);
-	wp_enqueue_script( 'the-fly-shop-2025-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+ }
+
+ wp_style_add_data( 'the-fly-shop-2025-style', 'rtl', 'replace' );
+ /* Scripts */
+ wp_enqueue_script( 'bootstarp-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array(), '5.3.3', true );
+ wp_enqueue_script( 'the-fly-shop-2025-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+ if ( is_front_page() ) {
+	wp_enqueue_script( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array(), '2.3.4', true );
+	wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true );
+ }
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
