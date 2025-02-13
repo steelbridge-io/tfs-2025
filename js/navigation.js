@@ -97,3 +97,19 @@
 		}
 	}
 }() );
+
+document.addEventListener("DOMContentLoaded", function () {
+	const navbar = document.querySelector(".navbar"); // Select the navbar
+	const addScrolledClass = () => {
+		// If the page is scrolled down more than 50px, add the "scrolled" class
+		if (window.scrollY > 50) {
+			navbar.classList.add("scrolled");
+		} else {
+			navbar.classList.remove("scrolled");
+		}
+	};
+
+	// Run function on scroll and on page load
+	window.addEventListener("scroll", addScrolledClass);
+	addScrolledClass();
+});
