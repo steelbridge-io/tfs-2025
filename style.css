@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: The Fly Shop 2025
 Theme URI: http://underscores.me/
@@ -46,8 +47,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 # Utilities
 	- Accessibility
 	- Alignments
+# Supports
+    - Front Page
+    - Nav
 
 --------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -400,6 +405,10 @@ h4,
 h5,
 h6 {
   clear: both;
+  font-family: "Arimo", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 p {
@@ -519,9 +528,9 @@ table {
 --------------------------------------------- */
 a {
   color: #4169e1;
-}
-a:visited {
-  color: #800080;
+  /*&:visited {
+  	color: $color__link-visited;
+  }*/
 }
 a:hover, a:focus, a:active {
   color: #191970;
@@ -703,7 +712,7 @@ textarea {
 
 .post,
 .page {
-  margin: 0 0 1.5em;
+  margin: 0 0 0;
 }
 
 .updated:not(.published) {
@@ -918,8 +927,203 @@ textarea {
   width: 100vw;
 }
 
+.carousel-overlay {
+  padding: 1rem;
+  opacity: 0;
+  position: absolute;
+  top: 55%;
+  left: 5%; /* Adjust positioning for left third */
+  transform: translateY(50%);
+  transition: opacity 1s ease, transform 1s ease;
+  color: #ffffff; /* Text color */
+  max-width: 80%; /* Controls the width of the left third */
+  z-index: 10;
+  text-align: left; /* Align content to the left */
+}
+.carousel-overlay.fade-in {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Back to original position */
+}
+.carousel-overlay h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  line-height: 1.2;
+}
+.carousel-overlay .cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  color: #ffffff;
+  margin-top: 1.9rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border: 2px solid #ffffff; /* Button border */
+  border-radius: 4px; /* Optional rounded edges */
+  transition: all 0.3s ease;
+}
+.carousel-overlay .cta-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Base Scrolly Style */
+.scrolly {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.4rem 0.6rem 0 0.6rem;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-50%, 30px);
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+.scrolly:hover {
+  border: 0.5px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Bounce Animation */
+.scrolly.bouncing {
+  animation: bounce 3s ease-in-out infinite;
+}
+
+/* Define Subtle Bounce */
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, -8px); /* Slight bounce up */
+  }
+}
+/* Extra small devices (default styles for <576px screens) */
+@media (max-width: 576px) {
+  .carousel-overlay {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+  }
+  .carousel-overlay h1 {
+    font-size: 2rem;
+  }
+}
+#front-page-content .card-feature {
+  height: 70vh;
+}
+#front-page-content .card-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+#front-page-content .card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#front-page-content .card-title-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+#front-page-content .card-hover-content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  transition: bottom 0.5s;
+}
+#front-page-content .card-container:hover .card-hover-content {
+  bottom: 0;
+}
+
+/* Small devices (≥576px) */
+@media (min-width: 576px) {
+  .carousel-overlay {
+    max-width: 80%;
+    left: 10%;
+    right: 10%;
+    text-align: left;
+  }
+}
+/* Medium devices (≥768px) */
+@media (min-width: 768px) {
+  .carousel-overlay {
+    max-width: 80%; /* Reduces width for middle-sized screens */
+    padding: 1.5rem; /* Add more padding */
+  }
+}
+/* Large devices (≥992px) */
+@media (min-width: 992px) {
+  .carousel-overlay {
+    max-width: 80%; /* Keep the width to match the left-third design */
+    padding: 2rem; /* Increase padding slightly for better spacing */
+  }
+}
+/* Extra-large devices (≥1200px) */
+@media (min-width: 1200px) {
+  .carousel-overlay {
+    max-width: 80%;
+  }
+  .carousel-overlay h1 {
+    font-size: 4.75rem;
+  }
+}
 .admin-bar nav {
   margin-top: 32px;
+}
+
+/* Make the navbar background transparent by default */
+.navbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
+  height: 100px;
+}
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navbar.scrolled {
+  background: none;
+  background-color: black;
+  height: 60px;
+}
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9); /* Slightly less transparent white */
+  transition: color 0.3s ease;
+  font-family: "Arimo", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.navbar .nav-link:hover {
+  color: #ffffff; /* Bright white on hover */
+}
+
+.navbar-brand {
+  font-family: "Arimo", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #ffffff;
+}
+.navbar.scrolled .navbar-brand {
+  font-size: 0.9em; /* Adjust size during scroll, optional */
 }
 
 /*# sourceMappingURL=style.css.map */
