@@ -1,0 +1,35 @@
+#typing-area {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #333;
+  white-space: pre-wrap;
+  overflow: hidden;
+  max-height: none !important;
+}
+
+.container-row {
+  height: auto; /* Default height */
+  overflow: hidden; /* Prevent jumpy behavior */
+  max-height: none !important;
+  transition: height 0.3s ease; /* Smooth height transition */
+
+}
+
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2.5rem;
+  background-color: black;
+  animation: blink 0.5s step-end infinite;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
+}

@@ -53,6 +53,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 --------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 /*--------------------------------------------------------------
 # Generic
 --------------------------------------------------------------*/
@@ -921,6 +922,47 @@ textarea {
 
 /* Supports
 --------------------------------------------- */
+.admin-bar nav {
+  margin-top: 32px;
+}
+
+/* Make the navbar background transparent by default */
+.navbar {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
+  transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
+  height: 100px;
+}
+.navbar:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.navbar.scrolled {
+  background: none;
+  background-color: black;
+  height: 60px;
+}
+.navbar .nav-link {
+  color: rgba(255, 255, 255, 0.9); /* Slightly less transparent white */
+  transition: color 0.3s ease;
+  font-family: "Arimo", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+.navbar .nav-link:hover {
+  color: #ffffff; /* Bright white on hover */
+}
+
+.navbar-brand {
+  font-family: "Arimo", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  color: #ffffff;
+}
+.navbar.scrolled .navbar-brand {
+  font-size: 0.9em; /* Adjust size during scroll, optional */
+}
+
 /* Carousel */
 #carouselExampleFade img {
   height: 100vh;
@@ -1014,6 +1056,14 @@ textarea {
     font-size: 2rem;
   }
 }
+.front-page-into-container h1 {
+  height: auto !important;
+}
+.front-page-into-container #typing-area {
+  max-height: none !important;
+  height: auto !important;
+}
+
 #front-page-content .card-feature {
   height: 70vh;
 }
@@ -1053,6 +1103,64 @@ textarea {
   bottom: 0;
 }
 
+#front-page-cta .background-image-cta {
+  background-image: url("https://placehold.co/2000x800/000000/FFF");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 30rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#front-page-cta .background-image-cta .form-container {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 0;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  animation: fade-in 0.8s ease-in-out;
+}
+#front-page-cta .background-image-cta .form-container h5 {
+  font-size: 1.5rem;
+  color: #333;
+}
+#front-page-cta .background-image-cta .form-container p {
+  font-size: 0.9rem;
+}
+#front-page-cta .background-image-cta .form-container .form-control {
+  border: none;
+  background: #f7f7f7;
+  color: #333;
+  padding: 0.8rem 1.5rem;
+}
+#front-page-cta .background-image-cta .form-container .form-control:focus {
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+  border: none;
+}
+#front-page-cta .background-image-cta .form-container button {
+  background: #007bff;
+  border: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+#front-page-cta .background-image-cta .form-container button:hover {
+  background: #0056cc;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*
+Media Queries
+------------------------------------------------- */
 /* Small devices (≥576px) */
 @media (min-width: 576px) {
   .carousel-overlay {
@@ -1085,45 +1193,170 @@ textarea {
     font-size: 4.75rem;
   }
 }
-.admin-bar nav {
-  margin-top: 32px;
+.custom-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 20px 0;
 }
 
-/* Make the navbar background transparent by default */
-.navbar {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
-  height: 100px;
+@media (min-width: 1400px) {
+  .custom-carousel-container {
+    max-width: 1320px; /* Extend width to 1320px for large desktops */
+  }
 }
-.navbar:hover {
+.carousel-inner-custom {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: fit-content;
+}
+
+.carousel-item-custom {
+  flex: 0 0 20%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.custom-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+
+.custom-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.custom-card-body {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.custom-card-text {
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.custom-card-link {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+  transition: color 0.2s;
+}
+
+.custom-card-link:hover {
+  color: #004aad;
+}
+
+.custom-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-}
-.navbar.scrolled {
-  background: none;
-  background-color: black;
-  height: 60px;
-}
-.navbar .nav-link {
-  color: rgba(255, 255, 255, 0.9); /* Slightly less transparent white */
-  transition: color 0.3s ease;
-  font-family: "Arimo", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-.navbar .nav-link:hover {
-  color: #ffffff; /* Bright white on hover */
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: background-color 0.2s, transform 0.2s;
 }
 
-.navbar-brand {
-  font-family: "Arimo", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-  color: #ffffff;
+.custom-prev {
+  left: 10px;
 }
-.navbar.scrolled .navbar-brand {
-  font-size: 0.9em; /* Adjust size during scroll, optional */
+
+.custom-next {
+  right: 10px;
+}
+
+.custom-nav-btn i {
+  color: white;
+  font-size: 24px;
+}
+
+.custom-nav-btn:hover {
+  background: black;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.custom-nav-btn:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .carousel-item-custom {
+    flex: 0 0 50%;
+  }
+  .custom-card-image {
+    height: 120px;
+  }
+}
+@media (max-width: 480px) {
+  .carousel-item-custom {
+    flex: 0 0 100%;
+  }
+  .custom-card-image {
+    height: 100px;
+  }
+}
+#typing-area {
+  display: inline-block;
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #333;
+  white-space: pre-wrap;
+  overflow: hidden;
+  max-height: none !important;
+}
+
+.container-row {
+  height: auto; /* Default height */
+  overflow: hidden; /* Prevent jumpy behavior */
+  max-height: none !important;
+  transition: height 0.3s ease; /* Smooth height transition */
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2.5rem;
+  background-color: black;
+  animation: blink 0.5s step-end infinite;
+  vertical-align: top;
+  margin-left: 5px;
+}
+
+/* Blinking cursor animation */
+@keyframes blink {
+  50% {
+    background-color: transparent;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

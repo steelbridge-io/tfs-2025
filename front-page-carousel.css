@@ -1,0 +1,23 @@
+#productCarousel .carousel-inner {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#productCarousel .carousel-item {
+  flex: 0 0 auto; /* Items should not shrink or expand */
+  width: 20%; /* Ensures that 5 items fit in the row (100% / 5 = 20%) */
+}
+
+#productCarousel .carousel-control-prev,
+#productCarousel .carousel-control-next {
+  height: 100%; /* Vertically align the navigation controls */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5); /* Ensure controls are visible */
+  border-radius: 50%;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=front-page-carousel.css.map */
