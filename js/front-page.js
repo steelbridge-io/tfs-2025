@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /** Typining Effect */
 const messages = [
-    "We are The Fly Shop. Located in Redding California. Shop with us for fly fishing gear, equipment, worldwide travel and...",
-    "the best guided fly fishing on the entire west coast."
+    "We are The Fly Shop. Located in Redding California. Shop with us for fly fishing gear, equipment, worldwide travel and the best guude staff on the west coast.",
 ];
 
 const phoneNumber = "We'll get that fly rod bent proper: 800-669-3474"; // Final phone number to type

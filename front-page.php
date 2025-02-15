@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="img-fluid object-fit-cover" src="https://placehold.co/3000x2000?text=Slider One" class="d-block w-100" alt="...">
@@ -45,43 +45,43 @@ get_header(); ?>
 <div class="container">
     <div class="row g-4">
         <!-- Card 1 -->
-        <div class="col-md-6 card-feature top-card-feature-left" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">
+        <div class="col-md-4 card-feature top-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 1" class="card-img">
                 <div class="card-title-overlay">Card Title 1</div>
                 <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content.</p>
                     <a href="#" class="btn btn-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
 
         <!-- Card 2 -->
-        <div class="col-md-6 card-feature top-card-feature-right" data-aos="fade-left" data-aos-offset="200" data-aos-duration="1000">
+        <div class="col-md-4 card-feature top-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 2" class="card-img">
                 <div class="card-title-overlay">Card Title 2</div>
                 <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
                     <a href="#" class="btn btn-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
 
         <!-- Card 3 -->
-        <div class="col-md-6 card-feature bottom-card-feature-left" data-aos="fade-right" data-aos-offset="200" data-aos-duration="1000">
+        <div class="col-md-4 card-feature bottom-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 3" class="card-img">
                 <div class="card-title-overlay">Card Title 3</div>
                 <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content.</p>
                     <a href="#" class="btn btn-primary btn-sm">Read More</a>
                 </div>
             </div>
         </div>
 
         <!-- Card 4 -->
-        <div class="col-md-6 card-feature bottom-card-feature-right" data-aos="fade-left" data-aos-offset="200" data-aos-duration="1000">
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
                 <div class="card-title-overlay">Card Title 4</div>
@@ -91,6 +91,62 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+        <!-- Card 5 -->
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+            <div class="card-container">
+                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
+                <div class="card-title-overlay">Card Title 4</div>
+                <div class="card-hover-content">
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+            <div class="card-container">
+                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
+                <div class="card-title-overlay">Card Title 4</div>
+                <div class="card-hover-content">
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 7 -->
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+            <div class="card-container">
+                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
+                <div class="card-title-overlay">Card Title 4</div>
+                <div class="card-hover-content">
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+            <div class="card-container">
+                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
+                <div class="card-title-overlay">Card Title 4</div>
+                <div class="card-hover-content">
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+            <div class="card-container">
+                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
+                <div class="card-title-overlay">Card Title 4</div>
+                <div class="card-hover-content">
+                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 </div>
