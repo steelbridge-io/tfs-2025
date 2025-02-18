@@ -129,29 +129,33 @@
     height: 100%;
     object-fit: cover;
   }
-  .card-title-overlay {
+  h3.card-title-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
     padding: 1rem;
     text-align: center;
+    margin-bottom: 0;
   }
   .card-hover-content {
     position: absolute;
     bottom: -100%;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
     padding: 2rem;
     text-align: center;
     transition: bottom 0.5s;
   }
   .card-container:hover .card-hover-content {
     bottom: 0;
+  }
+  .card-container {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -161,8 +165,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     height: 30rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -197,13 +201,13 @@
       }
 
       button {
-        background: #007bff;
+        background: #A21418;;
         border: none;
         font-weight: bold;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background: #0056cc;
+          background: #A21418;;
         }
       }
     }

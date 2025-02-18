@@ -35,10 +35,10 @@ get_header(); ?>
 </div>
 
 <section id="front-page-into">
-    <div id="fp-logo-background">
+    <div id="fp-logo-background" class="mt-3">
         <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop">
     </div>
-    <div class="container container-row front-page-into-container mt-4 mb-4">
+    <div class="container container-row front-page-into-container mb-5">
         <h1><span id="typing-area"></h1>
     </div>
 </section>
@@ -50,11 +50,11 @@ get_header(); ?>
         <!-- Card 1 -->
         <div class="col-md-4 card-feature top-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 1" class="card-img">
-                <div class="card-title-overlay">Card Title 1</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/02/FP_StormShadow_RollingCarryOn.webp" alt="Card 1" class="card-img">
+                <h3 class="card-title-overlay">Shop</h3>
                 <div class="card-hover-content">
                     <p class="lead">This text is only for demo purposes. You will be able to update this text. We just add it so we can see how this will look with text.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
@@ -62,11 +62,11 @@ get_header(); ?>
         <!-- Card 2 -->
         <div class="col-md-4 card-feature top-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 2" class="card-img">
-                <div class="card-title-overlay">Card Title 2</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/Bollibokka_Getting-1.jpg" alt="Card 2" class="card-img">
+                <h3 class="card-title-overlay">Regional Vacations</h3>
                 <div class="card-hover-content">
                     <p class="lead">Although there are only 9 "Cards" in this grid, there could be many more or less. You get to choose. If you only want three? Then add only three from within the associated editor in the admin dashboard.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
@@ -74,11 +74,11 @@ get_header(); ?>
         <!-- Card 3 -->
         <div class="col-md-4 card-feature bottom-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 3" class="card-img">
-                <div class="card-title-overlay">Card Title 3</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/09/LowerSac_Main3.jpg" alt="Card 3" class="card-img">
+                <h3 class="card-title-overlay">Guided Fly Fishing</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It's a test. The content here is purposed for conceltual reasons only. You will replace it with content related to a service, product, destination.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
@@ -86,69 +86,69 @@ get_header(); ?>
         <!-- Card 4 -->
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/08/3Day_Itinerary.jpg" alt="Card 4" class="card-img">
+                <h3 class="card-title-overlay">Fly Fishing Schools</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
         <!-- Card 5 -->
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/12/Providence_Report1.jpg" alt="Card 4" class="card-img">
+                <h3 class="card-title-overlay">International Travel</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
         <!-- Card 6 -->
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/10/Species_BrownTrout_MFFL.jpg" alt="Card 4" class="card-img">
+                <h3 class="card-title-overlay">Local Fishing Reports</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
         </div>
         <!-- Card 7 -->
-        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+       <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <h3 class="card-title-overlay">Card Title 4</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Card 8 -->
-        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+       <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <h3 class="card-title-overlay">Card Title 4</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
-        </div>
-        <!-- Card 8 -->
-        <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+        </div> -->
+        <!-- Card 9 -->
+        <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <div class="card-title-overlay">Card Title 4</div>
+                <h3 class="card-title-overlay">Card Title 4</h3>
                 <div class="card-hover-content">
                     <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Read More</a>
+                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>
@@ -205,7 +205,7 @@ if (!empty($carousel_items)): ?>
                             />
                             <label for="subscriberEmail" class="text-muted">Enter your email</label>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-lg px-4 shadow-sm">
+                        <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
                             Subscribe
                         </button>
                     </form>
