@@ -1,52 +1,33 @@
-#fp-logo-background {
-  position: relative;
-  width: 33.3%;
-  margin: 0 auto;
-  img {
-    width: 100%;
-    position: relative;
-    /*top: 300%;
-    left: 50%;
-    transform: translate(-128%, -50%) rotate(-15deg);*/
-    z-index: -1;
-  }
+/* Common styles */
+.hero-image {
+  position: relative; /* Controls the overlay positioning */
+  width: 100%;
+  height: auto;
+  max-height: 55vh; /* Optional: limit max height */
+  overflow: hidden;
 }
 
-#front-page-into {
-  #typing-area {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    font-size: 2.7rem !important;
-    text-align: center;
-  }
+/* Overlay container */
+.hero-overlay {
+  z-index: 2; /* Ensure it sits on top of the image */
+}
 
-  #typing-area,
-  .container-row {
-    height: 150px; /* Adjust to fit the tallest content */
-    overflow: hidden; /* Prevent overflowing */
-    white-space: pre-wrap;
-    display: flex;
-    align-items: center; /* Center align in case of vertical space */
-    justify-content: center; /* Optional: Center align horizontally */
-    transition: height 0.3s ease;
-  }
+/* Logo styling */
+.hero-logo {
+  max-width: 150px; /* Adjust logo size as needed */
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25)); /* Add subtle shadow */
+  margin-bottom: 20px; /* Space between logo and title */
+}
 
+/* Page title styling */
+.hero-title {
+  font-size: 3.5rem; /* Adjust font size */
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Subtle shadow for better readability */
+  color: #ffffff; /* White text for contrast */
 
-  .cursor {
-    display: inline-block;
-    width: 3px;
-    height: 2.5rem;
-    background-color: black;
-    animation: blink 0.5s step-end infinite;
-    vertical-align: top;
-    margin-left: 5px;
-  }
-
-  /* Blinking cursor animation */
-  @keyframes blink {
-    50% {
-      background-color: transparent;
-    }
+  @media (max-width: 768px) {
+    font-size: 2.5rem; /* Smaller font size for mobile */
   }
 }

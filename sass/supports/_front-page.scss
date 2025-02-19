@@ -129,29 +129,33 @@
     height: 100%;
     object-fit: cover;
   }
-  .card-title-overlay {
+  h3.card-title-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
     padding: 1rem;
     text-align: center;
+    margin-bottom: 0;
   }
   .card-hover-content {
     position: absolute;
     bottom: -100%;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
     padding: 2rem;
     text-align: center;
     transition: bottom 0.5s;
   }
   .card-container:hover .card-hover-content {
     bottom: 0;
+  }
+  .card-container {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -161,8 +165,8 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     height: 30rem;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,10 +184,6 @@
         color: #333;
       }
 
-      p {
-        font-size: 0.9rem;
-      }
-
       .form-control {
         border: none;
         background: #f7f7f7;
@@ -197,13 +197,13 @@
       }
 
       button {
-        background: #007bff;
+        background: #A21418;;
         border: none;
         font-weight: bold;
         transition: background-color 0.3s ease;
 
         &:hover {
-          background: #0056cc;
+          background: #A21418;;
         }
       }
     }
@@ -227,6 +227,79 @@
   }
   .card {
     border: none;
+  }
+}
+
+/* Front-Page-Into Section */
+#front-page-into {
+  position: relative; /* Ensures the pseudo-element is positioned relative to this section */
+  background: #ffffff; /* Background color for blending */
+}
+
+/* Add the wave at the top as a pseudo-element */
+#front-page-into::before {
+  content: "";
+  position: absolute;
+  top: -350px; /* Pulls the wave visually above this section */
+  left: 0;
+  width: 100%;
+  height: 100%; /* Adjust for a subtle wave */
+  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L60,218.7C120,213,240,203,360,208C480,213,600,235,720,245.3C840,256,960,256,1080,234.7C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>') no-repeat;
+  background-size: cover;
+  z-index: 1; /* Ensures it appears behind the section content */
+}
+
+#fp-logo-background {
+  position: relative;
+  width: 24.3%;
+  margin: 0 auto;
+  z-index: 5;
+  img {
+    width: 100%;
+    position: relative;
+    /*top: 300%;
+    left: 50%;
+    transform: translate(-128%, -50%) rotate(-15deg);*/
+    z-index: -1;
+  }
+}
+
+#front-page-into {
+  #typing-area {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%;
+    font-size: 2.7rem !important;
+    text-align: center;
+  }
+
+  #typing-area,
+  .container-row {
+    height: 150px; /* Adjust to fit the tallest content */
+    overflow: hidden; /* Prevent overflowing */
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center; /* Center align in case of vertical space */
+    justify-content: center; /* Optional: Center align horizontally */
+    transition: height 0.3s ease;
+  }
+
+
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 2.5rem;
+    background-color: black;
+    animation: blink 0.5s step-end infinite;
+    vertical-align: top;
+    margin-left: 5px;
+  }
+
+  /* Blinking cursor animation */
+  @keyframes blink {
+    50% {
+      background-color: transparent;
+    }
   }
 }
 

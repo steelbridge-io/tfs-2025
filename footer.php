@@ -27,7 +27,7 @@
             <!-- Departments Section -->
             <div class="col-md-4">
                 <h5>Departments</h5>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled p-0 m-0">
                     <li>Fishing Gear</li>
                     <li>Fly Tying</li>
                     <li>Waders & Boots</li>
