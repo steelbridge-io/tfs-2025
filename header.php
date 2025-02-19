@@ -33,7 +33,8 @@
             <div class="container">
                 <!-- Brand/Logo -->
                 <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<?php bloginfo( 'name' ); ?>
+					<?php //bloginfo( 'name' ); ?>
+                    <img class="tfs-nav-logo" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
                 </a>
 
                 <!-- Mobile Menu Toggle Button -->

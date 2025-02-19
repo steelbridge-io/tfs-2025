@@ -146,18 +146,16 @@ function the_fly_shop_2025_scripts() {
 
  wp_enqueue_style( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4', 'all' );
  wp_enqueue_style('lineicons', 'https://cdn.lineicons.com/5.0/lineicons.css', array(), 'all');
-
- if ( is_front_page() ) {
 	wp_enqueue_style( 'the-fly-shop-2025-style', get_stylesheet_uri(), array(), _S_VERSION );
- }
+
 
  wp_style_add_data( 'the-fly-shop-2025-style', 'rtl', 'replace' );
  /* Scripts */
  wp_enqueue_script( 'bootstarp-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js', array(), '5.3.3', true );
  wp_enqueue_script( 'the-fly-shop-2025-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
- if ( is_front_page() ) {
 	wp_enqueue_script( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array(), '2.3.4', true );
+
+	if ( is_front_page() ) {
 	wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true );
  }
 

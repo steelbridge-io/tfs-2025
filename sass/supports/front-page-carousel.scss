@@ -70,12 +70,12 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
-  color: #007bff;
+  color: $tfs__red;
   transition: color 0.2s;
 }
 
 .custom-card-link:hover {
-  color: #004aad;
+  color: $tfs__red;
 }
 
 .custom-nav-btn {

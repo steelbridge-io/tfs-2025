@@ -43,7 +43,7 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="content-section mt-4" data-aos="fade-up" data-aos-delay="1000">
+<section class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000">
 <div id="front-page-content" class="container-fluid container-row">
 <div class="container">
     <div class="row g-4">
@@ -51,7 +51,7 @@ get_header(); ?>
         <div class="col-md-4 card-feature top-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/02/FP_StormShadow_RollingCarryOn.webp" alt="Card 1" class="card-img">
-                <h3 class="card-title-overlay">Shop</h3>
+                <h3 class="card-title-overlay">Shop Online</h3>
                 <div class="card-hover-content">
                     <p class="lead">This text is only for demo purposes. You will be able to update this text. We just add it so we can see how this will look with text.</p>
                     <a href="#" class="btn btn-tfs btn-sm">Read More</a>
@@ -158,10 +158,10 @@ get_header(); ?>
 <?php
 $carousel_items = get_option('fppc_carousel_items') ?: []; // Retrieve the carousel items
 if (!empty($carousel_items)): ?>
-    <section id="retail-front-page-carousel" class="custom-carousel-container">
-        <div class="container no-padding-lr py-5" id="custom-cards">
+    <section id="retail-front-page-carousel" class="custom-carousel-container mt-5 mb-5">
+        <div class="container no-padding-lr" id="custom-cards">
         <h2 class="pb-2 border-bottom">Shop</h2>
-        <div id="productCarousel" class="custom-carousel py-5">
+        <div id="productCarousel" class="custom-carousel">
             <div class="carousel-inner-custom">
 						 <?php foreach ($carousel_items as $item): ?>
                  <div class="carousel-item-custom">
@@ -188,12 +188,19 @@ if (!empty($carousel_items)): ?>
 <?php endif; ?>
 
 <section id="front-page-cta">
-    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5">
+    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5 mb-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
         <div class="container text-center text-md-end">
             <div class="row justify-content-end">
                 <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+                    <div class="row">
+                    <div class="col-6">
+                    <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+                    </div>
+                    <div class="col-6">
                     <h5 class="mb-4 fw-bold">Stay Updated</h5>
-                    <p class="text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+                    <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+                    </div>
+                    </div>
                     <form id="subscribe-form">
                         <div class="form-floating mb-3">
                             <input
@@ -209,7 +216,7 @@ if (!empty($carousel_items)): ?>
                             Subscribe
                         </button>
                     </form>
-                </div>
+            </div>
             </div>
         </div>
     </div>
