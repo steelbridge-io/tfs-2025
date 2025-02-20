@@ -39,8 +39,31 @@ if (has_post_thumbnail()) :
             </div>
         </div>
     </div>
+<?php else:  ?>
+    <div class="container-fluid p-0">
+        <div class="hero-image position-relative">
+            <!-- Full-Width Featured Image -->
+            <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+            <!-- Overlay Content -->
+            <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+                <!-- Logo -->
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo.png'); ?>"
+                     class="hero-logo mb-3"
+                     alt="Website Logo">
+
+                <!-- Page Title -->
+                <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
+
+    <div class="container-fluid top-fade p-0"></div>
+
     <div class="container mt-6 mb-7">
+        <div class="container mt-4">
+				 <?php the_fly_shop_breadcrumbs(); ?>
+        </div>
         <div class="row">
             <div class="col-md-8">
                 <main id="primary" class="site-main">
@@ -61,7 +84,7 @@ if (has_post_thumbnail()) :
 
                 </main><!-- #main -->
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 page-sidebar">
             <?php
             get_sidebar(); ?>
             </div>

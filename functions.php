@@ -13,6 +13,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 }
 
 include_once get_template_directory() . '/inc/bootstrap-nav-walker.php';
+include_once get_template_directory() . '/inc/breadcrumbs.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
