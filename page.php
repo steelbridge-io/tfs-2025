@@ -22,7 +22,7 @@ if (has_post_thumbnail()) :
             <img src="<?php echo esc_url(
                     has_post_thumbnail() ?
                         get_the_post_thumbnail_url(get_the_ID(), 'full') :
-                        get_template_directory_uri() . '/images/the-fly-shop-logo.png'
+                        get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'
                 ); ?>"
                  class="img-fluid w-100"
                  alt="<?php the_title_attribute(); ?>">
@@ -30,7 +30,7 @@ if (has_post_thumbnail()) :
             <!-- Overlay Content -->
             <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
                 <!-- Logo -->
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo.png'); ?>"
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
                      class="hero-logo mb-3"
                      alt="Website Logo">
 
@@ -47,7 +47,7 @@ if (has_post_thumbnail()) :
             <!-- Overlay Content -->
             <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
                 <!-- Logo -->
-                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo.png'); ?>"
+                <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
                      class="hero-logo mb-3"
                      alt="Website Logo">
 
