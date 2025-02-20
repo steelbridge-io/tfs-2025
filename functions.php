@@ -14,6 +14,7 @@ if ( ! defined( '_S_VERSION' ) ) {
 
 include_once get_template_directory() . '/inc/bootstrap-nav-walker.php';
 include_once get_template_directory() . '/inc/breadcrumbs.php';
+include_once get_template_directory() . '/inc/login-page.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -148,7 +149,6 @@ function the_fly_shop_2025_scripts() {
  wp_enqueue_style( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4', 'all' );
  wp_enqueue_style('lineicons', 'https://cdn.lineicons.com/5.0/lineicons.css', array(), 'all');
 	wp_enqueue_style( 'the-fly-shop-2025-style', get_stylesheet_uri(), array(), _S_VERSION );
-
 
  wp_style_add_data( 'the-fly-shop-2025-style', 'rtl', 'replace' );
  /* Scripts */
