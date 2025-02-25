@@ -113,3 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	window.addEventListener("scroll", addScrolledClass);
 	addScrolledClass();
 });
+
+/*
+Dropdown on hover
+ */
