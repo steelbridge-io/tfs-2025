@@ -109,10 +109,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Supports
 --------------------------------------------- */
-@import "supports/archive";
+@import "supports/404-page";
 @import "supports/buttons";
 @import "supports/global";
 @import "supports/nav";
+@import "supports/archive";
 @import "supports/page";
 @import "supports/front-page";
 @import "supports/front-page-carousel";

@@ -802,23 +802,49 @@ textarea {
 
 /* Supports
 --------------------------------------------- */
-.archive .navbar {
+.error404 .navbar {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white);
   transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
   height: 100px; }
-  .archive .navbar .nav-link {
-    color: #000; }
-.archive #archive-template .img-fluid-archive {
+  .error404 .navbar:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white); }
+    .error404 .navbar:hover .nav-link {
+      color: #000; }
+    .error404 .navbar:hover .navbar-nav .nav-item.active .nav-link {
+      color: #A21418;
+      font-weight: bold; }
+  .error404 .navbar.scrolled {
+    background: none;
+    background-color: #ffffff;
+    height: 60px; }
+    .error404 .navbar.scrolled .nav-link {
+      color: #000; }
+    .error404 .navbar.scrolled .navbar-nav .nav-item.active .nav-link {
+      color: #A21418;
+      font-weight: bold; }
+  .error404 .navbar .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+    transition: color 0.3s ease;
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal; }
+  .error404 .navbar .navbar-brand .tfs-nav-logo.no-scroll {
+    display: none; }
+  .error404 .navbar .navbar-brand .tfs-nav-logo.scroll {
+    display: initial; }
+.error404 #archive-template .img-fluid-archive {
   max-width: 100%;
   height: 100%;
   min-height: 223px;
   object-fit: cover; }
-.archive #archive-template .list-group-item {
+.error404 #archive-template .list-group-item {
   border: none; }
-.archive .btn-link {
+.error404 .btn-link {
   color: #A21418; }
 @media (max-width: 768px) {
-  .archive #archive-template {
+  .error404 #archive-template {
     margin-top: 7rem; } }
 
 .btn-tfs {
@@ -887,16 +913,24 @@ a {
 /* Make the navbar background transparent by default */
 .navbar {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-  transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
+  transition: background 1.5s ease, height 1.3s ease;
   height: 100px; }
+  .navbar .navbar-brand .tfs-nav-logo.scroll {
+    display: none; }
+  .navbar .navbar-brand .tfs-nav-logo.no-scroll {
+    display: initial; }
   .navbar:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white); }
+    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.6), white); }
     .navbar:hover .nav-link {
       color: #000; }
     .navbar:hover .navbar-nav .nav-item.active .nav-link {
       color: #A21418;
       font-weight: bold; }
+    .navbar:hover .navbar-brand .tfs-nav-logo.scroll {
+      display: initial; }
+    .navbar:hover .navbar-brand .tfs-nav-logo.no-scroll {
+      display: none; }
   .navbar.scrolled {
     background: none;
     background-color: #ffffff;
@@ -906,6 +940,10 @@ a {
     .navbar.scrolled .navbar-nav .nav-item.active .nav-link {
       color: #A21418;
       font-weight: bold; }
+    .navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
+      display: initial; }
+    .navbar.scrolled .navbar-brand .tfs-nav-logo.no-scroll {
+      display: none; }
   .navbar .nav-link {
     color: rgba(255, 255, 255, 0.9);
     transition: color 0.3s ease;
@@ -1069,6 +1107,51 @@ ANIMATION STYLING
     transform: translateY(-10px); }
   to {
     transform: translateY(0); } }
+.archive .navbar {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white);
+  transition: background 0.5s ease, background-color 0.5s ease, height 0.3s ease;
+  height: 100px; }
+  .archive .navbar:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), white); }
+    .archive .navbar:hover .nav-link {
+      color: #000; }
+    .archive .navbar:hover .navbar-nav .nav-item.active .nav-link {
+      color: #A21418;
+      font-weight: bold; }
+  .archive .navbar.scrolled {
+    background: none;
+    background-color: #ffffff;
+    height: 60px; }
+    .archive .navbar.scrolled .nav-link {
+      color: #000; }
+    .archive .navbar.scrolled .navbar-nav .nav-item.active .nav-link {
+      color: #A21418;
+      font-weight: bold; }
+  .archive .navbar .nav-link {
+    color: rgba(0, 0, 0, 0.9);
+    transition: color 0.3s ease;
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal; }
+  .archive .navbar .navbar-brand .tfs-nav-logo.no-scroll {
+    display: none; }
+  .archive .navbar .navbar-brand .tfs-nav-logo.scroll {
+    display: initial; }
+.archive #archive-template .img-fluid-archive {
+  max-width: 100%;
+  height: 100%;
+  min-height: 223px;
+  object-fit: cover; }
+.archive #archive-template .list-group-item {
+  border: none; }
+.archive .btn-link {
+  color: #A21418; }
+@media (max-width: 768px) {
+  .archive #archive-template {
+    margin-top: 7rem; } }
+
 #page {
   /* Logo styling */ }
   #page .container-fluid.top-fade {
@@ -1084,7 +1167,8 @@ ANIMATION STYLING
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 75%);
+    /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 75%);*/
+    background: linear-gradient(0deg, #ffffff 5%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 90%);
     z-index: 1;
     pointer-events: none; }
   #page #primary {
@@ -1317,25 +1401,20 @@ ANIMATION STYLING
 /* Front-Page-Into Section */
 #front-page-into {
   position: relative;
-  /* Ensures the pseudo-element is positioned relative to this section */
-  background: #ffffff;
-  /* Background color for blending */ }
+  background: #ffffff; }
 
 /* Add the wave at the top as a pseudo-element */
-#front-page-into::before {
+/*#front-page-into::before {
   content: "";
   position: absolute;
   top: -350px;
-  /* Pulls the wave visually above this section */
   left: 0;
   width: 100%;
   height: 100%;
-  /* Adjust for a subtle wave */
   background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L60,218.7C120,213,240,203,360,208C480,213,600,235,720,245.3C840,256,960,256,1080,234.7C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>') no-repeat;
   background-size: cover;
   z-index: 1;
-  /* Ensures it appears behind the section content */ }
-
+}*/
 #fp-logo-background {
   position: relative;
   width: 24.3%;
@@ -1529,5 +1608,34 @@ Media Queries
   font-size: 1.45rem; }
 .page-sidebar h4 {
   font-size: 1.2rem; }
+
+/* Wave Section */
+.wave-section {
+  position: relative;
+  width: 100%;
+  /* Full page width */
+  height: auto;
+  /* Automatically scale its height */
+  overflow: hidden;
+  /* Clip any excessive content */
+  z-index: 2;
+  /* Stays above the carousel */
+  line-height: 0;
+  /* Eliminate extra spacing */
+  margin-top: -120px; }
+
+.wave-section svg {
+  display: block;
+  width: 100%;
+  /* Allow the SVG to stretch to fill the container */
+  height: 150px;
+  /* Adjust the wave height for an aesthetic transition */ }
+
+/* Apply hover dropdown only on larger screens */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible; } }
 
 /*# sourceMappingURL=style.css.map */

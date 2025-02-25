@@ -1,0 +1,25 @@
+/* Wave Section */
+.wave-section {
+  position: relative;
+  width: 100%; /* Full page width */
+  height: auto; /* Automatically scale its height */
+  overflow: hidden; /* Clip any excessive content */
+  z-index: 2; /* Stays above the carousel */
+  line-height: 0; /* Eliminate extra spacing */
+  margin-top: -120px;
+}
+
+.wave-section svg {
+  display: block;
+  width: 100%; /* Allow the SVG to stretch to fill the container */
+  height: 150px; /* Adjust the wave height for an aesthetic transition */
+}
+
+/* Apply hover dropdown only on larger screens */
+@media (min-width: 992px) {
+  .navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}

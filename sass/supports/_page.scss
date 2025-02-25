@@ -12,7 +12,8 @@
     left: 0;
     right: 0;
     height: 100px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 75%);
+   /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff 75%);*/
+    background: linear-gradient(0deg, #ffffff 5%, rgba(255,255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 90%);
     z-index: 1;
     pointer-events: none;
   }
