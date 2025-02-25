@@ -34,6 +34,13 @@ get_header(); ?>
     <a href="#find-out-more" class="cta-button">Find Out More</a>
 </div>
 
+<!-- Wave Section -->
+<div class="wave-section">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+        <path fill="#ffffff" d="M0,64L60,80C120,96,240,128,360,170.7C480,213,600,267,720,245.3C840,224,960,128,1080,85.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    </svg>
+</div>
+
 <section id="front-page-into">
     <div id="fp-logo-background" class="mt-3">
         <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop">
