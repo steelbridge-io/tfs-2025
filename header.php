@@ -51,11 +51,13 @@
 						array(
 							'theme_location'  => 'menu-1', // Registered menu location
 							'menu_id'         => 'primary-menu',
+                            'depth'           => 2,
 							'container'       => false,   // Don't wrap the menu in a container
-							'menu_class'      => 'navbar-nav me-auto mb-2 mb-lg-0', // Add Bootstrap classes
+							'menu_class'      => 'nav navbar-nav me-auto mb-2 mb-lg-0', // Add Bootstrap classes
 							'fallback_cb'     => '__return_false',
-							'depth'           => 2, // Allow dropdowns up to 2 levels
-							'walker'          => new Bootstrap_NavWalker(), // Use a custom walker class
+                            'items_wrap'      => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                            'depth'           => 3,
+							'walker'          => new bootstrap_5_wp_nav_menu_walker()
 						)
 					);
 					?>
