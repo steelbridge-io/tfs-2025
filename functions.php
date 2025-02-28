@@ -35,6 +35,7 @@ function the_fly_shop_2025_setup() {
  register_nav_menus(
 	array(
 	 'menu-1' => esc_html__( 'Primary Menu', 'the-fly-shop-2025' ),
+		'travel-menu' => esc_html__( 'Travel Menu', 'the-fly-shop-2025' ),
 	)
  );
 
