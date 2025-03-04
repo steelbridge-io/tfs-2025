@@ -157,6 +157,10 @@ function the_fly_shop_2025_scripts() {
  wp_enqueue_script( 'the-fly-shop-2025-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js', array(), '2.3.4', true );
 
+	if (is_page_template('page-templates/destination-template.php')) {
+		wp_enqueue_script( 'destination-features', get_template_directory_uri() . '/js/destination-slider.js', array('jquery'), _S_VERSION, true );
+	}
+
 	if ( is_front_page() ) {
 	wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true );
  }
