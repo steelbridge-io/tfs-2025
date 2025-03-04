@@ -424,10 +424,10 @@ body {
   background: #fff; }
 
 hr {
-  background-color: #ccc;
+  background-color: #000000;
   border: 0;
-  height: 1px;
-  margin-bottom: 1.5em; }
+  height: 1.5px;
+  margin: 1.5em 0; }
 
 ul,
 ol {
@@ -869,6 +869,8 @@ a {
   a:hover {
     color: #A21418; }
 
+/* Margins
+------------------------------*/
 .mt-6 {
   margin-top: 6rem; }
 
@@ -898,6 +900,50 @@ a {
 
 .mb-10 {
   margin-bottom: 10rem; }
+
+/* Padding
+------------------------------*/
+.pt-6 {
+  padding-top: 6rem; }
+
+.pt-7 {
+  padding-top: 7rem; }
+
+.pt-8 {
+  padding-top: 8rem; }
+
+.pt-9 {
+  padding-top: 9rem; }
+
+.pt-10 {
+  padding-top: 10rem; }
+
+.pb-6 {
+  padding-bottom: 6rem; }
+
+.pb-7 {
+  padding-bottom: 7rem; }
+
+.pb-8 {
+  padding-bottom: 8rem; }
+
+.pb-9 {
+  padding-bottom: 9rem; }
+
+.pb-10 {
+  padding-bottom: 10rem; }
+
+.pl-1 {
+  padding-left: 1rem; }
+
+.pl-2 {
+  padding-left: 2rem; }
+
+.pr-1 {
+  padding-right: 1rem; }
+
+.pr-2 {
+  padding-right: 2rem; }
 
 .no-padding-lr {
   padding-left: 0;
@@ -1767,5 +1813,127 @@ Media Queries
   font-size: 1.45rem; }
 .page-sidebar h4 {
   font-size: 1.2rem; }
+
+#travel-template-grid .travel-template-row {
+  background-color: #FBFBFD;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+#travel-template-grid p {
+  margin: 0;
+  font-size: 1.2rem; }
+#travel-template-grid img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+#travel-template-grid .widget-section {
+  position: relative;
+  z-index: 100;
+  background-color: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  width: 95%;
+  margin: -20px auto 0 auto;
+  padding: 1rem;
+  border: 0.5px solid #ccc; }
+#travel-template-grid .col-md-6.col-lg-6.one,
+#travel-template-grid .col-md-6.col-lg-6.two {
+  margin-top: 1.618em;
+  padding-top: 0; }
+#travel-template-grid .col-md-6.col-lg-6 {
+  margin-top: 1.618rem;
+  padding-top: 1.618rem; }
+
+.travel_cpt-template #page #primary {
+  box-shadow: none;
+  border: none;
+  padding: 0; }
+
+.travel-template-hero {
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4); }
+
+.travel_cpt-template-destination-tamplate .featurette {
+  padding: 1.618rem 1rem; }
+.travel_cpt-template-destination-tamplate .btn.btn-primary {
+  background-color: transparent;
+  border: none;
+  color: #000; }
+.travel_cpt-template-destination-tamplate .collapse .card-body {
+  width: 45rem; }
+.travel_cpt-template-destination-tamplate img.destination-img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+.travel_cpt-template-destination-tamplate #featurette-section-detination-template {
+  background-color: rgba(255, 211, 14, 0.9);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 1.618rem 0; }
+
+.modal.travel-modal {
+  margin-top: 5rem; }
+
+@media (min-width: 768px) {
+  #featurette-section-detination-template {
+    display: none; }
+
+  #feature-grid-destination-template {
+    display: initial; } }
+@media (max-width: 768.01px) {
+  #featurette-section-detination-template {
+    display: initial; }
+
+  #feature-grid-destination-template {
+    display: none; } }
+.additional-listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center; }
+
+/* Style for clickable items */
+.item {
+  cursor: pointer;
+  margin-bottom: 20px; }
+
+/* Circular icon styling */
+.item .icon {
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s ease; }
+
+/* Active state for selected item */
+.item.active .icon {
+  background-color: #007bff;
+  /* Bootstrap primary blue */
+  color: white; }
+
+/* Card body styling */
+.card-body {
+  background-color: rgba(29, 36, 42, 0.9);
+  color: white; }
+
+#scrollable-content {
+  overflow-y: auto; }
+
+/* Ensure the row uses Flexbox to make columns equal height */
+.equal-height-row {
+  display: flex; }
+
+/* Make columns stretch vertically and stack content internally */
+.equal-height-row > [class*="col-"] {
+  display: flex;
+  flex-direction: column; }
+
+/* Pink background fills the full height of col-md-8 */
+.pink-background {
+  /* background-color: pink; */
+  height: 100%; }
+
+/* Enable scrolling when content overflows */
+.scrollable-content {
+  overflow-y: auto; }
+  .scrollable-content .card {
+    height: 100%; }
+
+.item {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; }
+
+.item.active {
+  background-color: rgba(29, 36, 42, 0.9);
+  color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
