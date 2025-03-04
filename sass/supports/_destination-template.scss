@@ -1,0 +1,46 @@
+.travel_cpt-template-destination-tamplate {
+  .featurette {
+    padding: 1.618rem 1rem;
+  }
+  .btn.btn-primary {
+    background-color: transparent;
+    border: none;
+    color: #000;
+  }
+  .collapse {
+    .card-body {
+      width: 45rem;
+    }
+  }
+  img.destination-img {
+    box-shadow: $tfs__box-shadow
+  }
+  #featurette-section-detination-template {
+    background-color: rgba(255,211,14,0.9);
+    box-shadow: $tfs__box-shadow;
+    padding: 1.618rem 0;
+  }
+}
+
+.modal.travel-modal {
+  margin-top: 5rem;
+}
+
+
+@media (min-width: 768px ) {
+  #featurette-section-detination-template {
+    display: none;
+  }
+  #feature-grid-destination-template {
+    display: initial;
+  }
+}
+
+@media (max-width:768.01px) {
+  #featurette-section-detination-template {
+    display: initial;
+  }
+  #feature-grid-destination-template {
+    display: none;
+  }
+}

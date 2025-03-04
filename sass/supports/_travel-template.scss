@@ -1,0 +1,47 @@
+#travel-template-grid {
+  .travel-template-row {
+    background-color: $tfs__light-smoke;
+    box-shadow: $tfs__box-shadow ;
+  }
+  p {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  img {
+    box-shadow: $tfs__box-shadow;
+  }
+  .widget-section {
+    position: relative;
+    z-index: 100;
+    background-color: #fff;
+    box-shadow: $tfs__box-shadow;
+    width: 95%;
+    margin: -20px auto 0 auto;
+    padding: 1rem;
+    border: 0.5px solid #ccc;
+  }
+  .col-md-6.col-lg-6.one,
+  .col-md-6.col-lg-6.two {
+    margin-top: 1.618em;
+    padding-top: 0;
+  }
+
+  .col-md-6.col-lg-6 {
+    margin-top: 1.618rem;
+    padding-top: 1.618rem;
+  }
+}
+
+.travel_cpt-template {
+  #page {
+    #primary {
+      box-shadow: none;
+      border: none;
+      padding: 0;
+    }
+  }
+}
+
+.travel-template-hero {
+  box-shadow: $tfs__hero-box-shadow;
+}
