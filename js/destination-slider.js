@@ -1,3 +1,26 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal element
+    const travelModal = document.getElementById('travelTableModal');
+
+    // Store the slide number that should be shown
+    let slideToShow = 0;
+
+    // Add click listeners to all thumbnail images
+    document.querySelectorAll('[data-slide-to]').forEach(function(element) {
+        element.addEventListener('click', function() {
+            // Store the slide number from the clicked thumbnail
+            slideToShow = parseInt(this.getAttribute('data-slide-to'));
+        });
+    });
+
+    // When the modal is shown, switch to the correct slide
+    travelModal.addEventListener('shown.bs.modal', function() {
+        const carousel = document.getElementById('travel-carousel');
+        const bsCarousel = bootstrap.Carousel.getInstance(carousel);
+        // Go to the stored slide number
+        bsCarousel.to(slideToShow);
+    });
+});
  function setScrollableHeight() {
       const col4 = document.getElementById('col4');
       const scrollableContent = document.getElementById('scrollable-content');
