@@ -104,11 +104,13 @@ if (has_post_thumbnail()) : ?>
                 <div class="row">
                     <!-- ITEM ONE -->
                     <div class="item"
-                         data-image="<?php echo $feature_1_image; ?>"
-                         data-content="
-                     <b>Inclusions:</b>&nbsp;<?php echo $feature_1_inclusions_textarea; ?><br><br>
-                     <b>Seasons:</b>&nbsp;<?php echo $feature_1_noninclusions_textarea;?><br><br>
-                     <b>Travel Insurance:</b>&nbsp;<?php echo $feature_1_travelins_textarea;?>">
+                         data-image="<?php echo esc_url($feature_1_image); ?>"
+                         data-content="<?php
+                        $content = '<b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '<br><br>';
+                        $content .= '<b>Seasons:</b>&nbsp;' . $feature_1_noninclusions_textarea . '<br><br>';
+                        $content .= '<b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea;
+
+                        echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
 
                         <!--<div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
                             <i class="bi bi-code"></i>
@@ -426,7 +428,6 @@ if (has_post_thumbnail()) : ?>
     </div>
 </section>
 
-		<!-- Three -->
 <section id="three" class="wrapper style7 special">
     <div class="inner container">
         <header class="major">
@@ -638,8 +639,6 @@ if (has_post_thumbnail()) : ?>
         <?php if (get_post_meta(get_the_ID(), 'additional-info-image8', true)) { ?>
         <button type="button" data-bs-target="#travel-carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>
         <?php } ?>
-
-            <?php /* Repeat for other images as needed */ ?>
         </div>
 
         <!-- Carousel items -->
@@ -707,8 +706,6 @@ if (has_post_thumbnail()) : ?>
              alt="The Fly Shop World Fly Fishing Travel">
         </div>
         <?php } ?>
-
-        <?php /* Repeat for other images as needed */ ?>
         </div>
 
         <!-- Controls -->
@@ -771,5 +768,26 @@ if (has_post_thumbnail()) : ?>
 			</div>
 		</div>
 	</div>
+
+<script>
+    // Add this JavaScript to your template or JS file
+    document.addEventListener('DOMContentLoaded', function() {
+        // When displaying the content
+        const items = document.querySelectorAll('.item');
+        items.forEach(item => {
+            item.addEventListener('click', function() {
+                let content = this.getAttribute('data-content');
+                content = decodeEntities(content);
+                document.getElementById('display-content').innerHTML = content;
+            });
+        });
+
+        function decodeEntities(encodedString) {
+            const textarea = document.createElement('textarea');
+            textarea.innerHTML = encodedString;
+            return textarea.value;
+        }
+    });
+</script>
 
 <?php get_footer();
