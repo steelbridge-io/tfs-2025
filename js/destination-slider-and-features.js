@@ -1,3 +1,51 @@
+/**
+ * Features
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.item');
+
+    items.forEach(item => {
+        item.addEventListener('click', function() {
+            const featureGrid = document.getElementById('feature-grid-destination-template');
+            const scrollableContent = document.getElementById('scrollable-content');
+
+            // Reset the scroll position of the content area
+            scrollableContent.scrollTop = 0;
+
+            // Scroll the feature grid into view
+            featureGrid.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        });
+    });
+});
+
+
+
+
+// Add this JavaScript to your template or JS file
+document.addEventListener('DOMContentLoaded', function() {
+    // When displaying the content
+    const items = document.querySelectorAll('.item');
+    items.forEach(item => {
+        item.addEventListener('click', function() {
+            let content = this.getAttribute('data-content');
+            content = decodeEntities(content);
+            document.getElementById('display-content').innerHTML = content;
+        });
+    });
+
+    function decodeEntities(encodedString) {
+        const textarea = document.createElement('textarea');
+        textarea.innerHTML = encodedString;
+        return textarea.value;
+    }
+});
+
+/**
+ * Carousel JS
+ */
 document.addEventListener('DOMContentLoaded', function() {
     // Get the modal element
     const travelModal = document.getElementById('travelTableModal');
