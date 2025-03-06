@@ -2188,6 +2188,12 @@ Media Queries
   padding: 1.618rem 0;
 }
 
+#set-the-hook-destination-template .container {
+  border: 1px solid #ccc;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 1.618rem;
+}
+
 .modal.travel-modal {
   margin-top: 5rem;
 }
