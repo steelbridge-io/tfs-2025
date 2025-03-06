@@ -1,3 +1,12 @@
+html {
+  scroll-behavior: smooth;
+  /* Control scroll speed */
+  scroll-timeline: --myScroller;
+  scroll-timeline-axis: block;
+  scroll-transition-timing-function: ease-in-out;
+  transition: scroll-position 1.5s;
+}
+
 .travel_cpt-template-destination-tamplate {
   .featurette {
     padding: 1.618rem 1rem;
@@ -20,6 +29,11 @@
     box-shadow: $tfs__box-shadow;
     padding: 1.618rem 0;
   }
+  #scrollable-content {
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
 }
 
 #set-the-hook-destination-template {
@@ -30,15 +44,86 @@
   }
 }
 
-
-
-
 .modal.travel-modal {
   margin-top: 5rem;
 }
 
+.additional-listing {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
 
+/* Style for clickable items */
+.item {
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
 
+.item:hover {
+  background-color: rgba(29, 36, 42, 0.6);
+  color: white;
+}
+
+/* Circular icon styling */
+.item .icon {
+  width: 50px;
+  height: 50px;
+  transition: background-color 0.3s ease;
+}
+
+/* Active state for selected item */
+.item.active .icon {
+  background-color: #007bff; /* Bootstrap primary blue */
+  color: white;
+}
+
+/* Card body styling */
+.card-body {
+  background-color: $old__tfs-dark;
+  color: white;
+}
+
+#scrollable-content {
+  overflow-y: auto;
+}
+
+/* Ensure the row uses Flexbox to make columns equal height */
+.equal-height-row {
+  display: flex;
+}
+
+/* Make columns stretch vertically and stack content internally */
+.equal-height-row > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Pink background fills the full height of col-md-8 */
+.pink-background {
+  /* background-color: pink; */
+  height: 100%;
+}
+
+/* Enable scrolling when content overflows */
+.scrollable-content {
+  overflow-y: auto;
+  .card {
+    height: 100%;
+  }
+}
+
+.item {
+  padding: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.item.active {
+  background-color: rgba(29, 36, 42, 0.9);
+  color: #fff;
+}
 
 @media (min-width: 768px ) {
   #featurette-section-detination-template {
