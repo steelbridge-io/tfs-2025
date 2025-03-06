@@ -30,6 +30,78 @@
     margin-top: 1.618rem;
     padding-top: 1.618rem;
   }
+
+  .widget-section {
+    transition: transform 0.3s ease;
+    transform: translateY(0);
+  }
+
+  .widget-section:hover {
+    transform: translateY(-50px);
+  }
+
+  .thumbnail-link {
+    position: relative;
+    display: block;
+  }
+
+  .thumbnail-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .thumbnail-link::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;  /* Adjust size as needed */
+    height: 350px; /* Adjust size as needed */
+    background-image: url('https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease; /* Longer duration for more noticeable fade */
+    z-index: 2;
+    /* Start fully transparent and invisible */
+    visibility: hidden;
+  }
+
+  .thumbnail:hover .thumbnail-link::before {
+    opacity: 0.5;
+  }
+
+  .thumbnail:hover .thumbnail-link::after {
+    opacity: 1;
+    visibility: visible; /* Make visible on hover */
+  }
+
+  /* Keep the existing movement animation */
+  .thumbnail:hover .widget-section {
+    transform: translateY(-50px);
+  }
+
+  .widget-section {
+    transition: transform 0.3s ease;
+  }
+
+
+
+
+
+
+
+
 }
 
 .travel_cpt-template {
@@ -45,3 +117,4 @@
 .travel-template-hero {
   box-shadow: $tfs__hero-box-shadow;
 }
+
