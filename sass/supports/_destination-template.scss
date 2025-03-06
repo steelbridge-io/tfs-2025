@@ -22,9 +22,22 @@
   }
 }
 
+#set-the-hook-destination-template {
+  .container {
+    border: 1px solid #ccc;
+    box-shadow: $tfs__box-shadow;
+    padding: 1.618rem;
+  }
+}
+
+
+
+
 .modal.travel-modal {
   margin-top: 5rem;
 }
+
+
 
 
 @media (min-width: 768px ) {

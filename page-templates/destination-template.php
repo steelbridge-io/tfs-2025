@@ -4,7 +4,7 @@ Template Name: Destination Template
 Template Post Type: post, page, travel_cpt, lower48
 */
 
-get_header();
+get_header('destination-header');
 include_once( 'post-meta/post-meta-travel.php' ); // Includes all the custom meta-data
  ?>
 
@@ -421,14 +421,14 @@ if (has_post_thumbnail()) : ?>
 </div>
 </section>
 
-<section id="set-the-hook-destination-template">
-    <div class="container pt-5 pb-5">
+<section id="set-the-hook-destination-template" class="mt-5 mb-5">
+    <div class="container">
         <h2>What Makes This Destination Special and Unique?</h2>
         <div class="travel setthehook-p"><?php _e( $sth_content_1 ); ?></div>
     </div>
 </section>
 
-<section id="three" class="wrapper style7 special">
+<section id="destination-template-carousel" class="wrapper mt-5">
     <div class="inner container">
         <header class="major">
             <h2>Additional Photos</h2>
@@ -599,7 +599,6 @@ if (has_post_thumbnail()) : ?>
 </section>
 
 <!-- ====== MODAL SLIDER ====== -->
-
 <div class="modal fade travel-modal additional-img" tabindex="-1" id="travelTableModal" aria-labelledby="travelTableModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -723,17 +722,15 @@ if (has_post_thumbnail()) : ?>
         </div>
     </div>
 </div>
-
-
-	<!-- CALL TO ACTION ROW -->
-	<section id="cta" class="wrapper mt-5 mb-5">
-		<div class="inner container">
-			<header class="text-center">
-				<h2><?php echo $cta_strong_intro; ?></h2>
-				<p class="lead text-center text-justify"><?php echo $cta_content; ?></p>
-			</header>
-		</div>
-	</section>
+<!-- CALL TO ACTION ROW -->
+<section id="cta" class="wrapper mt-5 mb-5">
+    <div class="inner container">
+        <header class="text-center">
+            <h2><?php echo $cta_strong_intro; ?></h2>
+            <p class="lead text-center text-justify"><?php echo $cta_content; ?></p>
+        </header>
+    </div>
+</section>
 	<!-- Table Modal -->
 	<div id="travelmodal-table" class="modal fade travel-table-modal" tabindex="-1"
 	     role="dialog"
