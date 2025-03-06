@@ -106,7 +106,8 @@ if (has_post_thumbnail()) : ?>
                     <div class="item"
                          data-image="<?php echo esc_url($feature_1_image); ?>"
                          data-content="<?php
-                        $content = '<b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '<br><br>';
+                        $content  = '<h3>' .  $feature_1_title . '</h3>';
+                        $content .= '<b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '<br><br>';
                         $content .= '<b>Seasons:</b>&nbsp;' . $feature_1_noninclusions_textarea . '<br><br>';
                         $content .= '<b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea;
 
@@ -120,7 +121,10 @@ if (has_post_thumbnail()) : ?>
                     </div>
                     <!-- ITEM TWO -->
                     <div class="item" data-image="<?php echo $feature_2_image; ?>"
-                         data-content="<?php echo $feature_2_seasons_readmore; ?>">
+                         data-content="<?php
+                         $content = '<h3>' . $feature_2_seasons_title . '</h3>';
+                         $content .= $feature_2_seasons_readmore;
+                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
                          <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
                             <i class="bi bi-gear"></i>
                         </div> -->
@@ -130,7 +134,10 @@ if (has_post_thumbnail()) : ?>
                     <!-- ITEM THREE -->
                     <div class="item"
                          data-image="<?php echo $feature_3_gettingto_image; ?>"
-                         data-content="<?php echo esc_attr($feature_3_get_to_readmore); ?>">
+                         data-content="<?php
+                         $content = '<h3>' . $feature_3_get_to_title . '</h3>';
+                         $content .= $feature_3_get_to_readmore;
+                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
                          <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
                             <i class="bi bi-file-earmark-text"></i>
                         </div> -->
@@ -140,7 +147,10 @@ if (has_post_thumbnail()) : ?>
                     <!-- ITEM FOUR -->
                     <div class="item"
                          data-image="<?php echo $feature_4_lodging_image; ?>"
-                         data-content="<?php echo esc_attr($feature_4_lodging_readmore); ?>">
+                         data-content="<?php
+                         $content = '<h3>' . $feature_4_lodging_title . '</h3>';
+                         $content .= $feature_4_lodging_readmore;
+                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
                          <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
                             <i class="bi bi-book"></i>
                         </div> -->
@@ -150,7 +160,10 @@ if (has_post_thumbnail()) : ?>
                     <!-- ITEM FIVE -->
                     <div class="item"
                          data-image="<?php echo $feature_5_angling_image; ?>"
-                         data-content="<?php echo esc_attr($feature_5_angling_readmore); ?>">
+                         data-content="<?php
+                         $content = '<h3>' . $feature_5_angling_title . '</h3>';
+                         $content .= $feature_5_angling_readmore;
+                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
                          <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
                             <i class="bi bi-book"></i>
                         </div> -->
@@ -767,24 +780,8 @@ if (has_post_thumbnail()) : ?>
 	</div>
 
 <script>
-    // Add this JavaScript to your template or JS file
-    document.addEventListener('DOMContentLoaded', function() {
-        // When displaying the content
-        const items = document.querySelectorAll('.item');
-        items.forEach(item => {
-            item.addEventListener('click', function() {
-                let content = this.getAttribute('data-content');
-                content = decodeEntities(content);
-                document.getElementById('display-content').innerHTML = content;
-            });
-        });
 
-        function decodeEntities(encodedString) {
-            const textarea = document.createElement('textarea');
-            textarea.innerHTML = encodedString;
-            return textarea.value;
-        }
-    });
+
 </script>
 
 <?php get_footer();
