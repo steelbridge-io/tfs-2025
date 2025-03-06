@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /*
 Template Name: Destination Template
 Template Post Type: post, page, travel_cpt, lower48
@@ -170,7 +171,6 @@ if (has_post_thumbnail()) : ?>
                         <h3 class="label"><?php echo $feature_5_angling_title; ?></h3>
                         <div class="feature-textarea"><?php echo esc_attr($feature_5_angling_content); ?></div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -186,15 +186,15 @@ if (has_post_thumbnail()) : ?>
 			<p class="lead"><?php echo $feature_1_cost_textarea; ?></p>
 
 				<?php
-				if ( ! empty( $rr_table_title ) ) :?>
-					<button type="button" class="table-btn btn btn-transparent"
+				//if ( ! empty( $rr_table_title ) ) :?>
+					<!-- <button type="button" class="table-btn btn btn-transparent"
 					        data-toggle="modal"
 					        data-target=".travel-table-modal"><h4
 							class="panel-title travel travel-template table-h4">
 							Click To Review Rates
 							&amp; Reservations&nbsp;<span
-								class="arrow-down"></span></h4></button>
-				<?php else: ?>
+								class="arrow-down"></span></h4></button> -->
+				<?php //else: ?>
 					<div class="destination-collapse-btn">
 						<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDestinationInclusions1" aria-expanded="false" aria-controls="collapseDestinationInclusions1">
 							Inclusions<span class="arrow-down"></span>
@@ -231,20 +231,20 @@ if (has_post_thumbnail()) : ?>
 							</div>
 						</div>
 					</div>
-				<?php endif; ?>
+				<?php //endif; ?>
 		</div>
 		<div class="col-md-5">
 				<!-- Costs Video/Text/Image Option -->
 				<?php
-				$video_feature_one = get_post_meta( get_the_ID(),
+				$video_feat_one = get_post_meta( get_the_ID(),
 					'feature-1-video',
 					TRUE );
-				if ( ! empty( $video_feature_one ) ) :?>
+				if ( ! empty( $video_feat_one ) ) :?>
 					<div class="embed-responsive embed-responsive-16by9 video-poster">
 						<video id="vid" playsInline muted controls
 						       preload="auto"
 						       poster="<?php echo $feature_1_image ?>">
-							<source src="<?php echo $video_feature_one; ?>"
+							<source src="<?php echo $video_feat_one; ?>"
 							        type="video/mp4">
 						</video>
 					</div>
@@ -277,15 +277,15 @@ if (has_post_thumbnail()) : ?>
 		<div class="col-md-5 order-md-1">
 			<!-- Seasons Video/Text/Image Option -->
 			<?php
-			$video_feature_two = get_post_meta( get_the_ID(),
+			$video_feat_two = get_post_meta( get_the_ID(),
 				'feature-2-video',
 				TRUE );
-			if ( ! empty( $video_feature_two ) ) :?>
+			if ( ! empty( $video_feat_two ) ) :?>
 				<div class="embed-responsive embed-responsive-16by9 video-poster">
 					<video id="vid" playsInline muted controls
 					       preload="auto"
 					       poster="<?php echo $feature_2_image ?>">
-						<source src="<?php echo $video_feature_two; ?>"
+						<source src="<?php echo $video_feat_two; ?>"
 						        type="video/mp4">
 					</video>
 				</div>
@@ -321,16 +321,16 @@ if (has_post_thumbnail()) : ?>
         <div class="col-md-5">
             <!-- Getting To Video/Text/Image Option -->
 	        <?php
-	        $video_feature_three = get_post_meta( get_the_ID(),
+	        $video_feat_three = get_post_meta( get_the_ID(),
 		        'feature-3-video',
 		        TRUE );
 
-	        if ( ! empty( $video_feature_three ) ) :?>
+	        if ( ! empty( $video_feat_three ) ) :?>
              <div class="embed-responsive embed-responsive-16by9 video-poster">
                  <video id="vid" playsInline muted controls
                         preload="auto"
                         poster="<?php echo $feature_3_gettingto_image; ?>">
-                     <source src="<?php echo $video_feature_three; ?>"
+                     <source src="<?php echo $video_feat_three; ?>"
                              type="video/mp4">
                  </video>
              </div>
@@ -366,15 +366,15 @@ if (has_post_thumbnail()) : ?>
         <div class="col-md-5 order-md-1">
             <!-- Lodging Video/Text/Image Option -->
 	        <?php
-	        $video_feature_four = get_post_meta( get_the_ID(),
+	        $video_feat_four = get_post_meta( get_the_ID(),
 		        'feature-4-video',
 		        TRUE );
-	        if ( ! empty( $video_feature_four ) ) :?>
+	        if ( ! empty( $video_feat_four ) ) :?>
              <div class="embed-responsive embed-responsive-16by9 video-poster">
                  <video id="vid" playsInline muted controls
                         preload="auto"
                         poster="<?php echo $feature_4_lodging_image; ?>">
-                     <source src="<?php echo $video_feature_four; ?>"
+                     <source src="<?php echo $video_feat_four; ?>"
                              type="video/mp4">
                  </video>
              </div>
@@ -411,16 +411,16 @@ if (has_post_thumbnail()) : ?>
             <!-- Fishing Video/Text/Image Option -->
 
 	        <?php // Checkbox to activate video or image
-	        $video_feature_five = get_post_meta( get_the_ID(),
+	        $video_feat_five = get_post_meta( get_the_ID(),
 		        'feature-5-video',
 		        TRUE );
-	        if ( ! empty( $video_feature_five ) ) :?>
+	        if ( ! empty( $video_feat_five ) ) :?>
 
              <div class="embed-responsive embed-responsive-16by9 video-poster">
                  <video id="vid" playsInline muted controls
                         preload="auto"
                         poster="<?php echo $feature_5_angling_image ?>">
-                     <source src="<?php echo $video_feature_five; ?>"
+                     <source src="<?php echo $video_feat_five; ?>"
                              type="video/mp4">
                  </video>
              </div>
@@ -759,11 +759,11 @@ if (has_post_thumbnail()) : ?>
 				</div>
 				<div class="modal-body">
 					<?php
-					$rr_table_content_textarea = get_post_meta( get_the_ID(),
+					$tbl_textarea = get_post_meta( get_the_ID(),
 						'rr-table-content-textarea',
 						TRUE );
-					if ( ! empty( $rr_table_content_textarea ) ) : ?>
-						<div class="modal-body-content mb-1618"><?php echo $rr_table_content_textarea; ?></div>
+					if ( ! empty( $tbl_textarea ) ) : ?>
+						<div class="modal-body-content mb-1618"><?php echo $tbl_textarea; ?></div>
 					<?php endif; ?>
 					<div class="table-responsive">
 						<table class="table-travel table table-hover"><?php echo $rr_table_textarea; ?></table>
