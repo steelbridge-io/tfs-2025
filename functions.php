@@ -162,7 +162,7 @@ function the_fly_shop_2025_scripts() {
 
  // Conditional scripts remain the same
  if (is_page_template('page-templates/destination-template.php')) {
-	wp_enqueue_script('destination-features', get_template_directory_uri() . '/js/destination-slider.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('destination-features', get_template_directory_uri() . '/js/destination-slider-and-features.js', array('jquery'), _S_VERSION, true);
  }
 
  if (is_front_page()) {
