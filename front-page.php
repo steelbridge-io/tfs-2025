@@ -7,13 +7,13 @@ get_header(); ?>
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="img-fluid object-fit-cover" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/12/DelphiClub_Main_25.webp" class="d-block w-100" alt="The Fly Shop">
+      <img class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/12/DelphiClub_Main_25.webp" alt="The Fly Shop">
     </div>
     <div class="carousel-item">
-      <img  class="img-fluid object-fit-cover" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/04/ESBL_Main.webp" class="d-block w-100" alt="...">
+      <img  class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/04/ESBL_Main.webp" alt="...">
     </div>
     <div class="carousel-item">
-      <img  class="img-fluid object-fit-cover" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2022/10/ElEscondido_Main.webp" class="d-block w-100" alt="...">
+      <img  class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2022/10/ElEscondido_Main.webp" alt="...">
     </div>
       <!-- Add Scrolly -->
       <div id="scrolly" class="scrolly"><i class="lni lni-arrow-downward"></i></div>
