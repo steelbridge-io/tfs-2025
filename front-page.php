@@ -46,11 +46,15 @@ get_header(); ?>
         <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop">
     </div>
     <div class="container container-row front-page-into-container mb-5">
-        <h1><span id="typing-area"></h1>
+        <!-- <h1><span id="typing-area"></h1> -->
+        <div class="well text-center">
+        <h1>Northern California's Fly Fishing Retail, Travel, and Adventure Resource</h1>
+        <h2>(800) 669-3474</h2>
+        </div>
     </div>
 </section>
 
-<section class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000">
+<section class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
 <div id="front-page-content" class="container-fluid container-row">
 <div class="container">
     <div class="row g-4">
@@ -194,41 +198,6 @@ if (!empty($carousel_items)): ?>
     </section>
 <?php endif; ?>
 
-<section id="front-page-cta">
-    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5 mb-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500">
-        <div class="container text-center text-md-end">
-            <div class="row justify-content-end">
-                <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
-                    <div class="row">
-                    <div class="col-6">
-                    <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
-                    </div>
-                    <div class="col-6">
-                    <h5 class="mb-4 fw-bold">Stay Updated</h5>
-                    <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
-                    </div>
-                    </div>
-                    <form id="subscribe-form">
-                        <div class="form-floating mb-3">
-                            <input
-                                    type="email"
-                                    class="form-control shadow-sm"
-                                    id="subscriberEmail"
-                                    placeholder="name@example.com"
-                                    required
-                            />
-                            <label for="subscriberEmail" class="text-muted">Enter your email</label>
-                        </div>
-                        <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
-                            Subscribe
-                        </button>
-                    </form>
-            </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="front-page-news">
     <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">News</h2>
@@ -298,7 +267,41 @@ if (!empty($carousel_items)): ?>
             </div>
         </div>
     </div>
+</section>
 
+<section id="front-page-cta">
+    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
+        <div class="container text-center text-md-end">
+            <div class="row justify-content-end">
+                <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+                        </div>
+                        <div class="col-6">
+                            <h5 class="mb-4 fw-bold">Stay Updated</h5>
+                            <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+                        </div>
+                    </div>
+                    <form id="subscribe-form">
+                        <div class="form-floating mb-3">
+                            <input
+                                    type="email"
+                                    class="form-control shadow-sm"
+                                    id="subscriberEmail"
+                                    placeholder="name@example.com"
+                                    required
+                            />
+                            <label for="subscriberEmail" class="text-muted">Enter your email</label>
+                        </div>
+                        <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <?php

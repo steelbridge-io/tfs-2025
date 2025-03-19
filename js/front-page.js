@@ -1,6 +1,7 @@
 AOS.init({
     easing: 'ease',
-    duration: 1000, // 1 second for animation
+    duration: 1000,
+    once: true,
 });
 
 // Wait for DOM to load
