@@ -13,5 +13,19 @@
   --bs-btn-disabled-color: #fff;
   --bs-btn-disabled-bg: #A21418;
   --bs-btn-disabled-border-color: #A21418;
+}
 
+#report-tab-selector {
+  .nav {
+    .btn {
+      margin: .5rem 0;
+      min-width: 300px;
+    }
+    .btn.btn-tfs:hover {
+      background-color: $tfs__red !important;
+    }
+    .btn.btn-tfs.active {
+      background-color: $tfs__red-active !important;
+    }
+  }
 }
