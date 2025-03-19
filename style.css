@@ -863,6 +863,14 @@ textarea {
   --bs-btn-disabled-bg: #A21418;
   --bs-btn-disabled-border-color: #A21418; }
 
+#report-tab-selector .nav .btn {
+  margin: .5rem 0;
+  min-width: 300px; }
+#report-tab-selector .nav .btn.btn-tfs:hover {
+  background-color: #A21418 !important; }
+#report-tab-selector .nav .btn.btn-tfs.active {
+  background-color: #cd1c2e !important; }
+
 a {
   color: #A21418;
   text-decoration: none; }
@@ -1813,6 +1821,12 @@ Media Queries
   font-size: 1.45rem; }
 .page-sidebar h4 {
   font-size: 1.2rem; }
+
+.label.label-default {
+  display: none; }
+
+.label.label-default-danger {
+  display: initial; }
 
 #travel-template-grid {
   /* Keep the existing movement animation */ }
