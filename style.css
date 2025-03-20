@@ -863,12 +863,15 @@ textarea {
   --bs-btn-disabled-bg: #A21418;
   --bs-btn-disabled-border-color: #A21418; }
 
-#report-tab-selector .nav .btn {
+#report-tab-selector-rivers .nav .btn,
+#report-tab-selector-still-waters .nav .btn {
   margin: .5rem 0;
   min-width: 300px; }
-#report-tab-selector .nav .btn.btn-tfs:hover {
+#report-tab-selector-rivers .nav .btn.btn-tfs:hover,
+#report-tab-selector-still-waters .nav .btn.btn-tfs:hover {
   background-color: #A21418 !important; }
-#report-tab-selector .nav .btn.btn-tfs.active {
+#report-tab-selector-rivers .nav .btn.btn-tfs.active,
+#report-tab-selector-still-waters .nav .btn.btn-tfs.active {
   background-color: #cd1c2e !important; }
 
 a {
