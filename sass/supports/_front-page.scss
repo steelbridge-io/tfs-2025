@@ -47,11 +47,11 @@
   opacity: 0;
   position: absolute;
   top: 55%;
-  left: 5%; /* Adjust positioning for left third */
+  left: 5%;
   transform: translateY(50%);
   transition: opacity 1s ease, transform 1s ease;
-  color: #ffffff; /* Text color */
-  max-width: 80%; /* Controls the width of the left third */
+  color: #ffffff;
+  max-width: 80%;
   z-index: 10;
   text-align: left; /* Align content to the left */
   &.fade-in {
@@ -155,57 +155,7 @@
     padding: 1rem;
     text-align: center;
     margin-bottom: 0;
-    cursor: pointer; /* Indicates interactivity */
-  }
-  .card-hover-content {
-    position: absolute;
-    bottom: -100%; /* Initially hidden */
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    padding: 2rem;
-    text-align: center;
-    transition: bottom 0.5s ease; /* Smooth transition */
-  }
-  /* Ensure hover state includes both h3 and card-hover-content */
-  h3.card-title-overlay:hover + .card-hover-content,
-  .card-hover-content:hover {
-    bottom: 0; /* Show hover content */
-  }
-  .card-container {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-}
-
-
-
-
-/*#front-page-content {
-  .card-feature {
-    height: 380px;
-  }
-  .card-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  h3.card-title-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 0;
+    cursor: pointer;
   }
   .card-hover-content {
     position: absolute;
@@ -216,16 +166,17 @@
     color: #000;
     padding: 2rem;
     text-align: center;
-    transition: bottom 0.5s;
+    transition: bottom 0.5s ease;
   }
-  .card-container:hover .card-hover-content {
-    bottom: 0;
+  /* Ensure hover state includes both h3 and card-hover-content */
+  h3.card-title-overlay:hover + .card-hover-content,
+  .card-hover-content:hover {
+    bottom: 0; /* Show hover content */
   }
-  .card-container,
-  .card-container-wrap {
+  .card-container {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
   }
-}*/
+}
 
 #front-page-cta {
   .background-image-cta {
@@ -241,7 +192,7 @@
 
     .form-container {
       background: rgba(255, 255, 255, 0.55);
-      border-radius: 0; // Rounded corners
+      border-radius: 0;
       backdrop-filter: blur(4px);
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       max-width: 100%;
@@ -304,20 +255,6 @@
   background: #ffffff;
 }
 
-
-/* Add the wave at the top as a pseudo-element */
-/*#front-page-into::before {
-  content: "";
-  position: absolute;
-  top: -350px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L60,218.7C120,213,240,203,360,208C480,213,600,235,720,245.3C840,256,960,256,1080,234.7C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>') no-repeat;
-  background-size: cover;
-  z-index: 1;
-}*/
-
 #fp-logo-background {
   position: relative;
   width: 24.3%;
@@ -344,15 +281,14 @@
 
   #typing-area,
   .container-row {
-    height: 150px; /* Adjust to fit the tallest content */
-    overflow: hidden; /* Prevent overflowing */
+    height: 150px;
+    overflow: hidden;
     white-space: pre-wrap;
     display: flex;
-    align-items: center; /* Center align in case of vertical space */
-    justify-content: center; /* Optional: Center align horizontally */
+    align-items: center;
+    justify-content: center;
     transition: height 0.3s ease;
   }
-
 
   .cursor {
     display: inline-block;
