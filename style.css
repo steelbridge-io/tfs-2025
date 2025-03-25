@@ -1405,13 +1405,10 @@ ul.dropdown-menu ul.dropdown-menu {
   position: absolute;
   top: 55%;
   left: 5%;
-  /* Adjust positioning for left third */
   transform: translateY(50%);
   transition: opacity 1s ease, transform 1s ease;
   color: #ffffff;
-  /* Text color */
   max-width: 80%;
-  /* Controls the width of the left third */
   z-index: 10;
   text-align: left;
   /* Align content to the left */ }
@@ -1504,20 +1501,17 @@ ul.dropdown-menu ul.dropdown-menu {
     padding: 1rem;
     text-align: center;
     margin-bottom: 0;
-    cursor: pointer;
-    /* Indicates interactivity */ }
+    cursor: pointer; }
   #front-page-content .card-hover-content {
     position: absolute;
     bottom: -100%;
-    /* Initially hidden */
     left: 0;
     right: 0;
     background: rgba(255, 255, 255, 0.8);
     color: #000;
     padding: 2rem;
     text-align: center;
-    transition: bottom 0.5s ease;
-    /* Smooth transition */ }
+    transition: bottom 0.5s ease; }
   #front-page-content h3.card-title-overlay:hover + .card-hover-content,
   #front-page-content .card-hover-content:hover {
     bottom: 0;
@@ -1525,51 +1519,6 @@ ul.dropdown-menu ul.dropdown-menu {
   #front-page-content .card-container {
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); }
 
-/*#front-page-content {
-  .card-feature {
-    height: 380px;
-  }
-  .card-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-  .card-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  h3.card-title-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    padding: 1rem;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .card-hover-content {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    right: 0;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
-    padding: 2rem;
-    text-align: center;
-    transition: bottom 0.5s;
-  }
-  .card-container:hover .card-hover-content {
-    bottom: 0;
-  }
-  .card-container,
-  .card-container-wrap {
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-}*/
 #front-page-cta .background-image-cta {
   background-image: url("https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp");
   background-size: cover;
@@ -1622,18 +1571,6 @@ ul.dropdown-menu ul.dropdown-menu {
   position: relative;
   background: #ffffff; }
 
-/* Add the wave at the top as a pseudo-element */
-/*#front-page-into::before {
-  content: "";
-  position: absolute;
-  top: -350px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,224L60,218.7C120,213,240,203,360,208C480,213,600,235,720,245.3C840,256,960,256,1080,234.7C1200,213,1320,171,1380,149.3L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg>') no-repeat;
-  background-size: cover;
-  z-index: 1;
-}*/
 #fp-logo-background {
   position: relative;
   width: 24.3%;
@@ -1658,15 +1595,11 @@ ul.dropdown-menu ul.dropdown-menu {
   #front-page-into #typing-area,
   #front-page-into .container-row {
     height: 150px;
-    /* Adjust to fit the tallest content */
     overflow: hidden;
-    /* Prevent overflowing */
     white-space: pre-wrap;
     display: flex;
     align-items: center;
-    /* Center align in case of vertical space */
     justify-content: center;
-    /* Optional: Center align horizontally */
     transition: height 0.3s ease; }
   #front-page-into .cursor {
     display: inline-block;
@@ -1834,6 +1767,37 @@ Media Queries
 .label.label-default-danger {
   display: initial; }
 
+#regional-reports .well {
+  margin-top: 3rem; }
+#regional-reports .tab-content {
+  background-color: #eee;
+  padding: 1.5rem;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+
+/* Container for your report columns */
+.report-container {
+  display: flex;
+  width: 100%; }
+
+/* Button column - maintains its natural height */
+.report-button {
+  flex: 0 0 auto;
+  /* Don't grow or shrink */ }
+
+/* Content column - becomes scrollable when needed */
+.report-content {
+  flex: 1;
+  /* Takes remaining space */
+  overflow-y: auto;
+  /* Enables vertical scrolling */
+  height: 100%;
+  /* Takes full height of parent */ }
+
+/* If your columns are in a parent container with a specific height */
+.report-container {
+  position: relative; }
+
+/* Use JavaScript to dynamically match heights */
 #travel-template-grid {
   /* Keep the existing movement animation */ }
   #travel-template-grid .travel-template-row {
