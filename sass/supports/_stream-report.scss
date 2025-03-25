@@ -4,3 +4,39 @@
 .label.label-default-danger {
   display: initial;
 }
+
+#regional-reports {
+  .well {
+    margin-top: 3rem;
+  }
+  .tab-content {
+    background-color: #eee;
+    padding: 1.5rem;
+    box-shadow: $tfs__box-shadow;
+  }
+}
+
+/* Container for your report columns */
+.report-container {
+  display: flex;
+  width: 100%;
+}
+
+/* Button column - maintains its natural height */
+.report-button {
+  flex: 0 0 auto; /* Don't grow or shrink */
+}
+
+/* Content column - becomes scrollable when needed */
+.report-content {
+  flex: 1; /* Takes remaining space */
+  overflow-y: auto; /* Enables vertical scrolling */
+  height: 100%; /* Takes full height of parent */
+}
+
+/* If your columns are in a parent container with a specific height */
+.report-container {
+  position: relative;
+}
+
+/* Use JavaScript to dynamically match heights */
