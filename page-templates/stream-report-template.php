@@ -9,50 +9,50 @@ include_once('post-meta/post-meta-stream-report.php');
 
 get_header();
 ?>
-    <section>
+    <section id="stream-report-hero">
 
 		 <?php if (has_post_thumbnail()) : ?>
 
-         <div class="container-fluid travel-template-hero p-0">
-             <div class="hero-image position-relative">
-                 <!-- Full-Width Featured Image -->
-                 <img src="<?php echo esc_url(
-									has_post_thumbnail() ?
-									 get_the_post_thumbnail_url(get_the_ID(), 'full') :
-									 get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'
-								 ); ?>"
-                      class="img-fluid w-100"
-                      alt="<?php the_title_attribute(); ?>">
+     <div class="container-fluid travel-template-hero p-0">
+         <div class="hero-image position-relative">
+             <!-- Full-Width Featured Image -->
+             <img src="<?php echo esc_url(
+              has_post_thumbnail() ?
+               get_the_post_thumbnail_url(get_the_ID(), 'full') :
+               get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'
+             ); ?>"
+                  class="img-fluid w-100"
+                  alt="<?php the_title_attribute(); ?>">
 
-                 <!-- Overlay Content -->
-                 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-                     <!-- Logo -->
-                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
-                          class="hero-logo mb-3"
-                          alt="Website Logo">
+             <!-- Overlay Content -->
+             <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+                 <!-- Logo -->
+                 <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
+                      class="hero-logo mb-3"
+                      alt="Website Logo">
 
-                     <!-- Page Title -->
-                     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
-                 </div>
+                 <!-- Page Title -->
+                 <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
              </div>
          </div>
+     </div>
 		 <?php else:  ?>
-         <div class="container-fluid travel-template-hero p-0">
-             <div class="hero-image position-relative">
-                 <!-- Full-Width Featured Image -->
-                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
-                 <!-- Overlay Content -->
-                 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-                     <!-- Logo -->
-                     <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
-                          class="hero-logo mb-3"
-                          alt="Website Logo">
+     <div class="container-fluid travel-template-hero p-0">
+         <div class="hero-image position-relative">
+             <!-- Full-Width Featured Image -->
+             <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+             <!-- Overlay Content -->
+             <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+                 <!-- Logo -->
+                 <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
+                      class="hero-logo mb-3"
+                      alt="Website Logo">
 
-                     <!-- Page Title -->
-                     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
-                 </div>
+                 <!-- Page Title -->
+                 <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
              </div>
          </div>
+     </div>
 		 <?php endif; ?>
     </section>
 
@@ -60,35 +60,27 @@ get_header();
 		 <?php the_fly_shop_breadcrumbs(); ?>
     </div>
 
-    <section class="">
+    <section id="stream-report-content">
         <div class="container">
             <h2 class="text-center">Northern California Stream Report</h2>
-
             <div class="wide text-justify">
-
                 <?php if (have_posts()) :
-
                     while (have_posts()) : the_post();
-
                         the_content();
-
                     endwhile;
-
                 else :
-
                 endif; ?>
-
             </div>
         </div>
     </section>
 
-    <section class="">
+    <section id="featured-stream-reports" class="featured-content">
 
         <!-- ====== FEATURED REPORTS ====== -->
 
         <div class="container text-center mt-5">
             <h2>Featured Reports</h2>
-            <div class="row">
+            <div id="featured-reports-container" class="row">
 
                 <div class="col-xs-6 col-md-3">
                     <a data-bs-toggle="modal" href="#stream-report.php" data-bs-target=".featuredreport1" role="button" class="thumbnail featuredreport clicky"><img src="<?php echo $featured1_image; ?>" alt="Northern California - The Fly Shop - Stream Report"></a>
