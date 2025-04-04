@@ -33,6 +33,14 @@
   position: relative;
 }
 
+#regional-reports {
+  .well {
+    &:not(:first-child) {
+      margin-top: 2.5rem;
+    }
+  }
+}
+
 #featured-reports-container {
   > [class*="col-"] {
     &:not(:first-child) {

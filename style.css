@@ -2120,6 +2120,10 @@ Media Queries
   position: relative;
 }
 
+#regional-reports .well:not(:first-child) {
+  margin-top: 2.5rem;
+}
+
 @media (max-width: 767.98px) {
   #featured-reports-container > [class*=col-]:not(:first-child) {
     margin-top: 1rem;
