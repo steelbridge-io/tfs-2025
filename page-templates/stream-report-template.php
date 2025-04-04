@@ -111,7 +111,7 @@ get_header();
 
         <!-- ====== /FEATURED REPORTS ====== -->
 
-        <div id="regional-reports" class="container">
+        <div id="regional-reports" class="container d-none d-md-block">
 
             <div class="text-center mt-5">
                 <h2>All Regional Reports</h2>
@@ -432,8 +432,8 @@ get_header();
                      <?php endif; ?>
                     </button>
                     <button class="btn btn-tfs" id="mccloud-res-tab" data-bs-toggle="pill" data-bs-target="#mccloud-res-report" type="button" role="tab" aria-controls="mccloud-res-report" aria-selected="false">McCloud Reservoir:&nbsp;
-                                                 <?php $mccloudreservoir_closed_checkbox = get_post_meta(get_the_ID(), 'mccloudreservoir-closed-checkbox', true);
-                                                 if(get_post_meta(get_the_ID(), 'mccloudreservoir-closed-checkbox', true) == '-danger') :?>
+                         <?php $mccloudreservoir_closed_checkbox = get_post_meta(get_the_ID(), 'mccloudreservoir-closed-checkbox', true);
+                         if(get_post_meta(get_the_ID(), 'mccloudreservoir-closed-checkbox', true) == '-danger') :?>
                          <span class="label label-default<?php echo $mccloudreservoir_closed_checkbox;?>"><?php echo $mccloudreservoir_closed_message; ?></span>
                                                  <?php else: ?>
                          <span class="label label-default<?php echo $mccloudreservoir_checkbox_poor; ?>">Poor</span>
@@ -441,7 +441,7 @@ get_header();
                          <span class="label label-default<?php echo $mccloudreservoir_checkbox_fairgood; ?>">Fair to Good</span>
                          <span class="label label-default<?php echo $mccloudreservoir_checkbox_good; ?>">Good</span>
                          <span class="label label-default<?php echo $mccloudreservoir_checkbox_great; ?>">Great</span>
-                                                 <?php endif; ?>
+                         <?php endif; ?>
                     </button>
                     <button class="btn btn-tfs" id="pyramid-lake-tab" data-bs-toggle="pill" data-bs-target="#pyramid-lake-report" type="button" role="tab" aria-controls="pyramid-lake-report" aria-selected="false">Pyramid Lake:&nbsp;
                      <?php $pyramidlake_closed_checkbox = get_post_meta(get_the_ID(), 'pyramidlake-closed-checkbox', true);
@@ -878,6 +878,14 @@ get_header();
                 </div>
             </div>
         </div>
+
+        <!-- Mobile Version - Only shown on small screens -->
+        <div class="d-block d-md-none">
+				 <?php include(get_template_directory() . '/inc/mobile-stream-report.php'); ?>
+        </div>
+
+
+
     </section>
 
 	<!-- CTA -->
