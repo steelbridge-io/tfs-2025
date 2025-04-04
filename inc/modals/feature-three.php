@@ -237,9 +237,7 @@ This file includes the modals associated with the stream report featured reports
             <!-- === END EDIT SECTION: HOT FLIES === -->
 
            </p>
-           <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times"
-                                                         aria-hidden="true"></i>
-           </button>
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           </div>
          </div>
         </div>
