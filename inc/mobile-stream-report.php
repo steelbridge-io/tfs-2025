@@ -288,6 +288,90 @@
 			<span class="label label-default<?php echo $bollibokka_checkbox_great; ?>">Great</span>
 		 <?php endif; ?>
 		</button>
+    <!-- ##circle-7-guest-ranch-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#circle-7-guest-ranch-modal">Circle 7 Guest Ranch:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'circle7-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $circle7_closed_checkbox; ?>"><?php echo $circle7_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $circle7_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $circle7_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $circle7_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $circle7_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $circle7_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##clear-creek-ranch-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#clear-creek-ranch-modal">Clear Creek Ranch:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'clearcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $clearcreek_closed_checkbox; ?>"><?php echo $clearcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $clearcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##gold-river-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#gold-river-modal">Gold River:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'goldriver-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $goldriver_closed_checkbox; ?>"><?php echo $goldriver_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $goldriver_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##luk-lake-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#luk-lake-modal">Luk Lake:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'luklake-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $luklake_closed_checkbox; ?>"><?php echo $luklake_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $luklake_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $luklake_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $luklake_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $luklake_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $luklake_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##oasis-springs-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#oasis-springs-modal">Oasis Springs:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'oasissprings-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $oasissprings_closed_checkbox; ?>"><?php echo $oasissprings_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $oasissprings_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##rock-creek-lake-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#rock-creek-lake-modal">Rock Creek Lake:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'rockcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $rockcreek_closed_checkbox; ?>"><?php echo $rockcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $rockcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
+    <!-- ##sugar-creek-ranch-report -->
+    <button class="btn btn-tfs w-100 text-start mb-2" type="button" data-bs-toggle="modal" data-bs-target="#sugar-creek-ranch-modal">Sugar Creek Ranch:&nbsp&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'sugarcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $sugarcreek_closed_checkbox; ?>"><?php echo $sugarcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </button>
 	 </div>
 	</div>
  </div>
@@ -1001,5 +1085,257 @@
 		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 	 </div>
 	</div>
+ </div>
+</div>
+
+<!-- ##circle-7-guest-ranch-modal -->
+<div class="modal fade" id="circle-7-guest-ranch-modal" tabindex="-1" aria-labelledby="circle-7-guest-ranch-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="pyramid-lake-modal-label">Circle 7 Guest Ranch Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $circle7_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'circle7-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $circle7_closed_checkbox; ?>"><?php echo $circle7_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $circle7_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $circle7_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $circle7_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $circle7_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $circle7_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$circle7_report = get_post_meta(get_the_ID(), 'circle7-report', true);
+		if(!empty($circle7_report)) {
+		 echo '<div class="report">' . $circle7_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $circle7_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##clear-creek-ranch-modal -->
+<div class="modal fade" id="clear-creek-ranch-modal" tabindex="-1" aria-labelledby="clear-creek-ranch-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="clear-creek-ranch-modal-label">Clear Creek Ranch Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $clearcreek_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'clearcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $clearcreek_closed_checkbox; ?>"><?php echo $clearcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $clearcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $clearcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$clearcreek_report = get_post_meta(get_the_ID(), 'clearcreek-report', true);
+		if(!empty($clearcreek_report)) {
+		 echo '<div class="report">' . $clearcreek_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $clearcreek_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##gold-river-modal -->
+<div class="modal fade" id="gold-river-modal" tabindex="-1" aria-labelledby="gold-river-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="gold-river-modal-label">Gold River Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $goldriver_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'goldriver-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $goldriver_closed_checkbox; ?>"><?php echo $goldriver_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $goldriver_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $goldriver_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$goldriver_report = get_post_meta(get_the_ID(), 'goldriver-report', true);
+		if(!empty($goldriver_report)) {
+		 echo '<div class="report">' . $goldriver_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $goldriver_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##luk-lake-modal -->
+<div class="modal fade" id="luk-lake-modal" tabindex="-1" aria-labelledby="luk-lake-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="luk-lake-modal-label">Luk Lake Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $luklake_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'luklake-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $luklake_closed_checkbox; ?>"><?php echo $luklake_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $luklake_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $luklake_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $luklake_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $luklake_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $luklake_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$luklake_report = get_post_meta(get_the_ID(), 'luklake-report', true);
+		if(!empty($luklake_report)) {
+		 echo '<div class="report">' . $luklake_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $luklake_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##oasis-springs-modal -->
+<div class="modal fade" id="oasis-springs-modal" tabindex="-1" aria-labelledby="oasis-springs-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="oasis-springs-modal-label">Oasis Springs Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $oasissprings_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'oasissprings-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $oasissprings_closed_checkbox; ?>"><?php echo $oasissprings_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $oasissprings_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $oasissprings_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$oasissprings_report = get_post_meta(get_the_ID(), 'oasissprings-report', true);
+		if(!empty($oasissprings_report)) {
+		 echo '<div class="report">' . $oasissprings_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $oasissprings_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##rock-creek-lake-modal -->
+<div class="modal fade" id="rock-creek-lake-modal" tabindex="-1" aria-labelledby="rock-creek-lake-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="rock-creek-lake-modal-label">Rock Creek Lake Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $rockcreek_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'rockcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $rockcreek_closed_checkbox; ?>"><?php echo $rockcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $rockcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $rockcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$rockcreek_report = get_post_meta(get_the_ID(), 'rockcreek-report', true);
+		if(!empty($rockcreek_report)) {
+		 echo '<div class="report">' . $rockcreek_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $rockcreek_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- ##sugar-creek-ranch-modal -->
+<div class="modal fade" id="sugar-creek-ranch-modal" tabindex="-1" aria-labelledby="sugar-creek-ranch-modal-label" aria-hidden="true">
+ <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="sugar-creek-ranch-modal-label">Sugar Creek Ranch Report</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+		<?php echo '<div class="report-date"><strong>Updated:&nbsp;</strong>' . $sugarcreek_updated . '</div>'; ?>
+    <p><b>Fishing conditions:</b>&nbsp;
+		 <?php if(get_post_meta(get_the_ID(), 'sugarcreek-closed-checkbox', true) == '-danger') :?>
+      <span class="label label-default<?php echo $sugarcreek_closed_checkbox; ?>"><?php echo $sugarcreek_closed_message; ?></span>
+		 <?php else: ?>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_poor; ?>">Poor</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_fair; ?>">Fair</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_fairgood; ?>">Fair to Good</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_good; ?>">Good</span>
+      <span class="label label-default<?php echo $sugarcreek_checkbox_great; ?>">Great</span>
+		 <?php endif; ?>
+    </p>
+		<?php
+		$sugarcreek_report = get_post_meta(get_the_ID(), 'sugarcreek-report', true);
+		if(!empty($sugarcreek_report)) {
+		 echo '<div class="report">' . $sugarcreek_report . '</div>';
+		 echo '<div><b>Hot Flies:</b>' . $sugarcreek_hot_flies . '</div>';
+		}
+		?>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
  </div>
 </div>
