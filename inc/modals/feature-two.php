@@ -38,8 +38,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === BEGIN EDIT SECTION: REPORT === -->
 
                       <?php echo $antelopecreek_report; ?>
-
-
+                     
                       <!-- === END EDIT SECTION: REPORT === -->
 
                     </p>
@@ -53,7 +52,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -115,7 +114,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -177,7 +176,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -239,7 +238,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -301,7 +300,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -363,7 +362,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -425,7 +424,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -487,7 +486,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -549,7 +548,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -611,7 +610,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -673,7 +672,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -735,7 +734,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -797,7 +796,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -859,7 +858,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -921,7 +920,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -983,7 +982,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1045,7 +1044,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1108,7 +1107,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1171,7 +1170,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1233,7 +1232,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1295,7 +1294,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1357,7 +1356,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1419,7 +1418,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1481,7 +1480,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1543,7 +1542,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1605,7 +1604,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1667,7 +1666,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1729,7 +1728,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1791,7 +1790,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
@@ -1853,7 +1852,7 @@ Included in this file are the modals for featured reports in the stream report
                       <!-- === END EDIT SECTION: HOT FLIES === -->
 
                     </p>
-                    <button data-dismiss="modal" class="close"><i class="fa fa-3x fa-times" aria-hidden="true"></i></button>
+                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                   </div>
                 </div>
               </div>
