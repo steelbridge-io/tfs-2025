@@ -8,11 +8,13 @@
 // No need to redefine them if they're already in the parent scope
 ?>
 
-<div id="regional-reports-mobile" class="container">
- <h3 class="text-center mb-4">Fishing Reports</h3>
-
+<div id="regional-reports-mobile" class="container mt-5">
+ <div class="fishing-reports-cta mb-5">
+ <h3 class="text-center">Fishing Reports</h3>
+ <p class="lead text-center">Click each category to expand a selection of regional options</p>
+ </div>
  <!-- Rivers Section -->
-	<div class="card mb-3">
+ <div class="card mb-3">
 	<div class="card-header p-0">
 	 <button class="btn btn-link w-100 text-start p-3" type="button"
 					 data-bs-toggle="collapse" data-bs-target="#mobile-rivers-content"
