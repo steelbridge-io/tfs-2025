@@ -86,7 +86,7 @@ get_header();
 
         <!-- ====== FEATURED REPORTS ====== -->
 
-        <div class="container text-center">
+        <div class="container text-center mt-5">
             <h2>Featured Reports</h2>
             <div class="row">
 
@@ -113,7 +113,7 @@ get_header();
 
         <div id="regional-reports" class="container">
 
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <h2>All Regional Reports</h2>
             </div>
 
