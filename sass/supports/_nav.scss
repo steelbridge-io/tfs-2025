@@ -1,9 +1,8 @@
-/* Base styles for dropdown menu */
+
 .dropdown-menu {
   transition: all 0.3s ease;
 }
 
-/* Hover effect for dropdown items */
 .dropdown-item:hover,
 .dropdown-item:focus {
   background-color: #f8f9fa;
@@ -358,6 +357,53 @@ ul.dropdown-menu ul.dropdown-menu {
 }
 
 @media (max-width: 991.98px) {
+
+  .navbar-toggler-icon {
+    background-image: url('images/nav/default-hamburger.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px;
+    width: 40px;
+    height: 40px;
+    border: none;
+
+  }
+  .scrolled {
+    .navbar-toggler-icon {
+      filter: invert(1); // Makes white icon
+    }
+  }
+
+  #site-navigation {
+    .container {
+      .navbar-brand {
+        img {
+          width: 75px;
+        }
+      }
+    }
+    button.navbar-toggler {
+      border: none;
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .navbar-collapse {
+      background-color: $tfs__light-smoke;
+      color: $tfs__black;
+    }
+    li.menu-item {
+      a {
+        color: $tfs__black;
+      }
+    }
+  }
+
+  #site-navigation {
+
+  }
   .dropdown-menu {
     /*display: block;*/
     position: static;
