@@ -13,7 +13,6 @@ include_once('post-meta/post-meta-staff.php');
 
 get_header();
 if (has_post_thumbnail()) : ?>
-
 	<div class="container-fluid travel-template-hero p-0">
 		<div class="hero-image position-relative">
 			<!-- Full-Width Featured Image -->
@@ -59,10 +58,8 @@ if (has_post_thumbnail()) : ?>
 	<?php the_fly_shop_breadcrumbs(); ?>
 </div>
 
-
 <div class="container-fluid">
 	<div class="container">
-		<div id="scrollto"></div>
 		<div id="primary" class="content-area row">
 			<main id="main" class="site-main col-md-12" role="main">
 				<?php
@@ -77,7 +74,7 @@ if (has_post_thumbnail()) : ?>
 	</div>
 </div>
 
-<div class="container staff_bg_color">
+<div class="container staff_bg_color mt-5 mb-5">
 	<div class="row">
 		<div class="col-md-4">
 			<div class="thumbnail staff-text-color">
@@ -575,6 +572,8 @@ if (has_post_thumbnail()) : ?>
 			</div>
 		</div>
 	</div>
-</div>
 
-<?php endif; get_footer(); ?>
+
+<?php endif; ?>
+</div>
+<?php get_footer(); ?>
