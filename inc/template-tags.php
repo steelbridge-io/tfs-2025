@@ -120,6 +120,7 @@ if ( ! function_exists( 'the_fly_shop_2025_post_thumbnail' ) ) :
 	 * element when on single views.
 	 */
 	function the_fly_shop_2025_post_thumbnail() {
+
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 			return;
 		}
@@ -129,7 +130,7 @@ if ( ! function_exists( 'the_fly_shop_2025_post_thumbnail' ) ) :
 
 			<div class="post-thumbnail">
 				<?php the_post_thumbnail(); ?>
-			</div><!-- .post-thumbnail -->
+			</div>
 
 		<?php else : ?>
 
@@ -149,7 +150,7 @@ if ( ! function_exists( 'the_fly_shop_2025_post_thumbnail' ) ) :
 			</a>
 
 			<?php
-		endif; // End is_singular().
+		endif;
 	}
 endif;
 
