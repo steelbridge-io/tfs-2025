@@ -363,6 +363,9 @@ textarea {
   font-size: 1rem;
   line-height: 1.5; }
 
+p {
+  font-size: 1.3rem; }
+
 h1,
 h2,
 h3,
@@ -876,6 +879,9 @@ textarea {
 #report-tab-selector-still-waters .nav .btn.btn-tfs.active,
 #report-tab-selector-private-waters .nav .btn.btn-tfs.active {
   background-color: #cd1c2e !important; }
+
+.breadcrumb {
+  font-size: 1.15rem; }
 
 a {
   color: #A21418;
@@ -1783,6 +1789,11 @@ Media Queries
   font-size: 1.45rem; }
 .page-sidebar h4 {
   font-size: 1.2rem; }
+
+.page-template-staff-template .thumbnail img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+.page-template-staff-template .thumbnail .caption h4 {
+  margin-top: 1rem; }
 
 .label.label-default {
   display: none; }
