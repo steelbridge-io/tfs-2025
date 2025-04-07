@@ -63,7 +63,7 @@
         </div>
     </div>
 </footer>
-</div><!-- #page -->
+<!-- </div>-->
 
 <?php wp_footer(); ?>
 
