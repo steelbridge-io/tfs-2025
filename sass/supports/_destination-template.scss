@@ -142,3 +142,13 @@ html {
     display: none;
   }
 }
+
+#inclusions {
+  .destination-modal-btn {
+    width: 100% !important;
+    .destination.btn-tfs {
+      width: 100% !important;
+      margin-bottom: 1rem !important;
+    }
+  }
+}

@@ -196,44 +196,27 @@ if (has_post_thumbnail()) : ?>
 							&amp; Reservations&nbsp;<span
 								class="arrow-down"></span></h4></button> -->
 				<?php //else: ?>
-					<div class="destination-collapse-btn">
-						<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDestinationInclusions1" aria-expanded="false" aria-controls="collapseDestinationInclusions1">
+						<div id="inclusions">
+						<div class="destination-modal-btn">
+						 <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal"
+										 data-bs-target="#inclusionsModal">
 							Inclusions<span class="arrow-down"></span>
-						</button>
-					</div>
-					<div class="destination-collapse-text">
-						<div class="collapse collapse-horizontal" id="collapseDestinationInclusions1">
-							<div class="card card-body">
-								<p class="travel"><?php echo $feature_1_inclusions_textarea; ?></p>
-							</div>
+						 </button>
 						</div>
-					</div>
-					<div class="destination-collapse-btn">
-						<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDestinationNonInclusions1" aria-expanded="false" aria-controls="collapseDestinationNonInclusions1">
-							Non-Inclusions<span class="arrow-down"></span>
+					 <div class="destination-modal-btn">
+						<button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#noninclusionsModal">
+						 Non-Inclusions<span class="arrow-down"></span>
 						</button>
-					</div>
-					<div class="destination-collapse-text">
-						<div class="collapse collapse-horizontal" id="collapseDestinationNonInclusions1">
-							<div class="card card-body" style="width: 45rem;">
-								<p class="travel"><?php echo $feature_1_noninclusions_textarea; ?></p>
-							</div>
-						</div>
-					</div>
-					<div class="destination-collapse-btn">
-						<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDestinationTravelIns1" aria-expanded="false" aria-controls="collapseDestinationTravelIns1">
-							Travel Insurance<span class="arrow-down"></span>
+					 </div>
+					 <div class="destination-modal-btn">
+						<button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#travelinsuranceModal">
+						 Travel Insurance<span class="arrow-down"></span>
 						</button>
-					</div>
-					<div class="destination-collapse-text">
-						<div class="collapse collapse-horizontal" id="collapseDestinationTravelIns1">
-							<div class="card card-body" style="width: 45rem;">
-								<p class="travel"><?php echo $feature_1_travelins_textarea; ?></p>
-							</div>
+					 </div>
 						</div>
-					</div>
+					 </div>
 				<?php //endif; ?>
-		</div>
+
 		<div class="col-md-5">
 				<!-- Costs Video/Text/Image Option -->
 				<?php
@@ -779,10 +762,7 @@ if (has_post_thumbnail()) : ?>
 			</div>
 		</div>
 	</div>
-
-<script>
-
-
-</script>
+<?php
+include get_template_directory() . '/page-templates/template-modals/destination-template-modals.php'; ?>
 
 <?php get_footer();
