@@ -203,7 +203,7 @@ if (has_post_thumbnail()) : ?>
 					</div>
 					<div class="destination-collapse-text">
 						<div class="collapse collapse-horizontal" id="collapseDestinationInclusions1">
-							<div class="card card-body" style="width: 45rem;">
+							<div class="card card-body">
 								<p class="travel"><?php echo $feature_1_inclusions_textarea; ?></p>
 							</div>
 						</div>
