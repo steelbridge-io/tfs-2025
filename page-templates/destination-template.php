@@ -245,20 +245,13 @@ if (has_post_thumbnail()) : ?>
 		<div class="col-md-7 order-md-2">
 			<h2 class="featurette-heading"><?php echo $feature_2_seasons_title; ?></h2>
 			<p class="lead"><?php echo $feature_2_seasons_content; ?></p>
-			<div class="destination-collapse-btn">
-				<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeasons2" aria-expanded="false" aria-controls="collapseSeasons2">
-					Read More
-				</button>
+			<div class="destination-modal-btn">
+       <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#seasonsModal">
+        Read more...<span class="arrow-down"></span>
+       </button>
 			</div>
-			<div class="destination-collapse-text">
-                <div class="collapse collapse-horizontal" id="collapseSeasons2">
-                    <div class="card card-body" style="width: 45rem;">
-                        <p class="travel"><?php echo $feature_2_seasons_readmore; ?></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-		<div class="col-md-5 order-md-1">
+
+		<div class="col-md-5 order-md-1 mt-5">
 			<!-- Seasons Video/Text/Image Option -->
 			<?php
 			$video_feat_two = get_post_meta( get_the_ID(),
@@ -289,20 +282,13 @@ if (has_post_thumbnail()) : ?>
             <h2 class="featurette-heading"><?php echo $feature_3_get_to_title; ?></h2>
             <p class="lead"><?php echo $feature_3_get_to_content; ?></p>
 
-            <div class="destination-collapse-btn">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3GetTo" aria-expanded="false" aria-controls="collapse3GetTo">
-                    Read More..
-                </button>
-            </div>
-            <div class="destination-collapse-text">
-                <div class="collapse collapse-horizontal" id="collapse3GetTo">
-                    <div class="card card-body" style="width: 45rem;">
-                        <p class="travel"><?php echo $feature_3_get_to_readmore; ?></p>
-                    </div>
-                </div>
+            <div class="destination-modal-btn">
+             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#gettingtoModal">
+              Read more...<span class="arrow-down"></span>
+             </button>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 mt-5">
             <!-- Getting To Video/Text/Image Option -->
 	        <?php
 	        $video_feat_three = get_post_meta( get_the_ID(),
@@ -325,6 +311,7 @@ if (has_post_thumbnail()) : ?>
 
         </div>
     </div>
+
 	<!-- /Featurette Three -->
 
     <hr class="featurette-divider">
@@ -368,6 +355,7 @@ if (has_post_thumbnail()) : ?>
 	        <?php endif; ?>
         </div>
     </div>
+
 	<!-- /Featurette Four -->
 
     <hr class="featurette-divider">
