@@ -173,7 +173,29 @@ function the_fly_shop_2025_scripts() {
  }
 
  if (is_page_template('page-templates/private-waters-template.php')) {
-	wp_enqueue_script('guide-service-js', get_template_directory_uri() . '/js/private-waters.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('private-waters-js', get_template_directory_uri() . '/js/private-waters.js', array('jquery'),
+	 _S_VERSION,
+	 true);
+ }
+
+ if (is_page_template('page-templates/fly-fishing-schools-template.php')) {
+	wp_enqueue_script('fly-fishing-schools-js', get_template_directory_uri() . '/js/fly-fishing-schools.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/fish-camp-template.php')) {
+	wp_enqueue_script('fish-camp-js', get_template_directory_uri() . '/js/fish-camp.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/news-blog-template.php')) {
+	wp_enqueue_script('fishing-news-js', get_template_directory_uri() . '/js/fishing-news.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/travel-template.php')) {
+	wp_enqueue_script('travel-js', get_template_directory_uri() . '/js/travel.js', array('jquery'),
+	 _S_VERSION, true);
  }
 
  if (is_front_page()) {
