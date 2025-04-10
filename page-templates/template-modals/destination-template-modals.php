@@ -97,6 +97,48 @@
  </div>
 </div>
 
+<!-- Lodging Modal -->
+<div class="modal fade" id="lodgingModal" tabindex="-1" aria-labelledby="lodgingModalLabel"
+     aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="lodgingModalLabel">Lodging: <?php echo $feature_4_lodging_title; ?></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+    <p class="lead"><?php echo $feature_4_lodging_readmore; ?></p>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- Fishing Modal -->
+<div class="modal fade" id="fishingModal" tabindex="-1" aria-labelledby="fishingModalLabel"
+     aria-hidden="true">
+ <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title" id="fishingModalLabel">Fishing: <?php echo $feature_5_angling_title; ?></h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+   <div class="modal-body">
+    <p class="lead"><p class="travel"><?php echo $feature_5_angling_readmore; ?></p></p>
+   </div>
+   <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+
+
+
+
 
 
 

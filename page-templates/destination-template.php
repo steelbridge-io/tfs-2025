@@ -185,17 +185,6 @@ if (has_post_thumbnail()) : ?>
 		<div class="col-md-7">
 			<h2 class="featurette-heading"><?php echo $feature_1_title; ?></h2>
 			<p class="lead"><?php echo $feature_1_cost_textarea; ?></p>
-
-				<?php
-				//if ( ! empty( $rr_table_title ) ) :?>
-					<!-- <button type="button" class="table-btn btn btn-transparent"
-					        data-toggle="modal"
-					        data-target=".travel-table-modal"><h4
-							class="panel-title travel travel-template table-h4">
-							Click To Review Rates
-							&amp; Reservations&nbsp;<span
-								class="arrow-down"></span></h4></button> -->
-				<?php //else: ?>
 						<div id="inclusions">
 						<div class="destination-modal-btn">
 						 <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal"
@@ -215,7 +204,7 @@ if (has_post_thumbnail()) : ?>
 					 </div>
 						</div>
 					 </div>
-				<?php //endif; ?>
+
 
 		<div class="col-md-5">
 				<!-- Costs Video/Text/Image Option -->
@@ -250,6 +239,7 @@ if (has_post_thumbnail()) : ?>
         Read more...<span class="arrow-down"></span>
        </button>
 			</div>
+    </div>
 
 		<div class="col-md-5 order-md-1 mt-5">
 			<!-- Seasons Video/Text/Image Option -->
@@ -274,7 +264,7 @@ if (has_post_thumbnail()) : ?>
 	</div>
 	<!-- /Featurette Two -->
 
-    <hr class="featurette-divider">
+     <hr class="featurette-divider">
 
 	<!-- Featurette Three -->
     <div class="row featurette">
@@ -321,20 +311,13 @@ if (has_post_thumbnail()) : ?>
         <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading"><?php echo $feature_4_lodging_title; ?></h2>
             <p class="lead"><?php echo $feature_4_lodging_content; ?></p>
-            <div class="destination-collapse-btn">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4Lodging" aria-expanded="false" aria-controls="collapse4Lodging">
-                    Read More...
-                </button>
-            </div>
-            <div class="destination-collapse-text">
-                <div class="collapse collapse-horizontal" id="collapse4Lodging">
-                    <div class="card card-body" style="width: 45rem;">
-                        <p class="lead"><?php echo $feature_4_lodging_readmore; ?></p>
-                    </div>
-                </div>
+            <div class="destination-modal-btn">
+             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#lodgingModal">
+              Read more...<span class="arrow-down"></span>
+             </button>
             </div>
         </div>
-        <div class="col-md-5 order-md-1">
+        <div class="col-md-5 order-md-1 mt-5">
             <!-- Lodging Video/Text/Image Option -->
 	        <?php
 	        $video_feat_four = get_post_meta( get_the_ID(),
@@ -367,19 +350,12 @@ if (has_post_thumbnail()) : ?>
             <p class="lead"><?php echo $feature_5_angling_content; ?></p>
 
             <div class="destination-collapse-btn">
-                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5Angling" aria-expanded="false" aria-controls="collapse5Angling">
-                    Read More..
-                </button>
-            </div>
-            <div class="destination-collapse-text">
-                <div class="collapse collapse-horizontal" id="collapse5Angling">
-                    <div class="card card-body" style="width: 45rem;">
-                        <p class="travel"><?php echo $feature_5_angling_readmore; ?></p>
-                    </div>
-                </div>
+             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#fishingModal">
+              Read more...<span class="arrow-down"></span>
+             </button>
             </div>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 mt-5">
             <!-- Fishing Video/Text/Image Option -->
 
 	        <?php // Checkbox to activate video or image

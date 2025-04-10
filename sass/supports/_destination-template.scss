@@ -141,7 +141,22 @@ html {
   #feature-grid-destination-template {
     display: none;
   }
+  img.destination-img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .featurette-divider {
+    margin: 1rem 0;
+  }
 }
+
+@media (max-width: 576px) {
+  img.destination-img {
+    margin: 0.5rem auto;
+  }
+}
+
+
 
 #inclusions {
   .destination-modal-btn {
