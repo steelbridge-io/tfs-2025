@@ -202,7 +202,70 @@ if (!empty($carousel_items)): ?>
     <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">News</h2>
 
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+		 <?php
+		 // WP Query to fetch the 3 most recent posts
+		 $recent_posts = new WP_Query(array(
+			'post_type'      => 'post',
+			'posts_per_page' => 3,
+			'orderby'        => 'date',
+			'order'          => 'DESC'
+		 ));
+
+		 // Check if there are posts
+		 if ($recent_posts->have_posts()) : ?>
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+			 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post();
+				// Get the featured image URL
+				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+				// If no featured image, use a placeholder
+				if (!$featured_img_url) {
+				 $featured_img_url = 'https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png';
+				}
+
+				// Get the time difference
+				$time_diff = human_time_diff(get_the_time('U'), current_time('timestamp'));
+				?>
+				<div class="col">
+				 <div class="card card-news card-cover h-100 overflow-hidden text-bg-dark shadow-lg" style="background-image: url('<?php echo esc_url($featured_img_url); ?>');">
+					<div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+					 <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">
+						<a href="<?php the_permalink(); ?>" class="text-white text-decoration-none">
+						 <?php the_title(); ?>
+						</a>
+					 </h3>
+					 <ul class="d-flex list-unstyled mt-auto">
+						<li class="me-auto">
+						 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png" alt="<?php bloginfo('name'); ?>" width="52" height="52" class="border border-white">
+						</li>
+						<li class="d-flex align-items-center me-3">
+						 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+						 <small><?php
+							// Display the first category
+							$categories = get_the_category();
+							if (!empty($categories)) {
+							 echo esc_html($categories[0]->name);
+							} else {
+							 echo 'Uncategorized';
+							}
+							?></small>
+						</li>
+						<li class="d-flex align-items-center">
+						 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
+						 <small><?php echo esc_html($time_diff . ' ago'); ?></small>
+						</li>
+					 </ul>
+					</div>
+				 </div>
+				</div>
+			 <?php endwhile; ?>
+			</div>
+			<?php
+			// Restore original post data
+			wp_reset_postdata();
+		 endif;
+		 ?>
+
+        <!--<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
             <div class="col">
                 <div class="card card-news card-cover h-100 overflow-hidden text-bg-dark shadow-lg" style="background-image: url('https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/02/NFR_Extra3.webp');">
                     <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
@@ -265,7 +328,7 @@ if (!empty($carousel_items)): ?>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 
