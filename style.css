@@ -710,9 +710,15 @@ textarea {
   flex: 1 0 50%;
 }
 
-#primary-menu li a {
+#home-page li {
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+#home-page li a {
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.76rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 /* Posts and pages
@@ -1146,6 +1152,13 @@ a:hover {
 .container.no-padding-lr {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+#guide-service-image-container .thumbnail a img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+#guide-service-image-container .caption h4 {
+  margin-top: 1rem;
 }
 
 .dropdown-menu {
@@ -1725,10 +1738,6 @@ ul.dropdown-menu ul.dropdown-menu {
   text-align: center;
 }
 
-section {
-  margin: 0 !important;
-}
-
 #prime-travel-travel-template {
   padding-top: 1.618em;
   padding-bottom: 1.618em;
@@ -1844,6 +1853,13 @@ section {
     margin: -75px 0 0 -169px;
   }
 }
+#guide-service-image-container .thumbnail a img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+#guide-service-image-container .caption h4 {
+  margin-top: 1rem;
+}
+
 /* Wave Section */
 .wave-section {
   position: relative;
@@ -2597,6 +2613,18 @@ html {
   }
   #feature-grid-destination-template {
     display: none;
+  }
+  img.destination-img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .featurette-divider {
+    margin: 1rem 0;
+  }
+}
+@media (max-width: 576px) {
+  img.destination-img {
+    margin: 0.5rem auto;
   }
 }
 #inclusions .destination-modal-btn {
