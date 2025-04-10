@@ -34,7 +34,7 @@ function the_fly_shop_2025_setup() {
  // Register navigation menus.
  register_nav_menus(
 	array(
-	 'menu-1' => esc_html__( 'Primary Menu', 'the-fly-shop-2025' ),
+	 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
 	 'travel-menu' => esc_html__( 'Travel Menu', 'the-fly-shop-2025' ),
 	 'destination-menu' => esc_html__( 'Destination Menu', 'the-fly-shop-2025' ),
 	)
@@ -166,6 +166,14 @@ function the_fly_shop_2025_scripts() {
  }
  if (is_page_template('page-templates/stream-report-template.php')) {
 	wp_enqueue_script('stream-report-js', get_template_directory_uri() . '/js/stream-report.js', array('jquery'), _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/guide-service-template.php')) {
+	wp_enqueue_script('guide-service-js', get_template_directory_uri() . '/js/guide-service.js', array('jquery'), _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/private-waters-template.php')) {
+	wp_enqueue_script('guide-service-js', get_template_directory_uri() . '/js/private-waters.js', array('jquery'), _S_VERSION, true);
  }
 
  if (is_front_page()) {
