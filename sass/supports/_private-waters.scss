@@ -1,0 +1,14 @@
+#guide-service-image-container {
+  .thumbnail {
+    a {
+      img {
+        box-shadow: $tfs__box-shadow;
+      }
+    }
+  }
+  .caption {
+    h4 {
+      margin-top: 1rem;
+    }
+  }
+}
