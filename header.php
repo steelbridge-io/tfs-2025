@@ -37,15 +37,15 @@
                     <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primary-menu" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#home-page" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="primary-menu">
+                <div class="collapse navbar-collapse" id="home-page">
 								 <?php
 								 wp_nav_menu(array(
-									'theme_location' => 'menu-1',
-									'menu_id'       => 'primary-menu',
+									'theme_location' => 'home-page',
+									'menu_id'       => 'home-page',
 									'depth'         => 3,
 									'container'     => false,
 									'menu_class'    => 'navbar-nav me-auto mb-2 mb-md-0',
