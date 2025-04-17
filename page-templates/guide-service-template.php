@@ -136,7 +136,7 @@ if(get_post_meta(get_the_ID(), 'signature-csel-checkbox', true) == 'yes') :?>
 </div><!-- Item slider end-->
 <?php endif; ?>
 
-<div id="travel-template-grid" class="container container-xxl mt-5 mb-5">
+<div id="guide-template-grid" class="container container-xxl mt-5 mb-5 pt-5 pb-5">
 
 	<div class="row travel-template-row justify-content-center pt-4 pb-5 pr-2 pl-2 g-5">
 	<?php if( $signature_image_1 !== '') :?>
@@ -412,7 +412,7 @@ if(get_post_meta(get_the_ID(), 'signature-csel-checkbox', true) == 'yes') :?>
 		</div>
 	<?php endif;
 	if( $signature_image_22 !== '') : ?>
-	 <div class="row">
+	 <!-- <div class="row"> -->
 		<div class="col-md-6 col-lg-6 twentytwo">
 			<div class="thumbnail signature-text-color">
 				<a class="thumbnail-link" href="<?php echo $signature_image_22_title_link; ?>" target="_self" title="Signature Destination"><img src="<?php echo $signature_image_22; ?>"></a>
