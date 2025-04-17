@@ -1,7 +1,7 @@
 <?php
   /**
-   * Template Name: Guide Service Template
-   * Template Post Type: guide_service
+   * Template Name: Private Waters
+   * Template Post Type: adeventures
    * Developed for The Fly Shop
    * @package The_Fly_Shop
    * Author: Chris Parsons
