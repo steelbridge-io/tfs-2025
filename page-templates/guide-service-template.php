@@ -15,7 +15,7 @@
 
   include_once('post-meta/post-meta-signature.php');
   $default = '';
-  get_header();
+  get_header('guided-fly-fishing');
 if (has_post_thumbnail()) : ?>
 
  <div class="container-fluid travel-template-hero p-0">

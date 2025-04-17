@@ -37,6 +37,7 @@ function the_fly_shop_2025_setup() {
 	 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
 	 'travel-menu' => esc_html__( 'Travel Menu', 'the-fly-shop-2025' ),
 	 'destination-menu' => esc_html__( 'Destination Menu', 'the-fly-shop-2025' ),
+	 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
 	)
  );
 
