@@ -77,7 +77,7 @@ get_header();
 	if(!empty($hasposts_post)) { ?>
 
 	 <div class="panel panel-default">
-		<div class="panel-body">
+		<div class="panel-body container">
 		 <div class="row">
 			<?php
 			$selectpost = get_post_meta(get_the_ID(), 'news-template-select-post', true);
@@ -167,7 +167,7 @@ get_header();
 					'<a href="'.$news_permalink .'" title="'. $news_title .'"><img class="img-responsive" src="' . $news_img_url . '" alt="' . $alt_news . '"></a>' .
 					'</div>' .
 					'<div class="col-md-6 featured-caption">' .
-					'<h2>The Fly Shop News</h2>' .
+					'<a href="'.$news_permalink .'" title="'. $news_title .'"><h2>The Fly Shop News</h2></a>' .
 					'<a href="'. $news_permalink .'" title="'. $news_title .'"><h3>' . $news_title . '</h3></a>';
 
 				 echo '<p class="author-date featured"><span class="the-author">by: '. get_the_author() .'</span> <span class="the-date">'. get_the_date() .'</span></p>';
@@ -176,7 +176,7 @@ get_header();
 
 				 echo '<div class="more-btn row">
                 <div class="col-lg-12">
-                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapse-news-archive-one" aria-expanded="false" aria-controls="collapse-news-archive-one">
+                <button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-news-archive-one" aria-expanded="false" aria-controls="collapse-news-archive-one">
                 See more News articles
                 </button>
                 </div>
@@ -267,10 +267,10 @@ get_header();
 				 $travel_title = get_the_title();
 
 				 echo '<div class="col-md-6 featured-image">' .
-					'<a href="'. $travel_permalink .'" title="'. $travel_title .'"><img class="img-responsive" src="' . $travel_img_url . '" alt="' . $alt_travel . '">' .
+					'<a href="'. $travel_permalink .'" title="'. $travel_title .'"><img class="img-responsive" src="' . $travel_img_url . '" alt="' . $alt_travel . '"></a>' .
 					'</div>' .
 					'<div class="col-md-6 featured-caption">' .
-					'<h2>Travel News</h2>' .
+					'<a href="'. $travel_permalink .'" title="'. $travel_title .'"><h2>Travel News</h2></a>' .
 					'<a href="'. $travel_permalink .'" title="'. $travel_title .'"><h3>' . $travel_title . '</h3></a>';
 				 echo '<p class="author-date featured"><span class="the-author">by: '. get_the_author() .'</span> <span class="the-date">'. get_the_date() .'</span></p>';
 
@@ -472,10 +472,10 @@ get_header();
 				 $outfitters_title = get_the_title();
 
 				 echo '<div class="col-md-6 featured-image">' .
-					'<a href="'. $outfitters_permalink .'" title="'. $outfitters_title .'"><img class="img-responsive" src="' . $outfitters_img_url . '" alt="' . $alt_outfitters . '">' .
+					'<a href="'. $outfitters_permalink .'" title="'. $outfitters_title .'"><img class="img-responsive" src="' . $outfitters_img_url . '" alt="' . $alt_outfitters . '"></a>' .
 					'</div>' .
 					'<div class="col-md-6 featured-caption">' .
-					'<h2>Outfitters News</h2>' .
+					'<a href="'. $outfitters_permalink .'" title="'. $outfitters_title .'"><h2>Outfitters News</h2></a>' .
 					'<a href="'. $outfitters_permalink .'" title="'. $outfitters_title .'"><h3>' . $outfitters_title . '</h3></a>';
 				 echo '<p class="author-date featured"><span class="the-author">by: ' . get_the_author() .'</span> <span class="the-date">'. get_the_date() .'</span></p>';
 
@@ -574,10 +574,10 @@ get_header();
 				 $fishreport_title = get_the_title();
 
 				 echo '<div class="col-md-6 featured-image">' .
-					'<a href="'. $fishreport_permalink .'" title="'. $fishreport_title .'"><img class="img-responsive" src="' . $fishreport_img_url . '" alt="' . $alt_outfitters . '">' .
+					'<a href="'. $fishreport_permalink .'" title="'. $fishreport_title .'"><img class="img-responsive" src="' . $fishreport_img_url . '" alt="' . $alt_outfitters . '"></a>' .
 					'</div>' .
 					'<div class="col-md-6 featured-caption">' .
-					'<h2>Fishing Reports</h2>' .
+					'<a href="'. $fishreport_permalink .'" title="'. $fishreport_title .'"><h2>Fishing Reports</h2></a>' .
 					'<a href="'. $fishreport_permalink .'" title="'. $fishreport_title .'"><h3>' . $fishreport_title . '</h3></a>';
 				 echo '<p class="author-date featured"><span class="the-author">by: ' . get_the_author() .'</span> <span class="the-date">'. get_the_date() .'</span></p>';
 
