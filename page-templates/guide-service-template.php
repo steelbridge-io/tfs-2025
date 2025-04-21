@@ -1,7 +1,7 @@
 <?php
   /**
    * Template Name: Guide Service
-   * Template Post Type: adventures, guide_service
+   * Template Post Type: guide_service
    * Developed for The Fly Shop
    * @package The_Fly_Shop
    * Author: Chris Parsons
