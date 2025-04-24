@@ -2,44 +2,54 @@
 /**
  * Front Page - The Fly Shop 2025
  */
-get_header(); ?>
+get_header();
 
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
+// Get carousel items
+$carousel_items = get_option('tfs_carousel_items', []);
+?>
+
+<?php if (!empty($carousel_items)): ?>
+ <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="8000">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/12/DelphiClub_Main_25.webp" alt="The Fly Shop">
+	 <?php foreach ($carousel_items as $index => $item): ?>
+    <div class="carousel-item <?php echo ($index === 0) ? 'active' : ''; ?>">
+     <img class="img-fluid object-fit-cover d-block w-100" src="<?php echo esc_url($item['image']); ?>" alt="<?php echo esc_attr($item['title']); ?>">
+
+     <div class="carousel-overlay" data-aos="fade-up" data-aos-delay="800">
+      <h1><?php echo esc_html($item['title']); ?></h1>
+      <h2><?php echo esc_html($item['subtitle']); ?></h2>
+			<?php if (!empty($item['button_text']) && !empty($item['button_url'])): ?>
+       <a href="<?php echo esc_url($item['button_url']); ?>" class="cta-button"><?php echo esc_html($item['button_text']); ?></a>
+			<?php endif; ?>
+     </div>
     </div>
-    <div class="carousel-item">
-      <img  class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/04/ESBL_Main.webp" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img  class="img-fluid object-fit-cover d-block w-100" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2022/10/ElEscondido_Main.webp" alt="...">
-    </div>
-      <!-- Add Scrolly -->
-      <div id="scrolly" class="scrolly"><i class="lni lni-arrow-downward"></i></div>
+	 <?php endforeach; ?>
+
+   <!-- Add Scrolly -->
+   <div id="scrolly" class="scrolly"><i class="lni lni-arrow-downward"></i></div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+
+	<?php if (count($carousel_items) > 1): ?>
+   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+   </button>
+   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button>
-</div>
+   </button>
+	<?php endif; ?>
+ </div>
 
-<div class="carousel-overlay" data-aos="fade-up" data-aos-delay="800">
-    <h1>Fly Fishing</h1>
-    <h2>Gear &middot; Travel &middot; Schools</h2>
-    <a href="#find-out-more" class="cta-button">Find Out More</a>
-</div>
-
-<!-- Wave Section -->
-<div class="wave-section">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
-        <path fill="#ffffff" d="M0,64L60,80C120,96,240,128,360,170.7C480,213,600,267,720,245.3C840,224,960,128,1080,85.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
-    </svg>
-</div>
+ <!-- Wave Section -->
+ <div class="wave-section">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none">
+   <path fill="#ffffff" d="M0,64L60,80C120,96,240,128,360,170.7C480,213,600,267,720,245.3C840,224,960,128,1080,85.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+ </div>
+<?php else: ?>
+ <!-- No carousel items found, don't display the carousel -->
+<?php endif; ?>
 
 <section id="front-page-into">
     <div id="fp-logo-background" class="mt-3">
@@ -54,11 +64,56 @@ get_header(); ?>
     </div>
 </section>
 
-<section class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
+<?php
+// Get card grid settings
+$card_grid_options = get_option('tfs_card_grid_options', array());
+$cards = isset($card_grid_options['cards']) ? $card_grid_options['cards'] : array();
+
+// Display card grid
+if (!empty($cards)) :
+ ?>
+ <section id="card-grid-container" class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
+  <div id="front-page-content" class="container-fluid container-row">
+   <div class="container">
+    <div class="row g-4">
+		 <?php
+		 // Feature style classes to cycle through
+		 $style_classes = array(
+			'top-card-feature-left',
+			'top-card-feature-right',
+			'bottom-card-feature-left',
+			'bottom-card-feature-right'
+		 );
+
+		 foreach ($cards as $index => $card) :
+			// Get style class based on index (cycle through the classes)
+			$style_class = $style_classes[$index % count($style_classes)];
+			?>
+      <!-- Card <?php echo $index + 1; ?> -->
+      <div class="col-md-4 card-feature <?php echo esc_attr($style_class); ?>" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+       <div class="card-container">
+        <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['image_alt']); ?>" class="card-img">
+        <h3 class="card-title-overlay"><?php echo esc_html($card['title']); ?></h3>
+        <div class="card-hover-content">
+         <p class="lead"><?php echo wp_kses_post($card['description']); ?></p>
+				 <?php if (!empty($card['button_url'])) : ?>
+          <a href="<?php echo esc_url($card['button_url']); ?>" class="btn btn-tfs btn-sm"><?php echo esc_html($card['button_text']); ?></a>
+				 <?php endif; ?>
+        </div>
+       </div>
+      </div>
+		 <?php endforeach; ?>
+    </div>
+   </div>
+  </div>
+ </section>
+<?php endif; ?>
+
+<!-- <section class="content-section mt-4 mb-5" data-aos="fade-up" data-aos-delay="1000" data-aos-once="true">
 <div id="front-page-content" class="container-fluid container-row">
 <div class="container">
     <div class="row g-4">
-        <!-- Card 1 -->
+
         <div class="col-md-4 card-feature top-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/02/FP_StormShadow_RollingCarryOn.webp" alt="Card 1" class="card-img">
@@ -70,7 +125,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Card 2 -->
+
         <div class="col-md-4 card-feature top-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/Bollibokka_Getting-1.jpg" alt="Card 2" class="card-img">
@@ -82,7 +137,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Card 3 -->
+
         <div class="col-md-4 card-feature bottom-card-feature-left" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/09/LowerSac_Main3.jpg" alt="Card 3" class="card-img">
@@ -94,7 +149,7 @@ get_header(); ?>
             </div>
         </div>
 
-        <!-- Card 4 -->
+
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/08/3Day_Itinerary.jpg" alt="Card 4" class="card-img">
@@ -105,7 +160,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <!-- Card 5 -->
+
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/12/Providence_Report1.jpg" alt="Card 4" class="card-img">
@@ -116,7 +171,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <!-- Card 6 -->
+
         <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
             <div class="card-container">
                 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/10/Species_BrownTrout_MFFL.jpg" alt="Card 4" class="card-img">
@@ -127,44 +182,10 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <!-- Card 7 -->
-       <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
-            <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <h3 class="card-title-overlay">Card Title 4</h3>
-                <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- Card 8 -->
-       <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
-            <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <h3 class="card-title-overlay">Card Title 4</h3>
-                <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
-                </div>
-            </div>
-        </div> -->
-        <!-- Card 9 -->
-        <!-- <div class="col-md-4 card-feature bottom-card-feature-right" data-aos="" data-aos-offset="200" data-aos-duration="1000">
-            <div class="card-container">
-                <img src="https://placehold.co/600x400" alt="Card 4" class="card-img">
-                <h3 class="card-title-overlay">Card Title 4</h3>
-                <div class="card-hover-content">
-                    <p class="lead">This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information. This is an excerpt of the card content. It slides up on hover to reveal additional information.</p>
-                    <a href="#" class="btn btn-tfs btn-sm">Read More</a>
-                </div>
-            </div>
-        </div> -->
-
     </div>
 </div>
 </div>
-</section>
+</section> -->
 
 <?php
 $carousel_items = get_option('fppc_carousel_items') ?: []; // Retrieve the carousel items
