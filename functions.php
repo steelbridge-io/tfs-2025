@@ -16,6 +16,8 @@ include_once get_template_directory() . '/inc/bootstrap-nav-walker.php';
 include_once get_template_directory() . '/inc/breadcrumbs.php';
 include_once get_template_directory() . '/inc/login-page.php';
 
+require_once get_template_directory() . '/front-page-loader.php';
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
