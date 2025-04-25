@@ -247,3 +247,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+// Add link to excerpt
+function custom_excerpt_more($more) {
+ global $post;
+ return ' <a href="' . get_permalink($post->ID) . '">' . __('(more…)') . '</a>';
+}
+add_filter('excerpt_more', 'custom_excerpt_more');

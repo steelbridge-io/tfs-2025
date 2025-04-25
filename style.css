@@ -2786,6 +2786,9 @@ Media Queries
   flex-direction: column;
 }
 
+.featured-caption a h2 {
+  color: #A21418 !important;
+}
 .featured-caption h3 {
   margin: 0 0 0.3em 0;
 }

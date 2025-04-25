@@ -125,6 +125,9 @@ $standard-margin: 0 0 0.5em 0;
 
 // Caption styles
 .featured-caption {
+  a h2 {
+    color: $tfs__red !important;
+  }
   h3 {
     margin: 0 0 .3em 0;
   }
