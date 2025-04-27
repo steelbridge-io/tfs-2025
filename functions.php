@@ -17,6 +17,7 @@ include_once get_template_directory() . '/inc/breadcrumbs.php';
 include_once get_template_directory() . '/inc/login-page.php';
 
 require_once get_template_directory() . '/front-page-loader.php';
+require_once get_template_directory() . '/front-page/footer-admin.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
