@@ -267,7 +267,11 @@ function tfs_front_page_settings_page() {
 	 'ajax_url' => admin_url('admin-ajax.php'),
 	 'nonce'    => wp_create_nonce('tfs_card_grid_nonce')
 	));
+ } else if ($active_tab == 'footer') {
+	// Footer tab content
+	tfs_footer_settings_page();
  }
+
  ?>
  <div class="wrap tfs-front-page-admin">
   <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -276,6 +280,7 @@ function tfs_front_page_settings_page() {
   <h2 class="nav-tab-wrapper">
    <a href="?page=tfs-front-page-settings&tab=carousel" class="nav-tab <?php echo $active_tab == 'carousel' ? 'nav-tab-active' : ''; ?>">Carousel Slider</a>
    <a href="?page=tfs-front-page-settings&tab=card-grid" class="nav-tab <?php echo $active_tab == 'card-grid' ? 'nav-tab-active' : ''; ?>">Card Grid</a>
+	 <a href="?page=tfs-front-page-settings&tab=footer" class="nav-tab <?php echo $active_tab == 'footer' ? 'nav-tab-active' : ''; ?>">Footer</a>
   </h2>
 
 	<?php if ($active_tab == 'carousel'): ?>
