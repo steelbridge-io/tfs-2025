@@ -376,6 +376,7 @@ ul.dropdown-menu ul.dropdown-menu {
 
   #site-navigation {
     .container {
+      max-width: 1700px;
       .navbar-brand {
         img {
           width: 75px;
@@ -401,9 +402,6 @@ ul.dropdown-menu ul.dropdown-menu {
     }
   }
 
-  #site-navigation {
-
-  }
   .dropdown-menu {
     /*display: block;*/
     position: static;
@@ -430,3 +428,11 @@ ul.dropdown-menu ul.dropdown-menu {
     text-align: left;
   }
 }
+
+/*@media (min-width: 1400px) {
+  #site-navigation {
+    .container {
+      max-width: 1700px;
+      }
+    }
+}*/

@@ -41,7 +41,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="home-page">
+                <div class="collapse navbar-collapse" id="homepage">
 								 <?php
 								 wp_nav_menu(array(
 									'theme_location' => 'home-page',

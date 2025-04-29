@@ -1,0 +1,34 @@
+@media (min-width: 1400px) {
+  #site-navigation {
+    .container {
+      max-width: 1700px;
+      display: flex;
+      justify-content: space-between;
+
+      .navbar-brand {
+        margin: 0;
+        flex: 0 0 auto;
+      }
+
+      .navbar-collapse {
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: center;
+        width: auto;
+
+        .navbar-nav {
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          width: auto;
+        }
+      }
+    }
+  }
+  #home-page li a {
+    text-transform: uppercase;
+    font-size: 0.96rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+  }
+}
