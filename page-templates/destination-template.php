@@ -2,7 +2,7 @@
 declare(strict_types=1);
 /*
 Template Name: Destination Template
-Template Post Type: post, page, travel_cpt, lower48
+Template Post Type: post, page, travel_cpt, lower48, guide_service
 */
 
 get_header('destination-header');
