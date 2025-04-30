@@ -1,0 +1,11 @@
+#two {
+  .spotlight {
+    .row {
+      .col-md-6.col-lg-6 {
+        img {
+          box-shadow: $tfs__box-shadow;
+        }
+      }
+    }
+  }
+}
