@@ -15,7 +15,6 @@ if ( ! defined( '_S_VERSION' ) ) {
 include_once get_template_directory() . '/inc/bootstrap-nav-walker.php';
 include_once get_template_directory() . '/inc/breadcrumbs.php';
 include_once get_template_directory() . '/inc/login-page.php';
-
 require_once get_template_directory() . '/front-page-loader.php';
 require_once get_template_directory() . '/front-page/footer-admin.php';
 
@@ -202,6 +201,15 @@ function the_fly_shop_2025_scripts() {
 
  if (is_page_template('page-templates/travel-template.php')) {
 	wp_enqueue_script('travel-js', get_template_directory_uri() . '/js/travel.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/regional-waters-template.php')) {
+	wp_enqueue_script('regional-waters-js', get_template_directory_uri() . '/js/regional-waters.js', array('jquery'), _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/sections-template.php')) {
+	wp_enqueue_script('sections-template-js', get_template_directory_uri() . '/js/sections-template.js', array('jquery'),
 	 _S_VERSION, true);
  }
 
