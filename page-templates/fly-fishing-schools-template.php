@@ -136,6 +136,11 @@ if(get_post_meta(get_the_ID(), 'signature-csel-checkbox', true) == 'yes') :?>
  </div><!-- Item slider end-->
 <?php endif; ?>
 
+ <!-- Breadcrumbs -->
+ <div class="container mt-4">
+	<?php the_fly_shop_breadcrumbs(); ?>
+ </div>
+
  <div id="guide-template-grid" class="container container-xxl mt-5 mb-5 pt-5 pb-5">
 
   <div class="row travel-template-row justify-content-center pt-4 pb-5 pr-2 pl-2 g-5">
