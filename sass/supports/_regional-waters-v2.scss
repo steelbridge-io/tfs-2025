@@ -1,0 +1,139 @@
+.guide_service-template-regional-waters-template-v2 {
+
+  .info-button.active {
+    background-color:$tfs__red !important;
+    color: #ffffff !important;
+    border-color: $tfs__white !important;
+  }
+
+  .info-button:hover {
+    background-color: $tfs__red !important;
+    color: #ffffff !important;
+  }
+
+
+  .overlay-header.active-header {
+    background-color: $tfs__red !important;
+    color: $tfs__white !important;
+  }
+
+  #one {
+    box-shadow: $tfs__hero-box-shadow;
+  }
+
+  .regional-waters {
+    .content {
+      height: 100%;
+    }
+    #travel-style {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  .spotlight {
+    margin: 8em 0;
+  }
+
+  .image {
+    position: relative;
+    overflow: hidden;
+    box-shadow: $tfs__box-shadow;
+  }
+
+  .content-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  .content-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .overlay-header, .overlay-content {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  .content-overlay.visible .overlay-header,
+  .content-overlay.visible .overlay-content {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .content-overlay.visible .overlay-header {
+    transition-delay: 0.1s;
+  }
+
+  .content-overlay.visible .overlay-content {
+    transition-delay: 0.2s;
+  }
+
+  .overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+  }
+
+  .overlay-header h3 {
+    margin: 0;
+  }
+
+  .close-overlay {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .overlay-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+  }
+
+  .content-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .info-button {
+    padding: 8px 16px;
+    background-color: $tfs__catalog-black;
+    color: white;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+
+  .info-button:hover {
+    background-color: #003d7a;
+  }
+
+  .overlay-content p {
+    color: #333;
+    line-height: 1.6;
+  }
+}
