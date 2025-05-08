@@ -156,7 +156,7 @@ function the_fly_shop_2025_scripts() {
  wp_enqueue_style('the-fly-shop-2025-style', get_stylesheet_uri(), array('bootstrap-css'), _S_VERSION);
 
  /* Non-critical CSS with lower priority */
- wp_enqueue_style('lineicons', 'https://cdn.lineicons.com/5.0/lineicons.css', array(), '5.0', 'all');
+ wp_enqueue_style('lineicons', 'https://pro-cdn.lineicons.com/5.0/regular/lineicons.css', array(), '5.0', 'all');
  wp_enqueue_style('aos-js', 'https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css', array(), '2.3.4', 'all');
 
  wp_style_add_data('the-fly-shop-2025-style', 'rtl', 'replace');
@@ -208,8 +208,17 @@ function the_fly_shop_2025_scripts() {
 	wp_enqueue_script('regional-waters-js', get_template_directory_uri() . '/js/regional-waters.js', array('jquery'), _S_VERSION, true);
  }
 
+ if (is_page_template('page-templates/regional-waters-template-v2.php')) {
+	wp_enqueue_script('regional-waters-js-v2', get_template_directory_uri() . '/js/regional-waters-v2.js', array('jquery'), _S_VERSION, true);
+ }
+
  if (is_page_template('page-templates/sections-template.php')) {
 	wp_enqueue_script('sections-template-js', get_template_directory_uri() . '/js/sections-template.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/signature-template.php')) {
+	wp_enqueue_script('signature-template-js', get_template_directory_uri() . '/js/signature-template.js', array('jquery'),
 	 _S_VERSION, true);
  }
 
