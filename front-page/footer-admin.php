@@ -35,7 +35,7 @@ function tfs_sanitize_footer_options($input) {
 	if (isset($input['section1'])) {
 	 $sanitized_options['section1'] = [
 		'title' => sanitize_text_field($input['section1']['title'] ?? ''),
-		'content' => wp_kses_post($input['section1']['content'] ?? '')
+		'content' => tfs_expanded_kses_post($input['section1']['content'] ?? '')
 	 ];
 	}
 
@@ -43,7 +43,7 @@ function tfs_sanitize_footer_options($input) {
 	if (isset($input['section2'])) {
 	 $sanitized_options['section2'] = [
 		'title' => sanitize_text_field($input['section2']['title'] ?? ''),
-		'content' => wp_kses_post($input['section2']['content'] ?? '')
+		'content' => tfs_expanded_kses_post($input['section2']['content'] ?? '')
 	 ];
 	}
 
@@ -51,7 +51,7 @@ function tfs_sanitize_footer_options($input) {
 	if (isset($input['section3'])) {
 	 $sanitized_options['section3'] = [
 		'title' => sanitize_text_field($input['section3']['title'] ?? ''),
-		'content' => wp_kses_post($input['section3']['content'] ?? '')
+		'content' => tfs_expanded_kses_post($input['section3']['content'] ?? '')
 	 ];
 	}
 
@@ -86,6 +86,19 @@ function tfs_footer_settings_page() {
  wp_enqueue_script('tfs-footer-admin', get_template_directory_uri() . '/front-page/js/footer-admin.js', ['jquery'], '1.0.0', true);
  wp_enqueue_style('tfs-footer-admin-css', get_template_directory_uri() . '/front-page/css/footer-admin.css', [], '1.0.0');
 
+ $editor_settings = [
+	'textarea_rows' => 7,
+	'media_buttons' => false,
+	'teeny' => false,
+	'wpautop' => true,
+	'quicktags' => true,
+	'tinymce' => [
+	 'toolbar1' => 'formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,unlink,undo,redo',
+	 'toolbar2' => '',
+	],
+ ];
+
+
  ?>
  <div class="wrap tfs-footer-admin">
 	<h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -111,12 +124,8 @@ function tfs_footer_settings_page() {
 			 <?php
 			 $content = $footer_options['section1']['content'] ?? '';
 			 $editor_id = 'footer-section1-content';
-			 $settings = [
-				'textarea_name' => 'tfs_footer_options[section1][content]',
-				'textarea_rows' => 7,
-				'media_buttons' => false,
-				'teeny' => true,
-			 ];
+       $settings = $editor_settings;
+			 $settings['textarea_name'] = 'tfs_footer_options[section1][content]';
 			 wp_editor($content, $editor_id, $settings);
 			 ?>
 			</div>
@@ -139,12 +148,8 @@ function tfs_footer_settings_page() {
 			 <?php
 			 $content = $footer_options['section2']['content'] ?? '';
 			 $editor_id = 'footer-section2-content';
-			 $settings = [
-				'textarea_name' => 'tfs_footer_options[section2][content]',
-				'textarea_rows' => 7,
-				'media_buttons' => false,
-				'teeny' => true,
-			 ];
+       $settings = $editor_settings;
+			 $settings[ 'textarea_name'] = 'tfs_footer_options[section2][content]';
 			 wp_editor($content, $editor_id, $settings);
 			 ?>
 			</div>
@@ -167,12 +172,8 @@ function tfs_footer_settings_page() {
 			 <?php
 			 $content = $footer_options['section3']['content'] ?? '';
 			 $editor_id = 'footer-section3-content';
-			 $settings = [
-				'textarea_name' => 'tfs_footer_options[section3][content]',
-				'textarea_rows' => 7,
-				'media_buttons' => false,
-				'teeny' => true,
-			 ];
+       $settings = $editor_settings;
+			 $settings['textarea_name'] = 'tfs_footer_options[section3][content]';
 			 wp_editor($content, $editor_id, $settings);
 			 ?>
 			</div>
@@ -213,4 +214,23 @@ function tfs_get_footer_content() {
  }
 
  return $footer_options;
+}
+
+function tfs_expanded_kses_post($content) {
+ $allowed_html = wp_kses_allowed_html('post');
+
+ // Add any additional HTML elements you need
+ $allowed_html['div'] = [
+	'class' => true,
+	'id' => true,
+	'style' => true
+ ];
+ $allowed_html['span'] = [
+	'class' => true,
+	'id' => true,
+	'style' => true
+ ];
+ // Add more elements as needed
+
+ return wp_kses($content, $allowed_html);
 }
