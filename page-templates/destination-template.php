@@ -63,9 +63,10 @@ if (has_post_thumbnail()) : ?>
 </div>
 <?php endif; ?>
 
-<div class="container mt-4">
-    <?php the_fly_shop_breadcrumbs(); ?>
-</div>
+ <!-- Breadcrumbs -->
+ <div class="container mt-4">
+	<?php the_fly_shop_breadcrumbs(); ?>
+ </div>
 
 <section class="content-destination-template content">
     <div class="container">
