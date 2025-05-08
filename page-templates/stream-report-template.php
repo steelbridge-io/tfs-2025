@@ -56,8 +56,9 @@ get_header();
 		 <?php endif; ?>
     </section>
 
+    <!-- Breadcrumbs -->
     <div class="container mt-4">
-		 <?php the_fly_shop_breadcrumbs(); ?>
+     <?php the_fly_shop_breadcrumbs(); ?>
     </div>
 
     <section id="stream-report-content">
