@@ -70,6 +70,11 @@ get_header();
 </div>
 <?php endif; ?>
 
+ <!-- Breadcrumbs -->
+ <div class="container mt-4">
+	<?php the_fly_shop_breadcrumbs(); ?>
+ </div>
+
  <div id="news-header" class="container featured-post">
 
 	<?php
