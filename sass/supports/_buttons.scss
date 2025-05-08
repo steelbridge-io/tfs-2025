@@ -1,3 +1,18 @@
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.accordion-button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.accordion-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+
 .btn-tfs {
   --bs-btn-color: #fff;
   --bs-btn-bg: #A21418;
