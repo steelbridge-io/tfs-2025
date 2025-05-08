@@ -67,11 +67,11 @@ if (has_post_thumbnail()) :
 <?php endif; ?>
 
     <div class="container-fluid top-fade p-0"></div>
-
+    <!-- Breadcrumbs -->
+    <div class="container mt-4">
+     <?php the_fly_shop_breadcrumbs(); ?>
+    </div>
     <div class="container mt-6 mb-7">
-        <div class="container mt-4">
-				 <?php the_fly_shop_breadcrumbs(); ?>
-        </div>
         <div class="row">
             <div class="col-md-8">
                 <main id="primary" class="site-main">
