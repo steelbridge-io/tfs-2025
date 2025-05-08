@@ -1,0 +1,83 @@
+/* Keyframe animations for the chevrons */
+@keyframes moveRightChevron {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeftChevron {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Button styles */
+.info-button {
+  position: relative;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Base styles for chevron icons - always in the layout but hidden */
+.info-button .lni-chevron-left,
+.info-button .lni-chevron-right {
+  position: absolute;
+  top: 0%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none; /* Don't interfere with clicks */
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.lni{
+  font-size: 2.3em !important;
+  vertical-align: middle;
+}
+
+/* Position the icons at their final positions */
+.info-button .lni-chevron-right {
+  right: 10px;
+}
+
+.info-button .lni-chevron-left {
+  left: 10px;
+}
+
+/* Style for active button */
+.info-button.active {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border-color: #ff0000 !important;
+  /* Add extra padding to accommodate the icons */
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Animate and show icons when button is active */
+.info-button.active .lni-chevron-right {
+  opacity: 1;
+  animation: moveRightChevron 0.8s forwards;
+}
+
+.info-button.active .lni-chevron-left {
+  opacity: 1;
+  animation: moveLeftChevron 0.8s forwards;
+}
