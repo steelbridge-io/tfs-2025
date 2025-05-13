@@ -1,83 +1,80 @@
-/* Keyframe animations for the chevrons */
-@keyframes moveRightChevron {
-  0% {
-    transform: translateX(-20px);
-    opacity: 0;
+/* Centered Logo Navigation - Core Layout */
+@media (min-width: 992px) {
+  #site-navigation {
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        margin: 0;
+
+        .tfs-nav-logo {
+          width: 120px;
+          transition: width 0.3s ease;
+        }
+      }
+
+      .navbar-collapse {
+        flex: 1;
+        display: flex;
+
+        .left-menu,
+        .right-menu {
+          flex: 1;
+          display: flex;
+          align-items: center;
+        }
+
+        .left-menu {
+          justify-content: flex-end;
+          padding-right: 80px; /* Space for logo */
+        }
+
+        .right-menu {
+          justify-content: flex-start;
+          padding-left: 80px; /* Space for logo */
+        }
+      }
+    }
+
+    /* Apply existing scroll animations to our new layout */
+    &.scrolled {
+      .navbar-brand {
+        .tfs-nav-logo {
+          width: 90px; /* Smaller logo when scrolled */
+        }
+      }
+
+      .left-menu,
+      .right-menu {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
   }
-  20% {
-    opacity: 1;
+}
+
+/* Mobile Layout */
+@media (max-width: 991.98px) {
+  #site-navigation {
+    .container {
+      .navbar-brand {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+      }
+
+      .navbar-collapse {
+        .left-menu,
+        .right-menu {
+          width: 100%;
+        }
+      }
+    }
   }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes moveLeftChevron {
-  0% {
-    transform: translateX(20px);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-/* Button styles */
-.info-button {
-  position: relative;
-  padding: 8px 15px;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
-
-/* Base styles for chevron icons - always in the layout but hidden */
-.info-button .lni-chevron-left,
-.info-button .lni-chevron-right {
-  position: absolute;
-  top: 0%;
-  transform: translateY(-50%);
-  opacity: 0;
-  pointer-events: none; /* Don't interfere with clicks */
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-.lni{
-  font-size: 2.3em !important;
-  vertical-align: middle;
-}
-
-/* Position the icons at their final positions */
-.info-button .lni-chevron-right {
-  right: 10px;
-}
-
-.info-button .lni-chevron-left {
-  left: 10px;
-}
-
-/* Style for active button */
-.info-button.active {
-  background-color: #ff0000 !important;
-  color: #ffffff !important;
-  border-color: #ff0000 !important;
-  /* Add extra padding to accommodate the icons */
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-/* Animate and show icons when button is active */
-.info-button.active .lni-chevron-right {
-  opacity: 1;
-  animation: moveRightChevron 0.8s forwards;
-}
-
-.info-button.active .lni-chevron-left {
-  opacity: 1;
-  animation: moveLeftChevron 0.8s forwards;
 }
