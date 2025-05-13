@@ -114,6 +114,23 @@ document.addEventListener("DOMContentLoaded", function () {
 	addScrolledClass();
 });
 
-/*
-Dropdown on hover
- */
+/** Cnetered Logo */
+
+// Add this to your theme's JS file or in a script tag
+document.addEventListener('DOMContentLoaded', function() {
+	const nav = document.querySelector('#site-navigation');
+
+	// Apply scrolled class on page load if needed
+	if (window.scrollY > 50) {
+		nav.classList.add('scrolled');
+	}
+
+	// Add/remove scrolled class on scroll
+	window.addEventListener('scroll', function() {
+		if (window.scrollY > 50) {
+			nav.classList.add('scrolled');
+		} else {
+			nav.classList.remove('scrolled');
+		}
+	});
+});
