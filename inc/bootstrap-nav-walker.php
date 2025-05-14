@@ -77,32 +77,3 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 }
 // register a new menu
 register_nav_menu('main-menu', 'Main menu');
-
-/**
- * Filter function to split menu items for centered logo layout
- */
-function split_nav_menu_items($sorted_menu_items, $args) {
- // Only process our specific menu
- if (!isset($args->center_logo) || $args->center_logo !== true) {
-	return $sorted_menu_items;
- }
-
- // Total number of menu items
- $total_items = count($sorted_menu_items);
-
- // If we're splitting the menu between left and right sides
- if (isset($args->menu_part)) {
-	$middle_point = ceil($total_items / 2);
-
-	if ($args->menu_part === 'left') {
-	 // Return only the first half of items for left menu
-	 return array_slice($sorted_menu_items, 0, $middle_point);
-	} else if ($args->menu_part === 'right') {
-	 // Return the second half of items for right menu
-	 return array_slice($sorted_menu_items, $middle_point);
-	}
- }
-
- return $sorted_menu_items;
-}
-add_filter('wp_nav_menu_objects', 'split_nav_menu_items', 10, 2);
