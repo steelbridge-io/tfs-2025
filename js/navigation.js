@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	addScrolledClass();
 });
 
-/** Cnetered Logo */
+/** Centered Logo */
 
 // Add this to your theme's JS file or in a script tag
 document.addEventListener('DOMContentLoaded', function() {
