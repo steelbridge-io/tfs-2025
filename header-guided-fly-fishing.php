@@ -26,35 +26,54 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-fly-shop-2025' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		 <!-- .site-branding -->
 
-        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
-            <div class="container">
-                <!-- Brand/Logo -->
-                <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-                    <!-- Add loading="eager" to prevent image FOUC -->
-                    <img class="tfs-nav-logo scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
-                    <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
-                </a>
+       <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
+        <div class="container">
+         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
+          <span class="navbar-toggler-icon"></span>
+         </button>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#home-page" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+         <div class="collapse navbar-collapse" id="homepage">
+          <?php
+          // Left side menu
+          wp_nav_menu(array(
+           'theme_location' => 'guided-fishing',
+           'menu_id'        => 'left-menu',
+           'depth'          => 3,
+           'container'      => false,
+           'menu_class'     => 'navbar-nav left-menu',
+           'fallback_cb'    => '__return_false',
+           'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+           'walker'         => new bootstrap_5_wp_nav_menu_walker(),
+           'center_logo'    => true,
+           'menu_part'      => 'left'
+          ));
+          ?>
 
-                <div class="collapse navbar-collapse" id="guided-fishing">
-								 <?php
-								 wp_nav_menu(array(
-									'theme_location' => 'guided-fishing',
-									'menu_id'       => 'guided-fishing',
-									'depth'         => 3,
-									'container'     => false,
-									'menu_class'    => 'navbar-nav me-auto mb-2 mb-md-0',
-									'fallback_cb'   => '__return_false',
-									'items_wrap'    => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-									'walker'        => new bootstrap_5_wp_nav_menu_walker()
-								 ));
-								 ?>
-                </div>
-            </div>
-        </nav>
+          <!-- Brand/Logo (Centered) -->
+          <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
+           <img class="tfs-nav-logo scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
+           <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
+          </a>
+
+          <?php
+          // Right side menu
+          wp_nav_menu(array(
+           'theme_location' => 'guided-fishing',
+           'menu_id'        => 'right-menu',
+           'depth'          => 3,
+           'container'      => false,
+           'menu_class'     => 'navbar-nav right-menu',
+           'fallback_cb'    => '__return_false',
+           'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+           'walker'         => new bootstrap_5_wp_nav_menu_walker(),
+           'center_logo'    => true,
+           'menu_part'      => 'right'
+          ));
+          ?>
+         </div>
+        </div>
+       </nav>
+
+
 	</header><!-- #masthead -->
