@@ -90,6 +90,7 @@
       }
     }
   }
+
   .nav-link {
     color: rgba(255, 255, 255, 0.9);
     transition: color 0.3s ease;
@@ -432,7 +433,8 @@ ul.dropdown-menu ul.dropdown-menu {
 @media (min-width: 1400px) {
   #site-navigation {
     .container {
-      max-width: 1700px;
+      max-width: 2000px;
+      width: 100%;
       display: flex;
       justify-content: space-between;
 
@@ -467,5 +469,88 @@ ul.dropdown-menu ul.dropdown-menu {
     font-size: 0.96rem;
     padding-left: 0.2rem;
     padding-right: 0.2rem;
+  }
+}
+
+/********* Centered Nav ***********/
+
+/* Centered Logo Navigation - Core Layout */
+@media (min-width: 992px) {
+  #site-navigation {
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        margin: 0;
+
+        .tfs-nav-logo {
+          width: 120px;
+          transition: width 0.3s ease;
+        }
+      }
+
+      .navbar-collapse {
+        flex: 1;
+        display: flex;
+
+        .left-menu,
+        .right-menu {
+          flex: 1;
+          display: flex;
+          align-items: center;
+        }
+
+        .left-menu {
+          justify-content: flex-end;
+          padding-right: 80px; /* Space for logo */
+        }
+
+        .right-menu {
+          justify-content: flex-start;
+          padding-left: 80px; /* Space for logo */
+        }
+      }
+    }
+
+    /* Apply existing scroll animations to our new layout */
+    &.scrolled {
+      .navbar-brand {
+        .tfs-nav-logo {
+          width: 90px; /* Smaller logo when scrolled */
+        }
+      }
+
+      .left-menu,
+      .right-menu {
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+/* Mobile Layout */
+@media (max-width: 991.98px) {
+  #site-navigation {
+    .container {
+      .navbar-brand {
+        position: static;
+        transform: none;
+        margin: 0 auto;
+      }
+
+      .navbar-collapse {
+        .left-menu,
+        .right-menu {
+          width: 100%;
+        }
+      }
+    }
   }
 }

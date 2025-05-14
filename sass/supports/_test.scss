@@ -1,78 +1,13 @@
-/* Centered Logo Navigation - Core Layout */
+/* Additional styles to ensure proper spacing with uneven menus */
 @media (min-width: 992px) {
   #site-navigation {
     .container {
-      display: flex;
-      align-items: center;
-      position: relative;
-
-      .navbar-brand {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 100;
-        margin: 0;
-
-        .tfs-nav-logo {
-          width: 120px;
-          transition: width 0.3s ease;
-        }
-      }
-
-      .navbar-collapse {
-        flex: 1;
-        display: flex;
-
-        .left-menu,
-        .right-menu {
-          flex: 1;
-          display: flex;
-          align-items: center;
-        }
-
-        .left-menu {
-          justify-content: flex-end;
-          padding-right: 80px; /* Space for logo */
-        }
-
-        .right-menu {
-          justify-content: flex-start;
-          padding-left: 80px; /* Space for logo */
-        }
-      }
-    }
-
-    /* Apply existing scroll animations to our new layout */
-    &.scrolled {
-      .navbar-brand {
-        .tfs-nav-logo {
-          width: 90px; /* Smaller logo when scrolled */
-        }
-      }
-
-      .left-menu,
-      .right-menu {
-        padding-top: 0;
-        padding-bottom: 0;
-      }
-    }
-  }
-}
-
-/* Mobile Layout */
-@media (max-width: 991.98px) {
-  #site-navigation {
-    .container {
-      .navbar-brand {
-        position: static;
-        transform: none;
-        margin: 0 auto;
-      }
-
       .navbar-collapse {
         .left-menu,
         .right-menu {
-          width: 100%;
+          &:empty {
+            padding: 0;
+          }
         }
       }
     }
