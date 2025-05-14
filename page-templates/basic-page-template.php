@@ -82,6 +82,13 @@ if (has_post_thumbnail()) :
 
                     get_template_part('template-parts/content', 'page');
 
+										 the_post_navigation(
+											array(
+											 'prev_text' => '<i class="lni lni-chevron-left me-2"></i><span class="nav-content"><span class="nav-subtitle">' . esc_html__( 'Previous:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span></span>',
+											 'next_text' => '<span class="nav-content"><span class="nav-subtitle">' . esc_html__( 'Next:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span></span><i class="lni lni-chevron-right ms-2"></i>',
+											)
+										 );
+
                     // If comments are open or we have at least one comment, load up the comment template.
                     if (comments_open() || get_comments_number()) :
                     comments_template();
