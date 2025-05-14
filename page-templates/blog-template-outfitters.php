@@ -125,7 +125,10 @@ if ($hero_video_url !== $default) : ?>
 		</main><!-- #main -->
 	 </div>
 	 <div class="col-md-4 page-sidebar">
-		<?php get_sidebar(); ?>
+		<?php
+		$selectsidebar = get_post_meta(get_the_ID(), 'outfitters-select-sidebar', true);
+		get_sidebar($selectsidebar);
+		 ?>
 	 </div>
 	</div>
  </div>
