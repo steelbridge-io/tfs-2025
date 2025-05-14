@@ -659,7 +659,7 @@ get_header();
 		<?php } ?>
 
 	 </div>
-	 <div class="col-lg-3 sidebar">
+	 <div class="col-lg-3 page-sidebar">
 		<?php
 		$selectsidebar = get_post_meta(get_the_ID(), 'news-template-select-sidebar', true);
 		get_sidebar($selectsidebar); ?>
