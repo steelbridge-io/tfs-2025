@@ -126,7 +126,9 @@ if ($hero_video_url !== $default) : ?>
 		</main><!-- #main -->
 	 </div>
 	 <div class="col-md-4 page-sidebar">
-		<?php get_sidebar(); ?>
+		<?php
+		$select_sidebar = get_post_meta(get_the_ID(), 'select-sidebar', true );
+		get_sidebar($select_sidebar); ?>
 	 </div>
 	</div>
  </div>
