@@ -18,6 +18,7 @@ include_once get_template_directory() . '/inc/login-page.php';
 require_once get_template_directory() . '/front-page-loader.php';
 require_once get_template_directory() . '/front-page/footer-admin.php';
 require_once get_template_directory() . '/class-tfs-menu-position-handler.php';
+require_once get_template_directory() . '/inc/register-sidebars.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -220,6 +221,11 @@ function the_fly_shop_2025_scripts() {
 
  if (is_page_template('page-templates/signature-template.php')) {
 	wp_enqueue_script('signature-template-js', get_template_directory_uri() . '/js/signature-template.js', array('jquery'),
+	 _S_VERSION, true);
+ }
+
+ if (is_page_template('page-templates/staff-template.php')) {
+	wp_enqueue_script('signature-template-js', get_template_directory_uri() . '/js/staff-template.js', array('jquery'),
 	 _S_VERSION, true);
  }
 
