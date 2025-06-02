@@ -55,11 +55,14 @@ if (has_post_thumbnail()) :
 <?php endif; ?>
 
  <div class="container-fluid top-fade p-0"></div>
- <!-- Breadcrumbs -->
- <div class="container mt-4">
-	<?php the_fly_shop_breadcrumbs(); ?>
- </div>
+
  <div class="container mt-6 mb-7">
+
+  <!-- Breadcrumbs -->
+  <div class="container mt-4">
+	 <?php the_fly_shop_breadcrumbs(); ?>
+  </div>
+
 	<div class="row">
 	 <div class="col-md-8">
 		<main id="primary" class="site-main">
@@ -71,12 +74,6 @@ if (has_post_thumbnail()) :
 			//get_template_part( 'template-parts/content', get_post_type() );
 			get_template_part( 'template-parts/content', 'basic' );
 
-			/*the_post_navigation(
-			 array(
-				'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span>',
-				'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span>',
-			 )
-			);*/
 			the_post_navigation(
 			 array(
 				'prev_text' => '<i class="lni lni-chevron-left me-2"></i><span class="nav-content"><span class="nav-subtitle">' . esc_html__( 'Previous:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span></span>',
@@ -94,10 +91,47 @@ if (has_post_thumbnail()) :
 
 		</main><!-- #main -->
 	 </div>
-	 <div class="col-md-4 page-sidebar">
-		<?php get_sidebar(); ?>
-	 </div>
+   <div class="col-md-4 page-sidebar">
+		<?php
+		$selectsidebar = get_post_meta(get_the_ID(), 'btb-select-sidebar', true);
+		get_sidebar($selectsidebar);
+		?>
+   </div>
 	</div>
  </div>
+ <section id="front-page-cta">
+  <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5">
+   <div class="container text-center text-md-end">
+    <div class="row justify-content-end">
+     <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+      <div class="row">
+       <div class="col-6">
+        <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+       </div>
+       <div class="col-6">
+        <h5 class="mb-4 fw-bold">Stay Updated</h5>
+        <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+       </div>
+      </div>
+      <form id="subscribe-form">
+       <div class="form-floating mb-3">
+        <input
+         type="email"
+         class="form-control shadow-sm"
+         id="subscriberEmail"
+         placeholder="name@example.com"
+         required
+        />
+        <label for="subscriberEmail" class="text-muted">Enter your email</label>
+       </div>
+       <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+        Subscribe
+       </button>
+      </form>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
 <?php
 get_footer();
