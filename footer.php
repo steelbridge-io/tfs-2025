@@ -99,7 +99,7 @@ $footer_options = tfs_get_footer_content();
 		?>
 	 </small>
 	</div>
-	<hr/>
+
 	<div class="container footer-logo text-center mt-5">
 	 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop Logo" />
 	</div>
