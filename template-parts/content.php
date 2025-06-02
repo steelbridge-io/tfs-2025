@@ -29,8 +29,6 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php the_fly_shop_2025_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 		the_content(
