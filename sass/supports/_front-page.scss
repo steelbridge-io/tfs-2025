@@ -27,6 +27,11 @@
 }
 
 /* Carousel */
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  width: 4rem;
+  height: 10rem;
+}
 .carousel-item img {
   animation: zoomOutEffect 3.5s ease-in-out;
   transform-origin: center center;
@@ -46,7 +51,7 @@
   padding: 1rem;
   opacity: 0;
   position: absolute;
-  top: 55%;
+  top: 40%;
   left: 5%;
   transform: translateY(50%);
   transition: opacity 1s ease, transform 1s ease;
@@ -114,19 +119,6 @@
   }
   50% {
     transform: translate(-50%, -8px); /* Slight bounce up */
-  }
-}
-/* Extra small devices (default styles for <576px screens) */
-@media (max-width: 576px) {
-  .carousel-overlay {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-    left: 0;
-    right: 0;
-    h1 {
-      font-size: 2rem;
-    }
   }
 }
 
@@ -311,6 +303,24 @@
 /*
 Media Queries
 ------------------------------------------------- */
+/* Extra small devices (default styles for <576px screens) */
+@media (max-width: 576px) {
+  .carousel-overlay {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    top: 22%;
+    left: 0;
+    right: 0;
+    h1 {
+      font-size: clamp(2rem, 5vw, 4.5rem);
+    }
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: 40%;
+  }
+}
 
 /* Small devices (≥576px) */
 @media (min-width: 576px) {
@@ -328,6 +338,10 @@ Media Queries
     max-width: 80%; /* Reduces width for middle-sized screens */
     padding: 1.5rem; /* Add more padding */
   }
+  .carousel-overlay {
+    top: 50%;
+  }
+
 }
 
 /* Large devices (≥992px) */
@@ -344,6 +358,44 @@ Media Queries
     max-width: 80%;
     h1 {
       font-size: 4.75rem;
+    }
+  }
+}
+
+/* XXL devices (≥3840px) */
+@media (min-width: 3840px) {
+  .carousel-overlay {
+    top:  60%;
+    max-width: 50%;
+    h1 {
+      font-size: clamp(7rem, 6vw, 5.5rem);
+    }
+    h2 {
+      font-size: clamp(4rem, 5vw, 4.5rem);
+    }
+    .cta-button {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+    }
+  }
+
+  .carousel-control-next, .carousel-control-prev {
+    width: 5%;
+  }
+
+  .carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 9rem;
+    height: 10rem;
+  }
+
+  .scrolly {
+    font-size: clamp(5rem, 4vw, 3.5rem);
+    width: 150px;
+    height: 150px;
+    padding: 1rem;
+    .lni.lni-arrow-downward {
+      text-align: center;
+      margin-top: 18px;
+      display: block;
     }
   }
 }
