@@ -90,7 +90,7 @@ if (!empty($cards)) :
 			$style_class = $style_classes[$index % count($style_classes)];
 			?>
       <!-- Card <?php echo $index + 1; ?> -->
-      <div class="col-md-4 card-feature <?php echo esc_attr($style_class); ?>" data-aos="" data-aos-offset="200" data-aos-duration="1000">
+      <div class="col-sm-12 col-md-6 col-lg-6 col-xl-4 card-feature <?php echo esc_attr($style_class); ?>" data-aos="" data-aos-offset="200" data-aos-duration="1000">
        <div class="card-container">
         <img src="<?php echo esc_url($card['image']); ?>" alt="<?php echo esc_attr($card['image_alt']); ?>" class="card-img">
         <h3 class="card-title-overlay"><?php echo esc_html($card['title']); ?></h3>

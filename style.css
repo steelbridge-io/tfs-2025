@@ -2445,7 +2445,7 @@ ul.dropdown-menu ul.dropdown-menu {
 }
 #front-page-into #typing-area,
 #front-page-into .container-row {
-  height: 150px;
+  height: auto;
   overflow: hidden;
   white-space: pre-wrap;
   display: flex;
@@ -3959,6 +3959,40 @@ html {
   animation-delay: 0.2s;
 }
 
+/*.site-footer {
+  h5 {
+    margin-bottom: 1rem;
+  }
+  a {
+    color: $tfs__white;
+    font-size: 1rem;
+  }
+
+  .footer-section-content {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        margin-bottom: 1rem;
+      }
+      li a:hover {
+        font-weight: bold;
+      }
+      li a[href^="tel:"]:hover {
+        font-weight: 900; // Extra bold for telephone links
+        text-decoration: underline; // Additional visual cue
+      }
+
+    }
+    .social-footer {
+      padding-top: 3rem;
+      .lni {
+        margin-right: 1rem;
+      }
+    }
+  }
+} */
 .site-footer h5 {
   margin-bottom: 1rem;
 }
@@ -3986,6 +4020,46 @@ html {
 }
 .site-footer .footer-section-content .social-footer .lni {
   margin-right: 1rem;
+}
+@media (max-width: 767.98px) {
+  .site-footer .col-md-4 {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .site-footer .col-md-4:not(:last-child) {
+    padding-bottom: 2rem;
+  }
+  .site-footer .col-md-4:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 90%, transparent 100%);
+  }
+  .site-footer h5 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .site-footer .footer-section-content {
+    text-align: center;
+  }
+  .site-footer .footer-section-content ul {
+    text-align: center;
+  }
+  .site-footer .footer-section-content .social-footer {
+    text-align: center;
+  }
+  .site-footer .footer-section-content .social-footer h5 {
+    margin-bottom: 1rem;
+  }
+  .site-footer .footer-section-content .social-footer a {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
