@@ -202,7 +202,7 @@ function the_fly_shop_2025_scripts() {
  }
 
  if (is_page_template('page-templates/travel-template.php')) {
-	wp_enqueue_script('travel-js', get_template_directory_uri() . '/js/travel.js', array('jquery'),
+	wp_enqueue_script('travel-js', get_template_directory_uri() . '/js/travel-template.js', array('jquery'),
 	 _S_VERSION, true);
  }
 
