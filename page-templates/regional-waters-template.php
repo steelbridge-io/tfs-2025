@@ -82,7 +82,7 @@ if (has_post_thumbnail()) : ?>
 	 <section class="spotlight d-flex">
 		<!-- First spotlight - Image on RIGHT (default) -->
 		 <div class="row d-flex regional-waters">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 regional-waters-container">
 		 <div class="image">
 			<!-- Feature #1 Video/Text/Image Option -->
 			<?php
@@ -183,7 +183,7 @@ if (has_post_thumbnail()) : ?>
 		<!-- Second spotlight - Image on LEFT (flipped order) -->
 		<section class="spotlight d-flex flex-row-reverse">  <!-- Added flex-row-reverse class -->
 		 <div class="row flex-row-reverse regional-waters">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 regional-waters-container">
 			<div class="image">
 			 <!-- Seasons Video/Text/Image Option -->
 			 <?php
@@ -344,7 +344,7 @@ if (has_post_thumbnail()) : ?>
 		<!-- Third spotlight - Image on RIGHT (default) -->
 		<section class="spotlight d-flex">
 		 <div class="row regional-waters">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 regional-waters-container">
 			<div class="image">
 			 <!-- Feature #3 Video/Text/Image Option -->
 			 <?php
@@ -407,7 +407,7 @@ if (has_post_thumbnail()) : ?>
 		<!-- Fourth spotlight - Image on LEFT (flipped order) -->
 		<section class="spotlight">  <!-- Added flex-row-reverse class -->
 		 <div class="row flex-row-reverse regional-waters">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 regional-waters-container">
 			 <div class="image">
 				<!-- Guide Service Video/Text/Image Option -->
 				<?php
@@ -464,7 +464,7 @@ if (has_post_thumbnail()) : ?>
 		<!-- Fifth spotlight - Image on RIGHT (default) -->
 		<section class="spotlight d-flex">
 		 <div class="row regional-waters">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 regional-waters-container">
 			<div class="image">
 			 <!-- Video/Text/Image Option -->
 			 <?php
@@ -533,7 +533,7 @@ if (has_post_thumbnail()) : ?>
 		<div class="row g-4 additional-listing regional-waters">
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image1', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 			 <div class="thumbnail">
 				 <img src="' . $guideservice_additional_info_image1 . '" 
 							class="img-fluid gallery-trigger" 
@@ -546,7 +546,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image2', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image2 . '" 
 							 class="img-fluid gallery-trigger" 
@@ -559,7 +559,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image3', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image3 . '" 
 							 class="img-fluid gallery-trigger" 
@@ -572,7 +572,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image4', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image4 . '" 
 							 class="img-fluid gallery-trigger" 
@@ -587,7 +587,7 @@ if (has_post_thumbnail()) : ?>
 		<!-- Second Row Travel Images -->
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image5', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image5 . '" 
 							 class="img-fluid gallery-trigger" 
@@ -600,7 +600,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image6', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				 <div class="thumbnail">
 					 <img src="' . $guideservice_additional_info_image6 . '" 
 								class="img-fluid gallery-trigger" 
@@ -613,7 +613,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image7', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image7 . '" 
 							 class="img-fluid gallery-trigger" 
@@ -626,7 +626,7 @@ if (has_post_thumbnail()) : ?>
 			} ?>
 
 			<?php if (get_post_meta(get_the_ID(), 'guideservice-additional-info-image8', TRUE)) {
-			 echo '<div class="col-6 col-md-3">
+			 echo '<div class="col-6 col-md-3 regional-waters-container">
 				<div class="thumbnail">
 					<img src="' . $guideservice_additional_info_image8 . '" 
 							 class="img-fluid gallery-trigger" 
