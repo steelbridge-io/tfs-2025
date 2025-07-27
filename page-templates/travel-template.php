@@ -56,25 +56,31 @@ if (has_post_thumbnail()) :
  <div class="container mt-4">
 	<?php the_fly_shop_breadcrumbs(); ?>
  </div>
+<?php if($signature_travel_description !== '') : ?>
+<div class="container mt-4 cta-description">
 
+ <?php echo '<h4>' . $signature_travel_description . '</h4>'; ?>
 
-<div class="container mt-5">
-    <!--<div id="scrollto"></div>-->
-    <div id="primary" class="content-area row">
-        <main id="main-main" class="site-main col-md-12" role="main">
-
-            <?php
-            // WordPress Blog Content
-            while ( have_posts() ) : the_post();
-
-                get_template_part( 'template-parts/content', 'page' );
-
-            endwhile; // End of the loop.
-            ?>
-
-        </main>
-    </div>
 </div>
+ <?php endif; ?>
+
+ <div class="container mt-5">
+     <!--<div id="scrollto"></div>-->
+     <div id="primary" class="content-area row">
+         <main id="main-main" class="site-main col-md-12" role="main">
+
+             <?php
+             // WordPress Blog Content
+             while ( have_posts() ) : the_post();
+
+                 get_template_part( 'template-parts/content', 'page' );
+
+             endwhile; // End of the loop.
+             ?>
+
+         </main>
+     </div>
+ </div>
 
 <div id="travel-template-grid" class="container container-xxl mt-5 mb-5">
 <?php
@@ -647,40 +653,102 @@ if( $signature_travel_1_image !== '') :?>
     </div>
 </div>
 
- <section id="front-page-cta">
-	<div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
-	 <div class="container text-center text-md-end">
-		<div class="row justify-content-end">
-		 <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
-			<div class="row">
-			 <div class="col-6">
-				<img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
-			 </div>
-			 <div class="col-6">
-				<h5 class="mb-4 fw-bold">Stay Updated</h5>
-				<p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
-			 </div>
-			</div>
-			<form id="subscribe-form">
-			 <div class="form-floating mb-3">
-				<input
-				 type="email"
-				 class="form-control shadow-sm"
-				 id="subscriberEmail"
-				 placeholder="name@example.com"
-				 required
-				/>
-				<label for="subscriberEmail" class="text-muted">Enter your email</label>
-			 </div>
-			 <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
-				Subscribe
-			 </button>
-			</form>
-		 </div>
-		</div>
-	 </div>
-	</div>
- </section>
+<!-- Bootstrap Carousel -->
+
+ <!-- Alternative: Horizontal Scrolling Gallery -->
+<?php
+$carousel_display = get_post_meta(get_the_ID(), 'signature-travel-csel-checkbox', true);
+if ($carousel_display === 'yes'):
+ ?>
+ <div class="container-fluid mt-5 mb-5">
+  <div class="row">
+   <div class="col-12">
+    <div class="horizontal-scroll-gallery">
+     <div class="d-flex gap-3 overflow-auto pb-3" style="scroll-behavior: smooth;">
+			<?php
+			for ($i = 1; $i <= 6; $i++) {
+			 $image = get_post_meta(get_the_ID(), "signature-travel-csel-{$i}-img", true);
+			 $link = get_post_meta(get_the_ID(), "signature-travel-csel-{$i}-link", true);
+
+			 if (!empty($image)):
+				?>
+        <div class="flex-shrink-0" style="min-width: 300px;">
+         <div class="card h-100">
+          <img src="<?php echo esc_url($image); ?>"
+               class="card-img-top gallery-image"
+               alt="Gallery Image <?php echo $i; ?>"
+               data-bs-toggle="modal"
+               data-bs-target="#imageModal"
+               data-image="<?php echo esc_url($image); ?>"
+               data-link="<?php echo esc_url($link); ?>"
+               style="height: 250px; object-fit: cover; cursor: pointer;">
+         </div>
+        </div>
+			 <?php
+			 endif;
+			}
+			?>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <!-- Modal (same as above) -->
+ <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h5 class="modal-title" id="imageModalLabel">Gallery Image</h5>
+     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body text-center">
+     <img id="modalImage" src="" class="img-fluid" alt="Gallery Image">
+     <div id="modalLink" class="mt-3" style="display: none;">
+      <a id="modalLinkAnchor" href="" class="btn btn-primary" target="_blank">Learn More</a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+<?php endif; ?>
+
+<!-- /Bootstrap Carousel -->
+
+<section id="front-page-cta">
+ <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
+  <div class="container text-center text-md-end">
+   <div class="row justify-content-end">
+    <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+     <div class="row">
+      <div class="col-6">
+       <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+      </div>
+      <div class="col-6">
+       <h5 class="mb-4 fw-bold">Stay Updated</h5>
+       <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+      </div>
+     </div>
+     <form id="subscribe-form">
+      <div class="form-floating mb-3">
+       <input
+        type="email"
+        class="form-control shadow-sm"
+        id="subscriberEmail"
+        placeholder="name@example.com"
+        required
+       />
+       <label for="subscriberEmail" class="text-muted">Enter your email</label>
+      </div>
+      <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+       Subscribe
+      </button>
+     </form>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
 
 
 <?php
