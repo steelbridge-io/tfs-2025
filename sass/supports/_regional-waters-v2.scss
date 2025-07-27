@@ -111,6 +111,10 @@
         }
 
         .regional-waters {
+          padding: 0;
+          .regional-waters-container {
+            padding: 0;
+          }
           .content {
             height: 100%;
           }
@@ -228,5 +232,17 @@
         }
       }
 
+
+
+
+      @media (max-width: 768px) {
+        .regional-waters {
+          .col-md-6 {
+            .content {
+              margin-top: 2rem;
+            }
+          }
+        }
+      }
 
 

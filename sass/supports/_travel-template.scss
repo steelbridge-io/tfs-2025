@@ -110,3 +110,22 @@
   box-shadow: $tfs__hero-box-shadow;
 }
 
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
