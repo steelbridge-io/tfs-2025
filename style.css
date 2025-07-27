@@ -1173,6 +1173,10 @@ a:hover {
   padding-right: 0 !important;
 }
 
+.cta-description h3, .cta-description h4, .cta-description h5, .cta-description h6 {
+  text-align: center;
+}
+
 #guide-service-image-container .thumbnail a img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -2823,6 +2827,12 @@ Media Queries
 .guide_service-template-regional-waters-template-v2 #one {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4);
 }
+.guide_service-template-regional-waters-template-v2 .regional-waters {
+  padding: 0;
+}
+.guide_service-template-regional-waters-template-v2 .regional-waters .regional-waters-container {
+  padding: 0;
+}
 .guide_service-template-regional-waters-template-v2 .regional-waters .content {
   height: 100%;
 }
@@ -2921,6 +2931,11 @@ Media Queries
   line-height: 1.6;
 }
 
+@media (max-width: 768px) {
+  .regional-waters .col-md-6 .content {
+    margin-top: 2rem;
+  }
+}
 #two .spotlight .row .col-md-6.col-lg-6 img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -3082,6 +3097,24 @@ Media Queries
 
 .travel-template-hero {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4);
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.horizontal-scroll-gallery .d-flex::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 /** News Blog Template
@@ -3728,6 +3761,7 @@ html {
   transition: transform 0.3s ease;
 }
 
+/*** Fly Fishing School Template **/
 #fly-fishing-school-image-container .thumbnail a img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -3828,6 +3862,76 @@ html {
 }
 .schools_cpt-template #guide-template-grid .widget-section {
   transition: transform 0.3s ease;
+}
+
+/*** Footer ***/
+.site-footer h5 {
+  margin-bottom: 1rem;
+}
+.site-footer a {
+  color: #ffffff;
+  font-size: 1rem;
+}
+.site-footer .footer-section-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.site-footer .footer-section-content ul li {
+  margin-bottom: 1rem;
+}
+.site-footer .footer-section-content ul li a:hover {
+  font-weight: bold;
+}
+.site-footer .footer-section-content ul li a[href^="tel:"]:hover {
+  font-weight: 900;
+  text-decoration: underline;
+}
+.site-footer .footer-section-content .social-footer {
+  padding-top: 3rem;
+}
+.site-footer .footer-section-content .social-footer .lni {
+  margin-right: 1rem;
+}
+@media (max-width: 767.98px) {
+  .site-footer .col-md-4 {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  .site-footer .col-md-4:not(:last-child) {
+    padding-bottom: 2rem;
+  }
+  .site-footer .col-md-4:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 90%, transparent 100%);
+  }
+  .site-footer h5 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  .site-footer .footer-section-content {
+    text-align: center;
+  }
+  .site-footer .footer-section-content ul {
+    text-align: center;
+  }
+  .site-footer .footer-section-content .social-footer {
+    text-align: center;
+  }
+  .site-footer .footer-section-content .social-footer h5 {
+    margin-bottom: 1rem;
+  }
+  .site-footer .footer-section-content .social-footer a {
+    display: inline-block;
+    margin: 0 0.5rem;
+  }
 }
 
 /* Post Navigation Styling with Bootstrap 5 and LineIcons */
@@ -3957,109 +4061,6 @@ html {
 
 .nav-next {
   animation-delay: 0.2s;
-}
-
-/*.site-footer {
-  h5 {
-    margin-bottom: 1rem;
-  }
-  a {
-    color: $tfs__white;
-    font-size: 1rem;
-  }
-
-  .footer-section-content {
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      li {
-        margin-bottom: 1rem;
-      }
-      li a:hover {
-        font-weight: bold;
-      }
-      li a[href^="tel:"]:hover {
-        font-weight: 900; // Extra bold for telephone links
-        text-decoration: underline; // Additional visual cue
-      }
-
-    }
-    .social-footer {
-      padding-top: 3rem;
-      .lni {
-        margin-right: 1rem;
-      }
-    }
-  }
-} */
-.site-footer h5 {
-  margin-bottom: 1rem;
-}
-.site-footer a {
-  color: #ffffff;
-  font-size: 1rem;
-}
-.site-footer .footer-section-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.site-footer .footer-section-content ul li {
-  margin-bottom: 1rem;
-}
-.site-footer .footer-section-content ul li a:hover {
-  font-weight: bold;
-}
-.site-footer .footer-section-content ul li a[href^="tel:"]:hover {
-  font-weight: 900;
-  text-decoration: underline;
-}
-.site-footer .footer-section-content .social-footer {
-  padding-top: 3rem;
-}
-.site-footer .footer-section-content .social-footer .lni {
-  margin-right: 1rem;
-}
-@media (max-width: 767.98px) {
-  .site-footer .col-md-4 {
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  .site-footer .col-md-4:not(:last-child) {
-    padding-bottom: 2rem;
-  }
-  .site-footer .col-md-4:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 1px;
-    background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 90%, transparent 100%);
-  }
-  .site-footer h5 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  .site-footer .footer-section-content {
-    text-align: center;
-  }
-  .site-footer .footer-section-content ul {
-    text-align: center;
-  }
-  .site-footer .footer-section-content .social-footer {
-    text-align: center;
-  }
-  .site-footer .footer-section-content .social-footer h5 {
-    margin-bottom: 1rem;
-  }
-  .site-footer .footer-section-content .social-footer a {
-    display: inline-block;
-    margin: 0 0.5rem;
-  }
 }
 
 /*# sourceMappingURL=style.css.map */
