@@ -20,8 +20,8 @@ add_action('admin_init', 'tfs_front_page_settings_init');
 // Add menu item to WordPress dashboard
 function tfs_front_page_settings_menu() {
  add_menu_page(
-	'Homepage Features',
-	'Homepage Features',
+	'Theme Features',
+	'Theme Features',
 	'manage_options',
 	'tfs-front-page-settings',
 	'tfs_front_page_settings_page',
@@ -267,9 +267,6 @@ function tfs_front_page_settings_page() {
 	 'ajax_url' => admin_url('admin-ajax.php'),
 	 'nonce'    => wp_create_nonce('tfs_card_grid_nonce')
 	));
- } else if ($active_tab == 'footer') {
-	// Footer tab content
-	tfs_footer_settings_page();
  }
 
  ?>
@@ -278,9 +275,10 @@ function tfs_front_page_settings_page() {
 	<?php settings_errors('tfs_front_page_messages'); ?>
 
   <h2 class="nav-tab-wrapper">
-   <a href="?page=tfs-front-page-settings&tab=carousel" class="nav-tab <?php echo $active_tab == 'carousel' ? 'nav-tab-active' : ''; ?>">Carousel Slider</a>
-   <a href="?page=tfs-front-page-settings&tab=card-grid" class="nav-tab <?php echo $active_tab == 'card-grid' ? 'nav-tab-active' : ''; ?>">Card Grid</a>
-	 <a href="?page=tfs-front-page-settings&tab=footer" class="nav-tab <?php echo $active_tab == 'footer' ? 'nav-tab-active' : ''; ?>">Footer</a>
+   <a href="?page=tfs-front-page-settings&tab=carousel" class="nav-tab <?php echo $active_tab == 'carousel' ? 'nav-tab-active' : ''; ?>">Homepage Slider</a>
+   <a href="?page=tfs-front-page-settings&tab=card-grid" class="nav-tab <?php echo $active_tab == 'card-grid' ? 'nav-tab-active' : ''; ?>">Homepage Grid</a>
+   <a href="?page=tfs-front-page-settings&tab=footer" class="nav-tab <?php echo $active_tab == 'footer' ? 'nav-tab-active' : ''; ?>">Theme Footer</a>
+   <a href="?page=tfs-front-page-settings&tab=dashboard-customizer" class="nav-tab <?php echo $active_tab == 'dashboard-customizer' ? 'nav-tab-active' : ''; ?>">Dashboard Customizer</a>
   </h2>
 
 	<?php if ($active_tab == 'carousel'): ?>
@@ -344,6 +342,15 @@ function tfs_front_page_settings_page() {
 
 		<?php submit_button('Save Card Grid'); ?>
    </form>
+
+	<?php elseif ($active_tab == 'footer') : ?>
+
+	 <?php tfs_footer_settings_page(); ?>
+
+	<?php elseif ($active_tab == 'dashboard-customizer') : ?>
+
+	 <?php tfs_dashboard_customizer_settings_page(); ?>
+
 	<?php endif; ?>
  </div>
  <?php
