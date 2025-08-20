@@ -2106,7 +2106,7 @@ Media Queries
     /* Add more padding */ }
 
   .carousel-overlay {
-    top: 50%; } }
+    top: 40%; } }
 /* Large devices (≥992px) */
 @media (min-width: 992px) {
   .carousel-overlay {
