@@ -45,6 +45,7 @@ function the_fly_shop_2025_setup() {
 	 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
 	 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
 	 'fish-camp' => esc_html__( 'Fish Camp', 'the-fly-shop-2025' ),
+     '404-menu' => esc_html__( '404 Menu', 'the-fly-shop-2025' ),
 	)
  );
 
