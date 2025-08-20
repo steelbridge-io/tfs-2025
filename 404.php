@@ -7,7 +7,7 @@
  * @package The_Fly_Shop_2025
  */
 
-get_header();
+get_header('404');
 ?>
     <div id="404-page" class="container mt-7 mb-5">
         <main id="primary" class="site-main">
