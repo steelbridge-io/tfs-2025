@@ -241,6 +241,22 @@ function the_fly_shop_2025_scripts() {
 add_action( 'wp_enqueue_scripts', 'the_fly_shop_2025_scripts' );
 
 /**
+ * Loads admin css
+ */
+function enqueue_admin_bar_styles() {
+ // Only load on admin pages
+ if ( is_admin() ) {
+	wp_enqueue_style(
+	 'custom-admin-bar-styles',
+	 get_template_directory_uri() . '/css/admin.css',
+	 array(),
+	 '1.0.0'
+	);
+ }
+}
+add_action( 'admin_enqueue_scripts', 'enqueue_admin_bar_styles' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
