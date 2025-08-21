@@ -59,6 +59,12 @@ if (has_post_thumbnail()) : ?>
   </div>
  </div>
 <?php endif; ?>
+
+ <!-- Breadcrumbs -->
+ <div class="container mt-4">
+	<?php the_fly_shop_breadcrumbs(); ?>
+ </div>
+
  <div class="container">
   <div id="primary" class="content-area row mt-5">
    <main id="main" class="site-main col-md-12" role="main">
@@ -134,12 +140,8 @@ if(get_post_meta(get_the_ID(), 'signature-csel-checkbox', true) == 'yes') :?>
    </div>
   </div>
  </div><!-- Item slider end-->
-<?php endif; ?>
 
- <!-- Breadcrumbs -->
- <div class="container mt-4">
-	<?php the_fly_shop_breadcrumbs(); ?>
- </div>
+<?php endif; ?>
 
  <div id="guide-template-grid" class="container container-xxl mt-5 mb-5 pt-5 pb-5">
 
