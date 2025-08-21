@@ -88,11 +88,6 @@ if ($hero_video_url !== $default) : ?>
 <?php endif; ?>
 
  <div class="container-fluid top-fade p-0"></div>
- <!-- Breadcrumbs -->
- <div class="container mt-4">
-	<?php the_fly_shop_breadcrumbs(); ?>
- </div>
-
  <div class="container mt-6 mb-7">
 	<div class="container mt-4">
 	 <?php the_fly_shop_breadcrumbs(); ?>
