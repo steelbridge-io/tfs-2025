@@ -54,10 +54,10 @@ if (has_post_thumbnail()) : ?>
 	</div>
 </div>
 <?php endif; ?>
- <!-- Breadcrumbs -->
- <div class="container mt-4">
-	<?php the_fly_shop_breadcrumbs(); ?>
- </div>
+<!-- Breadcrumbs -->
+<div class="container mt-4">
+ <?php the_fly_shop_breadcrumbs(); ?>
+</div>
 
 <div class="container-fluid">
 	<div class="container">
