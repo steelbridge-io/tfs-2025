@@ -31,7 +31,7 @@
         <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon mobile-icon-404"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="homepage">
