@@ -558,4 +558,10 @@ ul.dropdown-menu ul.dropdown-menu {
       }
     }
   }
+
+  .navbar-toggler-icon {
+    &.mobile-icon-404 {
+      background-image: var(--bs-navbar-toggler-icon-bg);
+    }
+  }
 }
