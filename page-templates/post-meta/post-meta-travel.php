@@ -11,6 +11,7 @@ $travel_logo            = get_post_meta( get_the_ID(), 'travel-logo', true );
 $travel_description     = get_post_meta( get_the_ID(), 'travel-description', true );
 $masthead_bold_textarea = get_post_meta( get_the_ID(), 'masthead-bold-textarea', true );
 $signature_travel_description = get_post_meta( get_the_ID(), 'signature-travel-description', true );
+$dest_travel_logo				= get_post_meta( get_the_ID(), 'dest-travel-logo', true );
 
 $travel_temp_video        = get_post_meta( get_the_ID(), 'travel-temp-video', true );
 $travel_temp_video_poster = get_post_meta( get_the_ID(), 'travel-temp-video-poster', true );
