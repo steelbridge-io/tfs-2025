@@ -565,3 +565,138 @@ ul.dropdown-menu ul.dropdown-menu {
     }
   }
 }
+
+
+/* Post Navigation Styling with Bootstrap 5 and LineIcons */
+.post-navigation {
+  margin: 3rem 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-previous,
+.nav-next {
+  flex: 0 0 40%;
+  position: relative;
+  transition: all 0.3s ease;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  /*box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);*/
+  box-shadow: $tfs__box-shadow;
+}
+
+.nav-previous a,
+.nav-next a {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  color: #343a40;
+  text-decoration: none;
+  border-bottom: 3px solid $tfs__hero-box-shadow;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.nav-previous a {
+  border-left: 3px solid $tfs__hero-box-shadow;
+  border-bottom: 3px solid $tfs__hero-box-shadow;
+}
+
+.nav-next a {
+  justify-content: flex-end;
+  border-right: 3px solid $tfs__hero-box-shadow;
+  border-bottom: 3px solid $tfs__hero-box-shadow;
+}
+
+.nav-previous .lni,
+.nav-next .lni {
+  font-size: 1.25rem;
+  color: $tfs__black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-previous:hover .lni {
+  transform: translateX(-5px);
+}
+
+.nav-next:hover .lni {
+  transform: translateX(5px);
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-subtitle {
+  display: block;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.nav-title {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #212529;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-previous,
+  .nav-next {
+    flex: 0 0 100%;
+  }
+
+  .nav-next a {
+    justify-content: flex-start;
+  }
+
+  .nav-next .lni {
+    margin-right: 0.75rem;
+  }
+
+  .nav-previous .lni {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+}
+
+/* Add animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.nav-previous,
+.nav-next {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+.nav-next {
+  animation-delay: 0.2s;
+}

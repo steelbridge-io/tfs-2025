@@ -89,6 +89,25 @@ a {
 .pr-2 {
   padding-right: 2rem;
 }
+
+@media (min-width: 992px) {
+  .top-lg-60 {
+    top: 60%;
+  }
+  .no-render-lg {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .top-lg-40-mw {
+    top: 40%;
+  }
+  .top-lg-50-mw {
+    top: 50%;
+  }
+}
+
 .no-padding-lr {
   padding-left: 0;
   padding-right: 0;
