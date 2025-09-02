@@ -1,0 +1,266 @@
+/* Destination V2 Template Styles */
+
+#inclusions-section {
+  .container {
+    .inclusions-content {
+      background-color: $tfs__light-blue;
+      padding: 1.618em;
+    }
+  }
+  .featured-image {
+    padding: 0;
+    img {
+      box-shadow: $tfs__box-shadow;
+    }
+  }
+}
+
+
+
+/* Keyframe animations for the chevrons */
+@keyframes moveRightChevron {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveLeftChevron {
+  0% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Button styles for destination template */
+.btn.destination {
+  position: relative;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Base styles for chevron icons - always in the layout but hidden */
+.btn.destination .lni-chevron-left,
+.btn.destination .lni-chevron-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none; /* Don't interfere with clicks */
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+#destination-features {
+  .lni {
+    font-size: 2.3em !important;
+    vertical-align: middle;
+  }
+  .feature-image {
+    padding: 0;
+  }
+  .container {
+    margin-bottom: 3rem;
+  }
+  .row {
+    background-color: $tfs__light-blue;
+    padding: 1.618em;
+  }
+}
+
+/* Position the icons at their final positions */
+.btn.destination .lni-chevron-right {
+  right: 10px;
+}
+
+.btn.destination .lni-chevron-left {
+  left: 10px;
+}
+
+/* Style for active button */
+.btn.destination.active {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+  border-color: #ff0000 !important;
+  /* Add extra padding to accommodate the icons */
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+/* Animate and show icons when button is active */
+.btn.destination.active .lni-chevron-right {
+  opacity: 1;
+  animation: moveRightChevron 0.8s forwards;
+}
+
+.btn.destination.active .lni-chevron-left {
+  opacity: 1;
+  animation: moveLeftChevron 0.8s forwards;
+}
+
+/* Template specific styles */
+.travel_cpt-template-destination-v2-template,
+.page-template-destination-v2-template,
+.post-template-destination-v2-template {
+
+  .btn.destination.active {
+    background-color: $tfs__red !important;
+    color: #ffffff !important;
+    border-color: $tfs__white !important;
+  }
+
+  .btn.destination:hover {
+    background-color: $tfs__red !important;
+    color: #ffffff !important;
+  }
+
+  .overlay-header.active-header {
+    background-color: $tfs__red !important;
+    color: $tfs__white !important;
+  }
+
+  #destination-features {
+    margin: 8em 0;
+
+    .feature-image {
+      position: relative;
+      overflow: hidden;
+      box-shadow: $tfs__box-shadow;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .readmore-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .readmore-info.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .overlay-header, .overlay-content {
+      transform: translateY(20px);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .readmore-info.visible .overlay-header,
+    .readmore-info.visible .overlay-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .readmore-info.visible .overlay-header {
+      transition-delay: 0.1s;
+    }
+
+    .readmore-info.visible .overlay-content {
+      transition-delay: 0.2s;
+    }
+
+    .overlay-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+
+      h3 {
+        margin: 0;
+      }
+    }
+
+    .close-overlay {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .overlay-content {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: 20px;
+
+      p {
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .feature-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+
+      .btn.destination {
+        padding: 8px 16px;
+        background-color: $tfs__catalog-black;
+        color: white;
+        border: none;
+        border-radius: 0px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 15px;
+        align-self: flex-start;
+      }
+
+      .btn.destination:hover {
+        background-color: #003d7a;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #destination-features {
+    .feature-image {
+      margin-bottom: 2rem;
+    }
+
+    .feature-content {
+      .btn.destination {
+        width: 100%;
+      }
+    }
+  }
+}
