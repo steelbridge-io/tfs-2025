@@ -42,6 +42,8 @@ function the_fly_shop_2025_setup() {
 	 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
 	 'travel-menu' => esc_html__( 'Travel Menu', 'the-fly-shop-2025' ),
 	 'destination-menu' => esc_html__( 'Destination Menu', 'the-fly-shop-2025' ),
+     'lower-48' => esc_html__( 'Lower 48', 'the-fly-shop-2025' ),
+     'lower-48blog'     => esc_html__( 'Lower 48 Blog', 'the-fly-shop-2025' ),
 	 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
 	 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
 	 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
@@ -230,6 +232,10 @@ function the_fly_shop_2025_scripts() {
 	wp_enqueue_script('signature-template-js', get_template_directory_uri() . '/js/staff-template.js', array('jquery'),
 	 _S_VERSION, true);
  }
+
+if (is_page_template('page-templates/destination-v2-template.php')) {
+    wp_enqueue_script('destination-v2-template-js', get_template_directory_uri() . '/js/destination-v2-template.js', array('jquery'),_S_VERSION, true);
+}
 
  if (is_front_page()) {
 	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
