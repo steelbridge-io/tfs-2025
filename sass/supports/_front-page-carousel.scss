@@ -1,3 +1,91 @@
+
+/* Fix carousel text overlap during transitions with enhanced text fade */
+.carousel-fade .carousel-item {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  z-index: 1;
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  z-index: 0;
+  opacity: 0;
+}
+
+/* Enhanced carousel overlay text with better fade transitions */
+.carousel-overlay {
+  color: white;
+  z-index: 10;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Text fade out - more dramatic */
+.carousel-item:not(.active) .carousel-overlay {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+/* Text fade in - more noticeable */
+.carousel-item.active .carousel-overlay {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-in-out 0.4s, transform 0.8s ease-in-out 0.4s, visibility 0s 0.4s;
+}
+
+/* Individual text elements for staggered animation */
+.carousel-overlay h1 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.carousel-overlay h2 {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.1s;
+}
+
+.carousel-overlay .cta-button {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transition-delay: 0.2s;
+}
+
+/* Active state for individual elements */
+.carousel-item.active .carousel-overlay h1 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.carousel-item.active .carousel-overlay h2 {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.7s;
+}
+
+.carousel-item.active .carousel-overlay .cta-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.8s;
+}
+
+/** original css */
 #carouselExampleFade {
   background: #000;
 }
