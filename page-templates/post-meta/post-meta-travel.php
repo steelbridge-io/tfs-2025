@@ -22,8 +22,10 @@ $feature_1_inclusions_textarea    = get_post_meta( get_the_ID(), 'feature-1-incl
 $feature_1_noninclusions_textarea = get_post_meta( get_the_ID(), 'feature-1-noninclusions-textarea', true );
 $feature_1_travelins_textarea     = get_post_meta( get_the_ID(), 'feature-1-travelins-textarea', true );
 $feature_1_image                  = get_post_meta( get_the_ID(), 'feature-1-image', true );
+$travel_costs_image               = get_post_meta( get_the_ID(), 'travel-costs-image', true );
 
 $feature_2_image                 = get_post_meta( get_the_ID(), 'feature-2-image', true );
+$travel_seasons_image            = get_post_meta( get_the_ID(), 'travel-seasons-image', true );
 $feature_2_seasons_title         = get_post_meta( get_the_ID(), 'feature-2-seasons-title', true );
 $feature_2_seasons_content       = get_post_meta( get_the_ID(), 'feature-2-seasons-content', true );
 $feature_2_seasons_readmore      = get_post_meta( get_the_ID(), 'feature-2-seasons-readmore', true );

@@ -32,11 +32,6 @@ if (has_post_thumbnail()) : ?>
 
 	 <!-- Overlay Content -->
 	 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-		<!-- Logo -->
-		<img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
-				 class="hero-logo mb-3"
-				 alt="Website Logo">
-
 		<!-- Page Title -->
 		<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 	 </div>
@@ -49,11 +44,6 @@ if (has_post_thumbnail()) : ?>
 	 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
 	 <!-- Overlay Content -->
 	 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-		<!-- Logo -->
-		<img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
-				 class="hero-logo mb-3"
-				 alt="Website Logo">
-
 		<!-- Page Title -->
 		<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 	 </div>

@@ -23,15 +23,13 @@ if (has_post_thumbnail()) :
 			     alt="<?php the_title_attribute(); ?>">
 
 			<!-- Overlay Content -->
-			<div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-
-       <?php if( $sig_travel_logo !== ''	) : ?>
-        <img src="<?php echo $sig_travel_logo; ?>" class="hero-logo mb-3" alt="Website Logo">
-       <?php else : ?>
-				<!-- Logo -->
-				<img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>" class="hero-logo mb-3" alt="Website Logo">
-        <?php endif; ?>
-				<!-- Page Title -->
+			<div class="hero-overlay position-absolute top-lg-60 top-lg-50-mw start-50 translate-middle text-center">
+                <?php $sig_travel_logo = get_post_meta(get_the_ID(), 'signature-travel-logo', true); ?>
+                <?php if($sig_travel_logo !== '') : ?>
+                <img class="tfs-nav-logo-lg no-render-lg mb-5" loading="eager" src="<?php echo $sig_travel_logo; ?>" alt="The Fly Shop 2025" />
+                <?php else: ?>
+                <img class="tfs-nav-logo-lg no-render-lg" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
+                <?php endif; ?>
 				<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 			</div>
 		</div>
@@ -41,16 +39,9 @@ if (has_post_thumbnail()) :
 	<div class="hero-image position-relative">
 		<!-- Full-Width Featured Image -->
 		<img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+        <img class="tfs-nav-logo-lg no-render-lg mb-5" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
 		<!-- Overlay Content -->
 		<div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-
-		 <?php if( $sig_travel_logo !== ''	) : ?>
-      <img src="<?php echo $sig_travel_logo; ?>" class="hero-logo mb-3" alt="Website Logo">
-		 <?php else : ?>
-      <!-- Logo -->
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>" class="hero-logo mb-3" alt="Website Logo">
-		 <?php endif; ?>
-			<!-- Page Title -->
 			<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 		</div>
 	</div>
