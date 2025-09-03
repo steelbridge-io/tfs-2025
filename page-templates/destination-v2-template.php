@@ -47,13 +47,6 @@ if (has_post_thumbnail()) : ?>
 
 			<!-- Overlay Content -->
 			<div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-
-			 <?php if( $dest_travel_logo !== ''	) : ?>
-        <img src="<?php echo $dest_travel_logo; ?>" class="hero-logo mb-3" alt="Website Logo">
-			 <?php else : ?>
-        <!-- Logo -->
-        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>" class="hero-logo mb-3" alt="Website Logo">
-			 <?php endif; ?>
 				<!-- Page Title -->
 				<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 			</div>
@@ -106,6 +99,7 @@ if (has_post_thumbnail()) : ?>
     </div>
 </section>
 
+<?php if ($travel_costs_image !== '') : ?>
 <section id="inclusions-section" class="container-fluid">
     <div class="container">
         <div class="row h-100">
@@ -113,7 +107,7 @@ if (has_post_thumbnail()) : ?>
                 <img class="img-fluid inclusions-image w-100 " src="<?php echo $travel_costs_image; ?>" alt="The
                 Fly Shop Travel Image" style="object-fit: cover;">
             </div>
-            <div class="col-md-8 d-flex">
+            <div class="col-md-8 d-flex inclusions-content-wrapper">
                 <div class="inclusions-content d-flex flex-column justify-content-center">
                     <h2><?php echo $feature_1_title ?></h2>
                     <?php
@@ -127,8 +121,29 @@ if (has_post_thumbnail()) : ?>
         </div>
     </div>
 </section>
+<?php else: ?>
+ <section id="inclusions-section" class="container-fluid">
+  <div class="container">
+   <div class="row h-100">
+    <div class="col-md-12">
+     <div class="inclusions-content">
+      <h2><?php echo $feature_1_title ?></h2>
+			<?php
+			echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+			echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
+			echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
+			echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+			?>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+<?php endif; ?>
+
 
 <section id="destination-features" class="container-fluid">
+    <?php if ($travel_seasons_image !== '') : ?>
     <div class="container">
         <div class="row">
             <div class="col-md-6 feature-image">
@@ -153,77 +168,178 @@ if (has_post_thumbnail()) : ?>
         </div>
     </div>
 
-    <div class="container">
-        <div class="row flex-row-reverse">
-            <div class="col-md-6 feature-image">
-                <img class="img-fluid" src="<?php echo $feature_3_gettingto_image; ?>" alt="The Fly Shop Travel Image">
-                <div id="gettingToReadmore" class="readmore-info">
-                    <div class="overlay-header">
-                        <h3>Getting There Details</h3>
-                        <button class="close-overlay">&times;</button>
-                    </div>
-                    <div class="overlay-content">
-                        <p><?php echo $feature_3_get_to_readmore ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 feature-content">
-                <h2><?php echo $feature_3_get_to_title ?></h2>
-                <?php
-                echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
-                echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
-                ?>
-            </div>
+		<?php else: ?>
+     <div class="container">
+      <div class="row seasons-row">
+       <div class="col-12 feature-text seasons-readmore" id="seasonsReadmoreContainer">
+        <div class="seasons-text-content">
+         <div class="text-header">
+          <h3>Seasons Details</h3>
+          <button class="close-text">&times;</button>
+         </div>
+         <div class="text-content">
+          <p><?php echo $feature_2_seasons_readmore ?></p>
+         </div>
         </div>
-    </div>
+       </div>
+       <div class="col-12 feature-content seasons-content">
+        <h2><?php echo $feature_2_seasons_title ?></h2>
+				<?php
+				echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+				echo '<button type="button" class="btn destination btn-tfs seasons-expand-btn">Read more...</button>';
+				?>
+       </div>
+      </div>
+     </div>
+		<?php endif; ?>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 feature-image">
-                <img class="img-fluid" src="<?php echo $feature_4_lodging_image; ?>" alt="The Fly Shop Travel Image">
-                <div id="lodgingReadmore" class="readmore-info">
-                    <div class="overlay-header">
-                        <h3>Lodging Details</h3>
-                        <button class="close-overlay">&times;</button>
-                    </div>
-                    <div class="overlay-content">
-                        <p><?php echo $feature_4_lodging_readmore ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 feature-content">
-                <h2><?php echo $feature_4_lodging_title ?></h2>
-                <?php
-                echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
-                echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
-                ?>
-            </div>
-        </div>
-    </div>
 
-    <div class="container">
-        <div class="row flex-row-reverse">
-            <div class="col-md-6 feature-image">
-                <img class="img-fluid" src="<?php echo $feature_5_angling_image; ?>" alt="The Fly Shop Travel Image">
-                <div id="anglingAtdestination" class="readmore-info">
-                    <div class="overlay-header">
-                        <h3>Getting There Details</h3>
-                        <button class="close-overlay">&times;</button>
-                    </div>
-                    <div class="overlay-content">
-                        <p><?php echo $feature_5_angling_readmore ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 feature-content">
-                <h2><?php echo $feature_5_angling_title ?></h2>
-                <?php
-                echo '<div><p>' . $feature_5_angling_content . '</p></div>';
-                echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
-                ?>
-            </div>
-        </div>
+ <?php if ($feature_3_gettingto_image !== '') : ?>
+  <div class="container">
+   <div class="row flex-row-reverse">
+    <div class="col-md-6 feature-image">
+     <img class="img-fluid" src="<?php echo $feature_3_gettingto_image; ?>" alt="The Fly Shop Travel Image">
+     <div id="gettingToReadmore" class="readmore-info">
+      <div class="overlay-header">
+       <h3>Getting There Details</h3>
+       <button class="close-overlay">&times;</button>
+      </div>
+      <div class="overlay-content">
+       <p><?php echo $feature_3_get_to_readmore ?></p>
+      </div>
+     </div>
     </div>
+    <div class="col-md-6 feature-content">
+     <h2><?php echo $feature_3_get_to_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
+		 echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php else: ?>
+  <div class="container">
+   <div class="row getting-there-row flex-row-reverse">
+    <div class="col-12 feature-text getting-there-readmore">
+     <div class="getting-there-text-content">
+      <div class="text-header">
+       <h3>Getting There Details</h3>
+       <button class="close-text">&times;</button>
+      </div>
+      <div class="text-content">
+       <p><?php echo $feature_3_get_to_readmore ?></p>
+      </div>
+     </div>
+    </div>
+    <div class="col-12 feature-content">
+     <h2><?php echo $feature_3_get_to_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
+		 echo '<button type="button" class="btn btn-tfs destination getting-there-expand-btn">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php endif; ?>
+
+ <?php if ($feature_4_lodging_image !== '') : ?>
+  <div class="container">
+   <div class="row">
+    <div class="col-md-6 feature-image">
+     <img class="img-fluid" src="<?php echo $feature_4_lodging_image; ?>" alt="The Fly Shop Travel Image">
+     <div id="lodgingReadmore" class="readmore-info">
+      <div class="overlay-header">
+       <h3>Lodging Details</h3>
+       <button class="close-overlay">&times;</button>
+      </div>
+      <div class="overlay-content">
+       <p><?php echo $feature_4_lodging_readmore ?></p>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-6 feature-content">
+     <h2><?php echo $feature_4_lodging_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
+		 echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php else: ?>
+  <div class="container">
+   <div class="row lodging-row">
+    <div class="col-12 feature-text lodging-readmore">
+     <div class="lodging-text-content">
+      <div class="text-header">
+       <h3>Lodging Details</h3>
+       <button class="close-text">&times;</button>
+      </div>
+      <div class="text-content">
+       <p><?php echo $feature_4_lodging_readmore ?></p>
+      </div>
+     </div>
+    </div>
+    <div class="col-12 feature-content">
+     <h2><?php echo $feature_4_lodging_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
+		 echo '<button type="button" class="btn destination btn-tfs lodging-expand-btn">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php endif; ?>
+
+ <?php if ($feature_5_angling_image !== '') : ?>
+  <div class="container">
+   <div class="row flex-row-reverse">
+    <div class="col-md-6 feature-image">
+     <img class="img-fluid" src="<?php echo $feature_5_angling_image; ?>" alt="The Fly Shop Travel Image">
+     <div id="anglingAtdestination" class="readmore-info">
+      <div class="overlay-header">
+       <h3>Angling Details</h3>
+       <button class="close-overlay">&times;</button>
+      </div>
+      <div class="overlay-content">
+       <p><?php echo $feature_5_angling_readmore ?></p>
+      </div>
+     </div>
+    </div>
+    <div class="col-md-6 feature-content">
+     <h2><?php echo $feature_5_angling_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_5_angling_content . '</p></div>';
+		 echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php else: ?>
+  <div class="container">
+   <div class="row angling-row flex-row-reverse">
+    <div class="col-12 feature-text angling-readmore">
+     <div class="angling-text-content">
+      <div class="text-header">
+       <h3>Angling Details</h3>
+       <button class="close-text">&times;</button>
+      </div>
+      <div class="text-content">
+       <p><?php echo $feature_5_angling_readmore ?></p>
+      </div>
+     </div>
+    </div>
+    <div class="col-12 feature-content">
+     <h2><?php echo $feature_5_angling_title ?></h2>
+		 <?php
+		 echo '<div><p>' . $feature_5_angling_content . '</p></div>';
+		 echo '<button type="button" class="btn btn-tfs destination angling-expand-btn">Read more...</button>';
+		 ?>
+    </div>
+   </div>
+  </div>
+ <?php endif; ?>
 </section>
 
 <section id="set-the-hook-destination-template" class="mt-5 mb-5">
@@ -250,7 +366,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="0"><img class="destination-img" src="'
-                            . $additional_info_image1
+                            . $additional_travel_image1
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal"  alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -269,7 +385,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="1"><img class="destination-img" src="'
-                            . $additional_info_image2
+                            . $additional_travel_image2
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -288,7 +404,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="2"><img class="destination-img" src="'
-                            . $additional_info_image3
+                            . $additional_travel_image3
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -307,7 +423,7 @@ if (has_post_thumbnail()) : ?>
                             '<div class="thumbnail">' .
 
                             '<a href="#travel-carousel" data-slide-to="3"><img class="destination-img" src="'
-                            . $additional_info_image4
+                            . $additional_travel_image4
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -332,7 +448,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="4"><img class="destination-img" src="'
-                            . $additional_info_image5
+                            . $additional_travel_image5
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -351,7 +467,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="5"><img class="destination-img" src="'
-                            . $additional_info_image6
+                            . $additional_travel_image6
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -370,7 +486,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="6"><img class="destination-img" src="'
-                            . $additional_info_image7
+                            . $additional_travel_image7
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',
@@ -389,7 +505,7 @@ if (has_post_thumbnail()) : ?>
                         '<div class="thumbnail">',
 
                             '<a href="#travel-carousel" data-slide-to="7"><img class="destination-img" src="'
-                            . $additional_info_image8
+                            . $additional_travel_image8
                             . '" data-bs-toggle="modal" data-bs-target="#travelTableModal" alt="The Fly Shop Images"></a>',
 
                         '</div>',

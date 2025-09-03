@@ -266,114 +266,74 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /**
- * Universal Expanding Container System
- * Handles all expanding container functionality with a generic approach
+ * Added for expanding container
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Define all container types and their selectors
-    const containerTypes = [
-        {
-            name: 'seasons',
-            rowSelector: '.seasons-row',
-            expandBtnSelector: '.seasons-expand-btn',
-            closeBtnSelector: '.seasons-row .close-text',
-            contentSelector: '.seasons-content',
-            readmoreSelector: '.seasons-readmore'
-        },
-        {
-            name: 'getting-there',
-            rowSelector: '.getting-there-row',
-            expandBtnSelector: '.getting-there-expand-btn',
-            closeBtnSelector: '.getting-there-row .close-text',
-            contentSelector: '.getting-there-row .feature-content',
-            readmoreSelector: '.getting-there-readmore'
-        },
-        {
-            name: 'lodging',
-            rowSelector: '.lodging-row',
-            expandBtnSelector: '.lodging-expand-btn',
-            closeBtnSelector: '.lodging-row .close-text',
-            contentSelector: '.lodging-row .feature-content',
-            readmoreSelector: '.lodging-readmore'
-        },
-        {
-            name: 'angling',
-            rowSelector: '.angling-row',
-            expandBtnSelector: '.angling-expand-btn',
-            closeBtnSelector: '.angling-row .close-text',
-            contentSelector: '.angling-row .feature-content',
-            readmoreSelector: '.angling-readmore'
+    const seasonsSection = document.querySelector('.seasons-row');
+
+    if (seasonsSection) {
+        const readMoreBtn = seasonsSection.querySelector('.seasons-expand-btn');
+        const closeBtn = seasonsSection.querySelector('.close-text');
+        const seasonsContent = seasonsSection.querySelector('.seasons-content');
+        const seasonsReadmore = seasonsSection.querySelector('.seasons-readmore');
+
+        console.log('Seasons elements found:', {
+            section: !!seasonsSection,
+            readMoreBtn: !!readMoreBtn,
+            closeBtn: !!closeBtn,
+            seasonsContent: !!seasonsContent,
+            seasonsReadmore: !!seasonsReadmore
+        });
+
+        function matchHeights() {
+            if (seasonsContent && seasonsReadmore) {
+                // Get the actual height of the seasons-content
+                const contentHeight = seasonsContent.offsetHeight;
+                console.log('Setting seasons-readmore height to:', contentHeight + 'px');
+
+                // Set the seasons-readmore to exactly the same height
+                seasonsReadmore.style.height = contentHeight + 'px';
+            }
         }
-    ];
 
-    // Initialize each container type
-    containerTypes.forEach(container => {
-        const section = document.querySelector(container.rowSelector);
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Expanding seasons row');
 
-        if (section) {
-            const readMoreBtn = document.querySelector(container.expandBtnSelector);
-            const closeBtn = document.querySelector(container.closeBtnSelector);
-            const contentElement = document.querySelector(container.contentSelector);
-            const readmoreElement = document.querySelector(container.readmoreSelector);
+                seasonsSection.classList.add('expanded');
 
-            console.log(`${container.name} elements found:`, {
-                section: !!section,
-                readMoreBtn: !!readMoreBtn,
-                closeBtn: !!closeBtn,
-                contentElement: !!contentElement,
-                readmoreElement: !!readmoreElement
-            });
-
-            function matchHeights() {
-                if (contentElement && readmoreElement) {
-                    // Get the actual height of the content element
-                    const contentHeight = contentElement.offsetHeight;
-                    console.log(`Setting ${container.name}-readmore height to:`, contentHeight + 'px');
-
-                    // Set the readmore to exactly the same height
-                    readmoreElement.style.height = contentHeight + 'px';
-                }
-            }
-
-            if (readMoreBtn) {
-                readMoreBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log(`Expanding ${container.name} row`);
-
-                    section.classList.add('expanded');
-
-                    // Wait for the transition to complete, then match heights
-                    setTimeout(() => {
-                        matchHeights();
-                    }, 300); // Match the CSS transition duration
-                });
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log(`Collapsing ${container.name} row`);
-
-                    // Reset height before collapsing
-                    if (readmoreElement) {
-                        readmoreElement.style.height = '';
-                    }
-
-                    section.classList.remove('expanded');
-                });
-            }
-
-            // Also match heights on window resize (if expanded)
-            window.addEventListener('resize', function() {
-                if (section.classList.contains('expanded')) {
-                    setTimeout(() => {
-                        matchHeights();
-                    }, 100);
-                }
+                // Wait for the transition to complete, then match heights
+                setTimeout(() => {
+                    matchHeights();
+                }, 300); // Match the CSS transition duration
             });
         }
-    });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('Collapsing seasons row');
+
+                // Reset height before collapsing
+                if (seasonsReadmore) {
+                    seasonsReadmore.style.height = '';
+                }
+
+                seasonsSection.classList.remove('expanded');
+            });
+        }
+
+        // Also match heights on window resize (if expanded)
+        window.addEventListener('resize', function() {
+            if (seasonsSection.classList.contains('expanded')) {
+                setTimeout(() => {
+                    matchHeights();
+                }, 100);
+            }
+        });
+    }
 });

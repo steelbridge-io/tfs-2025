@@ -1,6 +1,7 @@
 /* Destination V2 Template Styles */
 
 #inclusions-section {
+  padding: 1.618em 0;
   .container {
     .inclusions-content {
       background-color: $tfs__light-blue;
@@ -13,9 +14,13 @@
       box-shadow: $tfs__box-shadow;
     }
   }
+
+  @media (min-width: 767.99px) {
+    .inclusions-content-wrapper {
+      padding-right: 0;
+    }
+  }
 }
-
-
 
 /* Keyframe animations for the chevrons */
 @keyframes moveRightChevron {
@@ -135,7 +140,7 @@
   }
 
   #destination-features {
-    margin: 8em 0;
+    margin: 1.618em 0;
 
     .feature-image {
       position: relative;

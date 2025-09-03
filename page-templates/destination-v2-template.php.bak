@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 /*
-Template Name: Destination Template
+Template Name: Destination V2 Template
 Template Post Type: post, page, travel_cpt, lower48, guide_service
 */
 
@@ -9,10 +9,6 @@ Template Post Type: post, page, travel_cpt, lower48, guide_service
 
 if (get_post_type() === 'travel_cpt') {
     get_header('travel-header');
-} elseif (get_post_type() === 'lower48') {
-    get_header('lower48');
-} elseif (get_post_type() === 'lower48blog') {
-    get_header('lower48-blog');
 } else {
     get_header('destination-header');
 }
@@ -23,7 +19,7 @@ if (get_post_type() === 'travel_cpt') {
  */
 
 
-include_once( 'post-meta/post-meta-travel.php' );
+include_once( 'post-meta/post-meta-travel.php' ); // Includes all the custom meta-data
  ?>
 
 <?php
@@ -53,12 +49,11 @@ if (has_post_thumbnail()) : ?>
 			<div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
 
 			 <?php if( $dest_travel_logo !== ''	) : ?>
-        <!-- <img src="<?php //echo $dest_travel_logo; ?>" class="hero-logo mb-3" alt="Website Logo"> -->
+        <img src="<?php echo $dest_travel_logo; ?>" class="hero-logo mb-3" alt="Website Logo">
 			 <?php else : ?>
         <!-- Logo -->
-        <!-- <img src="<?php //echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>" class="hero-logo mb-3" alt="Website Logo"> -->
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>" class="hero-logo mb-3" alt="Website Logo">
 			 <?php endif; ?>
-
 				<!-- Page Title -->
 				<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 			</div>
@@ -111,299 +106,172 @@ if (has_post_thumbnail()) : ?>
     </div>
 </section>
 
-<section id="feature-grid-destination-template">
-    <div class="container my-5">
-        <div class="row equal-height-row">
-            <!-- Left Column -->
-            <div class="col-md-8">
-                <div id="scrollable-content" class="pink-background scrollable-content">
-                    <div class="card">
-                    <img id="display-image" src="" alt="Item Image" class="card-img-top">
-                    <div class="card-body">
-                    <p id="display-content"></p>
-                    </div>
-                    </div>
-                </div>
+<?php if ($travel_costs_image !== '') : ?>
+<section id="inclusions-section" class="container-fluid">
+    <div class="container">
+        <div class="row h-100">
+            <div class="col-md-4 d-flex featured-image">
+                <img class="img-fluid inclusions-image w-100 " src="<?php echo $travel_costs_image; ?>" alt="The
+                Fly Shop Travel Image" style="object-fit: cover;">
             </div>
-            <!-- Right Column -->
-            <div id="col4" class="col-md-4">
-                <div class="row">
-                    <!-- ITEM ONE -->
-                    <div class="item"
-                         data-image="<?php echo esc_url($feature_1_image); ?>"
-                         data-content="<?php
-                        $content  = '<h3>' .  $feature_1_title . '</h3>';
-                        $content .= '<b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '<br><br>';
-                        $content .= '<b>Seasons:</b>&nbsp;' . $feature_1_noninclusions_textarea . '<br><br>';
-                        $content .= '<b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea;
-
-                        echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
-
-                        <!--<div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
-                            <i class="bi bi-code"></i>
-                        </div>-->
-                        <h3 class="label"><?php echo $feature_1_title; ?></h3>
-                        <div class="feature-textarea"><?php echo $feature_1_cost_textarea; ?></div>
-                    </div>
-                    <!-- ITEM TWO -->
-                    <div class="item" data-image="<?php echo $feature_2_image; ?>"
-                         data-content="<?php
-                         $content = '<h3>' . $feature_2_seasons_title . '</h3>';
-                         $content .= $feature_2_seasons_readmore;
-                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
-                         <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
-                            <i class="bi bi-gear"></i>
-                        </div> -->
-                        <h3 class="label"><?php echo $feature_2_seasons_title; ?></h3>
-                        <div class="feature-textarea"><?php echo $feature_2_seasons_content; ?></div>
-                    </div>
-                    <!-- ITEM THREE -->
-                    <div class="item"
-                         data-image="<?php echo $feature_3_gettingto_image; ?>"
-                         data-content="<?php
-                         $content = '<h3>' . $feature_3_get_to_title . '</h3>';
-                         $content .= $feature_3_get_to_readmore;
-                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
-                         <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
-                            <i class="bi bi-file-earmark-text"></i>
-                        </div> -->
-                        <h3 class="label"><?php echo $feature_3_get_to_title; ?></h3>
-                        <div class="feature-textarea"><?php echo $feature_3_get_to_content; ?></div>
-                    </div>
-                    <!-- ITEM FOUR -->
-                    <div class="item"
-                         data-image="<?php echo $feature_4_lodging_image; ?>"
-                         data-content="<?php
-                         $content = '<h3>' . $feature_4_lodging_title . '</h3>';
-                         $content .= $feature_4_lodging_readmore;
-                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
-                         <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
-                            <i class="bi bi-book"></i>
-                        </div> -->
-                        <h3 class="label"><?php echo $feature_4_lodging_title; ?></h3>
-                        <div class="feature-textarea"><?php echo $feature_4_lodging_content; ?></div>
-                    </div>
-                    <!-- ITEM FIVE -->
-                    <div class="item"
-                         data-image="<?php echo $feature_5_angling_image; ?>"
-                         data-content="<?php
-                         $content = '<h3>' . $feature_5_angling_title . '</h3>';
-                         $content .= $feature_5_angling_readmore;
-                         echo htmlspecialchars($content, ENT_QUOTES, 'UTF-8'); ?>">
-                         <!-- <div class="icon rounded-circle bg-light d-flex justify-content-center align-items-center mb-2">
-                            <i class="bi bi-book"></i>
-                        </div> -->
-                        <h3 class="label"><?php echo $feature_5_angling_title; ?></h3>
-                        <div class="feature-textarea"><?php echo esc_attr($feature_5_angling_content); ?></div>
-                    </div>
+            <div class="col-md-8 d-flex">
+                <div class="inclusions-content d-flex flex-column justify-content-center">
+                    <h2><?php echo $feature_1_title ?></h2>
+                    <?php
+                    echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+                    echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
+                    echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
+                    echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-<section id="featurette-section-detination-template">
-<div class="container">
-	<!-- Featurette One -->
-	<div class="row featurette">
-		<div class="col-md-7">
-			<h2 class="featurette-heading"><?php echo $feature_1_title; ?></h2>
-			<p class="lead"><?php echo $feature_1_cost_textarea; ?></p>
-						<div id="inclusions">
-						<div class="destination-modal-btn">
-						 <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal"
-										 data-bs-target="#inclusionsModal">
-							Inclusions<span class="arrow-down"></span>
-						 </button>
-						</div>
-					 <div class="destination-modal-btn">
-						<button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#noninclusionsModal">
-						 Non-Inclusions<span class="arrow-down"></span>
-						</button>
-					 </div>
-					 <div class="destination-modal-btn">
-						<button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#travelinsuranceModal">
-						 Travel Insurance<span class="arrow-down"></span>
-						</button>
-					 </div>
-						</div>
-					 </div>
-
-
-		<div class="col-md-5">
-				<!-- Costs Video/Text/Image Option -->
-				<?php
-				$video_feat_one = get_post_meta( get_the_ID(),
-					'feature-1-video',
-					TRUE );
-				if ( ! empty( $video_feat_one ) ) :?>
-					<div class="embed-responsive embed-responsive-16by9 video-poster">
-						<video id="vid" playsInline muted controls
-						       preload="auto"
-						       poster="<?php echo $feature_1_image ?>">
-							<source src="<?php echo $video_feat_one; ?>"
-							        type="video/mp4">
-						</video>
-					</div>
-				<?php else: ?>
-					<img class="destination-img" src="<?php echo $feature_1_image; ?>"
-					     alt="The Fly Shop Travel Image"/>
-				<?php endif; ?>
-		</div>
-	</div>
-	<!-- /Featurette One -->
-    <hr class="featurette-divider">
-	<!-- Featurette Two -->
-	<div class="row featurette">
-		<div class="col-md-7 order-md-2">
-			<h2 class="featurette-heading"><?php echo $feature_2_seasons_title; ?></h2>
-			<p class="lead"><?php echo $feature_2_seasons_content; ?></p>
-			<div class="destination-modal-btn">
-       <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#seasonsModal">
-        Read more...<span class="arrow-down"></span>
-       </button>
-			</div>
-    </div>
-
-		<div class="col-md-5 order-md-1 mt-5">
-			<!-- Seasons Video/Text/Image Option -->
+<?php else: ?>
+ <section id="inclusions-section" class="container-fluid">
+  <div class="container">
+   <div class="row h-100">
+    <div class="col-md-12">
+     <div class="inclusions-content">
+      <h2><?php echo $feature_1_title ?></h2>
 			<?php
-			$video_feat_two = get_post_meta( get_the_ID(),
-				'feature-2-video',
-				TRUE );
-			if ( ! empty( $video_feat_two ) ) :?>
-				<div class="embed-responsive embed-responsive-16by9 video-poster">
-					<video id="vid" playsInline muted controls
-					       preload="auto"
-					       poster="<?php echo $feature_2_image ?>">
-						<source src="<?php echo $video_feat_two; ?>"
-						        type="video/mp4">
-					</video>
-				</div>
-			<?php else: ?>
-				<img class="destination-img" src="<?php echo $feature_2_image; ?>"
-				     alt="The Fly Shop Travel Image"/>
-			<?php endif; ?>
-		</div>
-	</div>
-	<!-- /Featurette Two -->
+			echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+			echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
+			echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
+			echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+			?>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+<?php endif; ?>
 
-     <hr class="featurette-divider">
 
-	<!-- Featurette Three -->
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo $feature_3_get_to_title; ?></h2>
-            <p class="lead"><?php echo $feature_3_get_to_content; ?></p>
-
-            <div class="destination-modal-btn">
-             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#gettingtoModal">
-              Read more...<span class="arrow-down"></span>
-             </button>
+<section id="destination-features" class="container-fluid">
+    <?php if ($travel_seasons_image !== '') : ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 feature-image">
+                <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
+                <div id="seasonsReadmore" class="readmore-info">
+                    <div class="overlay-header">
+                        <h3>Seasons Details</h3>
+                        <button class="close-overlay">&times;</button>
+                    </div>
+                    <div class="overlay-content">
+                        <p><?php echo $feature_2_seasons_readmore ?></p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-5 mt-5">
-            <!-- Getting To Video/Text/Image Option -->
-	        <?php
-	        $video_feat_three = get_post_meta( get_the_ID(),
-		        'feature-3-video',
-		        TRUE );
-
-	        if ( ! empty( $video_feat_three ) ) :?>
-             <div class="embed-responsive embed-responsive-16by9 video-poster">
-                 <video id="vid" playsInline muted controls
-                        preload="auto"
-                        poster="<?php echo $feature_3_gettingto_image; ?>">
-                     <source src="<?php echo $video_feat_three; ?>"
-                             type="video/mp4">
-                 </video>
-             </div>
-	        <?php else: ?>
-             <img class="destination-img" src="<?php echo $feature_3_gettingto_image; ?>"
-                  alt="The Fly Shop Travel Image"/>
-	        <?php endif; ?>
-
+            <div class="col-md-6 feature-content">
+                <h2><?php echo $feature_2_seasons_title ?></h2>
+                <?php
+                echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+                echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
+                ?>
+            </div>
         </div>
     </div>
 
-	<!-- /Featurette Three -->
-
-    <hr class="featurette-divider">
-
-	<!-- Featurette Four -->
-    <div class="row featurette">
-        <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading"><?php echo $feature_4_lodging_title; ?></h2>
-            <p class="lead"><?php echo $feature_4_lodging_content; ?></p>
-            <div class="destination-modal-btn">
-             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#lodgingModal">
-              Read more...<span class="arrow-down"></span>
-             </button>
-            </div>
+		<?php else: ?>
+     <div class="container">
+      <div class="row seasons-row">
+       <div class="col-12 feature-text seasons-readmore" id="seasonsReadmoreContainer">
+        <div class="seasons-text-content">
+         <div class="text-header">
+          <h3>Seasons Details</h3>
+          <button class="close-text">&times;</button>
+         </div>
+         <div class="text-content">
+          <p><?php echo $feature_2_seasons_readmore ?></p>
+         </div>
         </div>
-        <div class="col-md-5 order-md-1 mt-5">
-            <!-- Lodging Video/Text/Image Option -->
-	        <?php
-	        $video_feat_four = get_post_meta( get_the_ID(),
-		        'feature-4-video',
-		        TRUE );
-	        if ( ! empty( $video_feat_four ) ) :?>
-             <div class="embed-responsive embed-responsive-16by9 video-poster">
-                 <video id="vid" playsInline muted controls
-                        preload="auto"
-                        poster="<?php echo $feature_4_lodging_image; ?>">
-                     <source src="<?php echo $video_feat_four; ?>"
-                             type="video/mp4">
-                 </video>
-             </div>
-	        <?php else: ?>
-             <img class="destination-img" src="<?php echo $feature_4_lodging_image; ?>"
-                  alt="The Fly Shop Travel Image"/>
-	        <?php endif; ?>
+       </div>
+       <div class="col-12 feature-content seasons-content">
+        <h2><?php echo $feature_2_seasons_title ?></h2>
+				<?php
+				echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+				echo '<button type="button" class="btn destination btn-tfs seasons-expand-btn">Read more...</button>';
+				?>
+       </div>
+      </div>
+     </div>
+		<?php endif; ?>
+
+
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-md-6 feature-image">
+                <img class="img-fluid" src="<?php echo $feature_3_gettingto_image; ?>" alt="The Fly Shop Travel Image">
+                <div id="gettingToReadmore" class="readmore-info">
+                    <div class="overlay-header">
+                        <h3>Getting There Details</h3>
+                        <button class="close-overlay">&times;</button>
+                    </div>
+                    <div class="overlay-content">
+                        <p><?php echo $feature_3_get_to_readmore ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 feature-content">
+                <h2><?php echo $feature_3_get_to_title ?></h2>
+                <?php
+                echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
+                echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
+                ?>
+            </div>
         </div>
     </div>
 
-	<!-- /Featurette Four -->
-
-    <hr class="featurette-divider">
-
-    <!-- Featurette Five -->
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h2 class="featurette-heading"><?php echo $feature_5_angling_title; ?></h2>
-            <p class="lead"><?php echo $feature_5_angling_content; ?></p>
-
-            <div class="destination-collapse-btn">
-             <button type="button" class="btn destination btn-tfs" data-bs-toggle="modal" data-bs-target="#fishingModal">
-              Read more...<span class="arrow-down"></span>
-             </button>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 feature-image">
+                <img class="img-fluid" src="<?php echo $feature_4_lodging_image; ?>" alt="The Fly Shop Travel Image">
+                <div id="lodgingReadmore" class="readmore-info">
+                    <div class="overlay-header">
+                        <h3>Lodging Details</h3>
+                        <button class="close-overlay">&times;</button>
+                    </div>
+                    <div class="overlay-content">
+                        <p><?php echo $feature_4_lodging_readmore ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 feature-content">
+                <h2><?php echo $feature_4_lodging_title ?></h2>
+                <?php
+                echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
+                echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
+                ?>
             </div>
         </div>
-        <div class="col-md-5 mt-5">
-            <!-- Fishing Video/Text/Image Option -->
+    </div>
 
-	        <?php // Checkbox to activate video or image
-	        $video_feat_five = get_post_meta( get_the_ID(),
-		        'feature-5-video',
-		        TRUE );
-	        if ( ! empty( $video_feat_five ) ) :?>
-
-             <div class="embed-responsive embed-responsive-16by9 video-poster">
-                 <video id="vid" playsInline muted controls
-                        preload="auto"
-                        poster="<?php echo $feature_5_angling_image ?>">
-                     <source src="<?php echo $video_feat_five; ?>"
-                             type="video/mp4">
-                 </video>
-             </div>
-	        <?php else: ?>
-             <img class="destination-img" src="<?php echo $feature_5_angling_image; ?>"
-                  alt="The Fly Shop Travel Image"/>
-	        <?php endif; ?>
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-md-6 feature-image">
+                <img class="img-fluid" src="<?php echo $feature_5_angling_image; ?>" alt="The Fly Shop Travel Image">
+                <div id="anglingAtdestination" class="readmore-info">
+                    <div class="overlay-header">
+                        <h3>Getting There Details</h3>
+                        <button class="close-overlay">&times;</button>
+                    </div>
+                    <div class="overlay-content">
+                        <p><?php echo $feature_5_angling_readmore ?></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 feature-content">
+                <h2><?php echo $feature_5_angling_title ?></h2>
+                <?php
+                echo '<div><p>' . $feature_5_angling_content . '</p></div>';
+                echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
+                ?>
+            </div>
         </div>
     </div>
-    <!-- /Featurette Five -->
-</div>
 </section>
 
 <section id="set-the-hook-destination-template" class="mt-5 mb-5">
