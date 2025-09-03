@@ -4477,6 +4477,9 @@ html {
 }
 
 /* Destination V2 Template Styles */
+#inclusions-section {
+  padding: 1.618em 0;
+}
 #inclusions-section .container .inclusions-content {
   background-color: #D9E6F9;
   padding: 1.618em;
@@ -4486,6 +4489,11 @@ html {
 }
 #inclusions-section .featured-image img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 767.99px) {
+  #inclusions-section .inclusions-content-wrapper {
+    padding-right: 0;
+  }
 }
 
 /* Keyframe animations for the chevrons */
@@ -4603,7 +4611,7 @@ html {
 .travel_cpt-template-destination-v2-template #destination-features,
 .page-template-destination-v2-template #destination-features,
 .post-template-destination-v2-template #destination-features {
-  margin: 8em 0;
+  margin: 1.618em 0;
 }
 .travel_cpt-template-destination-v2-template #destination-features .feature-image,
 .page-template-destination-v2-template #destination-features .feature-image,
@@ -5228,482 +5236,360 @@ html {
   }
 }
 
-/*
-.below-nav-logo-container {
-  position: fixed;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-  opacity: 1;
-  visibility: visible;
-
-  a {
-    position: relative;
-    display: block;
-  }
-
-  .tfs-nav-logo {
-    width: 350px;
-    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-
-    &.scroll {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transform: scale(0.95);
-    }
-
-    &.no-scroll {
-      position: relative;
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  &:hover {
-    .tfs-nav-logo.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .tfs-nav-logo.no-scroll {
-      opacity: 0;
-      transform: scale(1.05);
-    }
-  }
+/* Seasons Row - Expanding Container Functionality */
+.seasons-row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.navbar-brand {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-  pointer-events: none;
-
-  .tfs-nav-logo {
-    transition: all 0.4s ease;
-
-    &.scroll {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-
-    &.no-scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
+.seasons-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
 }
 
-.navbar.scrolled {
-  .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto;
-
-    .tfs-nav-logo.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .tfs-nav-logo.no-scroll {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-  }
-}
-
-.navbar.scrolled ~ .below-nav-logo-container {
-
-  top: 50px;
+.seasons-row .feature-text {
+  width: 0;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
-
-  .tfs-nav-logo {
-    width: 120px;
-
-    &.no-scroll {
-      opacity: 0;
-      transform: scale(0.8) rotate(-2deg);
-    }
-
-    &.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-}
-
-.navbar {
-  &.scroll-stage-1 ~ .below-nav-logo-container {
-    .tfs-nav-logo {
-      width: 280px;
-    }
-  }
-
-  &.scroll-stage-2 ~ .below-nav-logo-container {
-    top: 150px;
-    .tfs-nav-logo {
-      width: 200px;
-    }
-  }
-
-  &.scroll-stage-3 ~ .below-nav-logo-container {
-    top: 80px;
-    .tfs-nav-logo {
-      width: 140px;
-    }
-  }
-}
-
-@media (max-width: 991.98px) {
-  .below-nav-logo-container {
-    top: 120px;
-
-    .tfs-nav-logo {
-      width: 200px;
-    }
-  }
-
-  .navbar.scrolled ~ .below-nav-logo-container {
-    top: 40px;
-
-    .tfs-nav-logo {
-      width: 100px;
-    }
-  }
-
-  .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .below-nav-logo-container {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .below-nav-logo-container {
-    top: 100px;
-
-    .tfs-nav-logo {
-      width: 180px;
-    }
-  }
-}
-
-
-@keyframes logoColorTransition {
-  0% {
-    opacity: 0;
-    filter: brightness(1.2);
-  }
-  50% {
-    opacity: 0.5;
-    filter: brightness(1.1);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1);
-  }
-}
-
-.navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
-  animation: logoColorTransition 0.8s ease-out;
-}
-
- */
-/* Logo positioning and transitions */
-.below-nav-logo-container {
-  position: fixed;
-  top: 150px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-  visibility: visible;
-  /* Hover behavior for below-nav logo */
-}
-.below-nav-logo-container a {
-  position: relative;
-  display: block;
-}
-.below-nav-logo-container .tfs-nav-logo {
-  width: 250px;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.below-nav-logo-container .tfs-nav-logo.scroll {
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  /* KEY CHANGE: Completely remove from document flow when hidden */
   position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  transform: scale(0.95);
-}
-.below-nav-logo-container .tfs-nav-logo.no-scroll {
-  position: relative;
-  opacity: 1;
-  transform: scale(1);
-}
-.below-nav-logo-container:hover .tfs-nav-logo.scroll {
-  opacity: 1;
-  transform: scale(1);
-}
-.below-nav-logo-container:hover .tfs-nav-logo.no-scroll {
-  opacity: 0;
-  transform: scale(1.05);
+  height: 0;
+  z-index: -1;
 }
 
-/* Initially hide the navbar logo completely */
-.navbar-brand {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-.navbar-brand .tfs-nav-logo {
-  transition: all 0.4s ease;
-}
-.navbar-brand .tfs-nav-logo.scroll {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.navbar-brand .tfs-nav-logo.no-scroll {
-  opacity: 1;
-  transform: scale(1);
+/* Expanded state - both containers take 50% width */
+.seasons-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
 }
 
-/* Enhanced scroll detection with multiple stages */
-.navbar {
-  /* Final scrolled state */
-}
-.navbar.scroll-stage-1 ~ .below-nav-logo-container {
-  /* Early scroll state - start shrinking and moving */
-  top: 180px;
-}
-.navbar.scroll-stage-1 ~ .below-nav-logo-container .tfs-nav-logo {
-  width: 300px;
-}
-.navbar.scroll-stage-2 ~ .below-nav-logo-container {
-  /* Mid scroll state - more shrinking, more moving */
-  top: 140px;
-}
-.navbar.scroll-stage-2 ~ .below-nav-logo-container .tfs-nav-logo {
-  width: 220px;
-}
-.navbar.scroll-stage-3 ~ .below-nav-logo-container {
-  /* Near final state - almost at navbar position */
-  top: 90px;
-}
-.navbar.scroll-stage-3 ~ .below-nav-logo-container .tfs-nav-logo {
-  width: 160px;
-}
-.navbar.scrolled {
-  /* Show navbar logo when scrolled */
-}
-.navbar.scrolled .navbar-brand {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto;
-}
-.navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
+.seasons-row.expanded .feature-text {
+  width: 50%;
   opacity: 1;
-  transform: scale(1);
-}
-.navbar.scrolled .navbar-brand .tfs-nav-logo.no-scroll {
-  opacity: 0;
-  transform: scale(0.9);
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  /* KEY CHANGE: Bring back into normal document flow when expanded */
+  position: static;
+  height: auto;
+  z-index: auto;
 }
 
-/* Animate below-nav logo during final scroll */
-.navbar.scrolled ~ .below-nav-logo-container {
-  /* Move to navbar position and complete transition */
-  top: 50px;
+/* The readmore container - height will be set by JavaScript */
+.seasons-readmore {
+  /* Height will be dynamically set to match seasons-content */
+  overflow: hidden;
+}
+
+/* Simple text content container */
+.seasons-text-content {
+  height: 100%; /* Fill the seasons-readmore container */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.seasons-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* This is the scrollable area */
+.seasons-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.seasons-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Getting There Row - Expanding Container Functionality */
+.getting-there-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.getting-there-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.getting-there-row .feature-text {
+  width: 0;
   opacity: 0;
   visibility: hidden;
-  pointer-events: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
 }
-.navbar.scrolled ~ .below-nav-logo-container .tfs-nav-logo {
-  width: 120px;
+
+.getting-there-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
 }
-.navbar.scrolled ~ .below-nav-logo-container .tfs-nav-logo.no-scroll {
-  opacity: 0;
-  transform: scale(0.8) rotate(-2deg);
-}
-.navbar.scrolled ~ .below-nav-logo-container .tfs-nav-logo.scroll {
+
+.getting-there-row.expanded .feature-text {
+  width: 50%;
   opacity: 1;
-  transform: scale(1);
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
 }
 
-/* Add visual feedback for the parting navigation */
-@media (min-width: 992px) {
-  .navbar {
-    /* Show the visual separators during scroll stages */
-    /* Hide separators when fully scrolled */
-  }
-  .navbar .left-menu,
-  .navbar .right-menu {
-    /* Add subtle visual cue that menus are moving */
-  }
-  .navbar .left-menu::after,
-  .navbar .right-menu::after {
-    content: "";
-    position: absolute;
-    width: 1px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    top: 50%;
-    transform: translateY(-50%);
-    transition: opacity 0.3s ease;
-    opacity: 0;
-  }
-  .navbar .left-menu::after {
-    right: 0;
-  }
-  .navbar .right-menu::after {
-    left: 0;
-  }
-  .navbar.scroll-stage-2 .left-menu::after,
-  .navbar.scroll-stage-2 .right-menu::after, .navbar.scroll-stage-3 .left-menu::after,
-  .navbar.scroll-stage-3 .right-menu::after {
-    opacity: 1;
-  }
-  .navbar.scrolled .left-menu::after,
-  .navbar.scrolled .right-menu::after {
-    opacity: 0;
-  }
+.getting-there-readmore {
+  overflow: hidden;
 }
-/* Responsive adjustments */
-@media (max-width: 991.98px) {
-  .below-nav-logo-container {
-    top: 120px;
-  }
-  .below-nav-logo-container .tfs-nav-logo {
-    width: 200px;
-  }
-  .navbar.scrolled ~ .below-nav-logo-container {
-    top: 40px;
-  }
-  .navbar.scrolled ~ .below-nav-logo-container .tfs-nav-logo {
-    width: 100px;
-  }
-  /* On mobile, always show the navbar logo and hide below-nav logo */
-  .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-  .below-nav-logo-container {
-    display: none;
-  }
+
+.getting-there-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
 }
+
+.getting-there-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.getting-there-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.getting-there-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Lodging Row - Expanding Container Functionality */
+.lodging-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lodging-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.lodging-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.lodging-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.lodging-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.lodging-readmore {
+  overflow: hidden;
+}
+
+.lodging-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.lodging-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lodging-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.lodging-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Angling Row - Expanding Container Functionality */
+.angling-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.angling-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.angling-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.angling-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.angling-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.angling-readmore {
+  overflow: hidden;
+}
+
+.angling-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.angling-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.angling-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.angling-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Responsive adjustments for all expanding containers */
 @media (max-width: 768px) {
-  .below-nav-logo-container {
-    top: 100px;
+  .seasons-row.expanded,
+  .getting-there-row.expanded,
+  .lodging-row.expanded,
+  .angling-row.expanded {
+    flex-direction: column;
   }
-  .below-nav-logo-container .tfs-nav-logo {
-    width: 180px;
+  .seasons-row.expanded .feature-content,
+  .seasons-row.expanded .feature-text,
+  .getting-there-row.expanded .feature-content,
+  .getting-there-row.expanded .feature-text,
+  .lodging-row.expanded .feature-content,
+  .lodging-row.expanded .feature-text,
+  .angling-row.expanded .feature-content,
+  .angling-row.expanded .feature-text {
+    width: 100% !important;
   }
-}
-/* Add a subtle fade-in for the red logo in navbar */
-@keyframes logoColorTransition {
-  0% {
-    opacity: 0;
-    filter: brightness(1.2);
-  }
-  50% {
-    opacity: 0.5;
-    filter: brightness(1.1);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1);
-  }
-}
-.navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
-  animation: logoColorTransition 0.8s ease-out;
-}
-
-/* Centered Logo Navigation - Core Layout */
-@media (min-width: 992px) {
-  #site-navigation {
-    /* Stage 1: Start creating space */
-    /* Stage 2: More spacing */
-    /* Stage 3: Almost full spacing */
-    /* Final scrolled state: Full spacing for logo */
-  }
-  #site-navigation .container {
-    display: flex;
-    align-items: center;
-    position: relative;
-  }
-  #site-navigation .container .navbar-collapse .left-menu:empty,
-  #site-navigation .container .navbar-collapse .right-menu:empty {
-    padding: 0;
-  }
-  #site-navigation .container .navbar-brand {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    margin: 0;
-  }
-  #site-navigation .container .navbar-brand .tfs-nav-logo {
-    width: 120px;
-    transition: width 0.3s ease;
-  }
-  #site-navigation .container .navbar-collapse {
-    flex: 1;
-    display: flex;
-    /* Initially center both menus with no gap */
-  }
-  #site-navigation .container .navbar-collapse .left-menu,
-  #site-navigation .container .navbar-collapse .right-menu {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  #site-navigation .container .navbar-collapse .left-menu {
-    justify-content: flex-end;
-    padding-right: 0;
-    margin-right: 0;
-  }
-  #site-navigation .container .navbar-collapse .right-menu {
-    justify-content: flex-start;
-    padding-left: 0;
-    margin-left: 0;
-  }
-  #site-navigation.scroll-stage-1 .container .navbar-collapse .left-menu {
-    padding-right: 30px;
-  }
-  #site-navigation.scroll-stage-1 .container .navbar-collapse .right-menu {
-    padding-left: 30px;
-  }
-  #site-navigation.scroll-stage-2 .container .navbar-collapse .left-menu {
-    padding-right: 50px;
-  }
-  #site-navigation.scroll-stage-2 .container .navbar-collapse .right-menu {
-    padding-left: 50px;
-  }
-  #site-navigation.scroll-stage-3 .container .navbar-collapse .left-menu {
-    padding-right: 70px;
-  }
-  #site-navigation.scroll-stage-3 .container .navbar-collapse .right-menu {
-    padding-left: 70px;
-  }
-  #site-navigation.scrolled .container .navbar-collapse .left-menu {
-    padding-right: 80px; /* Full space for logo */
-  }
-  #site-navigation.scrolled .container .navbar-collapse .right-menu {
-    padding-left: 80px; /* Full space for logo */
-  }
-  #site-navigation.scrolled .navbar-brand .tfs-nav-logo {
-    width: 90px; /* Smaller logo when scrolled */
+  .seasons-row.expanded .feature-text,
+  .getting-there-row.expanded .feature-text,
+  .lodging-row.expanded .feature-text,
+  .angling-row.expanded .feature-text {
+    margin-top: 20px;
   }
 }
 
