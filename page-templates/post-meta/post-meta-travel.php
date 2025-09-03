@@ -71,6 +71,25 @@ $additional_info_image7_link = get_post_meta( get_the_ID(), 'additional-info-ima
 $additional_info_image8      = get_post_meta( get_the_ID(), 'additional-info-image8', true );
 $additional_info_image8_link = get_post_meta( get_the_ID(), 'additional-info-image8-link', true );
 
+
+
+$additional_travel_image1      = get_post_meta( get_the_ID(), 'additional-travel-image1', true );
+$additional_travel_image1_link = get_post_meta( get_the_ID(), 'additional-travel-image1-link', true );
+$additional_travel_image2      = get_post_meta( get_the_ID(), 'additional-travel-image2', true );
+$additional_travel_image2_link = get_post_meta( get_the_ID(), 'additional-travel-image2-link', true );
+$additional_travel_image3      = get_post_meta( get_the_ID(), 'additional-travel-image3', true );
+$additional_travel_image3_link = get_post_meta( get_the_ID(), 'additional-travel-image3-link', true );
+$additional_travel_image4      = get_post_meta( get_the_ID(), 'additional-travel-image4', true );
+$additional_travel_image4_link = get_post_meta( get_the_ID(), 'additional-travel-image4-link', true );
+$additional_travel_image5      = get_post_meta( get_the_ID(), 'additional-travel-image5', true );
+$additional_travel_image5_link = get_post_meta( get_the_ID(), 'additional-travel-image5-link', true );
+$additional_travel_image6      = get_post_meta( get_the_ID(), 'additional-travel-image6', true );
+$additional_travel_image6_link = get_post_meta( get_the_ID(), 'additional-travel-image6-link', true );
+$additional_travel_image7      = get_post_meta( get_the_ID(), 'additional-travel-image7', true );
+$additional_travel_image7_link = get_post_meta( get_the_ID(), 'additional-travel-image7-link', true );
+$additional_travel_image8      = get_post_meta( get_the_ID(), 'additional-travel-image8', true );
+$additional_travel_image8_link = get_post_meta( get_the_ID(), 'additional-travel-image8-link', true );
+
 $cta_strong_intro = get_post_meta( get_the_ID(), 'cta-strong-intro', true );
 $cta_content      = get_post_meta( get_the_ID(), 'cta-content', true );
 

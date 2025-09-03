@@ -74,4 +74,18 @@
           </div>
          </div>
         </nav>
+
+    <?php $sig_travel_logo = get_post_meta(get_the_ID(), 'signature-travel-logo', true); ?>
+
+    <!-- Below navigation logo container - Shows initially, hides on scroll -->
+    <div id="below-nav-logo" class="below-nav-logo-container">
+     <a href="<?php echo esc_url(home_url('/')); ?>">
+      <img class="tfs-nav-logo scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
+      <?php if ($sig_travel_logo !== '') : ?>
+       <img class="tfs-nav-logo no-scroll mb-5" loading="eager" src="<?php echo $sig_travel_logo; ?>" alt="The Fly Shop 2025" />
+      <?php else: ?>
+      <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
+     </a>
+     <?php endif; ?>
+    </div>
 	</header><!-- #masthead -->
