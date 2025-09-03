@@ -1,0 +1,470 @@
+/* Seasons Row - Expanding Container Functionality */
+.seasons-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seasons-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.seasons-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  /* KEY CHANGE: Completely remove from document flow when hidden */
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+/* Expanded state - both containers take 50% width */
+.seasons-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.seasons-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  /* KEY CHANGE: Bring back into normal document flow when expanded */
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+/* The readmore container - height will be set by JavaScript */
+.seasons-readmore {
+  /* Height will be dynamically set to match seasons-content */
+  overflow: hidden;
+}
+
+/* Simple text content container */
+.seasons-text-content {
+  height: 100%; /* Fill the seasons-readmore container */
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.seasons-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* This is the scrollable area */
+.seasons-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.seasons-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .seasons-row.expanded {
+    flex-direction: column;
+  }
+
+  .seasons-row.expanded .feature-content,
+  .seasons-row.expanded .feature-text {
+    width: 100% !important;
+  }
+
+  .seasons-row.expanded .feature-text {
+    margin-top: 20px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Logo positioning and transitions */
+.below-nav-logo-container {
+  position: fixed;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  transition: all 1.0s cubic-bezier(0.4, 0.0, 0.2, 1);
+  opacity: 1;
+  visibility: visible;
+
+  a {
+    position: relative;
+    display: block;
+  }
+
+  .tfs-nav-logo {
+    width: 250px;
+    transition: all 1.0s cubic-bezier(0.4, 0.0, 0.2, 1);
+
+    &.scroll {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(0.95);
+    }
+
+    &.no-scroll {
+      position: relative;
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Hover behavior for below-nav logo */
+  &:hover {
+    .tfs-nav-logo.scroll {
+      opacity: 1;
+      transform: scale(1);
+    }
+    .tfs-nav-logo.no-scroll {
+      opacity: 0;
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Initially hide the navbar logo completely */
+.navbar-brand {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 1.0s cubic-bezier(0.4, 0.0, 0.2, 1);
+  pointer-events: none;
+
+  .tfs-nav-logo {
+    transition: all 0.4s ease;
+
+    &.scroll {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    &.no-scroll {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Enhanced scroll detection with multiple stages */
+.navbar {
+  &.scroll-stage-1 ~ .below-nav-logo-container {
+    /* Early scroll state - start shrinking and moving */
+    top: 180px;
+    .tfs-nav-logo {
+      width: 300px;
+    }
+  }
+
+  &.scroll-stage-2 ~ .below-nav-logo-container {
+    /* Mid scroll state - more shrinking, more moving */
+    top: 140px;
+    .tfs-nav-logo {
+      width: 220px;
+    }
+  }
+
+  &.scroll-stage-3 ~ .below-nav-logo-container {
+    /* Near final state - almost at navbar position */
+    top: 90px;
+    .tfs-nav-logo {
+      width: 160px;
+    }
+  }
+
+  /* Final scrolled state */
+  &.scrolled {
+    /* Show navbar logo when scrolled */
+    .navbar-brand {
+      opacity: 1 !important;
+      visibility: visible !important;
+      pointer-events: auto;
+
+      .tfs-nav-logo.scroll {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .tfs-nav-logo.no-scroll {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+/* Animate below-nav logo during final scroll */
+.navbar.scrolled ~ .below-nav-logo-container {
+  /* Move to navbar position and complete transition */
+  top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  .tfs-nav-logo {
+    width: 120px;
+
+    &.no-scroll {
+      opacity: 0;
+      transform: scale(0.8) rotate(-2deg);
+    }
+
+    &.scroll {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Add visual feedback for the parting navigation */
+@media (min-width: 992px) {
+  .navbar {
+    .left-menu,
+    .right-menu {
+      /* Add subtle visual cue that menus are moving */
+      &::after {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        top: 50%;
+        transform: translateY(-50%);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+    }
+
+    .left-menu::after {
+      right: 0;
+    }
+
+    .right-menu::after {
+      left: 0;
+    }
+
+    /* Show the visual separators during scroll stages */
+    &.scroll-stage-2,
+    &.scroll-stage-3 {
+      .left-menu::after,
+      .right-menu::after {
+        opacity: 1;
+      }
+    }
+
+    /* Hide separators when fully scrolled */
+    &.scrolled {
+      .left-menu::after,
+      .right-menu::after {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .below-nav-logo-container {
+    top: 120px;
+
+    .tfs-nav-logo {
+      width: 200px;
+    }
+  }
+
+  .navbar.scrolled ~ .below-nav-logo-container {
+    top: 40px;
+
+    .tfs-nav-logo {
+      width: 100px;
+    }
+  }
+
+  /* On mobile, always show the navbar logo and hide below-nav logo */
+  .navbar-brand {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .below-nav-logo-container {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .below-nav-logo-container {
+    top: 100px;
+
+    .tfs-nav-logo {
+      width: 180px;
+    }
+  }
+}
+
+/* Add a subtle fade-in for the red logo in navbar */
+@keyframes logoColorTransition {
+  0% {
+    opacity: 0;
+    filter: brightness(1.2);
+  }
+  50% {
+    opacity: 0.5;
+    filter: brightness(1.1);
+  }
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+}
+
+.navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
+  animation: logoColorTransition 0.8s ease-out;
+}
+
+
+/* Centered Logo Navigation - Core Layout */
+@media (min-width: 992px) {
+  #site-navigation {
+    .container {
+      display: flex;
+      align-items: center;
+      position: relative;
+
+      .navbar-collapse {
+        .left-menu,
+        .right-menu {
+          &:empty {
+            padding: 0;
+          }
+        }
+      }
+
+      .navbar-brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        margin: 0;
+
+        .tfs-nav-logo {
+          width: 120px;
+          transition: width 0.3s ease;
+        }
+      }
+
+      .navbar-collapse {
+        flex: 1;
+        display: flex;
+
+        .left-menu,
+        .right-menu {
+          flex: 1;
+          display: flex;
+          align-items: center;
+          transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Initially center both menus with no gap */
+        .left-menu {
+          justify-content: flex-end;
+          padding-right: 0;
+          margin-right: 0;
+        }
+
+        .right-menu {
+          justify-content: flex-start;
+          padding-left: 0;
+          margin-left: 0;
+        }
+      }
+    }
+
+    /* Stage 1: Start creating space */
+    &.scroll-stage-1 {
+      .container .navbar-collapse {
+        .left-menu {
+          padding-right: 30px;
+        }
+        .right-menu {
+          padding-left: 30px;
+        }
+      }
+    }
+
+    /* Stage 2: More spacing */
+    &.scroll-stage-2 {
+      .container .navbar-collapse {
+        .left-menu {
+          padding-right: 50px;
+        }
+        .right-menu {
+          padding-left: 50px;
+        }
+      }
+    }
+
+    /* Stage 3: Almost full spacing */
+    &.scroll-stage-3 {
+      .container .navbar-collapse {
+        .left-menu {
+          padding-right: 70px;
+        }
+        .right-menu {
+          padding-left: 70px;
+        }
+      }
+    }
+
+    /* Final scrolled state: Full spacing for logo */
+    &.scrolled {
+      .container .navbar-collapse {
+        .left-menu {
+          padding-right: 80px; /* Full space for logo */
+        }
+        .right-menu {
+          padding-left: 80px; /* Full space for logo */
+        }
+      }
+
+      .navbar-brand {
+        .tfs-nav-logo {
+          width: 90px; /* Smaller logo when scrolled */
+        }
+      }
+    }
+  }
+}
