@@ -20,6 +20,7 @@ require_once get_template_directory() . '/front-page/footer-admin.php';
 require_once get_template_directory() . '/class-tfs-menu-position-handler.php';
 require_once get_template_directory() . '/inc/register-sidebars.php';
 require_once get_template_directory() . '/inc/searchform.php';
+require_once get_template_directory() . '/inc/bootstrap-pagination.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

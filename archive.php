@@ -56,22 +56,16 @@ get_header();
             <?php endwhile; ?>
 
          </div> <!-- End list group -->
-
-         <div class="d-flex justify-content-center my-4">
-            <?php the_posts_pagination( array(
-                'prev_text' => '<span aria-hidden="true">&laquo;</span>',
-                'next_text' => '<span aria-hidden="true">&raquo;</span>',
-                'type'      => 'list',
-                'class'     => 'pagination justify-content-center',
-            ) ); ?>
-         </div>
+      <div id="archive-pagination" class="mt-5">
+			<?php the_fly_shop_bootstrap_pagination(); ?>
+      </div>
      <?php
-      the_post_navigation(
+     /* the_post_navigation(
       array(
       'prev_text' => '<i class="lni lni-chevron-left me-2"></i><span class="nav-content"><span class="nav-subtitle">' . esc_html__( 'Previous:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span></span>',
                                                                                                                                                                                                                               'next_text' => '<span class="nav-content"><span class="nav-subtitle">' . esc_html__( 'Next:', 'the-fly-shop-2025' ) . '</span> <span class="nav-title">%title</span></span><i class="lni lni-chevron-right ms-2"></i>',
       )
-      );
+      ); */
       ?>
 
          <?php else : ?>
