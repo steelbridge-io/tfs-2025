@@ -643,15 +643,131 @@ if (has_post_thumbnail()) : ?>
         </div>
     </div>
 </div>
-<!-- CALL TO ACTION ROW -->
-<section id="cta" class="wrapper mt-5 mb-5">
+
+ <!-- CALL TO ACTION ROW -->
+ <section id="cta" class="wrapper mt-5 mb-5">
+  <div class="inner container">
+   <div id="cta-trigger" class="cta-trigger-area">
+    <header class="text-center">
+     <h2 class="cta-trigger-title">Let's talk about making this adventure happen</h2>
+     <p class="cta-trigger-subtitle">Ready to plan your perfect fishing trip?</p>
+     <button class="btn btn-primary cta-expand-btn" id="expandCTA">
+      Get Started <i class="fas fa-chevron-up"></i>
+     </button>
+    </header>
+   </div>
+
+   <div id="cta-form-container" class="cta-form-container">
+    <div class="form-wrapper">
+     <div class="form-header">
+      <h3>Contact Our Travel Specialists</h3>
+      <button class="close-form" id="closeCTA">
+       <i class="fas fa-times"></i>
+      </button>
+     </div>
+     <div class="form-content">
+      <div class="form-content">
+			 <?php
+			 $page_title = get_the_title();
+			 $form_url_params = '?page_title=' . urlencode($page_title);
+			 echo do_shortcode('[gravityform id="17" title="false" description="false" field_values="page_title=' . urlencode($page_title) . '"]');
+			 ?>
+      </div>
+      <!-- Fallback content if no form is available -->
+      <div class="contact-fallback">
+       <p>Call us directly at <strong>(800) 669-3474</strong> or use the form above to get started.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const expandBtn = document.getElementById('expandCTA');
+        const closeBTn = document.getElementById('closeCTA');
+        const ctaTrigger = document.getElementById('cta-trigger');
+        const formContainer = document.getElementById('cta-form-container');
+        const triggerArea = document.querySelector('.cta-trigger-area');
+
+        // Expand functionality
+        if (expandBtn) {
+            expandBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Add animation classes
+                triggerArea.classList.add('collapsed');
+                formContainer.classList.add('expanded');
+                expandBtn.classList.add('rotated');
+
+                // Smooth scroll to form after animation
+                setTimeout(() => {
+                    formContainer.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+            });
+        }
+
+        // Close functionality
+        if (closeBTn) {
+            closeBTn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Remove animation classes
+                triggerArea.classList.remove('collapsed');
+                formContainer.classList.remove('expanded');
+                expandBtn.classList.remove('rotated');
+
+                // Smooth scroll back to trigger
+                setTimeout(() => {
+                    ctaTrigger.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'center'
+                    });
+                }, 300);
+            });
+        }
+
+        // Optional: Close on outside click
+        document.addEventListener('click', function(e) {
+            if (formContainer.classList.contains('expanded') &&
+                !formContainer.contains(e.target) &&
+                !expandBtn.contains(e.target)) {
+                closeBTn.click();
+            }
+        });
+
+        // Optional: Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && formContainer.classList.contains('expanded')) {
+                closeBTn.click();
+            }
+        });
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="cta" class="wrapper mt-5 mb-5">
     <div class="inner container">
         <header class="text-center">
-            <h2><?php echo $cta_strong_intro; ?></h2>
-            <p class="lead text-center text-justify"><?php echo $cta_content; ?></p>
+            <h2><?php //echo $cta_strong_intro; ?></h2>
+            <p class="lead text-center text-justify"><?php //echo $cta_content; ?></p>
         </header>
     </div>
-</section>
+</section> -->
 	<!-- Table Modal -->
 	<div id="travelmodal-table" class="modal fade travel-table-modal" tabindex="-1"
 	     role="dialog"

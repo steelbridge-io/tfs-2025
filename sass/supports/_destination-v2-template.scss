@@ -22,7 +22,6 @@
   }
 }
 
-/* Keyframe animations for the chevrons */
 @keyframes moveRightChevron {
   0% {
     transform: translateX(-20px);
@@ -51,21 +50,19 @@
   }
 }
 
-/* Button styles for destination template */
 .btn.destination {
   position: relative;
   padding: 8px 15px;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-/* Base styles for chevron icons - always in the layout but hidden */
 .btn.destination .lni-chevron-left,
 .btn.destination .lni-chevron-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
-  pointer-events: none; /* Don't interfere with clicks */
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
   line-height: 1;
@@ -88,7 +85,6 @@
   }
 }
 
-/* Position the icons at their final positions */
 .btn.destination .lni-chevron-right {
   right: 10px;
 }
@@ -97,17 +93,14 @@
   left: 10px;
 }
 
-/* Style for active button */
 .btn.destination.active {
   background-color: #ff0000 !important;
   color: #ffffff !important;
   border-color: #ff0000 !important;
-  /* Add extra padding to accommodate the icons */
   padding-left: 30px;
   padding-right: 30px;
 }
 
-/* Animate and show icons when button is active */
 .btn.destination.active .lni-chevron-right {
   opacity: 1;
   animation: moveRightChevron 0.8s forwards;
@@ -118,7 +111,6 @@
   animation: moveLeftChevron 0.8s forwards;
 }
 
-/* Template specific styles */
 .travel_cpt-template-destination-v2-template,
 .page-template-destination-v2-template,
 .post-template-destination-v2-template {
@@ -257,7 +249,354 @@
   }
 }
 
+.seasons-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seasons-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.seasons-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.seasons-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.seasons-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.seasons-readmore {
+  overflow: hidden;
+}
+
+
+.seasons-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.seasons-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seasons-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.seasons-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.getting-there-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.getting-there-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.getting-there-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.getting-there-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.getting-there-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.getting-there-readmore {
+  overflow: hidden;
+}
+
+.getting-there-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.getting-there-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.getting-there-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.getting-there-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.lodging-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.lodging-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.lodging-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.lodging-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.lodging-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.lodging-readmore {
+  overflow: hidden;
+}
+
+.lodging-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.lodging-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lodging-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.lodging-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Angling Row - Expanding Container Functionality */
+.angling-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.angling-row .feature-content {
+  width: 100%;
+  transition: width 0.3s ease;
+  padding: 15px;
+}
+
+.angling-row .feature-text {
+  width: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 0;
+  position: absolute;
+  height: 0;
+  z-index: -1;
+}
+
+.angling-row.expanded .feature-content {
+  width: 50%;
+  padding: 15px;
+}
+
+.angling-row.expanded .feature-text {
+  width: 50%;
+  opacity: 1;
+  visibility: visible;
+  overflow: hidden;
+  padding: 15px;
+  position: static;
+  height: auto;
+  z-index: auto;
+}
+
+.angling-readmore {
+  overflow: hidden;
+}
+
+.angling-text-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #f9f9f9;
+}
+
+.angling-text-content .text-header {
+  flex-shrink: 0;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.angling-text-content .text-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 15px;
+}
+
+.angling-text-content .close-text {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
 @media (max-width: 768px) {
+  .seasons-row.expanded,
+  .getting-there-row.expanded,
+  .lodging-row.expanded,
+  .angling-row.expanded {
+    flex-direction: column;
+  }
+
+  .seasons-row.expanded .feature-content,
+  .seasons-row.expanded .feature-text,
+  .getting-there-row.expanded .feature-content,
+  .getting-there-row.expanded .feature-text,
+  .lodging-row.expanded .feature-content,
+  .lodging-row.expanded .feature-text,
+  .angling-row.expanded .feature-content,
+  .angling-row.expanded .feature-text {
+    width: 100% !important;
+  }
+
+  .seasons-row.expanded .feature-text,
+  .getting-there-row.expanded .feature-text,
+  .lodging-row.expanded .feature-text,
+  .angling-row.expanded .feature-text {
+    margin-top: 20px;
+  }
+
   #destination-features {
     .feature-image {
       margin-bottom: 2rem;
