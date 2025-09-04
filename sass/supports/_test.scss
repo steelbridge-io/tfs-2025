@@ -1,359 +1,147 @@
-
-/* Seasons Row - Expanding Container Functionality */
-.seasons-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.seasons-row .feature-content {
-  width: 100%;
-  transition: width 0.3s ease;
-  padding: 15px;
-}
-
-.seasons-row .feature-text {
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
+/* CTA Section Styles */
+#cta {
+  position: relative;
   overflow: hidden;
+}
+
+.cta-trigger-area {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  padding: 2rem 0;
+}
+
+.cta-trigger-area:hover {
+  transform: translateY(-5px);
+}
+
+.cta-trigger-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cta-trigger-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.cta-expand-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
   transition: all 0.3s ease;
-  padding: 0;
-  /* KEY CHANGE: Completely remove from document flow when hidden */
-  position: absolute;
-  height: 0;
-  z-index: -1;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
-/* Expanded state - both containers take 50% width */
-.seasons-row.expanded .feature-content {
-  width: 50%;
-  padding: 15px;
+.cta-expand-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
 }
 
-.seasons-row.expanded .feature-text {
-  width: 50%;
+.cta-expand-btn i {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-form-container {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #f8f9fa;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+
+.cta-form-container.expanded {
+  max-height: 1800px;
   opacity: 1;
-  visibility: visible;
-  overflow: hidden;
-  padding: 15px;
-  /* KEY CHANGE: Bring back into normal document flow when expanded */
-  position: static;
-  height: auto;
-  z-index: auto;
+  padding: 2rem;
 }
 
-/* The readmore container - height will be set by JavaScript */
-.seasons-readmore {
-  /* Height will be dynamically set to match seasons-content */
-  overflow: hidden;
+.form-wrapper {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Simple text content container */
-.seasons-text-content {
-  height: 100%; /* Fill the seasons-readmore container */
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-.seasons-text-content .text-header {
-  flex-shrink: 0;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px 5px 0 0;
+.form-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
 }
 
-/* This is the scrollable area */
-.seasons-text-content .text-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 15px;
+.form-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.8rem;
 }
 
-.seasons-text-content .close-text {
+.close-form {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 1.5rem;
+  color: #666;
   cursor: pointer;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-}
-
-/* Getting There Row - Expanding Container Functionality */
-.getting-there-row {
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.getting-there-row .feature-content {
-  width: 100%;
-  transition: width 0.3s ease;
-  padding: 15px;
-}
-
-.getting-there-row .feature-text {
-  width: 0;
-  opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  padding: 0;
-  position: absolute;
-  height: 0;
-  z-index: -1;
-}
-
-.getting-there-row.expanded .feature-content {
-  width: 50%;
-  padding: 15px;
-}
-
-.getting-there-row.expanded .feature-text {
-  width: 50%;
-  opacity: 1;
-  visibility: visible;
-  overflow: hidden;
-  padding: 15px;
-  position: static;
-  height: auto;
-  z-index: auto;
-}
-
-.getting-there-readmore {
-  overflow: hidden;
-}
-
-.getting-there-text-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-.getting-there-text-content .text-header {
-  flex-shrink: 0;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: center;
 }
 
-.getting-there-text-content .text-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 15px;
+.close-form:hover {
+  color: #dc3545;
+  background: #f8f9fa;
 }
 
-.getting-there-text-content .close-text {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
+.contact-fallback {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
 }
 
-/* Lodging Row - Expanding Container Functionality */
-.lodging-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.lodging-row .feature-content {
-  width: 100%;
-  transition: width 0.3s ease;
-  padding: 15px;
-}
-
-.lodging-row .feature-text {
-  width: 0;
+/*.cta-trigger-area.collapsed {
+  transform: translateY(-100px);
   opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  padding: 0;
-  position: absolute;
-  height: 0;
-  z-index: -1;
-}
-
-.lodging-row.expanded .feature-content {
-  width: 50%;
-  padding: 15px;
-}
-
-.lodging-row.expanded .feature-text {
-  width: 50%;
-  opacity: 1;
-  visibility: visible;
-  overflow: hidden;
-  padding: 15px;
-  position: static;
-  height: auto;
-  z-index: auto;
-}
-
-.lodging-readmore {
-  overflow: hidden;
-}
-
-.lodging-text-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-.lodging-text-content .text-header {
-  flex-shrink: 0;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.lodging-text-content .text-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 15px;
-}
-
-.lodging-text-content .close-text {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-}
-
-/* Angling Row - Expanding Container Functionality */
-.angling-row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.angling-row .feature-content {
-  width: 100%;
-  transition: width 0.3s ease;
-  padding: 15px;
-}
-
-.angling-row .feature-text {
-  width: 0;
+  pointer-events: none;
+}*/
+.cta-trigger-area.collapsed {
+  transform: translateY(-100px);
   opacity: 0;
-  visibility: hidden;
-  overflow: hidden;
-  transition: all 0.3s ease;
-  padding: 0;
-  position: absolute;
-  height: 0;
-  z-index: -1;
+  pointer-events: none;
+  /* Add a delay that matches your transition duration */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1), display 0s 0.4s;
+  display: none;
 }
 
-.angling-row.expanded .feature-content {
-  width: 50%;
-  padding: 15px;
+.cta-expand-btn.rotated i {
+  transform: rotate(180deg);
 }
 
-.angling-row.expanded .feature-text {
-  width: 50%;
-  opacity: 1;
-  visibility: visible;
-  overflow: hidden;
-  padding: 15px;
-  position: static;
-  height: auto;
-  z-index: auto;
-}
-
-.angling-readmore {
-  overflow: hidden;
-}
-
-.angling-text-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-.angling-text-content .text-header {
-  flex-shrink: 0;
-  padding: 15px;
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  border-radius: 5px 5px 0 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.angling-text-content .text-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 15px;
-}
-
-.angling-text-content .close-text {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-}
-
-/* Responsive adjustments for all expanding containers */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .seasons-row.expanded,
-  .getting-there-row.expanded,
-  .lodging-row.expanded,
-  .angling-row.expanded {
-    flex-direction: column;
+  .cta-trigger-title {
+    font-size: 2rem;
   }
 
-  .seasons-row.expanded .feature-content,
-  .seasons-row.expanded .feature-text,
-  .getting-there-row.expanded .feature-content,
-  .getting-there-row.expanded .feature-text,
-  .lodging-row.expanded .feature-content,
-  .lodging-row.expanded .feature-text,
-  .angling-row.expanded .feature-content,
-  .angling-row.expanded .feature-text {
-    width: 100% !important;
+  .form-wrapper {
+    padding: 1rem;
   }
 
-  .seasons-row.expanded .feature-text,
-  .getting-there-row.expanded .feature-text,
-  .lodging-row.expanded .feature-text,
-  .angling-row.expanded .feature-text {
-    margin-top: 20px;
+  .cta-form-container.expanded {
+    padding: 1rem;
   }
 }
