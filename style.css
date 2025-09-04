@@ -4624,7 +4624,8 @@ html {
 .page-template-destination-v2-template #destination-features .feature-image img,
 .post-template-destination-v2-template #destination-features .feature-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 .travel_cpt-template-destination-v2-template #destination-features .readmore-info,
 .page-template-destination-v2-template #destination-features .readmore-info,
