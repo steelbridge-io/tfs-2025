@@ -102,12 +102,12 @@ if (has_post_thumbnail()) : ?>
 <?php if ($travel_costs_image !== '') : ?>
 <section id="inclusions-section" class="container-fluid">
     <div class="container">
-        <div class="row h-100">
-            <div class="col-md-4 d-flex featured-image">
-                <img class="img-fluid inclusions-image w-100 " src="<?php echo $travel_costs_image; ?>" alt="The
+        <div class="row h-100 flex-row-reverse">
+            <div class="col-md-6 d-flex featured-image">
+                <img class="img-fluid inclusions-image" src="<?php echo $travel_costs_image; ?>" alt="The
                 Fly Shop Travel Image" style="object-fit: cover;">
             </div>
-            <div class="col-md-8 d-flex inclusions-content-wrapper">
+            <div class="col-md-6 d-flex inclusions-content-wrapper">
                 <div class="inclusions-content d-flex flex-column justify-content-center">
                     <h2><?php echo $feature_1_title ?></h2>
                     <?php
@@ -145,27 +145,28 @@ if (has_post_thumbnail()) : ?>
 <section id="destination-features" class="container-fluid">
     <?php if ($travel_seasons_image !== '') : ?>
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 feature-image">
-                <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
-                <div id="seasonsReadmore" class="readmore-info">
-                    <div class="overlay-header">
-                        <h3>Seasons Details</h3>
-                        <button class="close-overlay">&times;</button>
-                    </div>
-                    <div class="overlay-content">
-                        <p><?php echo $feature_2_seasons_readmore ?></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 feature-content">
-                <h2><?php echo $feature_2_seasons_title ?></h2>
-                <?php
-                echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
-                echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
-                ?>
-            </div>
-        </div>
+     <div id="seasonsReadmore" class="readmore-info">
+      <div class="overlay-header">
+       <h3>Seasons Details</h3>
+       <button class="close-overlay">&times;</button>
+      </div>
+      <div class="overlay-content">
+       <p><?php echo $feature_2_seasons_readmore ?></p>
+      </div>
+     </div>
+     <div class="row">
+         <div class="col-md-6 feature-image">
+             <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
+
+         </div>
+         <div class="col-md-6 feature-content">
+             <h2><?php echo $feature_2_seasons_title ?></h2>
+             <?php
+             echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+             echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
+             ?>
+         </div>
+     </div>
     </div>
 
 		<?php else: ?>
@@ -196,18 +197,18 @@ if (has_post_thumbnail()) : ?>
 
  <?php if ($feature_3_gettingto_image !== '') : ?>
   <div class="container">
+   <div id="gettingToReadmore" class="readmore-info">
+    <div class="overlay-header">
+     <h3>Getting There Details</h3>
+     <button class="close-overlay">&times;</button>
+    </div>
+    <div class="overlay-content">
+     <p><?php echo $feature_3_get_to_readmore ?></p>
+    </div>
+   </div>
    <div class="row flex-row-reverse">
     <div class="col-md-6 feature-image">
      <img class="img-fluid" src="<?php echo $feature_3_gettingto_image; ?>" alt="The Fly Shop Travel Image">
-     <div id="gettingToReadmore" class="readmore-info">
-      <div class="overlay-header">
-       <h3>Getting There Details</h3>
-       <button class="close-overlay">&times;</button>
-      </div>
-      <div class="overlay-content">
-       <p><?php echo $feature_3_get_to_readmore ?></p>
-      </div>
-     </div>
     </div>
     <div class="col-md-6 feature-content">
      <h2><?php echo $feature_3_get_to_title ?></h2>
@@ -245,18 +246,18 @@ if (has_post_thumbnail()) : ?>
 
  <?php if ($feature_4_lodging_image !== '') : ?>
   <div class="container">
+   <div id="lodgingReadmore" class="readmore-info">
+    <div class="overlay-header">
+     <h3>Lodging Details</h3>
+     <button class="close-overlay">&times;</button>
+    </div>
+    <div class="overlay-content">
+     <p><?php echo $feature_4_lodging_readmore ?></p>
+    </div>
+   </div>
    <div class="row">
     <div class="col-md-6 feature-image">
      <img class="img-fluid" src="<?php echo $feature_4_lodging_image; ?>" alt="The Fly Shop Travel Image">
-     <div id="lodgingReadmore" class="readmore-info">
-      <div class="overlay-header">
-       <h3>Lodging Details</h3>
-       <button class="close-overlay">&times;</button>
-      </div>
-      <div class="overlay-content">
-       <p><?php echo $feature_4_lodging_readmore ?></p>
-      </div>
-     </div>
     </div>
     <div class="col-md-6 feature-content">
      <h2><?php echo $feature_4_lodging_title ?></h2>
@@ -294,18 +295,18 @@ if (has_post_thumbnail()) : ?>
 
  <?php if ($feature_5_angling_image !== '') : ?>
   <div class="container">
+   <div id="anglingAtdestination" class="readmore-info">
+    <div class="overlay-header">
+     <h3>Angling Details</h3>
+     <button class="close-overlay">&times;</button>
+    </div>
+    <div class="overlay-content">
+     <p><?php echo $feature_5_angling_readmore ?></p>
+    </div>
+   </div>
    <div class="row flex-row-reverse">
     <div class="col-md-6 feature-image">
      <img class="img-fluid" src="<?php echo $feature_5_angling_image; ?>" alt="The Fly Shop Travel Image">
-     <div id="anglingAtdestination" class="readmore-info">
-      <div class="overlay-header">
-       <h3>Angling Details</h3>
-       <button class="close-overlay">&times;</button>
-      </div>
-      <div class="overlay-content">
-       <p><?php echo $feature_5_angling_readmore ?></p>
-      </div>
-     </div>
     </div>
     <div class="col-md-6 feature-content">
      <h2><?php echo $feature_5_angling_title ?></h2>
