@@ -34,19 +34,22 @@ $feature_2_seasons_hi_lo_content = get_post_meta( get_the_ID(), 'feature-2-seaso
 $feature_2_seasons_hiseason      = get_post_meta( get_the_ID(), 'feature-2-seasons-hiseason', true );
 $feature_2_seasons_lowseason     = get_post_meta( get_the_ID(), 'feature-2-seasons-lowseason', true );
 
-$feature_3_gettingto_image = get_post_meta( get_the_ID(), 'feature-3-gettingto-image', true );
-$feature_3_get_to_title    = get_post_meta( get_the_ID(), 'feature-3-get-to-title', true );
-$feature_3_get_to_content  = get_post_meta( get_the_ID(), 'feature-3-get-to-content', true );
-$feature_3_read_more_info  = get_post_meta( get_the_ID(), 'feature-3-read-more-info', true );
-$feature_3_get_to_readmore = get_post_meta( get_the_ID(), 'feature-3-get-to-readmore', true );
+$feature_3_gettingto_image  = get_post_meta( get_the_ID(), 'feature-3-gettingto-image', true );
+$feature_3_getting_to_image = get_post_meta( get_the_ID(), 'feature-3-getting-to-image', true );
+$feature_3_get_to_title     = get_post_meta( get_the_ID(), 'feature-3-get-to-title', true );
+$feature_3_get_to_content   = get_post_meta( get_the_ID(), 'feature-3-get-to-content', true );
+$feature_3_read_more_info   = get_post_meta( get_the_ID(), 'feature-3-read-more-info', true );
+$feature_3_get_to_readmore  = get_post_meta( get_the_ID(), 'feature-3-get-to-readmore', true );
 
 $feature_4_lodging_image    = get_post_meta( get_the_ID(), 'feature-4-lodging-image', true );
+$feature_4_lodging_img      = get_post_meta( get_the_ID(), 'feature-4-lodging-img', true );
 $feature_4_lodging_title    = get_post_meta( get_the_ID(), 'feature-4-lodging-title', true );
 $feature_4_lodging_content  = get_post_meta( get_the_ID(), 'feature-4-lodging-content', true );
 $feature_4_read_more_info   = get_post_meta( get_the_ID(), 'feature-4-read-more-info', true );
 $feature_4_lodging_readmore = get_post_meta( get_the_ID(), 'feature-4-lodging-readmore', true );
 
 $feature_5_angling_image    = get_post_meta( get_the_ID(), 'feature-5-angling-image', true );
+$feature_5_angling_img      = get_post_meta( get_the_ID(), 'feature-5-angling-img', true );
 $feature_5_angling_title    = get_post_meta( get_the_ID(), 'feature-5-angling-title', true );
 $feature_5_angling_content  = get_post_meta( get_the_ID(), 'feature-5-angling-content', true );
 $feature_5_read_more_info   = get_post_meta( get_the_ID(), 'feature-5-read-more-info', true );
