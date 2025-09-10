@@ -238,6 +238,10 @@ if (is_page_template('page-templates/destination-v2-template.php')) {
     wp_enqueue_script('destination-v2-template-js', get_template_directory_uri() . '/js/destination-v2-template.js', array('jquery'),_S_VERSION, true);
 }
 
+if (is_page_template('page-templates/destination-v3-template.php')) {
+ wp_enqueue_script('destination-v3-template-js', get_template_directory_uri() . '/js/destination-v3-template.js', array('jquery'),_S_VERSION, true);
+}
+
  if (is_front_page()) {
 	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
  }
