@@ -1,48 +1,43 @@
-
-// Bootstrap 5 Tabbed Destination Content
-
 #tabbed-destination-content {
-  padding: 2rem 0;
+
+  .container {
+    padding: 0 0 0 0;
+  }
 
   .destination-tabs {
-    /*border-bottom: 2px solid $tfs__red;*/
-    border-bottom: none;
+    border-bottom: 1px solid #ddd;
     margin-bottom: 2rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
 
     .nav-link {
-      border: none;
       border-radius: 0;
       color: $tfs__catalog-black;
       font-weight: 500;
       padding: 1rem 1.5rem;
       transition: all 0.3s ease;
       position: relative;
+      border: 1px solid transparent;
+      border-bottom: none;
+      margin-bottom: -1px;
+      background-color: transparent;
 
       i {
         margin-right: 0.5rem;
         font-size: 1.2em;
       }
 
-      &:hover {
-        /*border-color: transparent;
-         color: $tfs__red;*/
-        /*background-color: rgba($tfs__red, 0.05);*/
+      &:hover:not(.active) {
+        background-color: #f8f9fa;
+        border-color: #ddd;
+        border-bottom: none;
       }
 
       &.active {
-        /*background-color: $tfs__red;
-        color: white;
-        border-color: $tfs__red;*/
-
-        &::after {
-          content: '';
-          position: absolute;
-          /*bottom: -2px;*/
-          left: 0;
-          right: 0;
-          height: 0px;
-          /*background-color: $tfs__red;*/
-        }
+        background-color: #fff;
+        border-color: #ddd;
+        border-bottom: 1px solid #fff;
+        color: $tfs__catalog-black;
       }
     }
 
@@ -75,13 +70,13 @@
 
   .destination-tab-content {
     .tab-pane {
-      padding: 1.5rem 0;
+      padding: 0;
       animation: fadeIn 0.5s ease-in-out;
 
       // Container wrapper - MODIFIED for new layout
       .tab-container-wrapper {
         position: relative;
-        margin-bottom: 3rem;
+        margin-bottom: 0;
         width: 100%;
 
         // Image spans full width above content

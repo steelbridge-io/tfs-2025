@@ -13,11 +13,9 @@ if (get_post_type() === 'travel_cpt') {
     get_header('destination-header');
 }
 
-
 /**
  * Write the get header where if this template is used in the travel_cpt custom post typ, get_header('travel-header'); is used.
  */
-
 
 include_once( 'post-meta/post-meta-travel.php' ); // Includes all the custom meta-data
  ?>
