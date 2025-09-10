@@ -191,7 +191,7 @@ if (has_post_thumbnail()) : ?>
          <button class="close-overlay">&times;</button>
         </div>
         <div class="overlay-content">
-         <p><?php echo $feature_2_seasons_readmore ?></p>
+         <div><?php echo $feature_2_seasons_content . '&nbsp;'. $feature_2_seasons_readmore; ?></div>
         </div>
        </div>
 
@@ -222,7 +222,7 @@ if (has_post_thumbnail()) : ?>
          <button class="close-overlay">&times;</button>
         </div>
         <div class="overlay-content">
-         <p><?php echo $feature_3_get_to_readmore ?></p>
+         <div><?php echo $feature_3_get_to_content . '&nbsp;' . $feature_3_get_to_readmore ?></div>
         </div>
        </div>
 
@@ -253,13 +253,15 @@ if (has_post_thumbnail()) : ?>
          <button class="close-overlay">&times;</button>
         </div>
         <div class="overlay-content">
-         <p><?php echo $feature_4_lodging_readmore ?></p>
+         <div><?php echo $feature_4_lodging_content . '&nbsp;' . $feature_4_lodging_readmore ?></div>
         </div>
        </div>
 
        <!-- NEW: Image spans full width above content -->
        <div class="feature-image">
-        <img class="img-fluid" src="<?php echo $feature_4_lodging_img; ?>" alt="The Fly Shop Travel Image">
+        <img class="img-fluid" src="<?php echo $feature_4_lodging_img; ?>"
+             alt="The Fly
+        Shop Travel Image">
        </div>
 
        <!-- Content below image -->
@@ -284,7 +286,7 @@ if (has_post_thumbnail()) : ?>
          <button class="close-overlay">&times;</button>
         </div>
         <div class="overlay-content">
-         <p><?php echo $feature_5_angling_readmore ?></p>
+         <div><?php echo $feature_5_angling_content . '&nbsp;' . $feature_5_angling_readmore ?></div>
         </div>
        </div>
 
