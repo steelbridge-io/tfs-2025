@@ -107,71 +107,81 @@ if (has_post_thumbnail()) : ?>
   <div class="container">
    <!-- Bootstrap 5 Nav Tabs -->
    <ul class="nav nav-tabs destination-tabs" id="destinationTabs" role="tablist">
+    <?php if ($travel_costs_image !== '') : ?>
     <li class="nav-item" role="presentation">
      <button class="nav-link active" id="inclusions-tab" data-bs-toggle="tab" data-bs-target="#inclusions-pane" type="button" role="tab" aria-controls="inclusions-pane" aria-selected="true">
-      <i class="lni lni-wallet"></i> Inclusions
+      <i class="lni lni-user-info-circle"></i> <?php echo $feature_1_title ?>
      </button>
     </li>
+    <?php endif;
+    if ($travel_seasons_image !== '') : ?>
     <li class="nav-item" role="presentation">
      <button class="nav-link" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons-pane" type="button" role="tab" aria-controls="seasons-pane" aria-selected="false">
-      <i class="lni lni-calendar"></i> Seasons
+      <i class="lni lni-calendar-days"></i> <?php echo $feature_2_seasons_title ?>
      </button>
     </li>
+    <?php endif;
+    if ($feature_3_getting_to_image !== '') : ?>
     <li class="nav-item" role="presentation">
      <button class="nav-link" id="getting-there-tab" data-bs-toggle="tab" data-bs-target="#getting-there-pane" type="button" role="tab" aria-controls="getting-there-pane" aria-selected="false">
-      <i class="lni lni-map-marker"></i> Getting There
+      <i class="lni lni-suitcase-1"></i> <?php echo $feature_3_get_to_title ?>
      </button>
     </li>
+    <?php endif;
+    if ($feature_4_lodging_img !== '') : ?>
     <li class="nav-item" role="presentation">
      <button class="nav-link" id="lodging-tab" data-bs-toggle="tab" data-bs-target="#lodging-pane" type="button" role="tab" aria-controls="lodging-pane" aria-selected="false">
-      <i class="lni lni-home"></i> Lodging
+      <i class="lni lni-home-4"></i> <?php echo $feature_4_lodging_title ?>
      </button>
     </li>
+    <?php endif;
+    if ($feature_5_angling_img !== '') : ?>
     <li class="nav-item" role="presentation">
      <button class="nav-link" id="angling-tab" data-bs-toggle="tab" data-bs-target="#angling-pane" type="button" role="tab" aria-controls="angling-pane" aria-selected="false">
-      <i class="lni lni-fishing-hook"></i> Angling
+      <i class="lni lni-fish-1"></i> <?php echo $feature_5_angling_title ?>
      </button>
     </li>
+    <?php endif; ?>
    </ul>
 
    <!-- Tab Content -->
    <div class="tab-content destination-tab-content" id="destinationTabContent">
 
+
     <!-- Inclusions Tab -->
     <div class="tab-pane fade show active" id="inclusions-pane" role="tabpanel" aria-labelledby="inclusions-tab">
 		 <?php if ($travel_costs_image !== '') : ?>
-      <div class="row h-100 flex-row-reverse">
-       <div class="col-md-6 d-flex featured-image">
-        <img class="img-fluid inclusions-image" src="<?php echo $travel_costs_image; ?>" alt="The Fly Shop Travel Image" style="object-fit: cover;">
-       </div>
-       <div class="col-md-6 d-flex inclusions-content-wrapper">
-        <div class="inclusions-content d-flex flex-column justify-content-center">
-         <h2><?php echo $feature_1_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
-				 echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
-				 echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
-				 echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
-				 ?>
+      <div class="tab-container-wrapper">
+       <div id="inclusionsReadmore" class="readmore-info">
+        <div class="overlay-header">
+         <h3>Inclusions Details</h3>
+         <button class="close-overlay">&times;</button>
+        </div>
+        <div class="overlay-content">
+         <p>Placeholder content for inclusions read more. You can add the meta field for this later.</p>
         </div>
        </div>
-      </div>
-		 <?php else: ?>
-      <div class="row h-100">
-       <div class="col-md-12">
-        <div class="inclusions-content">
-         <h2><?php echo $feature_1_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
-				 echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
-				 echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
-				 echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
-				 ?>
-        </div>
+
+       <!-- NEW: Image spans full width above content -->
+       <div class="feature-image">
+        <img class="img-fluid inclusions-image" src="<?php echo $travel_costs_image; ?>" alt="The Fly Shop Travel Image">
+       </div>
+
+       <!-- Content below image -->
+       <div class="feature-content inclusions-content">
+        <h2><?php echo $feature_1_title ?></h2>
+				<?php
+				echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+				echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
+				echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
+				echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+				?>
+        <button type="button" class="btn destination btn-tfs" data-target="inclusionsReadmore">Read more...</button>
        </div>
       </div>
-		 <?php endif; ?>
+		 <?php endif ?>
     </div>
+
 
     <!-- Seasons Tab -->
     <div class="tab-pane fade" id="seasons-pane" role="tabpanel" aria-labelledby="seasons-tab">
@@ -186,37 +196,18 @@ if (has_post_thumbnail()) : ?>
          <p><?php echo $feature_2_seasons_readmore ?></p>
         </div>
        </div>
-       <div class="row">
-        <div class="col-md-6 feature-image">
-         <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
-        </div>
-        <div class="col-md-6 feature-content">
-         <h2><?php echo $feature_2_seasons_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
-				 echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
-				 ?>
-        </div>
+
+       <!-- NEW: Image spans full width above content -->
+       <div class="feature-image">
+        <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
        </div>
-      </div>
-		 <?php else: ?>
-      <div class="row seasons-row">
-       <div class="col-12 feature-text seasons-readmore" id="seasonsReadmoreContainer">
-        <div class="seasons-text-content">
-         <div class="text-header">
-          <h3>Seasons Details</h3>
-          <button class="close-text">&times;</button>
-         </div>
-         <div class="text-content">
-          <p><?php echo $feature_2_seasons_readmore ?></p>
-         </div>
-        </div>
-       </div>
-       <div class="col-12 feature-content seasons-content">
+
+       <!-- Content below image -->
+       <div class="feature-content">
         <h2><?php echo $feature_2_seasons_title ?></h2>
 				<?php
 				echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
-				echo '<button type="button" class="btn destination btn-tfs seasons-expand-btn">Read more...</button>';
+				echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
 				?>
        </div>
       </div>
@@ -236,37 +227,18 @@ if (has_post_thumbnail()) : ?>
          <p><?php echo $feature_3_get_to_readmore ?></p>
         </div>
        </div>
-       <div class="row flex-row-reverse">
-        <div class="col-md-6 feature-image">
-         <img class="img-fluid" src="<?php echo $feature_3_getting_to_image; ?>" alt="The Fly Shop Travel Image">
-        </div>
-        <div class="col-md-6 feature-content">
-         <h2><?php echo $feature_3_get_to_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
-				 echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
-				 ?>
-        </div>
+
+       <!-- NEW: Image spans full width above content -->
+       <div class="feature-image">
+        <img class="img-fluid" src="<?php echo $feature_3_getting_to_image; ?>" alt="The Fly Shop Travel Image">
        </div>
-      </div>
-		 <?php else: ?>
-      <div class="row getting-there-row flex-row-reverse">
-       <div class="col-12 feature-text getting-there-readmore">
-        <div class="getting-there-text-content">
-         <div class="text-header">
-          <h3>Getting There Details</h3>
-          <button class="close-text">&times;</button>
-         </div>
-         <div class="text-content">
-          <p><?php echo $feature_3_get_to_readmore ?></p>
-         </div>
-        </div>
-       </div>
-       <div class="col-12 feature-content">
+
+       <!-- Content below image -->
+       <div class="feature-content">
         <h2><?php echo $feature_3_get_to_title ?></h2>
 				<?php
 				echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
-				echo '<button type="button" class="btn btn-tfs destination getting-there-expand-btn">Read more...</button>';
+				echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
 				?>
        </div>
       </div>
@@ -286,37 +258,18 @@ if (has_post_thumbnail()) : ?>
          <p><?php echo $feature_4_lodging_readmore ?></p>
         </div>
        </div>
-       <div class="row">
-        <div class="col-md-6 feature-image">
-         <img class="img-fluid" src="<?php echo $feature_4_lodging_img; ?>" alt="The Fly Shop Travel Image">
-        </div>
-        <div class="col-md-6 feature-content">
-         <h2><?php echo $feature_4_lodging_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
-				 echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
-				 ?>
-        </div>
+
+       <!-- NEW: Image spans full width above content -->
+       <div class="feature-image">
+        <img class="img-fluid" src="<?php echo $feature_4_lodging_img; ?>" alt="The Fly Shop Travel Image">
        </div>
-      </div>
-		 <?php else: ?>
-      <div class="row lodging-row">
-       <div class="col-12 feature-text lodging-readmore">
-        <div class="lodging-text-content">
-         <div class="text-header">
-          <h3>Lodging Details</h3>
-          <button class="close-text">&times;</button>
-         </div>
-         <div class="text-content">
-          <p><?php echo $feature_4_lodging_readmore ?></p>
-         </div>
-        </div>
-       </div>
-       <div class="col-12 feature-content">
+
+       <!-- Content below image -->
+       <div class="feature-content">
         <h2><?php echo $feature_4_lodging_title ?></h2>
 				<?php
 				echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
-				echo '<button type="button" class="btn destination btn-tfs lodging-expand-btn">Read more...</button>';
+				echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
 				?>
        </div>
       </div>
@@ -336,37 +289,18 @@ if (has_post_thumbnail()) : ?>
          <p><?php echo $feature_5_angling_readmore ?></p>
         </div>
        </div>
-       <div class="row flex-row-reverse">
-        <div class="col-md-6 feature-image">
-         <img class="img-fluid" src="<?php echo $feature_5_angling_img; ?>" alt="The Fly Shop Travel Image">
-        </div>
-        <div class="col-md-6 feature-content">
-         <h2><?php echo $feature_5_angling_title ?></h2>
-				 <?php
-				 echo '<div><p>' . $feature_5_angling_content . '</p></div>';
-				 echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
-				 ?>
-        </div>
+
+       <!-- NEW: Image spans full width above content -->
+       <div class="feature-image">
+        <img class="img-fluid" src="<?php echo $feature_5_angling_img; ?>" alt="The Fly Shop Travel Image">
        </div>
-      </div>
-		 <?php else: ?>
-      <div class="row angling-row flex-row-reverse">
-       <div class="col-12 feature-text angling-readmore">
-        <div class="angling-text-content">
-         <div class="text-header">
-          <h3>Angling Details</h3>
-          <button class="close-text">&times;</button>
-         </div>
-         <div class="text-content">
-          <p><?php echo $feature_5_angling_readmore ?></p>
-         </div>
-        </div>
-       </div>
-       <div class="col-12 feature-content">
+
+       <!-- Content below image -->
+       <div class="feature-content">
         <h2><?php echo $feature_5_angling_title ?></h2>
 				<?php
 				echo '<div><p>' . $feature_5_angling_content . '</p></div>';
-				echo '<button type="button" class="btn destination btn-tfs angling-expand-btn">Read more...</button>';
+				echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
 				?>
        </div>
       </div>
@@ -376,18 +310,6 @@ if (has_post_thumbnail()) : ?>
    </div>
   </div>
  </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <section id="set-the-hook-destination-template" class="mt-5 mb-5">
     <div class="container">
