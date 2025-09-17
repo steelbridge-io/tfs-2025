@@ -1,3 +1,32 @@
+/* Hero overlay positioning enhancement */
+.hero-overlay {
+  /* Ensure smooth transitions when JavaScript adjusts positioning */
+  transition: top 0.3s ease-in-out !important;
+}
+
+/* Fallback positioning for when JavaScript hasn't loaded yet */
+.hero-overlay:not([style*="top"]) {
+  top: 60% !important; /* Fallback position that accounts for typical logo spacing */
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .hero-overlay:not([style*="top"]) {
+    top: 55% !important; /* Slightly higher on mobile devices */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-overlay:not([style*="top"]) {
+    top: 50% !important; /* Even higher on small mobile devices */
+  }
+}
+
+
+/**
+original code
+ */
+
 #tabbed-destination-content {
 
   .container {
