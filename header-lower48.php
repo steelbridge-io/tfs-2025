@@ -77,7 +77,7 @@
          </div>
      </nav>
 
-		 <?php $dest_travel_logo	= get_post_meta( get_the_ID(), 'dest-travel-logo', true ); ?>
+     <?php $dest_travel_logo	= get_post_meta( get_the_ID(), 'dest-travel-logo', true ); ?>
 
      <!-- Below navigation logo container - Shows initially, hides on scroll -->
      <div id="below-nav-logo" class="below-nav-logo-container">
