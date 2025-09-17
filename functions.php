@@ -41,15 +41,17 @@ function the_fly_shop_2025_setup() {
  register_nav_menus(
 	array(
 	 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
-	 'travel-menu' => esc_html__( 'Travel Menu', 'the-fly-shop-2025' ),
-	 'destination-menu' => esc_html__( 'Destination Menu', 'the-fly-shop-2025' ),
+	 'travel-menu' => esc_html__( 'Travel', 'the-fly-shop-2025' ),
+	 'destination-menu' => esc_html__( 'Destination', 'the-fly-shop-2025' ),
      'lower-48' => esc_html__( 'Lower 48', 'the-fly-shop-2025' ),
      'lower-48blog'     => esc_html__( 'Lower 48 Blog', 'the-fly-shop-2025' ),
 	 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
 	 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
 	 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
 	 'fish-camp' => esc_html__( 'Fish Camp', 'the-fly-shop-2025' ),
-	 '404-menu' => esc_html__( '404 Menu', 'the-fly-shop-2025' ),
+	 '404-menu' => esc_html__( '404', 'the-fly-shop-2025' ),
+     'regional-waters-menu' => esc_html__( 'Regional Waters', 'the-fly-shop-2025' ),
+     'outfitters-blog-menu' => esc_html__( 'Outfitters Blog', 'the-fly-shop-2025' ),
 	)
  );
 
@@ -241,6 +243,23 @@ if (is_page_template('page-templates/destination-v2-template.php')) {
 if (is_page_template('page-templates/destination-v3-template.php')) {
  wp_enqueue_script('destination-v3-template-js', get_template_directory_uri() . '/js/destination-v3-template.js', array('jquery'),_S_VERSION, true);
 }
+
+if (is_page_template('page-templates/basic-page-template.php')) {
+    wp_enqueue_script('basic-page-template-js', get_template_directory_uri() . '/js/basic-page-template.js', array
+    ('jquery'),_S_VERSION, true);
+}
+
+if (is_page_template('page-templates/blog-template-basic.php')) {
+    wp_enqueue_script('blog-template-basic-js', get_template_directory_uri() . '/js/blog-template-basic.js', array
+    ('jquery'),_S_VERSION, true);
+}
+
+if (is_page_template('page-templates/blog-template-outfitters.php')) {
+    wp_enqueue_script('blog-template-outfitters-js', get_template_directory_uri() . '/js/blog-template-outfitters.js',
+        array
+    ('jquery'),_S_VERSION, true);
+}
+
 
  if (is_front_page()) {
 	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
