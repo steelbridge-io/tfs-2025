@@ -79,7 +79,7 @@ if (has_post_thumbnail()) : ?>
 	<?php the_fly_shop_breadcrumbs(); ?>
  </div>
 
-<section class="content-destination-template content">
+<section id="destination-template-content" class="content-destination-template content">
     <div class="container">
         <!--<div id="scrollto"></div>-->
         <div id="primary" class="content-area row">
@@ -99,11 +99,7 @@ if (has_post_thumbnail()) : ?>
     </div>
 </section>
 
-<?php
-// Replace the entire #inclusions-section and #destination-features sections with this tabbed structure
-?>
-
- <section id="tabbed-destination-content" class="container-fluid">
+ <section id="tabbed-destination-content" class="container-fluid mt-6">
   <div class="container">
    <!-- Bootstrap 5 Nav Tabs -->
    <ul class="nav nav-tabs destination-tabs" id="destinationTabs" role="tablist">
