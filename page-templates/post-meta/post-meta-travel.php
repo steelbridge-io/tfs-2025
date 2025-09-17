@@ -7,6 +7,30 @@
  * @package The_Fly_Shop
  */
 
+$multi_season_calendar_title = get_post_meta( get_the_ID(), 'multi-season-calendar-title', true );
+
+$monthly_range_checkbox = get_post_meta( get_the_ID(), 'monthly-range-checkbox', true );
+$seasons = array();
+for ($season = 1; $season <= 3; $season++) {
+    $seasons[$season] = array(
+        'start_month' => get_post_meta( get_the_ID(), "season{$season}-start-month", true ),
+        'end_month'   => get_post_meta( get_the_ID(), "season{$season}-end-month", true ),
+        'start_part'  => get_post_meta( get_the_ID(), "season{$season}-start-part", true ),
+        'end_part'    => get_post_meta( get_the_ID(), "season{$season}-end-part", true ),
+        'color'       => get_post_meta( get_the_ID(), "season{$season}-color", true ),
+        'name'        => get_post_meta( get_the_ID(), "season{$season}-name", true ),
+    );
+}
+
+$feature_2_seasons_hi_lo_content = get_post_meta( get_the_ID(), 'feature-2-seasons-hi-lo-content', true );
+$feature_2_seasons_hiseason      = get_post_meta( get_the_ID(), 'feature-2-seasons-hiseason', true );
+$feature_2_seasons_lowseason     = get_post_meta( get_the_ID(), 'feature-2-seasons-lowseason', true );
+
+$monthly_range_checkbox = get_post_meta( get_the_ID(), 'monthly-range-checkbox', true );
+$season_start_month     = get_post_meta( get_the_ID(), 'season-start-month', true );
+$season_end_month       = get_post_meta( get_the_ID(), 'season-end-month', true );
+$season_color           = get_post_meta( get_the_ID(), 'season-color', true );
+
 $travel_logo            = get_post_meta( get_the_ID(), 'travel-logo', true );
 $travel_description     = get_post_meta( get_the_ID(), 'travel-description', true );
 $masthead_bold_textarea = get_post_meta( get_the_ID(), 'masthead-bold-textarea', true );
@@ -17,6 +41,7 @@ $travel_temp_video        = get_post_meta( get_the_ID(), 'travel-temp-video', tr
 $travel_temp_video_poster = get_post_meta( get_the_ID(), 'travel-temp-video-poster', true );
 
 $feature_1_title                  = get_post_meta( get_the_ID(), 'feature-1-title', true );
+$feature_1_readmore                = get_post_meta( get_the_ID(), 'feature-1-readmore', true );
 $feature_1_cost_textarea          = get_post_meta( get_the_ID(), 'feature-1-cost-textarea', true );
 $feature_1_inclusions_textarea    = get_post_meta( get_the_ID(), 'feature-1-inclusions-textarea', true );
 $feature_1_noninclusions_textarea = get_post_meta( get_the_ID(), 'feature-1-noninclusions-textarea', true );
