@@ -1864,199 +1864,10 @@ ul.dropdown-menu ul.dropdown-menu {
   .archive #archive-template {
     margin-top: 7rem; } }
 
-/*
-.below-nav-logo-container {
-  position: fixed;
-  top: 200px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-  opacity: 1;
-  visibility: visible;
-
-  a {
-    position: relative;
-    display: block;
-  }
-
-  .tfs-nav-logo {
-    width: 350px;
-    transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-
-    &.scroll {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transform: scale(0.95);
-    }
-
-    &.no-scroll {
-      position: relative;
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-
-  &:hover {
-    .tfs-nav-logo.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .tfs-nav-logo.no-scroll {
-      opacity: 0;
-      transform: scale(1.05);
-    }
-  }
-}
-
-.navbar-brand {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  transition: all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
-  pointer-events: none;
-
-  .tfs-nav-logo {
-    transition: all 0.4s ease;
-
-    &.scroll {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-
-    &.no-scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-}
-
-.navbar.scrolled {
-  .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto;
-
-    .tfs-nav-logo.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .tfs-nav-logo.no-scroll {
-      opacity: 0;
-      transform: scale(0.9);
-    }
-  }
-}
-
-.navbar.scrolled ~ .below-nav-logo-container {
-
-  top: 50px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  .tfs-nav-logo {
-    width: 120px;
-
-    &.no-scroll {
-      opacity: 0;
-      transform: scale(0.8) rotate(-2deg);
-    }
-
-    &.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-  }
-}
-
-.navbar {
-  &.scroll-stage-1 ~ .below-nav-logo-container {
-    .tfs-nav-logo {
-      width: 280px;
-    }
-  }
-
-  &.scroll-stage-2 ~ .below-nav-logo-container {
-    top: 150px;
-    .tfs-nav-logo {
-      width: 200px;
-    }
-  }
-
-  &.scroll-stage-3 ~ .below-nav-logo-container {
-    top: 80px;
-    .tfs-nav-logo {
-      width: 140px;
-    }
-  }
-}
-
-@media (max-width: 991.98px) {
-  .below-nav-logo-container {
-    top: 120px;
-
-    .tfs-nav-logo {
-      width: 200px;
-    }
-  }
-
-  .navbar.scrolled ~ .below-nav-logo-container {
-    top: 40px;
-
-    .tfs-nav-logo {
-      width: 100px;
-    }
-  }
-
-  .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-  }
-
-  .below-nav-logo-container {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .below-nav-logo-container {
-    top: 100px;
-
-    .tfs-nav-logo {
-      width: 180px;
-    }
-  }
-}
-
-
-@keyframes logoColorTransition {
-  0% {
-    opacity: 0;
-    filter: brightness(1.2);
-  }
-  50% {
-    opacity: 0.5;
-    filter: brightness(1.1);
-  }
-  100% {
-    opacity: 1;
-    filter: brightness(1);
-  }
-}
-
-.navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
-  animation: logoColorTransition 0.8s ease-out;
-}
-
- */
 /* Logo positioning and transitions */
 .below-nav-logo-container {
   position: fixed;
-  top: 150px;
+  top: 15%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -4660,6 +4471,32 @@ html {
       line-height: 1;
       font-size: clamp(0.875rem, 2vw, 1.25rem); }
 
+.multi-season-calendar h4 {
+  text-align: center; }
+
+.month-display-grid {
+  display: flex;
+  margin: 15px 0;
+  justify-content: center; }
+
+.month-display-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.month-label {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px; }
+
+.month-visual {
+  width: 50px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  overflow: hidden; }
+
 /*** Fly Fishing School Template **/
 #fly-fishing-school-image-container .thumbnail a img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
@@ -4799,6 +4636,28 @@ html {
         display: inline-block;
         margin: 0 0.5rem; } }
 
+/* Hero overlay positioning enhancement */
+.hero-overlay {
+  /* Ensure smooth transitions when JavaScript adjusts positioning */
+  transition: top 0.3s ease-in-out !important; }
+
+/* Fallback positioning for when JavaScript hasn't loaded yet */
+.hero-overlay:not([style*="top"]) {
+  top: 60% !important;
+  /* Fallback position that accounts for typical logo spacing */ }
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 768px) {
+  .hero-overlay:not([style*="top"]) {
+    top: 55% !important;
+    /* Slightly higher on mobile devices */ } }
+@media (max-width: 576px) {
+  .hero-overlay:not([style*="top"]) {
+    top: 50% !important;
+    /* Even higher on small mobile devices */ } }
+/**
+original code
+ */
 #tabbed-destination-content .container {
   padding: 0 0 0 0; }
 #tabbed-destination-content .destination-tabs {
