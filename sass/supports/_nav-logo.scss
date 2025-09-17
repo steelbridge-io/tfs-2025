@@ -1,7 +1,7 @@
 /* Logo positioning and transitions */
 .below-nav-logo-container {
   position: fixed;
-  top: 15%;
+  top: 20%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
@@ -30,18 +30,6 @@
       position: relative;
       opacity: 1;
       transform: scale(1);
-    }
-  }
-
-  /* Hover behavior for below-nav logo */
-  &:hover {
-    .tfs-nav-logo.scroll {
-      opacity: 1;
-      transform: scale(1);
-    }
-    .tfs-nav-logo.no-scroll {
-      opacity: 0;
-      transform: scale(1.05);
     }
   }
 }
