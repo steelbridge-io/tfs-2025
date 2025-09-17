@@ -75,7 +75,7 @@
          </div>
         </nav>
 
-    <?php $sig_travel_logo = get_post_meta(get_the_ID(), 'signature-travel-logo', true); ?>
+    <?php $sig_travel_logo = get_post_meta(get_the_ID(), 'dest-travel-logo', true); ?>
 
     <!-- Below navigation logo container - Shows initially, hides on scroll -->
     <div id="below-nav-logo" class="below-nav-logo-container">
@@ -85,6 +85,7 @@
        <img class="tfs-nav-logo no-scroll mb-5" loading="eager" src="<?php echo $sig_travel_logo; ?>" alt="The Fly Shop 2025" />
       <?php else: ?>
       <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
+
      </a>
      <?php endif; ?>
     </div>
