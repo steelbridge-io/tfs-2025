@@ -5,10 +5,12 @@ Template Name: Destination V3 Template
 Template Post Type: post, page, travel_cpt, lower48, guide_service
 */
 
-//get_header('destination-header');
-
 if (get_post_type() === 'travel_cpt') {
     get_header('travel-header');
+} elseif (get_post_type() === 'lower48') {
+    get_header('lower48');
+} elseif (get_post_type() === 'lower48blog') {
+    get_header('lower48-blog');
 } else {
     get_header('destination-header');
 }
@@ -156,7 +158,7 @@ if (has_post_thumbnail()) : ?>
          <button class="close-overlay">&times;</button>
         </div>
         <div class="overlay-content">
-         <p>Placeholder content for inclusions read more. You can add the meta field for this later.</p>
+         <div><?php echo $feature_1_readmore; ?></div>
         </div>
        </div>
 
@@ -174,43 +176,155 @@ if (has_post_thumbnail()) : ?>
 				echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
 				echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
 				?>
+        <?php if($feature_1_readmore !== '') : ?>
         <button type="button" class="btn destination btn-tfs" data-target="inclusionsReadmore">Read more...</button>
+        <?php endif; ?>
        </div>
       </div>
 		 <?php endif ?>
     </div>
 
-
     <!-- Seasons Tab -->
-    <div class="tab-pane fade" id="seasons-pane" role="tabpanel" aria-labelledby="seasons-tab">
-		 <?php if ($travel_seasons_image !== '') : ?>
-      <div class="tab-container-wrapper">
-       <div id="seasonsReadmore" class="readmore-info">
-        <div class="overlay-header">
-         <h3>Seasons Details</h3>
-         <button class="close-overlay">&times;</button>
-        </div>
-        <div class="overlay-content">
-         <div><?php echo $feature_2_seasons_content . '&nbsp;'. $feature_2_seasons_readmore; ?></div>
-        </div>
-       </div>
+       <!-- Seasons Tab -->
+       <div class="tab-pane fade" id="seasons-pane" role="tabpanel" aria-labelledby="seasons-tab">
+           <?php if ($travel_seasons_image !== '') : ?>
+               <div class="tab-container-wrapper">
+                   <div id="seasonsReadmore" class="readmore-info">
+                       <div class="overlay-header">
+                           <h3>Seasons Details</h3>
+                           <button class="close-overlay">&times;</button>
+                       </div>
+                       <div class="overlay-content">
+                           <div><?php echo $feature_2_seasons_content . '&nbsp;'. $feature_2_seasons_readmore; ?></div>
+                       </div>
+                   </div>
 
-       <!-- NEW: Image spans full width above content -->
-       <div class="feature-image">
-        <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
-       </div>
+                   <!-- NEW: Image spans full width above content -->
+                   <div class="feature-image">
+                       <img class="img-fluid" src="<?php echo $travel_seasons_image; ?>" alt="The Fly Shop Travel Image">
+                   </div>
 
-       <!-- Content below image -->
-       <div class="feature-content">
-        <h2><?php echo $feature_2_seasons_title ?></h2>
-				<?php
-				echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
-				echo '<button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>';
-				?>
+                   <!-- Content below image -->
+                   <div class="feature-content">
+                       <h2><?php echo $feature_2_seasons_title ?></h2>
+                       <?php
+                       echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+
+                       // NEW MULTI-SEASON CALENDAR - This is ADDITIONAL functionality
+                       if ($monthly_range_checkbox === 'yes'):
+                           $hasActiveSeasons = false;
+                           foreach($seasons as $season) {
+                               if ($season['start_month'] > 0 && $season['end_month'] > 0) {
+                                   $hasActiveSeasons = true;
+                                   break;
+                               }
+                           }
+
+                           if ($hasActiveSeasons):
+                               ?>
+                               <div class="multi-season-calendar" style="margin: 20px 0;">
+                                   <h4><?php echo $multi_season_calendar_title; ?></h4>
+                                   <div class="month-display-grid">
+                                       <?php
+                                       $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+                                       for ($month = 1; $month <= 12; $month++):
+                                           echo '<div class="month-display-container">';
+                                           echo '<div class="month-label">' . $months[$month-1] . '</div>';
+                                           echo '<div class="month-visual">';
+
+                                           $periods = ['early', 'mid', 'late'];
+                                           foreach($periods as $period):
+                                               $backgroundColor = '#f8f8f8';
+                                               $activeSeasonName = '';
+
+                                               // Check each season for this month/period
+                                               foreach($seasons as $seasonNum => $season) {
+                                                   if ($season['start_month'] > 0 && $season['end_month'] > 0) {
+                                                       $startMonth = (int)$season['start_month'];
+                                                       $endMonth = (int)$season['end_month'];
+                                                       $startPart = $season['start_part'] ?: 'full';
+                                                       $endPart = $season['end_part'] ?: 'full';
+
+                                                       $inSeason = false;
+
+                                                       if ($startMonth <= $endMonth) {
+                                                           $inSeason = $month >= $startMonth && $month <= $endMonth;
+                                                       } else {
+                                                           $inSeason = $month >= $startMonth || $month <= $endMonth;
+                                                       }
+
+                                                       if ($inSeason) {
+                                                           $shouldColor = false;
+
+                                                           if ($month === $startMonth && $month === $endMonth) {
+                                                               // Same month start and end
+                                                               $startIdx = array_search($startPart, $periods);
+                                                               $endIdx = array_search($endPart, $periods);
+                                                               $periodIdx = array_search($period, $periods);
+                                                               $shouldColor = $periodIdx >= $startIdx && $periodIdx <= $endIdx;
+                                                           } else if ($month === $startMonth) {
+                                                               // Start month
+                                                               if ($startPart === 'full') $shouldColor = true;
+                                                               else {
+                                                                   $startIdx = array_search($startPart, $periods);
+                                                                   $periodIdx = array_search($period, $periods);
+                                                                   $shouldColor = $periodIdx >= $startIdx;
+                                                               }
+                                                           } else if ($month === $endMonth) {
+                                                               // End month
+                                                               if ($endPart === 'full') $shouldColor = true;
+                                                               else {
+                                                                   $endIdx = array_search($endPart, $periods);
+                                                                   $periodIdx = array_search($period, $periods);
+                                                                   $shouldColor = $periodIdx <= $endIdx;
+                                                               }
+                                                           } else {
+                                                               // Full months in between
+                                                               $shouldColor = true;
+                                                           }
+
+                                                           if ($shouldColor) {
+                                                               $backgroundColor = $season['color'] ?: '#28a745';
+                                                               $activeSeasonName = $season['name'] ?: "Season {$seasonNum}";
+                                                           }
+                                                       }
+                                                   }
+                                               }
+
+                                               echo '<div class="period-' . $period . '" style="flex: 1; background-color: ' . $backgroundColor . ';" title="' . ucfirst($period) . ($activeSeasonName ? ' - ' . $activeSeasonName : '') . '"></div>';
+                                           endforeach;
+
+                                           echo '</div>';
+                                           echo '</div>';
+                                       endfor;
+                                       ?>
+                                   </div>
+
+                                   <!-- Season Legend -->
+                                   <div class="season-legend" style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center;">
+                                       <?php foreach($seasons as $seasonNum => $season):
+                                           if ($season['start_month'] > 0 && $season['end_month'] > 0): ?>
+                                               <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                                   <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo $season['color'] ?: '#28a745'; ?>; border: 2px solid #333; border-radius: 3px;"></div>
+                                                   <span style="font-weight: 500;"><?php echo $season['name'] ?: "Season {$seasonNum}"; ?></span>
+                                               </div>
+                                           <?php endif; endforeach; ?>
+                                   </div>
+
+                                   <div style="margin-top: 15px; font-size: 13px; color: #666; text-align: center;">
+                                       <em>Each month is divided into early, mid, and late periods for precise season timing</em>
+                                   </div>
+                               </div>
+                           <?php endif; endif; ?>
+
+
+
+                       <button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read more...</button>
+                   </div>
+               </div>
+           <?php endif; ?>
        </div>
-      </div>
-		 <?php endif; ?>
-    </div>
 
     <!-- Getting There Tab -->
     <div class="tab-pane fade" id="getting-there-pane" role="tabpanel" aria-labelledby="getting-there-tab">
