@@ -202,7 +202,7 @@
       i {
         vertical-align: middle;
         line-height: 1;
-        font-size: inherit;
+        font-size: 1.85rem;
       }
     }
 
@@ -221,7 +221,7 @@
         padding: 0.75rem 1rem;
 
         i {
-          font-size: 1.125rem;
+          font-size: 1.85rem;
         }
       }
     }
@@ -233,7 +233,7 @@
         padding: 0.875rem 1.125rem;
 
         i {
-          font-size: 1.25rem;
+          font-size: 1.85rem;
         }
       }
     }
@@ -256,4 +256,29 @@
     }
   }
 
+}
+
+// Force all pagination items to have equal height
+.pagination.archive-pagination {
+  .page-item {
+    display: flex; // Make li a flex container
+
+    .page-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2.5rem; // Set minimum height for all items
+      width: 100%;
+
+      // Base font size for mobile
+      font-size: 0.875rem;
+      padding: 0.5rem 0.75rem;
+
+      i {
+        line-height: 1;
+        font-size: inherit; // Use same font size as text
+        vertical-align: middle;
+      }
+    }
+  }
 }
