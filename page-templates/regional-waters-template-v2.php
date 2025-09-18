@@ -162,7 +162,7 @@
    </section>
 
 		<!-- Second spotlight - Image on LEFT (flipped order) -->
-   <section class="spotlight d-flex flex-row-reverse">  <!-- Added flex-row-reverse class -->
+   <section class="spotlight d-flex flex-row-reverse">
     <div class="row flex-row-reverse regional-waters">
      <div class="col-md-6 col-lg-6 regional-waters-container">
       <div class="image position-relative">
