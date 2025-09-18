@@ -222,6 +222,10 @@ function the_fly_shop_2025_scripts() {
 	wp_enqueue_script('regional-waters-js-v2', get_template_directory_uri() . '/js/regional-waters-v2.js', array('jquery'), _S_VERSION, true);
  }
 
+ if (is_page_template('page-templates/private-template.php')) {
+	wp_enqueue_script('private-template', get_template_directory_uri() . '/js/regional-waters-v2.js', array('jquery'), _S_VERSION, true);
+ }
+
  if (is_page_template('page-templates/sections-template.php')) {
 	wp_enqueue_script('sections-template-js', get_template_directory_uri() . '/js/sections-template.js', array('jquery'),
 	 _S_VERSION, true);
