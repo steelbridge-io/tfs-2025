@@ -1554,26 +1554,22 @@ a:hover {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4);
 }
 
-/* Hero overlay positioning enhancement */
 .hero-overlay {
-  /* Ensure smooth transitions when JavaScript adjusts positioning */
   transition: top 0.3s ease-in-out !important;
 }
 
-/* Fallback positioning for when JavaScript hasn't loaded yet */
 .hero-overlay:not([style*=top]) {
-  top: 60% !important; /* Fallback position that accounts for typical logo spacing */
+  top: 60% !important;
 }
 
-/* Responsive adjustments for different screen sizes */
 @media (max-width: 768px) {
   .hero-overlay:not([style*=top]) {
-    top: 55% !important; /* Slightly higher on mobile devices */
+    top: 55% !important;
   }
 }
 @media (max-width: 576px) {
   .hero-overlay:not([style*=top]) {
-    top: 50% !important; /* Even higher on small mobile devices */
+    top: 50% !important;
   }
 }
 .dropdown-menu {
@@ -2547,9 +2543,15 @@ ul.dropdown-menu ul.dropdown-menu {
 #page .hero-image {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 80vh;
   max-height: 90vh;
   overflow: hidden;
+}
+#page .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 @media (max-width: 768px) {
   #page .hero-image {
@@ -2563,6 +2565,11 @@ ul.dropdown-menu ul.dropdown-menu {
 }
 #page .hero-overlay {
   z-index: 2;
+}
+@media (max-width: 1199.98px) {
+  #page .hero-overlay {
+    width: 90%;
+  }
 }
 #page .hero-logo {
   max-width: 250px;
@@ -3169,6 +3176,16 @@ ul.dropdown-menu ul.dropdown-menu {
   50% {
     background-color: transparent;
   }
+}
+
+.recent-posts-features {
+  margin: 1rem auto;
+}
+
+.recent-posts-cat a {
+  background-color: #A21418;
+  padding: 0.2rem 0.5rem;
+  color: #ffffff;
 }
 
 /*
@@ -5818,7 +5835,7 @@ html {
 #archive-pagination .pagination.archive-pagination .page-link i {
   vertical-align: middle;
   line-height: 1;
-  font-size: inherit;
+  font-size: 1.85rem;
 }
 @media (min-width: 768px) {
   #archive-pagination .pagination.archive-pagination .page-link {
@@ -5832,7 +5849,7 @@ html {
     padding: 0.75rem 1rem;
   }
   #archive-pagination .pagination.archive-pagination .page-link i {
-    font-size: 1.125rem;
+    font-size: 1.85rem;
   }
 }
 @media (min-width: 1200px) {
@@ -5841,7 +5858,7 @@ html {
     padding: 0.875rem 1.125rem;
   }
   #archive-pagination .pagination.archive-pagination .page-link i {
-    font-size: 1.25rem;
+    font-size: 1.85rem;
   }
 }
 #archive-pagination .pagination-fluid .page-link {
@@ -5855,6 +5872,24 @@ html {
   vertical-align: middle;
   line-height: 1;
   font-size: clamp(0.875rem, 2vw, 1.25rem);
+}
+
+.pagination.archive-pagination .page-item {
+  display: flex;
+}
+.pagination.archive-pagination .page-item .page-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  width: 100%;
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+.pagination.archive-pagination .page-item .page-link i {
+  line-height: 1;
+  font-size: inherit;
+  vertical-align: middle;
 }
 
 .multi-season-calendar h4 {
