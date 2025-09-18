@@ -232,18 +232,16 @@ if (!empty($carousel_items)): ?>
 			'order'          => 'DESC'
 		 ));
 
-		 // Check if there are posts
 		 if ($recent_posts->have_posts()) : ?>
 			<div class="row row-cols-1 row-cols-md-3 g-4">
 			 <?php while ($recent_posts->have_posts()) : $recent_posts->the_post();
-				// Get the featured image URL
+
 				$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
-				// If no featured image, use a placeholder
+
 				if (!$featured_img_url) {
 				 $featured_img_url = 'https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png';
 				}
 
-				// Get the time difference
 				$time_diff = human_time_diff(get_the_time('U'), current_time('timestamp'));
 				?>
 				<div class="col">
@@ -254,34 +252,52 @@ if (!empty($carousel_items)): ?>
 						 <?php the_title(); ?>
 						</a>
 					 </h3>
-					 <ul class="d-flex list-unstyled mt-auto">
-						<li class="me-auto">
-						 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png" alt="<?php bloginfo('name'); ?>" width="52" height="52" class="border border-white">
-						</li>
-						<li class="d-flex align-items-center me-3">
-						 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
-						 <small><?php
-							// Display the first category
-							$categories = get_the_category();
+					 <!-- <ul class="d-flex list-unstyled mt-auto recent-posts-features">
+
+            <li class="me-auto">
+						 <?php
+						/* $categories = get_the_category();
+						 if (!empty($categories)) {
+							$category_image_id = get_term_meta($categories[0]->term_id, 'category-image-id', true);
+							$category_link = get_category_link($categories[0]->term_id);
+
+							if ($category_image_id) {
+							 $category_image_url = wp_get_attachment_image_url($category_image_id, 'thumbnail');
+							 echo '<a href="' . esc_url($category_link) . '">';
+							 echo '<img src="' . esc_url($category_image_url) . '" alt="' . esc_attr($categories[0]->name) . '" width="50" style="height: auto;" class="border border-white" decoding="async">';
+							 echo '</a>';
+							} else {
+							 echo '<img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png" alt="' . esc_attr(get_bloginfo('name')) . '" width="52" height="52" class="border border-white">';
+							}
+						 } else {
+							echo '<img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2018/01/TFSLogo-red.png" alt="' . esc_attr(get_bloginfo('name')) . '" width="52" height="52" class="border border-white">';
+						 } */
+						 ?>
+            </li>
+
+
+            <li class="d-flex align-items-center me-3">
+             <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"/></svg>
+             <small class="recent-posts-cat"><?php
+						/*	$categories = get_the_category();
 							if (!empty($categories)) {
-							 echo esc_html($categories[0]->name);
+							 echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" class="text-decoration-none">' . esc_html($categories[0]->name) . '</a>';
 							} else {
 							 echo 'Uncategorized';
-							}
+							} */
 							?></small>
-						</li>
+            </li>
 						<li class="d-flex align-items-center">
 						 <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"/></svg>
-						 <small><?php echo esc_html($time_diff . ' ago'); ?></small>
+             <small class="recent-posts-cat"><?php /* echo '<a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" class="text-decoration-none">' . get_the_date('F j, Y') . '</a>' */ ?></small>
 						</li>
-					 </ul>
+					 </ul> -->
 					</div>
 				 </div>
 				</div>
 			 <?php endwhile; ?>
 			</div>
 			<?php
-			// Restore original post data
 			wp_reset_postdata();
 		 endif;
 		 ?>
