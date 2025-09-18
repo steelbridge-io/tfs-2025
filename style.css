@@ -2791,108 +2791,6 @@ ul.dropdown-menu ul.dropdown-menu {
     margin: -75px 0 0 -169px;
   }
 }
-#guide-service-image-container .thumbnail a img {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-}
-#guide-service-image-container .caption h4 {
-  margin-top: 1rem;
-}
-#guide-service-image-container .row {
-  justify-content: center;
-}
-
-.adventures-template .row {
-  margin-right: calc(0 * var(--bs-gutter-x));
-  margin-left: calc(0 * var(--bs-gutter-x));
-}
-.adventures-template #guide-template-grid {
-  /* Keep the existing movement animation */
-}
-.adventures-template #guide-template-grid .travel-template-row {
-  background-color: #FBFBFD;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-}
-.adventures-template #guide-template-grid p {
-  margin: 0;
-  font-size: 1.2rem;
-}
-.adventures-template #guide-template-grid img {
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-}
-.adventures-template #guide-template-grid .widget-section {
-  position: relative;
-  z-index: 100;
-  background-color: #fff;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
-  width: 95%;
-  margin: -20px auto 0 auto;
-  padding: 1rem;
-  border: 0.5px solid #ccc;
-}
-.adventures-template #guide-template-grid .col-md-6.col-lg-6.one,
-.adventures-template #guide-template-grid .col-md-6.col-lg-6.two {
-  margin-top: 1.618em;
-  padding-top: 0;
-}
-.adventures-template #guide-template-grid .col-md-6.col-lg-6 {
-  margin-top: 1.618rem;
-  padding-top: 1.618rem;
-}
-.adventures-template #guide-template-grid .widget-section {
-  transition: transform 0.3s ease;
-  transform: translateY(0);
-}
-.adventures-template #guide-template-grid .widget-section:hover {
-  transform: translateY(-50px);
-}
-.adventures-template #guide-template-grid .thumbnail-link {
-  position: relative;
-  display: block;
-}
-.adventures-template #guide-template-grid .thumbnail-link::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-}
-.adventures-template #guide-template-grid .thumbnail-link::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px; /* Adjust size as needed */
-  height: 350px; /* Adjust size as needed */
-  background-image: url("https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease; /* Longer duration for more noticeable fade */
-  z-index: 2;
-  /* Start fully transparent and invisible */
-  visibility: hidden;
-}
-.adventures-template #guide-template-grid .thumbnail:hover .thumbnail-link::before {
-  opacity: 0.5;
-}
-.adventures-template #guide-template-grid .thumbnail:hover .thumbnail-link::after {
-  opacity: 1;
-  visibility: visible; /* Make visible on hover */
-}
-.adventures-template #guide-template-grid .thumbnail:hover .widget-section {
-  transform: translateY(-50px);
-}
-.adventures-template #guide-template-grid .widget-section {
-  transition: transform 0.3s ease;
-}
-
 /* Wave Section */
 .wave-section {
   position: relative;
@@ -3614,46 +3512,57 @@ Media Queries
   animation: moveLeftChevron 0.8s forwards;
 }
 
-.guide_service-template-regional-waters-template-v2 .info-button.active {
+.guide_service-template-regional-waters-template-v2 .info-button.active,
+.adventures-template-private-template .info-button.active {
   background-color: #A21418 !important;
   color: #ffffff !important;
   border-color: #ffffff !important;
 }
-.guide_service-template-regional-waters-template-v2 .info-button:hover {
+.guide_service-template-regional-waters-template-v2 .info-button:hover,
+.adventures-template-private-template .info-button:hover {
   background-color: #A21418 !important;
   color: #ffffff !important;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-header.active-header {
+.guide_service-template-regional-waters-template-v2 .overlay-header.active-header,
+.adventures-template-private-template .overlay-header.active-header {
   background-color: #A21418 !important;
   color: #ffffff !important;
 }
-.guide_service-template-regional-waters-template-v2 #one {
+.guide_service-template-regional-waters-template-v2 #one,
+.adventures-template-private-template #one {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4);
 }
-.guide_service-template-regional-waters-template-v2 .regional-waters {
+.guide_service-template-regional-waters-template-v2 .regional-waters,
+.adventures-template-private-template .regional-waters {
   padding: 0;
 }
-.guide_service-template-regional-waters-template-v2 .regional-waters .regional-waters-container {
+.guide_service-template-regional-waters-template-v2 .regional-waters .regional-waters-container,
+.adventures-template-private-template .regional-waters .regional-waters-container {
   padding: 0;
 }
-.guide_service-template-regional-waters-template-v2 .regional-waters .content {
+.guide_service-template-regional-waters-template-v2 .regional-waters .content,
+.adventures-template-private-template .regional-waters .content {
   height: 100%;
 }
-.guide_service-template-regional-waters-template-v2 .regional-waters #travel-style {
+.guide_service-template-regional-waters-template-v2 .regional-waters #travel-style,
+.adventures-template-private-template .regional-waters #travel-style {
   display: flex;
   flex-direction: column;
   justify-content: center;
   height: 100%;
 }
-.guide_service-template-regional-waters-template-v2 .spotlight {
+.guide_service-template-regional-waters-template-v2 .spotlight,
+.adventures-template-private-template .spotlight {
   margin: 8em 0;
 }
-.guide_service-template-regional-waters-template-v2 .image {
+.guide_service-template-regional-waters-template-v2 .image,
+.adventures-template-private-template .image {
   position: relative;
   overflow: hidden;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
-.guide_service-template-regional-waters-template-v2 .content-overlay {
+.guide_service-template-regional-waters-template-v2 .content-overlay,
+.adventures-template-private-template .content-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -3667,27 +3576,35 @@ Media Queries
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-.guide_service-template-regional-waters-template-v2 .content-overlay.visible {
+.guide_service-template-regional-waters-template-v2 .content-overlay.visible,
+.adventures-template-private-template .content-overlay.visible {
   opacity: 1;
   visibility: visible;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-header, .guide_service-template-regional-waters-template-v2 .overlay-content {
+.guide_service-template-regional-waters-template-v2 .overlay-header, .guide_service-template-regional-waters-template-v2 .overlay-content,
+.adventures-template-private-template .overlay-header,
+.adventures-template-private-template .overlay-content {
   transform: translateY(20px);
   opacity: 0;
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 .guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-header,
-.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-content {
+.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-content,
+.adventures-template-private-template .content-overlay.visible .overlay-header,
+.adventures-template-private-template .content-overlay.visible .overlay-content {
   transform: translateY(0);
   opacity: 1;
 }
-.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-header {
+.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-header,
+.adventures-template-private-template .content-overlay.visible .overlay-header {
   transition-delay: 0.1s;
 }
-.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-content {
+.guide_service-template-regional-waters-template-v2 .content-overlay.visible .overlay-content,
+.adventures-template-private-template .content-overlay.visible .overlay-content {
   transition-delay: 0.2s;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-header {
+.guide_service-template-regional-waters-template-v2 .overlay-header,
+.adventures-template-private-template .overlay-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3695,28 +3612,33 @@ Media Queries
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-header h3 {
+.guide_service-template-regional-waters-template-v2 .overlay-header h3,
+.adventures-template-private-template .overlay-header h3 {
   margin: 0;
 }
-.guide_service-template-regional-waters-template-v2 .close-overlay {
+.guide_service-template-regional-waters-template-v2 .close-overlay,
+.adventures-template-private-template .close-overlay {
   background: none;
   border: none;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-content {
+.guide_service-template-regional-waters-template-v2 .overlay-content,
+.adventures-template-private-template .overlay-content {
   flex-grow: 1;
   overflow-y: auto;
   padding: 20px;
 }
-.guide_service-template-regional-waters-template-v2 .content-buttons {
+.guide_service-template-regional-waters-template-v2 .content-buttons,
+.adventures-template-private-template .content-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-top: 15px;
 }
-.guide_service-template-regional-waters-template-v2 .info-button {
+.guide_service-template-regional-waters-template-v2 .info-button,
+.adventures-template-private-template .info-button {
   padding: 8px 16px;
   background-color: #393939;
   color: white;
@@ -3726,10 +3648,12 @@ Media Queries
   transition: background-color 0.3s;
   width: 100%;
 }
-.guide_service-template-regional-waters-template-v2 .info-button:hover {
+.guide_service-template-regional-waters-template-v2 .info-button:hover,
+.adventures-template-private-template .info-button:hover {
   background-color: #003d7a;
 }
-.guide_service-template-regional-waters-template-v2 .overlay-content p {
+.guide_service-template-regional-waters-template-v2 .overlay-content p,
+.adventures-template-private-template .overlay-content p {
   color: #333;
   line-height: 1.6;
 }
@@ -4316,7 +4240,7 @@ html {
 
 #destination-template-content .container {
   padding: 1em;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  /*box-shadow: $tfs__box-shadow;*/
 }
 
 .travel_cpt-template-destination-tamplate .featurette {
