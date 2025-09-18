@@ -26,11 +26,6 @@ get_header();
 
              <!-- Overlay Content -->
              <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-                 <!-- Logo -->
-                 <img src="<?php echo esc_url(get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'); ?>"
-                      class="hero-logo mb-3"
-                      alt="Website Logo">
-
                  <!-- Page Title -->
                  <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
              </div>
