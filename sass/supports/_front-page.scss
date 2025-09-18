@@ -300,6 +300,18 @@
   }
 }
 
+.recent-posts-features {
+  margin: 1rem auto;
+}
+
+.recent-posts-cat {
+  a {
+    background-color: $tfs__red;
+    padding: 0.2rem .5rem;
+    color: $tfs__white;
+  }
+}
+
 /*
 Media Queries
 ------------------------------------------------- */
