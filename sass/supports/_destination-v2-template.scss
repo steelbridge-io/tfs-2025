@@ -1,5 +1,11 @@
 /* Destination V2 Template Styles */
 
+.feature-image {
+  video {
+    object-fit: cover;
+  }
+}
+
 #inclusions-section {
   padding: 1.618em 0;
   .container {
