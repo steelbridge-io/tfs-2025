@@ -10,7 +10,18 @@ textarea {
 	line-height: $font__line-height-body;
 }
 
-p {
+p,
+ul,
+ol,
+dl,
+table,
+blockquote,
+address,
+pre,
+iframe,
+form,
+figure,
+{
 	font-size: 1.3rem;
 }
 
