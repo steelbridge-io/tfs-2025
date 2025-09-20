@@ -1,11 +1,12 @@
-
-
-
-
-
-
 .hero-overlay {
   transition: top 0.3s ease-in-out !important;
+}
+
+.hero-image {
+  .ratio>* {
+    width: 100%;
+    height: 100vh !important;
+  }
 }
 
 .hero-overlay:not([style*="top"]) {
