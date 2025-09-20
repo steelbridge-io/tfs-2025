@@ -118,7 +118,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
         </div>
     </section>
 
-    <section id="tabbed-destination-content" class="container-fluid mt-6">
+    <section id="tabbed-destination-content" class="container-fluid mt-5">
         <div class="container">
             <!-- Bootstrap 5 Nav Tabs -->
             <ul class="nav nav-tabs destination-tabs" id="destinationTabs" role="tablist">
