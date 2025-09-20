@@ -594,6 +594,21 @@
   line-height: 1;
 }
 
+#set-the-hook-destination-template {
+  .container {
+    padding: 3rem;
+    .travel.setthehook-p {
+      ul {
+        margin: 0 !important;
+        padding-left: 1rem;
+        li {
+          margin: 0.8rem 0;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .seasons-row.expanded,
   .getting-there-row.expanded,
