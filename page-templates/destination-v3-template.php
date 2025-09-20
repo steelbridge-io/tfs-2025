@@ -15,10 +15,6 @@ if (get_post_type() === 'travel_cpt') {
     get_header('destination-header');
 }
 
-/**
- * Write the get header where if this template is used in the travel_cpt custom post typ, get_header('travel-header'); is used.
- */
-
 include_once('post-meta/post-meta-travel.php'); // Includes all the custom meta-data
 ?>
 
@@ -32,40 +28,70 @@ include_once( 'cta-sections/news-signup-blog-estancia-maria-behety-lodge.php' );
 include_once( 'cta-sections/news-signup-blog-la-villa-de-maria-behety.php' );
 include_once('cta-sections/news-signup-blog-rio-marie.php' );*/
 
-if (has_post_thumbnail()) : ?>
+$travel_hero_video = get_post_meta( get_the_ID(), 'travel-hero-video', true );
+$has_hero_video = !empty(trim($travel_hero_video));
+$fallback_image = 'https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp';
 
-    <div class="container-fluid travel-template-hero p-0">
-        <div class="hero-image position-relative">
-            <!-- Full-Width Featured Image -->
-            <img src="<?php echo esc_url(
-                    has_post_thumbnail() ?
-                            get_the_post_thumbnail_url(get_the_ID(), 'full') :
-                            get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'
-            ); ?>"
-                 class="img-fluid w-100"
-                 alt="<?php the_title_attribute(); ?>">
+if ($has_hero_video || has_post_thumbnail()) : ?>
 
-            <!-- Overlay Content -->
-            <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-                <!-- Page Title -->
-                <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
-            </div>
-        </div>
+  <div class="container-fluid travel-template-hero p-0">
+   <div class="hero-image position-relative">
+
+    <?php if ($has_hero_video) : ?>
+     <!-- Hero Video -->
+     <div class="ratio ratio-21x9">
+      <video
+       class="w-100"
+       autoplay
+       muted
+       loop
+       playsinline
+       preload="auto"
+       style="object-fit: cover;"
+       <?php if (has_post_thumbnail()) : ?>
+        poster="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+       <?php endif; ?>
+      >
+       <source src="<?php echo esc_url($travel_hero_video); ?>" type="video/mp4">
+       <!-- Fallback to image if video fails -->
+       <img src="<?php echo esc_url(
+        has_post_thumbnail() ?
+         get_the_post_thumbnail_url(get_the_ID(), 'full') :
+         $fallback_image
+       ); ?>"
+            class="img-fluid w-100"
+            alt="<?php the_title_attribute(); ?>">
+       Your browser does not support the video tag.
+      </video>
+     </div>
+    <?php else : ?>
+     <!-- Fallback to Featured Image -->
+     <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+          class="img-fluid w-100"
+          alt="<?php the_title_attribute(); ?>">
+    <?php endif; ?>
+
+    <!-- Overlay Content -->
+    <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+     <!-- Page Title -->
+     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
     </div>
-<?php else: ?>
-    <div class="container-fluid travel-template-hero p-0">
-        <div class="hero-image position-relative">
-            <!-- Full-Width Featured Image -->
-            <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp"
-                 class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
-            <!-- Overlay Content -->
-            <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-                <!-- Page Title -->
-                <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
-            </div>
-        </div>
+   </div>
+  </div>
+  <?php else: ?>
+  <div class="container-fluid travel-template-hero p-0">
+   <div class="hero-image position-relative">
+    <!-- Default Fallback Image -->
+    <img src="<?php echo esc_url($fallback_image); ?>"
+         class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+    <!-- Overlay Content -->
+    <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+     <!-- Page Title -->
+     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
     </div>
-<?php endif; ?>
+   </div>
+  </div>
+  <?php endif; ?>
 
     <!-- Breadcrumbs -->
     <div class="container mt-4">
@@ -554,13 +580,14 @@ if (has_post_thumbnail()) : ?>
             </div>
         </div>
     </section>
-
+    <?php if($cta_strong_intro !=='') : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
         <div class="container">
-            <h2>What Makes This Destination Special and Unique?</h2>
-            <div class="travel setthehook-p"><?php _e($sth_content_1); ?></div>
+         <h2><?php echo $cta_strong_intro; ?></h2>
+         <div class="travel setthehook-p"><?php echo $cta_content; ?></div>
         </div>
     </section>
+    <?php endif; ?>
 
     <section id="destination-template-carousel" class="wrapper mt-5">
         <div class="inner container">
@@ -982,14 +1009,6 @@ if (has_post_thumbnail()) : ?>
         });
     </script>
 
-    <!-- <section id="cta" class="wrapper mt-5 mb-5">
-    <div class="inner container">
-        <header class="text-center">
-            <h2><?php //echo $cta_strong_intro; ?></h2>
-            <p class="lead text-center text-justify"><?php //echo $cta_content; ?></p>
-        </header>
-    </div>
-</section> -->
     <!-- Table Modal -->
     <div id="travelmodal-table" class="modal fade travel-table-modal" tabindex="-1"
          role="dialog"
