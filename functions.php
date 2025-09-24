@@ -269,6 +269,10 @@ if (is_page_template('page-templates/blog-template-outfitters.php')) {
     ('jquery'),_S_VERSION, true);
 }
 
+if (is_page_template('page-templates/schools-template.php')) {
+  wp_enqueue_script('schools-template-js', get_template_directory_uri() . '/js/schools-template.js', array('jquery'), _S_VERSION, true);
+}
+
  if (is_front_page()) {
 	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
  }
