@@ -188,6 +188,10 @@ function the_fly_shop_2025_scripts() {
 	wp_enqueue_script('guide-service-js', get_template_directory_uri() . '/js/guide-service.js', array('jquery'), _S_VERSION, true);
  }
 
+ if (is_page_template('page-templates/guide-service-destination-template.php')) {
+	wp_enqueue_script('guide-service-destination-js', get_template_directory_uri() . '/js/guide-service-destination-template.js', array('jquery'), _S_VERSION, true);
+ }
+
  if (is_page_template('page-templates/private-waters-template.php')) {
 	wp_enqueue_script('private-waters-js', get_template_directory_uri() . '/js/private-waters.js', array('jquery'),
 	 _S_VERSION,
@@ -223,7 +227,7 @@ function the_fly_shop_2025_scripts() {
  }
 
  if (is_page_template('page-templates/private-template.php')) {
-	wp_enqueue_script('private-template', get_template_directory_uri() . '/js/regional-waters-v2.js', array('jquery'), _S_VERSION, true);
+	wp_enqueue_script('private-template', get_template_directory_uri() . '/js/private-template.js', array('jquery'), _S_VERSION, true);
  }
 
  if (is_page_template('page-templates/sections-template.php')) {
@@ -265,7 +269,6 @@ if (is_page_template('page-templates/blog-template-outfitters.php')) {
     ('jquery'),_S_VERSION, true);
 }
 
-
  if (is_front_page()) {
 	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
  }
@@ -273,6 +276,9 @@ if (is_page_template('page-templates/blog-template-outfitters.php')) {
  if (is_singular() && comments_open() && get_option('thread_comments')) {
 	wp_enqueue_script('comment-reply');
  }
+
+ require_once get_template_directory() . '/inc/inline-styles.php';
+
 }
 add_action( 'wp_enqueue_scripts', 'the_fly_shop_2025_scripts' );
 
