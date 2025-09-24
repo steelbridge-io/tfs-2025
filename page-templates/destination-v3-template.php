@@ -221,6 +221,59 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                             <!-- Content below image -->
                             <div class="feature-content inclusions-content">
                                 <h2><?php echo $feature_1_title ?></h2>
+
+                             <!-- Test Area -->
+
+
+														 <?php
+														 // Get the dynamic pricing table data
+														 $table_config = get_post_meta(get_the_ID(), 'pricing-table-config', true);
+														 $table_data = get_post_meta(get_the_ID(), 'pricing-table-data', true);
+
+														 if ($table_config && $table_data) {
+															$config = json_decode( $table_config, true );
+															$data   = json_decode( $table_data, true );
+
+															if ( $config && $data ) {
+															 $columns = $config['columns'];
+															 $rows    = $config['rows'];
+															 $title   = isset( $config['title'] ) ? $config['title'] : '';
+
+															 if ( $title ) {
+
+																echo '<div class="pricing-rates-table">';
+
+																if ( $title ) {
+																 echo '<h3 class="table-title">' . esc_html( $title ) . '</h3>';
+																}
+
+																echo '<table class="lodging-rates-table">';
+
+																for ( $r = 0; $r < $rows; $r ++ ) {
+																 echo '<tr>';
+																 for ( $c = 0; $c < $columns; $c ++ ) {
+																	$cell_value = isset( $data[ $r ][ $c ] ) ? esc_html( $data[ $r ][ $c ] ) : '';
+
+																	if ( $r == 0 ) {
+																	 // Header row
+																	 echo '<th>' . $cell_value . '</th>';
+																	} else {
+																	 // Data rows
+																	 echo '<td>' . $cell_value . '</td>';
+																	}
+																 }
+																 echo '</tr>';
+																}
+
+																echo '</table>';
+																echo '</div>';
+															 }
+															}
+														 }
+														 ?>
+
+                              <!-- /Test Area -->
+
                                 <?php
                                 echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
                                 echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
