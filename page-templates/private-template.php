@@ -70,19 +70,22 @@ get_header(); ?>
 
  <!-- One -->
 <section class="mt-5 mb-5">
-  <div class="container private-template-content">
+    <div class="container">
+        <div id="primary" class="content-area row mt-5">
+            <main id="main" class="site-main col-md-12" role="main">
 
-   <h2><?php the_title( '<h1 class="entry-title">', '</h1>' ); ?></h2>
+                <?php
+                // WordPress Blog Content
+                while ( have_posts() ) : the_post();
 
-	 <?php
-	 // Page content from editor
-	 while ( have_posts() ) : the_post();?>
-		<?php the_content();?>
-	 <?php
-	 endwhile;
-	 wp_reset_query();?>
+                    get_template_part( 'template-parts/content', 'page-basic' );
 
-  </div>
+                endwhile; // End of the loop.
+                ?>
+
+            </main>
+        </div>
+    </div>
 </section>
 
 
