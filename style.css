@@ -1452,6 +1452,10 @@ a:hover {
   text-align: center;
 }
 
+.guide_service-template-page-templates .image img {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+}
+
 #guide-service-image-container .thumbnail a img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
@@ -1462,10 +1466,6 @@ a:hover {
   justify-content: center;
 }
 
-.guide_service-template .row {
-  margin-right: calc(0 * var(--bs-gutter-x));
-  margin-left: calc(0 * var(--bs-gutter-x));
-}
 .guide_service-template #guide-template-grid {
   /* Keep the existing movement animation */
 }
@@ -2801,6 +2801,11 @@ ul.dropdown-menu ul.dropdown-menu {
     margin: -75px 0 0 -169px;
   }
 }
+.private-template-content {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+}
+
 /* Wave Section */
 .wave-section {
   position: relative;
@@ -6062,6 +6067,88 @@ html {
     display: inline-block;
     margin: 0 0.5rem;
   }
+}
+
+.pricing-rates-table {
+  margin: 20px 0;
+}
+
+.pricing-rates-table .table-title {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.lodging-rates-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.lodging-rates-table th,
+.lodging-rates-table td {
+  border: 1px solid #ddd;
+  padding: 12px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.lodging-rates-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #495057;
+}
+
+.lodging-rates-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.lodging-rates-table tbody tr:hover {
+  background-color: #e8f4f8;
+}
+
+@media (max-width: 768px) {
+  .lodging-rates-table {
+    font-size: 12px;
+  }
+  .lodging-rates-table th,
+  .lodging-rates-table td {
+    padding: 8px 4px;
+  }
+}
+/** Test */
+/* For videos with poster images that should cover the container */
+/* If you're using Bootstrap's ratio classes, ensure the video fills the container */
+.ratio video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Specifically for your video-poster class */
+.video-poster video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Alternative approach using specific positioning */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
