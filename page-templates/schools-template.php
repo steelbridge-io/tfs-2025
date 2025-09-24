@@ -16,22 +16,74 @@ get_header(); ?>
  <style class="schoolshack"></style>
  <section id="banner">
 
-	<div class="inner">
+  <div class="inner">
 
-	 <img src="<?php echo $schools_waters_logo;?>" class="img-responsive center-block" alt="The Fly Shop Schools">
+   <img src="<?php echo $schools_waters_logo;?>" class="img-fluid mx-auto d-block" alt="The Fly Shop Schools">
 
-	 <h2 id="schools-title"><?php the_title();?></h2>
+   <h2 id="schools-title"><?php the_title();?></h2>
 
 	 <?php if ( get_post_meta($post->ID, 'schools-description', true) )
 		echo '<p class="template-description">' . $schools_waters_description . '</p>' ?>
 
-	 <h3 id="schools-tel">800 &bull; 669 &bull; 3474</h3>
+   <h3 id="schools-tel">800 &bull; 669 &bull; 3474</h3>
 
-	</div>
+  </div>
 
-	<a href="#main" class="more scrolly">Read more here!</a>
+  <a href="#main" class="more scrolly">Read more here!</a>
 
  </section>
+
+<?php if ( !empty( $guidesvc_temp_video ) && !empty($guidesvc_temp_video_poster) ) : ?>
+ <div id="banner" class="container-fluid travel-template-hero p-0">
+  <div class="hero-image position-relative guidesvc-temp-hero-overlay video-control">
+   <div class="overlay"></div>
+   <video id="sections-private-background-video" class="private-temp-video"
+          autoplay
+          playsinline loop
+          muted
+          poster="<?php echo $guidesvc_temp_video_poster; ?>">
+    <source src="<?php echo $guidesvc_temp_video; ?>" type="video/mp4">
+   </video>
+   <!-- Overlay Content -->
+   <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+    <!-- Page Title -->
+    <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+   </div>
+  </div>
+ </div>
+<?php elseif ( empty( $guidesvc_temp_video )) : ?>
+ <div id="banner" class="container-fluid travel-template-hero p-0">
+  <div class="hero-image position-relative guidesvc-temp-hero-overlay">
+   <div class="overlay"></div>
+   <!-- Full-Width Featured Image -->
+   <img src="<?php echo esc_url(
+		has_post_thumbnail() ?
+		 get_the_post_thumbnail_url(get_the_ID(), 'full') :
+		 get_template_directory_uri() . '/images/the-fly-shop-logo-white.png'
+	 ); ?>"
+        class="img-fluid w-100"
+        alt="<?php the_title_attribute(); ?>">
+
+   <!-- Overlay Content -->
+   <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+    <!-- Page Title -->
+    <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+   </div>
+  </div>
+ </div>
+<?php else:  ?>
+ <div class="container-fluid travel-template-hero p-0">
+  <div class="hero-image position-relative">
+   <!-- Full-Width Featured Image -->
+   <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+   <!-- Overlay Content -->
+   <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+    <!-- Page Title -->
+    <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+   </div>
+  </div>
+ </div>
+<?php endif; ?>
 
  <!-- Breadcrumbs -->
  <div class="container mt-4">
@@ -40,8 +92,8 @@ get_header(); ?>
 
  <!-- One -->
  <section id="one" class="wrapper style5 special">
-	<span id="main"></span>
-	<div class="inner">
+  <span id="main"></span>
+  <div class="inner">
 
 	 <?php
 	 // Page content from editor
@@ -51,274 +103,308 @@ get_header(); ?>
 	 endwhile;
 	 wp_reset_query();?>
 
-	</div>
+  </div>
  </section>
 
  <!-- Two -->
  <section id="schools-two" class="wrapper alt style2">
-	<section class="spotlight">
+  <div class="container">
+   <div class="row align-items-center">
+    <div class="col-md-6">
+     <div class="image">
+      <!-- Video/Text/Image Option -->
+			<?php
+			if(get_post_meta(get_the_ID(), 'feature-sch1-checkbox', true) == 'yes') :?>
+       <div class="ratio ratio-16x9">
+        <iframe class="w-100" src="<?php echo $video_schfeature_one; ?>" allowfullscreen></iframe>
+       </div>
+			<?php else: ?>
+       <img src="<?php echo $feature_sch1_image;?>" alt="The Fly Shop Schools Image" class="img-fluid" />
+			<?php endif; ?>
+     </div>
+    </div>
 
-	 <div class="image">
-		<!-- Video/Text/Image Option -->
-		<?php
-		if(get_post_meta(get_the_ID(), 'feature-sch1-checkbox', true) == 'yes') :?>
-		 <div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="<?php echo $video_schfeature_one; ?>" allowfullscreen></iframe>
-		 </div>
-		<?php else: ?>
-		 <img src="<?php echo $feature_sch1_image;?>" alt="The Fly Shop Schools Image" />
-		<?php endif; ?>
-	 </div>
+    <div class="col-md-6">
+     <div class="content">
+      <div id="travel-style" class="schools1">
 
-	 <div class="content">
-		<div id="travel-style" class="schools1">
+       <h2><?php echo $feature_sch1_title;?></h2>
 
-		 <h2><?php echo $feature_sch1_title;?></h2>
+       <div class="travel"><?php echo $feature_sch1_cost_textarea;?></div>
 
-		 <div class="travel"><?php echo $feature_sch1_cost_textarea;?></div>
+       <div class="accordion" id="accordion1">
 
-		 <div class="panel-group" id="accordion1">
+        <div class="accordion-item schools1">
+         <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+           Inclusions&nbsp;<span class="arrow-down"></span>
+          </button>
+         </h2>
 
-			<div class="panel-travel schools1">
-			 <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseTwo1">
-				<h4 class="panel-title travel">Inclusions&nbsp;<span class="arrow-down"></span></h4>
-			 </div>
+         <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+          <div class="accordion-body">
+           <div class="travel"><?php echo $feature_sch1_inclusions_textarea;?></div>
+          </div>
+         </div>
+        </div>
 
-			 <div id="collapseTwo1" class="panel-collapse collapse">
-				<div class="panel-body">
-				 <div class="travel"><?php echo $feature_sch1_inclusions_textarea;?></div>
-				</div>
-			 </div>
-			</div>
+        <div class="accordion-item schools1">
+         <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+           Non-Inclusions&nbsp;<span class="arrow-down"></span>
+          </button>
+         </h2>
+         <div id="collapseThree1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+          <div class="accordion-body">
+           <div class="travel"><?php echo $feature_sch1_noninclusions_textarea;?></div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-			<div class="panel-travel schools1">
-			 <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" data-target="#collapseThree1">
-				<h4 class="panel-title travel">Non-Inclusions&nbsp;<span class="arrow-down"></span></h4>
-			 </div>
-			 <div id="collapseThree1" class="panel-collapse collapse">
-				<div class="panel-body">
-				 <div class="travel"><?php echo $feature_sch1_noninclusions_textarea;?></div>
-				</div>
-			 </div>
+  <!-- === SCHOOLS DATES === -->
+  <div class="container">
+   <div class="row align-items-center flex-row-reverse">
+    <div class="col-md-6">
+     <div class="image">
+      <!-- Schools Dates Video/Text/Image Option -->
+			<?php
+			if(get_post_meta(get_the_ID(), 'feature-sch2-checkbox', true) == 'yes') :?>
+       <div class="ratio ratio-16x9">
+        <iframe class="w-100" src="<?php echo $video_schfeature_two; ?>" allowfullscreen></iframe>
+       </div>
+			<?php else: ?>
+       <img src="<?php echo $feature_sch2_image;?>" alt="The Fly Shop Schools Image" class="img-fluid" />
+			<?php endif; ?>
+     </div>
+    </div>
 
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
+    <div class="col-md-6">
+     <div class="content">
+      <div id="travel-style" class="schools2">
 
-	<!-- === SCHOOLS DATES === -->
-	<section class="spotlight">
+       <!-- Dates title -->
+       <h2><?php echo $feature_sch2_title;?></h2>
 
-	 <div class="image">
-		<!-- Schools Dates Video/Text/Image Option -->
-		<?php
-		if(get_post_meta(get_the_ID(), 'feature-sch2-checkbox', true) == 'yes') :?>
-		 <div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="<?php echo $video_schfeature_two; ?>" allowfullscreen></iframe>
-		 </div>
-		<?php else: ?>
-		 <img src="<?php echo $feature_sch2_image;?>" alt="The Fly Shop Schools Image" />
-		<?php endif; ?>
-	 </div>
+       <div class="travel"><?php echo $feature_sch2_dates_textarea;?></div>
 
-	 <div class="content">
-		<div id="travel-style" class="schools2">
+       <div class="accordion" id="accordionDates">
+        <div class="accordion-item schools2">
 
-		 <!-- Dates title -->
-		 <h2><?php echo $feature_sch2_title;?></h2>
+				 <?php
+				 // Read more option
+				 if(get_post_meta(get_the_ID(), 'sch-dates-readmore-checkbox', true) == 'yes') :?>
 
-		 <div class="travel"><?php echo $feature_sch2_dates_textarea;?></div>
+          <h2 class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneDates" aria-expanded="false" aria-controls="collapseOneDates">
+            Read More&nbsp;<span class="arrow-down"></span>
+           </button>
+          </h2>
 
-		 <div class="panel-group" id="accordionDates">
-			<div class="panel-travel schools2">
+          <div id="collapseOneDates" class="accordion-collapse collapse" data-bs-parent="#accordionDates">
+           <div class="accordion-body">
+            <div class="travel"><?php echo $sch_dates_readmore_textarea;?></div>
+           </div>
+          </div>
 
-			 <?php
-			 // Read more option
-			 if(get_post_meta(get_the_ID(), 'sch-dates-readmore-checkbox', true) == 'yes') :?>
+				 <?php endif; ?>
 
-				<div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordionDates" data-target="#collapseOneDates">
-				 <h4 class="panel-title travel">Read More&nbsp;<span class="arrow-down"></span></h4>
-				</div>
+        </div>
+       </div>
 
-				<div id="collapseOneDates" class="panel-collapse collapse">
-				 <div class="panel-body">
-					<div class="travel"><?php echo $sch_dates_readmore_textarea;?></div>
-				 </div>
-				</div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-			 <?php endif; ?>
+  <!-- === SCHOOLS LODGING === -->
+  <div class="container">
+   <div class="row align-items-center">
+    <div class="col-md-6">
+     <div class="image">
+      <!-- Schools Video/Text/Image Option -->
+			<?php
 
-			</div>
-		 </div>
+			if(get_post_meta(get_the_ID(), 'feature-sch4-checkbox', true) == 'yes') :?>
+       <div class="ratio ratio-16x9">
+        <iframe class="w-100" src="<?php echo $video_schfeature_four; ?>" allowfullscreen></iframe>
+       </div>
+			<?php else: ?>
+       <img src="<?php echo $feature_4_schlodging_image;?>" alt="The Fly Shop Schools Image" class="img-fluid" />
+			<?php endif; ?>
+     </div>
+    </div>
 
-		</div>
-	 </div>
-	</section>
+    <div class="col-md-6">
+     <div class="content">
+      <div id="travel-style" class="schools3">
 
-	<!-- === SCHOOLS LODGING === -->
-	<section class="spotlight">
+       <h2><?php echo $feature_4_schlodging_title;?></h2>
 
-	 <div class="image">
-		<!-- Schools Video/Text/Image Option -->
-		<?php
+       <div class="travel"><?php echo $feature_4_schlodging_content;?></div>
 
-		if(get_post_meta(get_the_ID(), 'feature-sch4-checkbox', true) == 'yes') :?>
-		 <div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="<?php echo $video_schfeature_four; ?>" allowfullscreen></iframe>
-		 </div>
-		<?php else: ?>
-		 <img src="<?php echo $feature_4_schlodging_image;?>" alt="The Fly Shop Schools Image" />
-		<?php endif; ?>
-	 </div>
+       <div class="accordion" id="accordion3">
+        <div class="accordion-item schools3">
 
-	 <div class="content">
-		<div id="travel-style" class="schools3">
+				 <?php
+				 // Readmore option
+				 if(get_post_meta(get_the_ID(), 'sch-lodging-readmore-checkbox', true) == 'yes') :?>
 
-		 <h2><?php echo $feature_4_schlodging_title;?></h2>
+          <h2 class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne3" aria-expanded="false" aria-controls="collapseOne3">
+            Read More&nbsp;<span class="arrow-down"></span>
+           </button>
+          </h2>
 
-		 <div class="travel"><?php echo $feature_4_schlodging_content;?></div>
+          <div id="collapseOne3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+           <div class="accordion-body">
+            <div class="travel"><?php echo $feature_4_schlodging_readmore;?></div>
+           </div>
+          </div>
 
-		 <div class="panel-group" id="accordion3">
-			<div class="panel-travel schools3">
+				 <?php endif; ?>
 
-			 <?php
-			 // Readmore option
-			 if(get_post_meta(get_the_ID(), 'sch-lodging-readmore-checkbox', true) == 'yes') :?>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-				<div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" data-target="#collapseOne3">
-				 <h4 class="panel-title travel">Read More&nbsp;<span class="arrow-down"></span></h4>
-				</div>
+  <!-- === GETTING THERE === -->
+  <div class="container">
+   <div class="row align-items-center flex-row-reverse">
+    <div class="col-md-6">
+     <div class="image">
+      <!-- Itinerary/Text/Image Option -->
+			<?php
+			if(get_post_meta(get_the_ID(), 'feature-sch5-checkbox', true) == 'yes') :?>
+       <div class="ratio ratio-16x9">
+        <!-- Itinerary map -->
+        <iframe class="w-100" src="<?php echo $video_schfeature_five; ?>" allowfullscreen></iframe>
+       </div>
+			<?php else: ?>
+       <!-- Itinerary image -->
+       <img src="<?php echo $feature_sch5_gettingto_image;?>" alt="The Fly Shop Travel Image" class="img-fluid" />
+			<?php endif; ?>
+     </div>
+    </div>
 
-				<div id="collapseOne3" class="panel-collapse collapse">
-				 <div class="panel-body">
-					<div class="travel"><?php echo $feature_4_schlodging_readmore;?></div>
-				 </div>
-				</div>
+    <div class="col-md-6">
+     <div class="content">
+      <div id="travel-style" class="schools4">
+       <!-- Itineray title -->
+       <h2><?php echo $feature_sch5_get_to_title;?></h2>
+       <!-- Itineray content -->
+       <div class="travel"><?php echo $feature_sch5_get_to_content;?></div>
 
-			 <?php endif; ?>
+       <div class="accordion" id="accordion4">
+        <div class="accordion-item schools4">
 
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
+				 <?php
+				 // Readmore option
+				 if(get_post_meta(get_the_ID(), 'sch-gettingthere-readmore-checkbox', true) == 'yes') :?>
 
-	<!-- === GETTING THERE === -->
-	<section class="spotlight">
+          <h2 class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne4" aria-expanded="false" aria-controls="collapseOne4">
+            Read More&nbsp;<span class="arrow-down"></span>
+           </button>
+          </h2>
+          <div id="collapseOne4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+           <div class="accordion-body">
+            <div class="travel"><?php echo $feature_sch5_get_to_readmore;?></div>
+           </div>
+          </div>
 
-	 <div class="image">
-		<!-- Itinerary/Text/Image Option -->
-		<?php
-		if(get_post_meta(get_the_ID(), 'feature-sch5-checkbox', true) == 'yes') :?>
-		 <div class="embed-responsive embed-responsive-16by9">
-			<!-- Itinerary map -->
-			<iframe class="embed-responsive-item" src="<?php echo $video_schfeature_five; ?>" allowfullscreen></iframe>
-		 </div>
-		<?php else: ?>
-		 <!-- Itinerary image -->
-		 <img src="<?php echo $feature_sch5_gettingto_image;?>" alt="The Fly Shop Travel Image" />
-		<?php endif; ?>
+				 <?php endif; ?>
 
-	 </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
-	 <div class="content">
-		<div id="travel-style" class="schools4">
-		 <!-- Itineray title -->
-		 <h2><?php echo $feature_sch5_get_to_title;?></h2>
-		 <!-- Itineray content -->
-		 <div class="travel"><?php echo $feature_sch5_get_to_content;?></div>
+  <!-- === ITINERARY === -->
 
-		 <div class="panel-group" id="accordion4">
-			<div class="panel-travel schools4">
+  <div class="container">
+   <div class="row align-items-center">
+    <div class="col-md-6">
+     <div class="image">
+      <!-- Itinerary Video/Text/Image Option -->
+			<?php
+			if(get_post_meta(get_the_ID(), 'feature-sch3-checkbox', true) == 'yes') :?>
+       <div class="ratio ratio-16x9">
+        <iframe class="w-100" src="<?php echo $video_schfeature_three; ?>" allowfullscreen></iframe>
+       </div>
+			<?php else: ?>
+       <img src="<?php echo $feature_sch3_itinerary_image;?>" alt="The Fly Shop Travel Image" class="img-fluid" />
+			<?php endif; ?>
+     </div>
+    </div>
 
-			 <?php
-			 // Readmore option
-			 if(get_post_meta(get_the_ID(), 'sch-gettingthere-readmore-checkbox', true) == 'yes') :?>
+    <!-- === ITINERARY === -->
+    <div class="col-md-6">
+     <div class="content">
+      <div id="travel-style" class="schools5">
+       <h2><?php echo $feature_sch3_fishing_title;?></h2>
+       <div class="travel"><?php echo $feature_sch3_fishing_content;?></div>
 
-				<div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion4" data-target="#collapseOne4">
-				 <h4 class="panel-title travel">Read More&nbsp;<span class="arrow-down"></span></h4>
-				</div>
-				<div id="collapseOne4" class="panel-collapse collapse">
-				 <div class="panel-body">
-					<div class="travel"><?php echo $feature_sch5_get_to_readmore;?></div>
-				 </div>
-				</div>
+       <div class="accordion" id="accordion5">
+        <div class="accordion-item schools5">
 
-			 <?php endif; ?>
+				 <?php
+				 // Readmore option
+				 if(get_post_meta(get_the_ID(), 'sch-itinerary-readmore-checkbox', true) == 'yes') :?>
 
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
+          <h2 class="accordion-header">
+           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne5" aria-expanded="false" aria-controls="collapseOne5">
+            Read More&nbsp;<span class="arrow-down"></span>
+           </button>
+          </h2>
+          <div id="collapseOne5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+           <div class="accordion-body">
+            <div class="travel"><?php echo $feature_sch3_fishing_readmore;?></div>
+           </div>
+          </div>
 
-	<!-- === ITINERARY === -->
+				 <?php endif; ?>
 
-	<section class="spotlight">
+        </div>
+       </div>
 
-	 <div class="image">
-		<!-- Itinerary Video/Text/Image Option -->
-		<?php
-		if(get_post_meta(get_the_ID(), 'feature-sch3-checkbox', true) == 'yes') :?>
-		 <div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="<?php echo $video_schfeature_three; ?>" allowfullscreen></iframe>
-		 </div>
-		<?php else: ?>
-		 <img src="<?php echo $feature_sch3_itinerary_image;?>" alt="The Fly Shop Travel Image" />
-		<?php endif; ?>
-
-	 </div>
-
-	 <!-- === ITINERARY === -->
-	 <div class="content">
-		<div id="travel-style" class="schools5">
-		 <h2><?php echo $feature_sch3_fishing_title;?></h2>
-		 <div class="travel"><?php echo $feature_sch3_fishing_content;?></div>
-
-		 <div class="panel-group" id="accordion5">
-			<div class="panel-travel schools5">
-
-			 <?php
-			 // Readmore option
-			 if(get_post_meta(get_the_ID(), 'sch-itinerary-readmore-checkbox', true) == 'yes') :?>
-
-				<div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion5" data-target="#collapseOne5">
-				 <h4 class="panel-title travel">Read More&nbsp;<span class="arrow-down"></span></h4>
-				</div>
-				<div id="collapseOne5" class="panel-collapse collapse">
-				 <div class="panel-body">
-					<div class="travel"><?php echo $feature_sch3_fishing_readmore;?></div>
-				 </div>
-				</div>
-
-			 <?php endif; ?>
-
-			</div>
-		 </div>
-
-		</div>
-	 </div>
-	</section>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
 
  </section>
 
  <section id="three" class="wrapper style7 special">
-	<div class="inner">
+  <div class="inner">
 
-	 <header class="major">
-		<h2>Additional Information</h2>
-		<hr class="fancy1">
-		<div class="row">
-		 <div class="additional-listing">
+   <header class="major">
+    <h2>Additional Information</h2>
+    <hr class="fancy1">
+    <div class="row">
+     <div class="additional-listing">
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image1', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="0"><img src="'. $schools_additional_info_image1 .'" class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="0"><img src="'. $schools_additional_info_image1 .'" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -328,11 +414,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image2', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="1"><img src=" ' . $schools_additional_info_image2 . '" class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="1"><img src=" ' . $schools_additional_info_image2 . '" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -342,11 +428,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image3', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="2"><img src=" ' . $schools_additional_info_image3 . '" class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="2"><img src=" ' . $schools_additional_info_image3 . '" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -356,11 +442,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image4', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="3"><img src=" ' . $schools_additional_info_image4 . ' " class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="3"><img src=" ' . $schools_additional_info_image4 . ' " class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -368,19 +454,19 @@ get_header(); ?>
 
 			} ?>
 
-		 </div>
-		</div>
-		<!-- Second Row Travel Images -->
-		<div class="row">
-		 <div class="additional-listing">
+     </div>
+    </div>
+    <!-- Second Row Travel Images -->
+    <div class="row">
+     <div class="additional-listing">
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image5', true)) {
 
-			 echo'<div class="col-xs-6 col-md-3">',
+			 echo'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="4"><img src=" ' . $schools_additional_info_image5 . ' " class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="4"><img src=" ' . $schools_additional_info_image5 . ' " class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -390,11 +476,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image6', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="5"><img src=" ' . $schools_additional_info_image6 . ' " class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="5"><img src=" ' . $schools_additional_info_image6 . ' " class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -404,11 +490,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image7', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="6"><img src=" ' . $schools_additional_info_image7 . ' " class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="6"><img src=" ' . $schools_additional_info_image7 . ' " class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -418,11 +504,11 @@ get_header(); ?>
 
 			<?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image8', true)) {
 
-			 echo	'<div class="col-xs-6 col-md-3">',
+			 echo	'<div class="col-6 col-md-3">',
 
-			 '<div class="thumbnail">',
+			 '<div class="card">',
 
-				'<a href="#schools-carousel" data-slide-to="7"><img src=" ' . $schools_additional_info_image8 . ' " class="img-responsive" data-toggle="modal" data-target=".schools-modal" alt="The Fly Shop Images"></a>',
+				'<a href="#schools-carousel" data-bs-slide-to="7"><img src=" ' . $schools_additional_info_image8 . ' " class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target=".schools-modal" alt="The Fly Shop Images"></a>',
 
 			 '</div>',
 
@@ -430,88 +516,88 @@ get_header(); ?>
 
 			} ?>
 
-		 </div>
-		</div>
-	</div>
-	</header>
+     </div>
+    </div>
+  </div>
+  </header>
  </section>
 
  <!-- ====== MODAL SLIDER ====== -->
 
  <div class="additional-img modal fade schools-modal" tabindex="-1" role="dialog" aria-labelledby="schoolsModalLabel">
-	<div class="additional-img modal-dialog" role="document">
+  <div class="additional-img modal-dialog" role="document">
 
-	 <div id="schools-carousel" class="carousel slide" data-ride="carousel">
-		<!-- Indicators -->
-		<ol class="carousel-indicators">
+   <div id="schools-carousel" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image1', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="0" class="active"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image2', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="1"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image3', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="2"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image4', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="3"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image5', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="4"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image6', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="5"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image7', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="6"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>';
 
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image8', true)) {
 
-			echo '<li data-target="#schools-carousel" data-slide-to="7"></li>';
+			echo '<button type="button" data-bs-target="#schools-carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>';
 
 		 } ?>
 
-		</ol>
+    </div>
 
-		<!-- Wrapper for slides -->
-		<div class="carousel-inner" role="listbox">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image1', true)) {
 
-			echo	'<div class="item active">',
+			echo	'<div class="carousel-item active">',
 
-			 '<img src="' . $schools_additional_info_image1 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image1 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 		 } ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image2', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image2 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image2 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -519,9 +605,9 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image3', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image3 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image3 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -529,9 +615,9 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image4', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image4 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image4 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -539,9 +625,9 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image5', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image5 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image5 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -549,9 +635,9 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image6', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image6 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image6 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -559,9 +645,9 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image7', true)) {
 
-			echo  '<div class="item">',
+			echo  '<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image7 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image7 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
@@ -569,40 +655,41 @@ get_header(); ?>
 
 		 <?php if(get_post_meta(get_the_ID(), 'schools-additional-info-image8', true)) {
 
-			echo	'<div class="item">',
+			echo	'<div class="carousel-item">',
 
-			 '<img src="' . $schools_additional_info_image8 . '" alt="The Fly Shop World Fly Fishing Travel">',
+			 '<img src="' . $schools_additional_info_image8 . '" class="d-block w-100" alt="The Fly Shop World Fly Fishing Travel">',
 
 			'</div>';
 
 		 } ?>
 
-		</div>
+    </div>
 
-		<!-- Controls -->
-		<a class="left carousel-control" href="#schools-carousel" role="button" data-slide="prev">
-		 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		 <span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#schools-carousel" role="button" data-slide="next">
-		 <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		 <span class="sr-only">Next</span>
-		</a>
-	 </div>
-	</div>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#schools-carousel" data-bs-slide="prev">
+     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+     <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#schools-carousel" data-bs-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="visually-hidden">Next</span>
+    </button>
+   </div>
+  </div>
  </div>
 
  <!-- CALL TO ACTION ROW -->
  <section id="cta" class="wrapper style4">
-	<div class="inner">
+  <div class="inner">
 
-	 <header class="text-center">
-		<h2><?php echo $cta_schools_strong_intro;?></h2>
-		<p><?php echo $cta_schools_content;?></p>
-	 </header>
+   <header class="text-center">
+    <h2><?php echo $cta_schools_strong_intro;?></h2>
+    <p><?php echo $cta_schools_content;?></p>
+   </header>
 
-	</div>
+  </div>
  </section>
 
 <?php
+get_footer();
 get_footer();
