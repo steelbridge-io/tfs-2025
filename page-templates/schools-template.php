@@ -13,27 +13,7 @@ include_once('post-meta/post-meta-schools.php');
 
 get_header(); ?>
  <!-- Banner -->
- <style class="schoolshack"></style>
- <section id="banner">
-
-  <div class="inner">
-
-   <img src="<?php echo $schools_waters_logo;?>" class="img-fluid mx-auto d-block" alt="The Fly Shop Schools">
-
-   <h2 id="schools-title"><?php the_title();?></h2>
-
-	 <?php if ( get_post_meta($post->ID, 'schools-description', true) )
-		echo '<p class="template-description">' . $schools_waters_description . '</p>' ?>
-
-   <h3 id="schools-tel">800 &bull; 669 &bull; 3474</h3>
-
-  </div>
-
-  <a href="#main" class="more scrolly">Read more here!</a>
-
- </section>
-
-<?php if ( !empty( $guidesvc_temp_video ) && !empty($guidesvc_temp_video_poster) ) : ?>
+<?php if ( !empty( $school_temp_video ) && !empty($school_temp_video_poster) ) : ?>
  <div id="banner" class="container-fluid travel-template-hero p-0">
   <div class="hero-image position-relative guidesvc-temp-hero-overlay video-control">
    <div class="overlay"></div>
@@ -91,24 +71,28 @@ get_header(); ?>
  </div>
 
  <!-- One -->
- <section id="one" class="wrapper style5 special">
-  <span id="main"></span>
-  <div class="inner">
+ <section id="one" class="mt-5 mb-5">
+     <div class="container">
+         <div id="primary" class="content-area row mt-5">
+             <main id="main" class="site-main col-md-12" role="main">
 
-	 <?php
-	 // Page content from editor
-	 while ( have_posts() ) : the_post();?>
-		<?php the_content();?>
-	 <?php
-	 endwhile;
-	 wp_reset_query();?>
+                 <?php
+                 // WordPress Blog Content
+                 while ( have_posts() ) : the_post();
 
-  </div>
+                     get_template_part( 'template-parts/content', 'page-basic' );
+
+                 endwhile; // End of the loop.
+                 ?>
+
+             </main>
+         </div>
+     </div>
  </section>
 
  <!-- Two -->
- <section id="schools-two" class="wrapper alt style2">
-  <div class="container">
+ <section id="schools-two" class="mt-5 mb-5">
+  <div class="container pt-5 pb-5">
    <div class="row align-items-center">
     <div class="col-md-6">
      <div class="image">
@@ -166,9 +150,11 @@ get_header(); ?>
     </div>
    </div>
   </div>
+ </section>
 
   <!-- === SCHOOLS DATES === -->
-  <div class="container">
+<section class="mt mb-5">
+  <div class="container pt-5 pb-5">
    <div class="row align-items-center flex-row-reverse">
     <div class="col-md-6">
      <div class="image">
@@ -222,9 +208,11 @@ get_header(); ?>
     </div>
    </div>
   </div>
+</section>
 
   <!-- === SCHOOLS LODGING === -->
-  <div class="container">
+<section class="mt-5 mb-5">
+  <div class="container pt-5 pb-5">
    <div class="row align-items-center">
     <div class="col-md-6">
      <div class="image">
@@ -277,9 +265,11 @@ get_header(); ?>
     </div>
    </div>
   </div>
+</section>
 
   <!-- === GETTING THERE === -->
-  <div class="container">
+<section class="mt-5 mb-5">
+  <div class="container pt-5 pb-5">
    <div class="row align-items-center flex-row-reverse">
     <div class="col-md-6">
      <div class="image">
@@ -332,10 +322,11 @@ get_header(); ?>
     </div>
    </div>
   </div>
+</section>
 
   <!-- === ITINERARY === -->
-
-  <div class="container">
+<section class="mt-5 mb-5">
+  <div class="container pt-5 pb-5">
    <div class="row align-items-center">
     <div class="col-md-6">
      <div class="image">
@@ -386,15 +377,13 @@ get_header(); ?>
     </div>
    </div>
   </div>
+</section>
 
- </section>
 
- <section id="three" class="wrapper style7 special">
-  <div class="inner">
 
-   <header class="major">
-    <h2>Additional Information</h2>
-    <hr class="fancy1">
+ <section id="three" class="mt-5 mb-5">
+  <div class="inner container">
+    <!--<h2>Additional Information</h2>-->
     <div class="row">
      <div class="additional-listing">
 
@@ -519,7 +508,6 @@ get_header(); ?>
      </div>
     </div>
   </div>
-  </header>
  </section>
 
  <!-- ====== MODAL SLIDER ====== -->
@@ -679,17 +667,55 @@ get_header(); ?>
  </div>
 
  <!-- CALL TO ACTION ROW -->
- <section id="cta" class="wrapper style4">
+ <!--<section id="cta" class="wrapper style4">
   <div class="inner">
 
    <header class="text-center">
-    <h2><?php echo $cta_schools_strong_intro;?></h2>
-    <p><?php echo $cta_schools_content;?></p>
+    <h2><?php //echo $cta_schools_strong_intro;?></h2>
+    <p><?php //echo $cta_schools_content;?></p>
    </header>
 
   </div>
- </section>
+ </section>-->
+
+    <section id="cta" class="wrapper mt-5 mb-5">
+        <div class="inner container">
+            <div id="cta-trigger" class="cta-trigger-area">
+                <header class="text-center">
+                    <h2 class="cta-trigger-title">Let's talk about making this adventure happen</h2>
+                    <p class="cta-trigger-subtitle">Ready to plan your perfect fishing trip?</p>
+                    <button class="btn btn-primary cta-expand-btn" id="expandCTA">
+                        Get Started <i class="fas fa-chevron-up"></i>
+                    </button>
+                </header>
+            </div>
+
+            <div id="cta-form-container" class="cta-form-container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h3>Contact Our Travel Specialists</h3>
+                        <button class="close-form" id="closeCTA">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-content">
+                            <?php
+                            $page_title = get_the_title();
+                            $form_url_params = '?page_title=' . urlencode($page_title);
+                            echo do_shortcode('[gravityform id="17" title="false" description="false" field_values="page_title=' . urlencode($page_title) . '"]');
+                            ?>
+                        </div>
+                        <!-- Fallback content if no form is available -->
+                        <div class="contact-fallback">
+                            <p>Call us directly at <strong>(800) 669-3474</strong> or use the form above to get started.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php
-get_footer();
 get_footer();
