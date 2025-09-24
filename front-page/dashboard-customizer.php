@@ -424,16 +424,16 @@ function tfs_generate_dashboard_css($options) {
 
 // Helper function to darken colors
 function tfs_darken_color($hex, $amount) {
- $hex = str_replace('#', '', $hex);
- $rgb = array_map('hexdec', str_split($hex, 2));
+ $hex = str_replace( '#', '', $hex );
+ $rgb = array_map( 'hexdec', str_split( $hex, 2 ) );
 
- foreach ($rgb as &$color) {
-	$color = max(0, min(255, $color - ($color * $amount)));
+ foreach ( $rgb as &$color ) {
+	$color = max( 0, min( 255, $color - ( $color * $amount ) ) );
  }
 
- return '#' . implode('', array_map(function($color) {
-	 return str_pad(dechex($color), 2, '0', STR_PAD_LEFT);
-	}, $rgb));
+ return '#' . implode( '', array_map( function ( $color ) {
+	 return str_pad( dechex( (int) round( $color ) ), 2, '0', STR_PAD_LEFT );
+	}, $rgb ) );
 }
 
 // Replace WordPress logo link
