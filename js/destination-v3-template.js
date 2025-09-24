@@ -264,10 +264,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-/**
- * Test
- */
-
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
 
