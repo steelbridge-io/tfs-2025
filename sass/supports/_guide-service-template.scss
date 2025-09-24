@@ -1,3 +1,11 @@
+.guide_service-template-page-templates {
+  .image {
+    img {
+      box-shadow: $tfs__box-shadow;
+    }
+  }
+}
+
 #guide-service-image-container {
   .thumbnail {
     a {
@@ -18,8 +26,7 @@
 
 .guide_service-template {
   .row {
-    margin-right: calc(-.0* var(--bs-gutter-x));
-    margin-left: calc(-.0* var(--bs-gutter-x));
+
   }
 
   #guide-template-grid {
