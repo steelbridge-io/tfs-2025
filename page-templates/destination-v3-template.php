@@ -107,7 +107,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
       </div>
   </section>
 
-  <section id="tabbed-destination-content" class="container-fluid mt-5">
+    <section id="tabbed-destination-content" class="container-fluid mt-5">
       <div class="container">
           <!-- Bootstrap 5 Nav Tabs -->
           <ul class="nav nav-tabs destination-tabs" id="destinationTabs" role="tablist">
@@ -627,16 +627,21 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
 
           </div>
       </div>
-  </section>
+    </section>
 
-    <?php if (!empty($cta_strong_intro)) : ?>
+    <?php if (!empty($sth_content_1)) : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
         <div class="container">
-         <h2><?php echo $cta_strong_intro; ?></h2>
-         <div class="travel setthehook-p"><?php echo $cta_content; ?></div>
+            <div id="setthehook-title" class="col-md-8 col-md-offset-2">
+                <h2><?php _e($whywe_title_2); ?></h2>
+            </div>
+            <div class="mt-2">
+                <div class="travel setthehook-p"><?php _e( $whywe_content_2 ); ?></div>
+            </div>
         </div>
     </section>
     <?php endif; ?>
+
     <section id="destination-template-carousel" class="wrapper mt-5">
         <div class="inner container">
             <header class="major">
@@ -956,8 +961,8 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
         <div class="inner container">
             <div id="cta-trigger" class="cta-trigger-area">
                 <header class="text-center">
-                    <h2 class="cta-trigger-title">Let's talk about making this adventure happen</h2>
-                    <p class="cta-trigger-subtitle">Ready to plan your perfect fishing trip?</p>
+                    <h2 class="cta-trigger-title"><?php echo $cta_strong_intro; ?></h2>
+                    <p class="cta-trigger-subtitle"><?php echo $cta_content; ?></p>
                     <button class="btn btn-primary cta-expand-btn" id="expandCTA">
                         Get Started <i class="fas fa-chevron-up"></i>
                     </button>
