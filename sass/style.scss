@@ -120,8 +120,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "supports/nav-logo";
 @import "supports/page";
 @import "supports/prime-travel";
-//@import "supports/private-waters";
+@import "supports/private-waters";
 @import "supports/private-template";
+@import "supports/fish-camp-course";
 @import "supports/front-page";
 @import "supports/front-page-carousel";
 @import "supports/regional-waters-template";
@@ -136,6 +137,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 @import "supports/destination-v2-template";
 @import "supports/fish-camp-template";
 @import "supports/archive-pagination";
+@import "supports/schools-template";
 @import "supports/seasons";
 
 /*** Fly Fishing School Template **/
