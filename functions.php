@@ -41,18 +41,19 @@ function the_fly_shop_2025_setup() {
  // Register navigation menus.
  register_nav_menus(
 	array(
-	 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
-	 'travel-menu' => esc_html__( 'Travel', 'the-fly-shop-2025' ),
-	 'destination-menu' => esc_html__( 'Destination', 'the-fly-shop-2025' ),
-     'lower-48' => esc_html__( 'Lower 48', 'the-fly-shop-2025' ),
-     'lower-48blog'     => esc_html__( 'Lower 48 Blog', 'the-fly-shop-2025' ),
-	 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
-	 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
-	 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
-	 'fish-camp' => esc_html__( 'Fish Camp', 'the-fly-shop-2025' ),
-	 '404-menu' => esc_html__( '404', 'the-fly-shop-2025' ),
-     'regional-waters-menu' => esc_html__( 'Regional Waters', 'the-fly-shop-2025' ),
-     'outfitters-blog-menu' => esc_html__( 'Outfitters Blog', 'the-fly-shop-2025' ),
+		 'home-page' => esc_html__( 'Home Page', 'the-fly-shop-2025' ),
+		 'travel-menu' => esc_html__( 'Travel', 'the-fly-shop-2025' ),
+		 'destination-menu' => esc_html__( 'Destination', 'the-fly-shop-2025' ),
+		 'lower-48' => esc_html__( 'Lower 48', 'the-fly-shop-2025' ),
+		 'lower-48blog'     => esc_html__( 'Lower 48 Blog', 'the-fly-shop-2025' ),
+		 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
+		 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
+		 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
+		 'fish-camp' => esc_html__( 'Fish Camp', 'the-fly-shop-2025' ),
+		 '404-menu' => esc_html__( '404', 'the-fly-shop-2025' ),
+		 'regional-waters-menu' => esc_html__( 'Regional Waters', 'the-fly-shop-2025' ),
+		 'outfitters-blog-menu' => esc_html__( 'Outfitters Blog', 'the-fly-shop-2025' ),
+		 'schools-menu' => esc_html__( 'Schools', 'the-fly-shop-2025' ),
 	)
  );
 
@@ -271,6 +272,10 @@ if (is_page_template('page-templates/blog-template-outfitters.php')) {
 
 if (is_page_template('page-templates/schools-template.php')) {
   wp_enqueue_script('schools-template-js', get_template_directory_uri() . '/js/schools-template.js', array('jquery'), _S_VERSION, true);
+}
+
+if (is_page_template('page-templates/fish-camp-course.php')) {
+ wp_enqueue_script('fish-camp-course-js', get_template_directory_uri() . '/js/fish-camp-course.js', array('jquery'), _S_VERSION, true);
 }
 
  if (is_front_page()) {
