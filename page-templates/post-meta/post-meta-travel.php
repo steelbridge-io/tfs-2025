@@ -79,7 +79,11 @@ $feature_5_angling_content  = get_post_meta( get_the_ID(), 'feature-5-angling-co
 $feature_5_read_more_info   = get_post_meta( get_the_ID(), 'feature-5-read-more-info', true );
 $feature_5_angling_readmore = get_post_meta( get_the_ID(), 'feature-5-angling-readmore', true );
 
+$sth_title_1 = get_post_meta( get_the_ID(), 'sth-title-1', true );
 $sth_content_1 = get_post_meta( get_the_ID(), 'sth-textarea-1', true );
+
+$whywe_title_2 = get_post_meta( get_the_ID(), 'whywe-title-2', true );
+$whywe_content_2 = get_post_meta( get_the_ID(), 'whywe-textarea-2', true );
 
 $additional_info_image1      = get_post_meta( get_the_ID(), 'additional-info-image1', true );
 $additional_info_image1_link = get_post_meta( get_the_ID(), 'additional-info-image1-link', true );
