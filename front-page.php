@@ -219,6 +219,48 @@ if (!empty($carousel_items)): ?>
     </section>
 <?php endif; ?>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('#productCarousel .carousel-inner-custom');
+        const prev = document.getElementById('customPrev');
+        const next = document.getElementById('customNext');
+        if (!track || !prev || !next) return;
+
+        const isSmall = () => window.matchMedia('(max-width: 991.98px)').matches;
+
+        const step = () => {
+            if (isSmall()) {
+                const container = document.querySelector('#productCarousel');
+                return (container ? container.clientWidth : track.clientWidth);
+            }
+            const item = track.querySelector('.carousel-item-custom');
+            if (!item) return track.clientWidth;
+            const gap = parseFloat(getComputedStyle(track).gap || 0);
+            return item.getBoundingClientRect().width + gap;
+        };
+
+        const clamp = (x) => {
+            const max = track.scrollWidth - track.clientWidth;
+            return Math.max(0, Math.min(x, max));
+        };
+
+        const go = (dir) => {
+            const s = step(); if (!s) return;
+            track.scrollTo({ left: clamp(track.scrollLeft + dir * s), behavior: 'smooth' });
+        };
+
+        prev.addEventListener('click', () => go(-1));
+        next.addEventListener('click', () => go(1));
+
+        window.addEventListener('resize', () => {
+            const s = step(); if (!s) return;
+            const page = Math.round(track.scrollLeft / s);
+            track.scrollTo({ left: clamp(page * s), behavior: 'auto' });
+        });
+    });
+
+</script>
+
 <section id="front-page-news">
     <div class="container px-4 py-5" id="custom-cards">
         <h2 class="pb-2 border-bottom">News</h2>
