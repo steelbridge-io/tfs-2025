@@ -1098,8 +1098,8 @@ get_header(); ?>
   <div class="inner container">
    <div id="cta-trigger" class="cta-trigger-area">
     <header class="text-center">
-     <h2 class="cta-trigger-title">Let's talk about making this adventure happen</h2>
-     <p class="cta-trigger-subtitle">Ready to plan your perfect fishing trip?</p>
+     <h2 class="cta-trigger-title"><?php echo $cta_private_strong_intro; ?></h2>
+     <p class="cta-trigger-subtitle"><?php echo $cta_private_content; ?></p>
      <button class="btn btn-primary cta-expand-btn" id="expandCTA">
       Get Started <i class="fas fa-chevron-up"></i>
      </button>
