@@ -30,8 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
-/** Typining Effect */
 /** Typing Effect */
 const messages = [
     "This is a typing effect. Can be used to convey who The Fly Shop is.",
