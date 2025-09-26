@@ -1,6 +1,8 @@
 <?php
 // Post Meta Signature Destinations Template
 
+$signature_hero_video_url				= get_post_meta(get_the_ID(), 'signature-hero-video-url', true);
+
 $signature_description					= get_post_meta(get_the_ID(), 'signature-description', true);
 $basic_page_description					= get_post_meta(get_the_ID(), 'signature-description', true);
 
