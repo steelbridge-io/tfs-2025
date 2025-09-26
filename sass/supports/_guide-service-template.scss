@@ -25,9 +25,6 @@
 }
 
 .guide_service-template {
-  .row {
-
-  }
 
   #guide-template-grid {
     .travel-template-row {
@@ -128,6 +125,14 @@
 
     .widget-section {
       transition: transform 0.3s ease;
+    }
+    @media (max-width: 991.98px) {
+      &.mobile-container {
+        .thumbnail-link::after {
+          width: 250px;
+          height: 250px;
+        }
+      }
     }
   }
 }
