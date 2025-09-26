@@ -3,7 +3,8 @@ button,
 input,
 select,
 optgroup,
-textarea {
+textarea,
+.setthehook-p {
 	color: $color__text-main;
 	font-family: $font__main;
 	font-size: 1rem;
@@ -21,6 +22,7 @@ pre,
 iframe,
 form,
 figure,
+.setthehook-p
 {
 	font-size: 1.3rem;
 }
