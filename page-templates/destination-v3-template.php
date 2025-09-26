@@ -5,6 +5,11 @@ Template Name: Destination V3 Template
 Template Post Type: post, page, travel_cpt, lower48, guide_service
 */
 
+/**
+ * This is the meta field file for the Destination V3 Template.
+ * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_travel.php
+ */
+
 if (get_post_type() === 'travel_cpt') {
     get_header('travel-header');
 } elseif (get_post_type() === 'lower48') {
@@ -629,7 +634,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
       </div>
     </section>
 
-    <?php if (!empty($sth_content_1)) : ?>
+    <?php if (!empty($whywe_content_2)) : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
         <div class="container">
             <div id="setthehook-title" class="col-md-8 col-md-offset-2">
