@@ -79,6 +79,13 @@ $feature_5_angling_content  = get_post_meta( get_the_ID(), 'feature-5-angling-co
 $feature_5_read_more_info   = get_post_meta( get_the_ID(), 'feature-5-read-more-info', true );
 $feature_5_angling_readmore = get_post_meta( get_the_ID(), 'feature-5-angling-readmore', true );
 
+$feature_6_species_image    = get_post_meta( get_the_ID(), 'feature-6-species-image', true );
+$feature_6_species_img      = get_post_meta( get_the_ID(), 'feature-6-species-img', true );
+$feature_6_species_title    = get_post_meta( get_the_ID(), 'feature-6-species-title', true );
+$feature_6_species_content  = get_post_meta( get_the_ID(), 'feature-6-species-content', true );
+$feature_6_read_more_info   = get_post_meta( get_the_ID(), 'feature-6-read-more-info', true );
+$feature_6_species_readmore = get_post_meta( get_the_ID(), 'feature-6-species-readmore', true );
+
 $sth_title_1 = get_post_meta( get_the_ID(), 'sth-title-1', true );
 $sth_content_1 = get_post_meta( get_the_ID(), 'sth-textarea-1', true );
 
