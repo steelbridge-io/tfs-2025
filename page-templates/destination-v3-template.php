@@ -157,6 +157,14 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                           <i class="lni lni-fish-1"></i> <?php echo $feature_5_angling_title ?>
                       </button>
                   </li>
+              <?php endif;
+              if ($feature_6_species_img !== '') : ?>
+              <li class="nav-item" role="presentation">
+               <button class="nav-link" id="species-tab" data-bs-toggle="tab" data-bs-target="#species-pane"
+                       type="button" role="tab" aria-controls="species-pane" aria-selected="false">
+                <i class="lni lni-fish-2"></i> <?php echo $feature_6_species_title ?>
+               </button>
+              </li>
               <?php endif; ?>
           </ul>
 
@@ -629,6 +637,67 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                       </div>
                   <?php endif; ?>
               </div>
+
+             <!-- Species Tab -->
+             <div class="tab-pane fade" id="species-pane" role="tabpanel" aria-labelledby="species-tab">
+              <?php if ($feature_6_species_img !== '') : ?>
+               <div class="tab-container-wrapper">
+                <div id="speciesReadmore" class="readmore-info">
+                 <div class="overlay-header">
+                  <h3>Species Details</h3>
+                  <button class="close-overlay">&times;</button>
+                 </div>
+                 <div class="overlay-content">
+                  <div><?php echo get_post_meta( get_the_ID(), 'feature-6-species-content', true ) . '&nbsp;' . get_post_meta( get_the_ID(), 'feature-6-species-readmore', true ); ?></div>
+                 </div>
+                </div>
+
+                <!-- NEW: Image spans full width above content -->
+                <div class="feature-image">
+                 <?php
+                 // Video support for Feature 6 (Species)
+                 $feature_6_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_url', true));
+                 $feature_6_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_id', true));
+                 $feature_6_video_src = '';
+
+                 if ($feature_6_video_url !== '') {
+                  $feature_6_video_src = esc_url($feature_6_video_url);
+                 } elseif ($feature_6_video_id !== '' && is_numeric($feature_6_video_id)) {
+                  $tmp_src = wp_get_attachment_url((int) $feature_6_video_id);
+                  if ($tmp_src) {
+                   $feature_6_video_src = esc_url($tmp_src);
+                  }
+                 }
+
+                 if ($feature_6_video_src) :
+                  ?>
+                  <div class="ratio ratio-16x9">
+                   <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_6_species_img); ?>">
+                    <source src="<?php echo $feature_6_video_src; ?>" type="video/mp4">
+                    Your browser does not support the video tag.
+                   </video>
+                  </div>
+                 <?php else: ?>
+                  <img class="img-fluid" src="<?php echo esc_url($feature_6_species_img); ?>" alt="The Fly Shop Species Image">
+                 <?php endif; ?>
+                </div>
+
+                <!-- Content below image -->
+                <div class="feature-content">
+                 <h2><?php echo $feature_6_species_title ?></h2>
+                 <?php
+                 $feature_6_species_content = get_post_meta( get_the_ID(), 'feature-6-species-content', true );
+                 echo '<div><p>' . $feature_6_species_content . '</p></div>';
+
+                 $feature_6_species_readmore = get_post_meta( get_the_ID(), 'feature-6-species-readmore', true );
+                 if (!empty($feature_6_species_readmore)) :
+                  echo '<button type="button" class="btn destination btn-tfs" data-target="speciesReadmore">Read more...</button>';
+                 endif;
+                 ?>
+                </div>
+               </div>
+              <?php endif; ?>
+             </div>
 
           </div>
       </div>
