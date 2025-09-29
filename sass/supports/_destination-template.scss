@@ -160,7 +160,7 @@ html {
       border-radius: 0;
       color: $tfs__catalog-black;
       font-weight: 500;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
       transition: all 0.3s ease;
       position: relative;
       border: 1px solid transparent;
@@ -240,7 +240,7 @@ html {
         position: relative;
         margin-bottom: 0;
         width: 100%;
-        padding: 20px;
+        padding: 0 20px 20px;
 
         .feature-image {
           width: 100%;
