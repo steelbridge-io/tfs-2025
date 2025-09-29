@@ -59,6 +59,7 @@ html {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  padding: 0;
 }
 
 /* Style for clickable items */
@@ -149,7 +150,7 @@ html {
 
   .destination-tabs {
     border-bottom: 1px solid #ddd;
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     margin-left: 0rem;
     margin-right: 0rem;
     justify-content: center;
@@ -239,6 +240,7 @@ html {
         position: relative;
         margin-bottom: 0;
         width: 100%;
+        padding: 20px;
 
         .feature-image {
           width: 100%;
