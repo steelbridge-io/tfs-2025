@@ -10,7 +10,7 @@ Template Post Type: post, page, travel_cpt, lower48, guide_service
 if (get_post_type() === 'travel_cpt') {
     get_header('travel-header');
 } elseif (get_post_type() === 'lower48') {
-    get_header('lower48');
+    get_header('travel-header');
 } elseif (get_post_type() === 'lower48blog') {
     get_header('lower48-blog');
 } else {
