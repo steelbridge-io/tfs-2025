@@ -1,0 +1,25 @@
+.carousel-indicators button {
+  width: auto !important;
+  height: auto !important;
+  text-indent: 0 !important;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-radius: 4px !important;
+  padding: 8px 16px !important;
+  margin: 0 5px !important;
+  font-size: 14px !important;
+  color: white !important;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  color: #333 !important;
+  opacity: 1;
+}
+
+.carousel-indicators button:hover {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 0.9;
+}
