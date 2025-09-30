@@ -9,7 +9,7 @@
 
 /**
  * Find meta data for this page in the following file:
- * /wp-content/plugins/sbm-image-field/includes/sections_image_field.php
+ * /wp-content/plugins/sbm-image-field/includes/multi_destinations_field.php
  */
 
 $sections_featured_img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
@@ -19,7 +19,7 @@ $sections_hero_image   = get_post_meta( get_the_ID(), 'sections-hero-image', tru
 $sections_video        = get_post_meta( get_the_ID(), 'sections-video', true );
 $sections_video_poster = get_post_meta( get_the_ID(), 'sections-video-poster', true );
 
-include_once( 'post-meta/post-meta-sections.php' );
+include_once( 'post-meta/post-meta-multi-destination.php' );
 get_header();
 
 if (has_post_thumbnail()) : ?>
@@ -144,74 +144,220 @@ if (has_post_thumbnail()) : ?>
 	</div><!-- Item slider end-->
  <?php endif; ?>
 
- <div id="two" class="container mt-5">
-
 	<!-- ==== Section #1 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-1-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
-	 <div class="row">
-	 <div class="col-md-6 col-lg-6">
-	 <div class="image">
-		<!-- Costs Video/Text/Image Option -->
-		<?php
-		if ( get_post_meta( get_the_ID(), 'sections-1-video-image-checkbox', true ) == 'yes' ) :?>
+ <section class="spotlight-multi-destination mt-5 mb-5">
+  <div class="row align-items-center">
+   <div class="col-md-4 col-lg-4">
+    <div class="image">
+     <!-- Costs Video/Text/Image Option -->
+     <?php
+     if ( !empty($sections_1_video) ) :?>
+      <div class="embed-responsive embed-responsive-16by9">
+       <iframe class="embed-responsive-item" src="<?php echo $sections_1_video; ?>" allowfullscreen></iframe>
+      </div>
+     <?php elseif( !empty($sections_1_image) && empty($sections_1_video) ) : ?>
+      <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
+     <?php else : ?>
+      <div id="carouselExampleCaptions" class="carousel slide">
+       <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+       </div>
+       <div class="carousel-inner">
+        <div class="carousel-item active">
+         <img src="<?php echo $multidest_carousel_1_img	?>" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Some representative placeholder content for the first slide.</p>
+         </div>
+        </div>
+        <div class="carousel-item">
+         <img src="<?php echo $multidest_carousel_2_img	?>" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+          <h5>Second slide label</h5>
+          <p>Some representative placeholder content for the second slide.</p>
+         </div>
+        </div>
+        <div class="carousel-item">
+         <img src="<?php echo $multidest_carousel_3_img	?>" class="d-block w-100" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+          <h5>Third slide label</h5>
+          <p>Some representative placeholder content for the third slide.</p>
+         </div>
+        </div>
+       </div>
+       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+       </button>
+       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+       </button>
+      </div>
+     <?php endif; ?>
+    </div>
+   </div>
+   <div class="col-md-6 col-lg-6">
+    <div class="content">
+     <div id="travel-style">
+      <?php if( empty($sections_1_image) && empty($sections_1_video) ) : ?>
+       <h2 id="dynamic-title"><?php echo $sections_1_multidest_title ; ?></h2>
+       <p id="dynamic-content" class="travel"><?php echo $sections_1_multidest_textarea; ?></p>
+       <div class="accordion" id="accordion1" style="<?php echo !empty($sections_1_multidest_readmore) ? '' : 'display: none;'; ?>">
+        <div class="accordion-item">
+         <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+           Read more...&nbsp;<span class="arrow-down"></span>
+          </button>
+         </h2>
+         <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+          <div class="accordion-body">
+           <p id="dynamic-readmore" class="travel"><?php echo $sections_1_multidest_readmore; ?></p>
+          </div>
+         </div>
+        </div>
+       </div>
+      <?php else : ?>
+       <h2><?php echo $sections_1_title; ?></h2>
+       <p class="travel"><?php echo $sections_1_textarea; ?></p>
+       <div class="accordion" id="accordion1">
+        <div class="accordion-item">
+         <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+           Read more...&nbsp;<span class="arrow-down"></span>
+          </button>
+         </h2>
+         <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+          <div class="accordion-body">
+           <p id="dynamic-readmore" class="travel"><?php echo $sections_1_readmore; ?></p>
+          </div>
+         </div>
+        </div>
+       </div>
+      <?php endif; ?>
+     </div>
+    </div>
+   </div>
+  </div>
+ </section>
 
-		 <div class="embed-responsive embed-responsive-16by9">
+ <script>
+     document.addEventListener('DOMContentLoaded', function() {
+         const carousel = document.getElementById('carouselExampleCaptions');
 
-			<iframe class="embed-responsive-item" src="<?php echo $sections_1_video; ?>" allowfullscreen></iframe>
+         if (!carousel) {
+             console.error('Carousel not found');
+             return;
+         }
 
-		 </div>
+         // ALL section data from your meta fields
+         const slideContent = {
+             0: {
+                 title: <?php echo json_encode($sections_1_multidest_title); ?>,
+                 content: <?php echo json_encode($sections_1_multidest_textarea); ?>,
+                 readmore: <?php echo json_encode($sections_1_multidest_readmore); ?>,
+                 image: <?php echo json_encode($multidest_carousel_1_img); ?>
+             },
+             1: {
+                 title: <?php echo json_encode($sections_2_multidest_title); ?>,
+                 content: <?php echo json_encode($sections_2_multidest_textarea); ?>,
+                 readmore: <?php echo json_encode($sections_2_multidest_readmore); ?>,
+                 image: <?php echo json_encode($multidest_carousel_2_img); ?>
+             },
+             2: {
+                 title: <?php echo json_encode($sections_3_multidest_title); ?>,
+                 content: <?php echo json_encode($sections_3_multidest_textarea); ?>,
+                 readmore: <?php echo json_encode($sections_3_multidest_readmore); ?>,
+                 image: <?php echo json_encode($multidest_carousel_3_img); ?>
+             }
+         };
 
-		<?php else: ?>
+         function updateContent(slideIndex) {
+             console.log('Updating content for slide:', slideIndex);
+             const data = slideContent[slideIndex];
 
-		 <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
+             if (!data) {
+                 console.error('No data found for slide:', slideIndex);
+                 return;
+             }
 
-		<?php endif; ?>
+             // Update text content
+             const titleEl = document.getElementById('dynamic-title');
+             const contentEl = document.getElementById('dynamic-content');
+             const readmoreEl = document.getElementById('dynamic-readmore');
 
-	 </div>
-	 </div>
-		<div class="col-md-6 col-lg-6">
-		 <div class="content">
-			<div id="travel-style">
-			 <h2><?php echo $sections_1_title; ?></h2>
-			 <p class="travel"><?php echo $sections_1_textarea; ?></p>
+             if (titleEl) titleEl.textContent = data.title;
+             if (contentEl) contentEl.textContent = data.content;
+             if (readmoreEl) readmoreEl.textContent = data.readmore;
 
-			 <?php // Displays read more section if needed
-			 if ( get_post_meta( get_the_ID(), 'sections-1-readmore-checkbox', true ) == 'yes' ) :?>
+             // Show/hide read more accordion
+             const accordion = document.getElementById('accordion1');
+             if (accordion) {
+                 if (data.readmore && data.readmore.trim() !== '') {
+                     accordion.style.display = 'block';
+                 } else {
+                     accordion.style.display = 'none';
+                 }
+             }
+         }
 
-				<div class="accordion" id="accordion1">
-				 <div class="accordion-item">
-					<h2 class="accordion-header">
-					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-						Read more...&nbsp;<span class="arrow-down"></span>
-					 </button>
-					</h2>
-					<div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-					 <div class="accordion-body">
-						<p class="travel"><?php echo $sections_1_readmore; ?></p>
-					 </div>
-					</div>
-				 </div>
-				</div> <!-- /.panel-group -->
+         // Listen for Bootstrap carousel slide event (AFTER slide completes)
+         carousel.addEventListener('slid.bs.carousel', function(event) {
+             console.log('Carousel slid event fired, slide index:', event.to);
+             updateContent(event.to);
+         });
 
-			 <?php endif; ?>
+         // Also listen for slide event (BEFORE slide starts) - sometimes more reliable
+         carousel.addEventListener('slide.bs.carousel', function(event) {
+             console.log('Carousel slide event fired, slide index:', event.to);
+             updateContent(event.to);
+         });
 
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
-	<?php endif; ?> <!-- sections-1-option-checkbox -->
+         // Handle direct indicator clicks
+         const indicators = carousel.querySelectorAll('.carousel-indicators button');
+         indicators.forEach((indicator, index) => {
+             indicator.addEventListener('click', function(e) {
+                 console.log('Indicator clicked:', index);
+                 // Small delay to let Bootstrap process the click
+                 setTimeout(() => updateContent(index), 100);
+             });
+         });
+
+         // Handle prev/next button clicks
+         const prevButton = carousel.querySelector('.carousel-control-prev');
+         const nextButton = carousel.querySelector('.carousel-control-next');
+
+         if (prevButton) {
+             prevButton.addEventListener('click', function() {
+                 console.log('Previous button clicked');
+             });
+         }
+
+         if (nextButton) {
+             nextButton.addEventListener('click', function() {
+                 console.log('Next button clicked');
+             });
+         }
+
+         // Initialize with first slide content
+         console.log('Initializing with slide 0');
+         updateContent(0);
+     });
+ </script>
+
+
+
 
 	<!-- ==== Section #2 ==== -->
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-2-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row flex-row-reverse ">
- 			<div class="col-md-6 col-lg-6">
+ 			<div class="col-md-4 col-lg-4">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
 				<?php
@@ -258,9 +404,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-3-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-4 col-lg-4">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
 			 <?php
@@ -307,9 +453,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-4-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row flex-row-reverse">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-4 col-lg-4">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
 			 <?php
@@ -358,9 +504,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-5-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-4 col-lg-4">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
 			<?php
@@ -407,9 +553,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-6-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row flex-row-reverse">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-4 col-lg-4">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
 			 <?php
@@ -456,9 +602,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-7-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row">
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-4 col-lg-4">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
 			 <?php
@@ -505,9 +651,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-8-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
+	 <section class="spotlight-multi-destination mt-5 mb-5">
 		<div class="row flex-row-reverse">
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-4 col-lg-4">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
 				<?php
@@ -554,9 +700,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-9-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
+	<section class="spotlight-multi-destination mt-5 mb-5">
 	 <div class="row">
-		<div class="col-md-6 col-lg-6">
+		<div class="col-md-4 col-lg-4">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
 			<?php
@@ -603,9 +749,9 @@ if (has_post_thumbnail()) : ?>
 
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-10-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
+	<section class="spotlight-multi-destination mt-5 mb-5">
 	 <div class="row flex-row-reverse">
-		<div class="col-md-6 col-lg-6">
+		<div class="col-md-4 col-lg-4">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
 			<?php
@@ -647,7 +793,7 @@ if (has_post_thumbnail()) : ?>
 	 </div>
 	</section>
 	<?php endif; ?> <!-- sections-10-option-checkbox -->
- </div>
+
 
 <?php if ( ! empty( $galleryphoto_1_image ) ) { ?>
  <section id="three" class="wrapper style7 special">
