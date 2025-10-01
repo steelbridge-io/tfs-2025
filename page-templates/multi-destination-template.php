@@ -10,14 +10,8 @@
 /**
  * Find meta data for this page in the following file:
  * /wp-content/plugins/sbm-image-field/includes/multi_destinations_field.php
+ * template JS is enqueued in the /page-templates/template-functions/multi-destination-template-functions.php file
  */
-
-$sections_featured_img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-$the_sections_default  = get_bloginfo( 'template_directory' ) . '/images/default/default-page-header.png';
-$sections_page_logo    = get_theme_mod( 'sections_page_logo' );
-$sections_hero_image   = get_post_meta( get_the_ID(), 'sections-hero-image', true );
-$sections_video        = get_post_meta( get_the_ID(), 'sections-video', true );
-$sections_video_poster = get_post_meta( get_the_ID(), 'sections-video-poster', true );
 
 include_once( 'post-meta/post-meta-multi-destination.php' );
 get_header();
@@ -81,718 +75,1004 @@ if (has_post_thumbnail()) : ?>
 	</div>
  </section>
 
- <!-- ==== CAROUSEL ==== -->
- <!-- Item slider-->
- <!-- Javascript is in main.js -->
- <?php
- // Carousel Images activated by check-box
- if ( get_post_meta( get_the_ID(), 'sections-csel-checkbox', true ) == 'yes' ) :?>
+ <!-- ==== Section #1 ==== -->
 
-	<div class="container-fluid">
-
-	 <div class="row">
-		<div class="col-xs-12 col-sm-12 col-md-12">
-		 <div class="carousel carousel-showallmove1 slide" id="itemslider">
-			<div class="carousel-inner">
-
-			 <div class="item active">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_1_link; ?>"><img src="<?php echo esc_url( $sections_csel_1_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			 <div class="item">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_2_link; ?>"><img src="<?php echo esc_url( $sections_csel_2_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			 <div class="item">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_3_link; ?>"><img src="<?php echo esc_url( $sections_csel_3_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			 <div class="item">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_4_link; ?>"><img src="<?php echo esc_url( $sections_csel_4_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			 <div class="item">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_5_link; ?>"><img src="<?php echo esc_url( $sections_csel_5_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			 <div class="item">
-				<div class="col-xs-12 col-sm-6 col-md-2">
-				 <a href="<?php echo $sections_csel_6_link; ?>"><img src="<?php echo esc_url( $sections_csel_6_img ); ?>" class="img-responsive center-block"></a>
-				</div>
-			 </div>
-
-			</div>
-
-			<div id="slider-control">
-			 <a class="left carousel-control" href="#itemslider" data-slide="prev"><i class="fa fa-chevron-left fa-4x" aria-hidden="true"></i></a>
-			 <a class="right carousel-control" href="#itemslider" data-slide="next"><i class="fa fa-chevron-right fa-4x" aria-hidden="true"></i></a>
-			</div>
-
-		 </div>
-		</div>
-	 </div>
-	</div><!-- Item slider end-->
- <?php endif; ?>
-
-	<!-- ==== Section #1 ==== -->
-
- <section class="spotlight-multi-destination mt-5 mb-5">
-  <div class="row align-items-center">
-   <div class="col-md-4 col-lg-4">
-    <div class="image">
-     <!-- Costs Video/Text/Image Option -->
-     <?php
-     if ( !empty($sections_1_video) ) :?>
-      <div class="embed-responsive embed-responsive-16by9">
-       <iframe class="embed-responsive-item" src="<?php echo $sections_1_video; ?>" allowfullscreen></iframe>
-      </div>
-     <?php elseif( !empty($sections_1_image) && empty($sections_1_video) ) : ?>
-      <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
-     <?php else : ?>
-      <div id="carouselExampleCaptions" class="carousel slide">
-       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
-       </div>
-       <div class="carousel-inner">
-        <div class="carousel-item active">
-         <img src="<?php echo $multidest_carousel_1_img	?>" class="d-block w-100" alt="...">
-         <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Some representative placeholder content for the first slide.</p>
-         </div>
-        </div>
-        <div class="carousel-item">
-         <img src="<?php echo $multidest_carousel_2_img	?>" class="d-block w-100" alt="...">
-         <div class="carousel-caption d-none d-md-block">
-          <h5>Second slide label</h5>
-          <p>Some representative placeholder content for the second slide.</p>
-         </div>
-        </div>
-        <div class="carousel-item">
-         <img src="<?php echo $multidest_carousel_3_img	?>" class="d-block w-100" alt="...">
-         <div class="carousel-caption d-none d-md-block">
-          <h5>Third slide label</h5>
-          <p>Some representative placeholder content for the third slide.</p>
-         </div>
-        </div>
-       </div>
-       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-       </button>
-       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-       </button>
-      </div>
-     <?php endif; ?>
-    </div>
-   </div>
-   <div class="col-md-6 col-lg-6">
-    <div class="content">
-     <div id="travel-style">
-      <?php if( empty($sections_1_image) && empty($sections_1_video) ) : ?>
-       <h2 id="dynamic-title"><?php echo $sections_1_multidest_title ; ?></h2>
-       <p id="dynamic-content" class="travel"><?php echo $sections_1_multidest_textarea; ?></p>
-       <div class="accordion" id="accordion1" style="<?php echo !empty($sections_1_multidest_readmore) ? '' : 'display: none;'; ?>">
-        <div class="accordion-item">
-         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-           Read more...&nbsp;<span class="arrow-down"></span>
-          </button>
-         </h2>
-         <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-          <div class="accordion-body">
-           <p id="dynamic-readmore" class="travel"><?php echo $sections_1_multidest_readmore; ?></p>
+     <section class="spotlight-multi-destination mt-5 mb-5">
+      <div class="row align-items-center">
+       <div class="col-md-4 col-lg-4">
+        <div class="image">
+         <!-- Costs Video/Text/Image Option -->
+         <?php
+         if ( !empty($sections_1_video) ) :?>
+          <div class="embed-responsive embed-responsive-16by9">
+           <iframe class="embed-responsive-item" src="<?php echo $sections_1_video; ?>" allowfullscreen></iframe>
           </div>
-         </div>
-        </div>
-       </div>
-      <?php else : ?>
-       <h2><?php echo $sections_1_title; ?></h2>
-       <p class="travel"><?php echo $sections_1_textarea; ?></p>
-       <div class="accordion" id="accordion1">
-        <div class="accordion-item">
-         <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
-           Read more...&nbsp;<span class="arrow-down"></span>
-          </button>
-         </h2>
-         <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
-          <div class="accordion-body">
-           <p id="dynamic-readmore" class="travel"><?php echo $sections_1_readmore; ?></p>
+         <?php elseif( !empty($sections_1_image) && empty($sections_1_video) ) : ?>
+          <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
+         <?php else : ?>
+          <div id="sec1-dest-indicator-1" class="carousel slide">
+           <div class="carousel-indicators">
+            <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+            <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+            <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+           </div>
+           <div class="carousel-inner">
+            <div class="carousel-item active">
+             <img src="<?php echo $sec1_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_1 ?>">
+             <div class="carousel-caption d-none d-md-block">
+              <h5>First slide label</h5>
+              <p>Some representative placeholder content for the first slide.</p>
+             </div>
+            </div>
+            <div class="carousel-item">
+             <img src="<?php echo $sec1_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_2 ?>">
+             <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+             </div>
+            </div>
+            <div class="carousel-item">
+             <img src="<?php echo $sec1_dest_img_3	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_3 ?>">
+             <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+             </div>
+            </div>
+           </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+           </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+           </button>
           </div>
+         <?php endif; ?>
+        </div>
+       </div>
+       <div class="col-md-6 col-lg-6">
+        <div class="content">
+         <div id="travel-style">
+          <?php if( empty($sections_1_image) && empty($sections_1_video) ) : ?>
+           <h2 id="sec1-dynamic-title"><?php echo $sec1_dest_title_1; ?></h2>
+           <p id="sec1-dynamic-content" class="travel"><?php echo $sec1_dest_textarea_1; ?></p>
+           <div class="accordion" id="accordion1" style="<?php echo !empty($sec1_dest_readmore_1) ? '' : 'display: none;'; ?>">
+            <div class="accordion-item">
+             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+               Read more...&nbsp;<span class="arrow-down"></span>
+              </button>
+             </h2>
+             <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+              <div class="accordion-body">
+               <p id="sec1-dynamic-readmore" class="travel"><?php echo $sec1_dest_readmore_1; ?></p>
+              </div>
+             </div>
+            </div>
+           </div>
+          <?php else : ?>
+           <h2><?php echo $sections_1_title; ?></h2>
+           <p class="travel"><?php echo $sections_1_textarea; ?></p>
+           <div class="accordion" id="accordion1">
+            <div class="accordion-item">
+             <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+               Read more...&nbsp;<span class="arrow-down"></span>
+              </button>
+             </h2>
+             <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
+              <div class="accordion-body">
+               <p id="dynamic-readmore" class="travel"><?php echo $sections_1_readmore; ?></p>
+              </div>
+             </div>
+            </div>
+           </div>
+          <?php endif; ?>
          </div>
         </div>
        </div>
-      <?php endif; ?>
-     </div>
-    </div>
-   </div>
-  </div>
- </section>
+      </div>
+     </section>
 
- <script>
-     document.addEventListener('DOMContentLoaded', function() {
-         const carousel = document.getElementById('carouselExampleCaptions');
+    <!-- ==== Section #2 ==== -->
 
-         if (!carousel) {
-             console.error('Carousel not found');
-             return;
-         }
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                        if ( !empty($sections_2_video) ) :?>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<?php echo $sections_2_video; ?>" allowfullscreen></iframe>
+                            </div>
+                        <?php elseif( !empty($sections_2_image) && empty($sections_2_video) ) : ?>
+                            <img src="<?php echo $sections_2_image; ?>" alt="The Fly Shop Travel Image"/>
+                        <?php else : ?>
+                            <div id="sec2-dest-indicator-1" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                    <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                    <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="<?php echo $sec2_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec2_dest_title_1 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>First slide label</h5>
+                                            <p>Some representative placeholder content for the first slide.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?php echo $sec2_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec2_dest_title_2 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Second slide label</h5>
+                                            <p>Some representative placeholder content for the second slide.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?php echo $sec2_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec2_dest_title_3 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Third slide label</h5>
+                                            <p>Some representative placeholder content for the third slide.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_2_image) && empty($sections_2_video) ) : ?>
+                            <h2 id="sec2-dynamic-title"><?php echo $sec2_dest_title_1; ?></h2>
+                            <p id="sec2-dynamic-content" class="travel"><?php echo $sec2_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion2" style="<?php echo !empty($sec2_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                                        <div class="accordion-body">
+                                            <p id="sec2-dynamic-readmore" class="travel"><?php echo $sec2_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_2_title; ?></h2>
+                            <p class="travel"><?php echo $sections_2_textarea; ?></p>
+                            <div class="accordion" id="accordion2">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
+                                        <div class="accordion-body">
+                                            <p id="dynamic-readmore" class="travel"><?php echo $sections_2_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-         // ALL section data from your meta fields
-         const slideContent = {
-             0: {
-                 title: <?php echo json_encode($sections_1_multidest_title); ?>,
-                 content: <?php echo json_encode($sections_1_multidest_textarea); ?>,
-                 readmore: <?php echo json_encode($sections_1_multidest_readmore); ?>,
-                 image: <?php echo json_encode($multidest_carousel_1_img); ?>
-             },
-             1: {
-                 title: <?php echo json_encode($sections_2_multidest_title); ?>,
-                 content: <?php echo json_encode($sections_2_multidest_textarea); ?>,
-                 readmore: <?php echo json_encode($sections_2_multidest_readmore); ?>,
-                 image: <?php echo json_encode($multidest_carousel_2_img); ?>
-             },
-             2: {
-                 title: <?php echo json_encode($sections_3_multidest_title); ?>,
-                 content: <?php echo json_encode($sections_3_multidest_textarea); ?>,
-                 readmore: <?php echo json_encode($sections_3_multidest_readmore); ?>,
-                 image: <?php echo json_encode($multidest_carousel_3_img); ?>
-             }
-         };
-
-         function updateContent(slideIndex) {
-             console.log('Updating content for slide:', slideIndex);
-             const data = slideContent[slideIndex];
-
-             if (!data) {
-                 console.error('No data found for slide:', slideIndex);
-                 return;
-             }
-
-             // Update text content
-             const titleEl = document.getElementById('dynamic-title');
-             const contentEl = document.getElementById('dynamic-content');
-             const readmoreEl = document.getElementById('dynamic-readmore');
-
-             if (titleEl) titleEl.textContent = data.title;
-             if (contentEl) contentEl.textContent = data.content;
-             if (readmoreEl) readmoreEl.textContent = data.readmore;
-
-             // Show/hide read more accordion
-             const accordion = document.getElementById('accordion1');
-             if (accordion) {
-                 if (data.readmore && data.readmore.trim() !== '') {
-                     accordion.style.display = 'block';
-                 } else {
-                     accordion.style.display = 'none';
-                 }
-             }
-         }
-
-         // Listen for Bootstrap carousel slide event (AFTER slide completes)
-         carousel.addEventListener('slid.bs.carousel', function(event) {
-             console.log('Carousel slid event fired, slide index:', event.to);
-             updateContent(event.to);
-         });
-
-         // Also listen for slide event (BEFORE slide starts) - sometimes more reliable
-         carousel.addEventListener('slide.bs.carousel', function(event) {
-             console.log('Carousel slide event fired, slide index:', event.to);
-             updateContent(event.to);
-         });
-
-         // Handle direct indicator clicks
-         const indicators = carousel.querySelectorAll('.carousel-indicators button');
-         indicators.forEach((indicator, index) => {
-             indicator.addEventListener('click', function(e) {
-                 console.log('Indicator clicked:', index);
-                 // Small delay to let Bootstrap process the click
-                 setTimeout(() => updateContent(index), 100);
-             });
-         });
-
-         // Handle prev/next button clicks
-         const prevButton = carousel.querySelector('.carousel-control-prev');
-         const nextButton = carousel.querySelector('.carousel-control-next');
-
-         if (prevButton) {
-             prevButton.addEventListener('click', function() {
-                 console.log('Previous button clicked');
-             });
-         }
-
-         if (nextButton) {
-             nextButton.addEventListener('click', function() {
-                 console.log('Next button clicked');
-             });
-         }
-
-         // Initialize with first slide content
-         console.log('Initializing with slide 0');
-         updateContent(0);
-     });
- </script>
-
-
-
-
-	<!-- ==== Section #2 ==== -->
-
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-2-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row flex-row-reverse ">
- 			<div class="col-md-4 col-lg-4">
-			 <div class="image">
-				<!-- Costs Video/Text/Image Option -->
-				<?php
-				if ( get_post_meta( get_the_ID(), 'sections-2-video-image-checkbox', true ) == 'yes' ) :?>
-				 <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="<?php echo $sections_2_video; ?>" allowfullscreen></iframe>
-				 </div>
-				<?php else: ?>
-				 <img src="<?php echo $sections_2_image; ?>" alt="The Fly Shop Travel Image"/>
-				<?php endif; ?>
-			 </div>
-			</div>
-		 <div class="col-md-6 col-lg-6">
-			<div class="content">
-			 <div id="travel-style">
-				<h2><?php echo $sections_2_title; ?></h2>
-				<p class="travel"><?php echo $sections_2_textarea; ?></p>
-				<?php // Displays read more section if needed
-				if ( get_post_meta( get_the_ID(), 'sections-2-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion2">
-					<div class="accordion-item">
-					 <h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
-						 Read more...&nbsp;<span class="arrow-down"></span>
-						</button>
-					 </h2>
-					 <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
-						<div class="accordion-body">
-						 <p class="travel"><?php echo $sections_2_readmore; ?></p>
-						</div>
-					 </div>
-					</div>
-				 </div>
-				<?php endif; ?> <!-- sections-2-readmore-checkbox -->
-			 </div>
-			</div>
-		 </div>
-		</div>
-	 </section>
-	 <?php endif; ?> <!-- sections-2-option-checkbox -->
-
-	<!-- ==== Section #3 ==== -->
-
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-3-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row">
-		 <div class="col-md-4 col-lg-4">
-			<div class="image">
-			 <!-- Costs Video/Text/Image Option -->
-			 <?php
-			 if ( get_post_meta( get_the_ID(), 'sections-3-video-image-checkbox', true ) == 'yes' ) :?>
-				<div class="embed-responsive embed-responsive-16by9">
-				 <iframe class="embed-responsive-item" src="<?php echo $sections_3_video; ?>" allowfullscreen></iframe>
-				</div>
-			 <?php else: ?>
-				<img src="<?php echo $sections_3_image; ?>" alt="The Fly Shop Travel Image"/>
-			 <?php endif; ?>
-			</div>
-		 </div>
-		 <div class="col-md-6 col-lg-6">
-			<div class="content">
-			 <div id="travel-style">
-				<h2><?php echo $sections_3_title; ?></h2>
-				<p class="travel"><?php echo $sections_3_textarea; ?></p>
-				<?php // Displays read more section if needed
-				if ( get_post_meta( get_the_ID(), 'sections-3-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion3">
-					<div class="accordion-item">
-					 <h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
-						 Read more...&nbsp;<span class="arrow-down"></span>
-						</button>
-					 </h2>
-					 <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
-						<div class="accordion-body">
-						 <p class="travel"><?php echo $sections_3_readmore; ?></p>
-						</div>
-					 </div>
-					</div>
-				 </div> <!-- /.panel-group -->
-				<?php endif; ?> <!-- sections-3-readmore-checkbox -->
-			 </div>
-			</div>
-		 </div>
-		</div>
-	 </section>
-	<?php endif; ?> <!-- sections-3-option-checkbox -->
+    <!-- ==== Section #3 ==== -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                        if ( !empty($sections_3_video) ) :?>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="<?php echo $sections_3_video; ?>" allowfullscreen></iframe>
+                            </div>
+                        <?php elseif( !empty($sections_3_image) && empty($sections_3_video) ) : ?>
+                            <img src="<?php echo $sections_3_image; ?>" alt="The Fly Shop Travel Image"/>
+                        <?php else : ?>
+                            <div id="sec3-dest-indicator-1" class="carousel slide">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                    <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                    <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="<?php echo $sec3_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec3_dest_title_1 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>First slide label</h5>
+                                            <p>Some representative placeholder content for the first slide.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?php echo $sec3_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec3_dest_title_2 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Second slide label</h5>
+                                            <p>Some representative placeholder content for the second slide.</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="<?php echo $sec3_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec3_dest_title_3 ?>">
+                                        <div class="carousel-caption d-none d-md-block">
+                                            <h5>Third slide label</h5>
+                                            <p>Some representative placeholder content for the third slide.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_3_image) && empty($sections_3_video) ) : ?>
+                            <h2 id="sec3-dynamic-title"><?php echo $sec3_dest_title_1; ?></h2>
+                            <p id="sec3-dynamic-content" class="travel"><?php echo $sec3_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion3" style="<?php echo !empty($sec3_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                                        <div class="accordion-body">
+                                            <p id="sec3-dynamic-readmore" class="travel"><?php echo $sec3_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_3_title; ?></h2>
+                            <p class="travel"><?php echo $sections_3_textarea; ?></p>
+                            <div class="accordion" id="accordion3">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo3" aria-expanded="false" aria-controls="collapseTwo3">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
+                                        <div class="accordion-body">
+                                            <p id="sec3-dynamic-readmore" class="travel"><?php echo $sections_3_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #4 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-4-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row flex-row-reverse">
-		 <div class="col-md-4 col-lg-4">
-			<div class="image">
-			 <!-- Costs Video/Text/Image Option -->
-			 <?php
-			 if ( get_post_meta( get_the_ID(), 'sections-4-video-image-checkbox', true ) == 'yes' ) :?>
-				<div class="embed-responsive embed-responsive-16by9">
-				 <iframe class="embed-responsive-item" src="<?php echo $sections_4_video; ?>" allowfullscreen></iframe>
-				</div>
-			 <?php else: ?>
-				<img src="<?php echo $sections_4_image; ?>" alt="The Fly Shop Travel Image"/>
-			 <?php endif; ?>
-
-			</div>
-		 </div>
-		 <div class="col-md-6 col-lg-6">
-			<div class="content">
-			 <div id="travel-style">
-				<h2><?php echo $sections_4_title; ?></h2>
-				<p class="travel"><?php echo $sections_4_textarea; ?></p>
-
-				<?php // Displays read more section if needed
-				if ( get_post_meta( get_the_ID(), 'sections-4-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion4">
-					<div class="accordion-item">
-					 <h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
-						 Read more...&nbsp;<span class="arrow-down"></span>
-						</button>
-					 </h2>
-					 <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
-						<div class="accordion-body">
-						 <p class="travel"><?php echo $sections_4_readmore; ?></p>
-						</div>
-					 </div>
-					</div>
-				 </div> <!-- /.panel-group -->
-				<?php endif; ?> <!-- sections-4-readmore-checkbox -->
-			 </div>
-			</div>
-		 </div>
-		</div>
-	 </section>
-	<?php endif; ?> <!-- sections-4-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_4_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_4_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_4_image) && empty($sections_4_video) ) : ?>
+                        <img src="<?php echo $sections_4_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec4-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec4_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec4_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec4_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec4_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec4_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec4_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_4_image) && empty($sections_4_video) ) : ?>
+                            <h2 id="sec4-dynamic-title"><?php echo $sec4_dest_title_1; ?></h2>
+                            <p id="sec4-dynamic-content" class="travel"><?php echo $sec4_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion4" style="<?php echo !empty($sec4_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                                        <div class="accordion-body">
+                                            <p id="sec4-dynamic-readmore" class="travel"><?php echo $sec4_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_4_title; ?></h2>
+                            <p class="travel"><?php echo $sections_4_textarea; ?></p>
+                            <div class="accordion" id="accordion4">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo4" aria-expanded="false" aria-controls="collapseTwo4">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
+                                        <div class="accordion-body">
+                                            <p id="sec4-dynamic-readmore" class="travel"><?php echo $sections_4_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #5 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-5-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row">
-		 <div class="col-md-4 col-lg-4">
-		 <div class="image">
-			<!-- Costs Video/Text/Image Option -->
-			<?php
-			if ( get_post_meta( get_the_ID(), 'sections-5-video-image-checkbox', true ) == 'yes' ) :?>
-			 <div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="<?php echo $sections_5_video; ?>" allowfullscreen></iframe>
-			 </div>
-			<?php else: ?>
-			 <img src="<?php echo $sections_5_image; ?>" alt="The Fly Shop Travel Image"/>
-			<?php endif; ?>
-		 </div>
-		 </div>
-		 <div class="col-md-6 col-lg-6">
-			<div class="content">
-			 <div id="travel-style">
-				<h2><?php echo $sections_5_title; ?></h2>
-				<p class="travel"><?php echo $sections_5_textarea; ?></p>
-				<?php // Displays read more section if needed
-				if ( get_post_meta( get_the_ID(), 'sections-5-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion5">
-					<div class="accordion-item">
-					 <h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
-						 Read more...&nbsp;<span class="arrow-down"></span>
-						</button>
-					 </h2>
-					 <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
-						<div class="accordion-body">
-						 <p class="travel"><?php echo $sections_5_readmore; ?></p>
-						</div>
-					 </div>
-					</div>
-				 </div> <!-- /.panel-group -->
-				<?php endif; ?> <!-- sections-5-readmore-checkbox -->
-			 </div>
-			</div>
-		 </div>
-		</div>
-	 </section>
-	<?php endif; ?> <!-- sections-5-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_5_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_5_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_5_image) && empty($sections_5_video) ) : ?>
+                        <img src="<?php echo $sections_5_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec5-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec5_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec5_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec5_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec5_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec5_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec5_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_5_image) && empty($sections_5_video) ) : ?>
+                            <h2 id="sec5-dynamic-title"><?php echo $sec5_dest_title_1; ?></h2>
+                            <p id="sec5-dynamic-content" class="travel"><?php echo $sec5_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion5" style="<?php echo !empty($sec5_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                                        <div class="accordion-body">
+                                            <p id="sec5-dynamic-readmore" class="travel"><?php echo $sec5_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_5_title; ?></h2>
+                            <p class="travel"><?php echo $sections_5_textarea; ?></p>
+                            <div class="accordion" id="accordion5">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo5" aria-expanded="false" aria-controls="collapseTwo5">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
+                                        <div class="accordion-body">
+                                            <p id="sec5-dynamic-readmore" class="travel"><?php echo $sections_5_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #6 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-6-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row flex-row-reverse">
-		 <div class="col-md-4 col-lg-4">
-			<div class="image">
-			 <!-- Costs Video/Text/Image Option -->
-			 <?php
-			 if ( get_post_meta( get_the_ID(), 'sections-6-video-image-checkbox', true ) == 'yes' ) :?>
-				<div class="embed-responsive embed-responsive-16by9">
-				 <iframe class="embed-responsive-item" src="<?php echo $sections_6_video; ?>" allowfullscreen></iframe>
-				</div>
-			 <?php else: ?>
-				<img src="<?php echo $sections_6_image; ?>" alt="The Fly Shop Travel Image"/>
-			 <?php endif; ?>
-			</div>
-		 </div>
-		 <div class="col-md-6 col-lg-6">
-			<div class="content">
-			 <div id="travel-style">
-				<h2><?php echo $sections_6_title; ?></h2>
-				<p class="travel"><?php echo $sections_6_textarea; ?></p>
-				<?php // Displays read more section if needed
-				if ( get_post_meta( get_the_ID(), 'sections-6-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion6">
-					<div class="accordion-item">
-					 <h2 class="accordion-header">
-						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										data-bs-target="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6">
-						 Read more...&nbsp;<span class="arrow-down"></span>
-						</button>
-					 </h2>
-					 <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
-						<div class="accordion-body">
-						 <p class="travel"><?php echo $sections_6_readmore; ?></p>
-						</div>
-					 </div>
-					</div>
-				 </div> <!-- /.panel-group -->
-				<?php endif; ?> <!-- sections-6-readmore-checkbox -->
-			 </div>
-			</div>
-		 </div>
-		</div>
-	 </section>
-	<?php endif; ?> <!-- sections-6-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_6_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_6_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_6_image) && empty($sections_6_video) ) : ?>
+                        <img src="<?php echo $sections_6_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec6-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec6_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec6_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec6_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec6_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec6_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec6_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_6_image) && empty($sections_6_video) ) : ?>
+                            <h2 id="sec6-dynamic-title"><?php echo $sec6_dest_title_1; ?></h2>
+                            <p id="sec6-dynamic-content" class="travel"><?php echo $sec6_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion6" style="<?php echo !empty($sec6_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+                                        <div class="accordion-body">
+                                            <p id="sec6-dynamic-readmore" class="travel"><?php echo $sec6_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_6_title; ?></h2>
+                            <p class="travel"><?php echo $sections_6_textarea; ?></p>
+                            <div class="accordion" id="accordion6">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo6" aria-expanded="false" aria-controls="collapseTwo6">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
+                                        <div class="accordion-body">
+                                            <p id="sec6-dynamic-readmore" class="travel"><?php echo $sections_6_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- ==== Section #7 ==== -->
+    <!-- ==== Section #7 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-7-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row">
-		 <div class="col-md-4 col-lg-4">
-			<div class="image">
-			 <!-- Costs Video/Text/Image Option -->
-			 <?php
-			 if ( get_post_meta( get_the_ID(), 'sections-7-video-image-checkbox', true ) == 'yes' ) :?>
-				<div class="embed-responsive embed-responsive-16by9">
-				 <iframe class="embed-responsive-item" src="<?php echo $sections_7_video; ?>" allowfullscreen></iframe>
-				</div>
-			 <?php else: ?>
-				<img src="<?php echo $sections_7_image; ?>" alt="The Fly Shop Travel Image"/>
-			 <?php endif; ?>
-			</div>
-		 </div>
-			<div class="col-md-6 col-lg-6">
-			 <div class="content">
-				<div id="travel-style">
-				 <h2><?php echo $sections_7_title; ?></h2>
-				 <p class="travel"><?php echo $sections_7_textarea; ?></p>
-				 <?php // Displays read more section if needed
-				 if ( get_post_meta( get_the_ID(), 'sections-7-readmore-checkbox', true ) == 'yes' ) :?>
-					<div class="accordion" id="accordion7">
-					 <div class="accordion-item">
-						<h2 class="accordion-header">
-						 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										 data-bs-target="#collapseTwo7" aria-expanded="false" aria-controls="collapseTwo7">
-							Read more...&nbsp;<span class="arrow-down"></span>
-						 </button>
-						</h2>
-						<div id="collapseTwo7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
-						 <div class="accordion-body">
-							<p class="travel"><?php echo $sections_7_readmore; ?></p>
-						 </div>
-						</div>
-					 </div>
-					</div> <!-- /.panel-group -->
-				 <?php endif; ?> <!-- sections-7-readmore-checkbox -->
-				</div>
-			 </div>
-			</div>
-		 </div>
-	 </section>
-	<?php endif; ?> <!-- sections-7-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_7_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_7_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_7_image) && empty($sections_7_video) ) : ?>
+                        <img src="<?php echo $sections_7_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec7-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec7_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec7_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec7_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec7_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec7_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec7_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_7_image) && empty($sections_7_video) ) : ?>
+                            <h2 id="sec7-dynamic-title"><?php echo $sec7_dest_title_1; ?></h2>
+                            <p id="sec7-dynamic-content" class="travel"><?php echo $sec7_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion7" style="<?php echo !empty($sec7_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo7" aria-expanded="false" aria-controls="collapseTwo7">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
+                                        <div class="accordion-body">
+                                            <p id="sec7-dynamic-readmore" class="travel"><?php echo $sec7_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_7_title; ?></h2>
+                            <p class="travel"><?php echo $sections_7_textarea; ?></p>
+                            <div class="accordion" id="accordion7">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo7" aria-expanded="false" aria-controls="collapseTwo7">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
+                                        <div class="accordion-body">
+                                            <p id="sec7-dynamic-readmore" class="travel"><?php echo $sections_7_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #8 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-8-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight-multi-destination mt-5 mb-5">
-		<div class="row flex-row-reverse">
-			<div class="col-md-4 col-lg-4">
-			 <div class="image">
-				<!-- Costs Video/Text/Image Option -->
-				<?php
-				if ( get_post_meta( get_the_ID(), 'sections-8-video-image-checkbox', true ) == 'yes' ) :?>
-				 <div class="embed-responsive embed-responsive-16by9">
-					<iframe class="embed-responsive-item" src="<?php echo $sections_8_video; ?>" allowfullscreen></iframe>
-				 </div>
-				<?php else: ?>
-				 <img src="<?php echo $sections_8_image; ?>" alt="The Fly Shop Travel Image"/>
-				<?php endif; ?>
-			 </div>
-			</div>
-			<div class="col-md-6 col-lg-6">
-			 <div class="content">
-				<div id="travel-style">
-				 <h2><?php echo $sections_8_title; ?></h2>
-				 <p class="travel"><?php echo $sections_8_textarea; ?></p>
-				 <?php // Displays read more section if needed
-				 if ( get_post_meta( get_the_ID(), 'sections-8-readmore-checkbox', true ) == 'yes' ) :?>
-					<div class="accordion" id="accordion8">
-					 <div class="accordion-item">
-						<h2 class="accordion-header">
-						 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-										 data-bs-target="#collapseTwo8" aria-expanded="false" aria-controls="collapseTwo8">
-							Read more...&nbsp;<span class="arrow-down"></span>
-						 </button>
-						</h2>
-						<div id="collapseTwo8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
-						 <div class="accordion-body">
-							<p class="travel"><?php echo $sections_8_readmore; ?></p>
-						 </div>
-						</div>
-					 </div>
-					</div> <!-- /.panel-group -->
-				 <?php endif; ?> <!-- sections-8-readmore-checkbox -->
-				</div>
-			 </div>
-			</div>
-		 </div>
-	 </section>
-	<?php endif; ?> <!-- sections-8-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_8_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_8_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_8_image) && empty($sections_8_video) ) : ?>
+                        <img src="<?php echo $sections_8_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec8-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec8_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec8_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec8_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec8_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec8_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec8_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_8_image) && empty($sections_8_video) ) : ?>
+                            <h2 id="sec8-dynamic-title"><?php echo $sec8_dest_title_1; ?></h2>
+                            <p id="sec8-dynamic-content" class="travel"><?php echo $sec8_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion8" style="<?php echo !empty($sec8_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo8" aria-expanded="false" aria-controls="collapseTwo8">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
+                                        <div class="accordion-body">
+                                            <p id="sec8-dynamic-readmore" class="travel"><?php echo $sec8_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_8_title; ?></h2>
+                            <p class="travel"><?php echo $sections_8_textarea; ?></p>
+                            <div class="accordion" id="accordion8">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo8" aria-expanded="false" aria-controls="collapseTwo8">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
+                                        <div class="accordion-body">
+                                            <p id="sec8-dynamic-readmore" class="travel"><?php echo $sections_8_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #9 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-9-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight-multi-destination mt-5 mb-5">
-	 <div class="row">
-		<div class="col-md-4 col-lg-4">
-		 <div class="image">
-			<!-- Costs Video/Text/Image Option -->
-			<?php
-			if ( get_post_meta( get_the_ID(), 'sections-9-video-image-checkbox', true ) == 'yes' ) :?>
-			 <div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="<?php echo $sections_9_video; ?>" allowfullscreen></iframe>
-			 </div>
-			<?php else: ?>
-			 <img src="<?php echo $sections_9_image; ?>" alt="The Fly Shop Travel Image"/>
-			<?php endif; ?>
-		 </div>
-		</div>
-		<div class="col-md-6 col-lg-6">
-		 <div class="content">
-			<div id="travel-style">
-			 <h2><?php echo $sections_9_title; ?></h2>
-			 <p class="travel"><?php echo $sections_9_textarea; ?></p>
-			 <?php // Displays read more section if needed
-			 if ( get_post_meta( get_the_ID(), 'sections-9-readmore-checkbox', true ) == 'yes' ) :?>
-				<div class="accordion" id="accordion9">
-				 <div class="accordion-item">
-					<h2 class="accordion-header">
-					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									 data-bs-target="#collapseTwo9" aria-expanded="false" aria-controls="collapseTwo9">
-						Read more...&nbsp;<span class="arrow-down"></span>
-					 </button>
-					</h2>
-					<div id="collapseTwo9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
-					 <div class="accordion-body">
-						<p class="travel"><?php echo $sections_9_readmore; ?></p>
-					 </div>
-					</div>
-				 </div>
-				</div> <!-- /.panel-group -->
-			 <?php endif; ?> <!-- sections-9-readmore-checkbox -->
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
-	<?php endif; ?> <!-- sections-9-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_9_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_9_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_9_image) && empty($sections_9_video) ) : ?>
+                        <img src="<?php echo $sections_9_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec9-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec9_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec9_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec9_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec9_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec9_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec9_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_9_image) && empty($sections_9_video) ) : ?>
+                            <h2 id="sec9-dynamic-title"><?php echo $sec9_dest_title_1; ?></h2>
+                            <p id="sec9-dynamic-content" class="travel"><?php echo $sec9_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion9" style="<?php echo !empty($sec9_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo9" aria-expanded="false" aria-controls="collapseTwo9">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
+                                        <div class="accordion-body">
+                                            <p id="sec9-dynamic-readmore" class="travel"><?php echo $sec9_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_9_title; ?></h2>
+                            <p class="travel"><?php echo $sections_9_textarea; ?></p>
+                            <div class="accordion" id="accordion9">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo9" aria-expanded="false" aria-controls="collapseTwo9">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
+                                        <div class="accordion-body">
+                                            <p id="sec9-dynamic-readmore" class="travel"><?php echo $sections_9_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 	<!-- ==== Section #10 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-10-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight-multi-destination mt-5 mb-5">
-	 <div class="row flex-row-reverse">
-		<div class="col-md-4 col-lg-4">
-		 <div class="image">
-			<!-- Costs Video/Text/Image Option -->
-			<?php
-			if ( get_post_meta( get_the_ID(), 'sections-10-video-image-checkbox', true ) == 'yes' ) :?>
-			 <div class="embed-responsive embed-responsive-16by9">
-				<iframe class="embed-responsive-item" src="<?php echo $sections_10_video; ?>" allowfullscreen></iframe>
-			 </div>
-			<?php else: ?>
-			 <img src="<?php echo $sections_10_image; ?>" alt="The Fly Shop Travel Image"/>
-			<?php endif; ?>
-		 </div>
-		</div>
-		<div class="col-md-6 col-lg-6">
-		 <div class="content">
-			<div id="travel-style">
-			 <h2><?php echo $sections_10_title; ?></h2>
-			 <p class="travel"><?php echo $sections_10_textarea; ?></p>
-			 <?php // Displays read more section if needed
-			 if ( get_post_meta( get_the_ID(), 'sections-10-readmore-checkbox', true ) == 'yes' ) :?>
-				<div class="accordion" id="accordion10">
-				 <div class="accordion-item">
-					<h2 class="accordion-header">
-					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-									 data-bs-target="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
-						Read more...&nbsp;<span class="arrow-down"></span>
-					 </button>
-					</h2>
-					<div id="collapseTwo10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
-					 <div class="accordion-body">
-						<p class="travel"><?php echo $sections_10_readmore; ?></p>
-					 </div>
-					</div>
-				 </div>
-				</div> <!-- /.panel-group -->
-			 <?php endif; ?> <!-- sections-10-readmore-checkbox -->
-			</div>
-		 </div>
-		</div>
-	 </div>
-	</section>
-	<?php endif; ?> <!-- sections-10-option-checkbox -->
+    <section class="spotlight-multi-destination mt-5 mb-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-md-4 col-lg-4">
+                <div class="image">
+                    <!-- Costs Video/Text/Image Option -->
+                    <?php
+                    if ( !empty($sections_10_video) ) :?>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $sections_10_video; ?>" allowfullscreen></iframe>
+                        </div>
+                    <?php elseif( !empty($sections_10_image) && empty($sections_10_video) ) : ?>
+                        <img src="<?php echo $sections_10_image; ?>" alt="The Fly Shop Travel Image"/>
+                    <?php else : ?>
+                        <div id="sec10-dest-indicator-1" class="carousel slide">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
+                                <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
+                                <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="<?php echo $sec10_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec10_dest_title_1 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>First slide label</h5>
+                                        <p>Some representative placeholder content for the first slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec10_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec10_dest_title_2 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Second slide label</h5>
+                                        <p>Some representative placeholder content for the second slide.</p>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $sec10_dest_img_3	?>" class="d-block w-200" alt="<?php echo $sec10_dest_title_3 ?>">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <h5>Third slide label</h5>
+                                        <p>Some representative placeholder content for the third slide.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6">
+                <div class="content">
+                    <div id="travel-style">
+                        <?php if( empty($sections_10_image) && empty($sections_10_video) ) : ?>
+                            <h2 id="sec10-dynamic-title"><?php echo $sec10_dest_title_1; ?></h2>
+                            <p id="sec10-dynamic-content" class="travel"><?php echo $sec10_dest_textarea_1; ?></p>
+                            <div class="accordion" id="accordion10" style="<?php echo !empty($sec10_dest_readmore_1) ? '' : 'display: none;'; ?>">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
+                                        <div class="accordion-body">
+                                            <p id="sec10-dynamic-readmore" class="travel"><?php echo $sec10_dest_readmore_1; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php else : ?>
+                            <h2><?php echo $sections_10_title; ?></h2>
+                            <p class="travel"><?php echo $sections_10_textarea; ?></p>
+                            <div class="accordion" id="accordion10">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
+                                            Read more...&nbsp;<span class="arrow-down"></span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
+                                        <div class="accordion-body">
+                                            <p id="sec10-dynamic-readmore" class="travel"><?php echo $sections_10_readmore; ?></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 <?php if ( ! empty( $galleryphoto_1_image ) ) { ?>
@@ -912,6 +1192,45 @@ if (has_post_thumbnail()) : ?>
 	</div>
  </section>
 <?php } ?>
+
+    <section id="cta" class="wrapper mt-5 mb-5">
+        <div class="inner container">
+            <div id="cta-trigger" class="cta-trigger-area">
+                <header class="text-center">
+                    <h2 class="cta-trigger-title"><?php echo $cta_schools_strong_intro;?></h2>
+                    <p class="cta-trigger-subtitle"><?php echo $cta_schools_content;?></p>
+                    <button class="btn btn-primary cta-expand-btn" id="expandCTA">
+                        Get Started <i class="fas fa-chevron-up"></i>
+                    </button>
+                </header>
+            </div>
+
+            <div id="cta-form-container" class="cta-form-container">
+                <div class="form-wrapper">
+                    <div class="form-header">
+                        <h3>Contact Our Travel Specialists</h3>
+                        <button class="close-form" id="closeCTA">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="form-content">
+                        <div class="form-content">
+                            <?php
+                            $page_title = get_the_title();
+                            $form_url_params = '?page_title=' . urlencode($page_title);
+                            echo do_shortcode('[gravityform id="17" title="false" description="false" field_values="page_title=' . urlencode($page_title) . '"]');
+                            ?>
+                        </div>
+                        <!-- Fallback content if no form is available -->
+                        <div class="contact-fallback">
+                            <p>Call us directly at <strong>(800) 669-3474</strong> or use the form above to get started.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!-- MODAL -->
 <div class="container">
@@ -1057,6 +1376,10 @@ if (has_post_thumbnail()) : ?>
 	 </div>
 	</div>
  </section>
+
+
 <?php
+include_once( get_template_directory() . '/page-templates/template-functions/multi-destination-template-functions.php' );
+
 get_footer();
 
