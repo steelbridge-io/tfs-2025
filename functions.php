@@ -278,15 +278,15 @@ if (is_page_template('page-templates/fish-camp-course.php')) {
  wp_enqueue_script('fish-camp-course-js', get_template_directory_uri() . '/js/fish-camp-course.js', array('jquery'), _S_VERSION, true);
 }
 
- if (is_front_page()) {
-	 wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
- }
+if (is_front_page()) {
+ wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
+}
 
- if (is_singular() && comments_open() && get_option('thread_comments')) {
-	wp_enqueue_script('comment-reply');
- }
+if (is_singular() && comments_open() && get_option('thread_comments')) {
+wp_enqueue_script('comment-reply');
+}
 
- require_once get_template_directory() . '/inc/inline-styles.php';
+require_once get_template_directory() . '/inc/inline-styles.php';
 
 }
 add_action( 'wp_enqueue_scripts', 'the_fly_shop_2025_scripts' );
