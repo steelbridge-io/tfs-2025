@@ -111,20 +111,152 @@ $galleryphoto_6_image         = get_post_meta(get_the_ID(), 'galleryphoto-6-imag
 $galleryphoto_7_image         = get_post_meta(get_the_ID(), 'galleryphoto-7-image', true);
 $galleryphoto_8_image         = get_post_meta(get_the_ID(), 'galleryphoto-8-image', true);
 
-// end
+$sec1_dest_img_1		  = get_post_meta(get_the_ID(), 'sec1-dest-img-1', true);
+$sec1_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec1-dest-title-1', true);
+$sec1_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec1-dest-textarea-1', true);
+$sec1_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec1-dest-readmore-1', true);
 
-$multidest_carousel_1_img				= get_post_meta(get_the_ID(), 'multidest-carousel-1-img', true);
-$sections_1_multidest_title   	= get_post_meta(get_the_ID(), 'sections-1-multidest-title', true);
-$sections_1_multidest_textarea	= get_post_meta(get_the_ID(), 'sections-1-multidest-textarea', true);
-$sections_1_multidest_readmore	= get_post_meta(get_the_ID(), 'sections-1-multidest-readmore', true);
+$sec1_dest_img_2 	    = get_post_meta(get_the_ID(), 'sec1-dest-img-2', true);
+$sec1_dest_title_2   	= get_post_meta(get_the_ID(), 'sec1-dest-title-2', true);
+$sec1_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec1-dest-textarea-2', true);
+$sec1_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec1-dest-readmore-2', true);
 
-$multidest_carousel_2_img 			= get_post_meta(get_the_ID(), 'multidest-carousel-2-img', true);
-$sections_2_multidest_title   	= get_post_meta(get_the_ID(), 'sections-2-multidest-title', true);
-$sections_2_multidest_textarea	= get_post_meta(get_the_ID(), 'sections-2-multidest-textarea', true);
-$sections_2_multidest_readmore	= get_post_meta(get_the_ID(), 'sections-2-multidest-readmore', true);
+$sec1_dest_img_3		  = get_post_meta(get_the_ID(), 'sec1-dest-img-3', true);
+$sec1_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec1-dest-title-3', true);
+$sec1_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec1-dest-textarea-3', true);
+$sec1_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec1-dest-readmore-3', true);
 
-$multidest_carousel_3_img				= get_post_meta(get_the_ID(), 'multidest-carousel-3-img', true);
-$sections_3_multidest_title   	= get_post_meta(get_the_ID(), 'sections-3-multidest-title', true);
-$sections_3_multidest_textarea	= get_post_meta(get_the_ID(), 'sections-3-multidest-textarea', true);
-$sections_3_multidest_readmore	= get_post_meta(get_the_ID(), 'sections-3-multidest-readmore', true);
+$sec2_dest_img_1		  = get_post_meta(get_the_ID(), 'sec2-dest-img-1', true);
+$sec2_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec2-dest-title-1', true);
+$sec2_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec2-dest-textarea-1', true);
+$sec2_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec2-dest-readmore-1', true);
 
+$sec2_dest_img_2 	    = get_post_meta(get_the_ID(), 'sec2-dest-img-2', true);
+$sec2_dest_title_2   	= get_post_meta(get_the_ID(), 'sec2-dest-title-2', true);
+$sec2_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec2-dest-textarea-2', true);
+$sec2_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec2-dest-readmore-2', true);
+
+$sec2_dest_img_3		  = get_post_meta(get_the_ID(), 'sec2-dest-img-3', true);
+$sec2_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec2-dest-title-3', true);
+$sec2_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec2-dest-textarea-3', true);
+$sec2_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec2-dest-readmore-3', true);
+
+$sec3_dest_img_1		  = get_post_meta(get_the_ID(), 'sec3-dest-img-1', true);
+$sec3_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec3-dest-title-1', true);
+$sec3_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec3-dest-textarea-1', true);
+$sec3_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec3-dest-readmore-1', true);
+
+$sec3_dest_img_2 		= get_post_meta(get_the_ID(), 'sec3-dest-img-2', true);
+$sec3_dest_title_2   	= get_post_meta(get_the_ID(), 'sec3-dest-title-2', true);
+$sec3_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec3-dest-textarea-2', true);
+$sec3_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec3-dest-readmore-2', true);
+
+$sec3_dest_img_3          = get_post_meta(get_the_ID(), 'sec3-dest-img-3', true);
+$sec3_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec3-dest-title-3', true);
+$sec3_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec3-dest-textarea-3', true);
+$sec3_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec3-dest-readmore-3', true);
+
+$sec4_dest_img_1	      = get_post_meta(get_the_ID(), 'sec4-dest-img-1', true);
+$sec4_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec4-dest-title-1', true);
+$sec4_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec4-dest-textarea-1', true);
+$sec4_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec4-dest-readmore-1', true);
+
+$sec4_dest_img_2 		= get_post_meta(get_the_ID(), 'sec4-dest-img-2', true);
+$sec4_dest_title_2   	= get_post_meta(get_the_ID(), 'sec4-dest-title-2', true);
+$sec4_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec4-dest-textarea-2', true);
+$sec4_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec4-dest-readmore-2', true);
+
+$sec4_dest_img_3		  = get_post_meta(get_the_ID(), 'sec4-dest-img-3', true);
+$sec4_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec4-dest-title-3', true);
+$sec4_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec4-dest-textarea-3', true);
+$sec4_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec4-dest-readmore-3', true);
+
+$sec5_dest_img_1	      = get_post_meta(get_the_ID(), 'sec5-dest-img-1', true);
+$sec5_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec5-dest-title-1', true);
+$sec5_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec5-dest-textarea-1', true);
+$sec5_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec5-dest-readmore-1', true);
+
+$sec5_dest_img_2 		= get_post_meta(get_the_ID(), 'sec5-dest-img-2', true);
+$sec5_dest_title_2   	= get_post_meta(get_the_ID(), 'sec5-dest-title-2', true);
+$sec5_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec5-dest-textarea-2', true);
+$sec5_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec5-dest-readmore-2', true);
+
+$sec5_dest_img_3		  = get_post_meta(get_the_ID(), 'sec5-dest-img-3', true);
+$sec5_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec5-dest-title-3', true);
+$sec5_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec5-dest-textarea-3', true);
+$sec5_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec5-dest-readmore-3', true);
+
+$sec6_dest_img_1	      = get_post_meta(get_the_ID(), 'sec6-dest-img-1', true);
+$sec6_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec6-dest-title-1', true);
+$sec6_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec6-dest-textarea-1', true);
+$sec6_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec6-dest-readmore-1', true);
+
+$sec6_dest_img_2 		= get_post_meta(get_the_ID(), 'sec6-dest-img-2', true);
+$sec6_dest_title_2   	= get_post_meta(get_the_ID(), 'sec6-dest-title-2', true);
+$sec6_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec6-dest-textarea-2', true);
+$sec6_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec6-dest-readmore-2', true);
+
+$sec6_dest_img_3		  = get_post_meta(get_the_ID(), 'sec6-dest-img-3', true);
+$sec6_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec6-dest-title-3', true);
+$sec6_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec6-dest-textarea-3', true);
+$sec6_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec6-dest-readmore-3', true);
+
+$sec7_dest_img_1	      = get_post_meta(get_the_ID(), 'sec7-dest-img-1', true);
+$sec7_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec7-dest-title-1', true);
+$sec7_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec7-dest-textarea-1', true);
+$sec7_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec7-dest-readmore-1', true);
+
+$sec7_dest_img_2 		= get_post_meta(get_the_ID(), 'sec7-dest-img-2', true);
+$sec7_dest_title_2   	= get_post_meta(get_the_ID(), 'sec7-dest-title-2', true);
+$sec7_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec7-dest-textarea-2', true);
+$sec7_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec7-dest-readmore-2', true);
+
+$sec7_dest_img_3		  = get_post_meta(get_the_ID(), 'sec7-dest-img-3', true);
+$sec7_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec7-dest-title-3', true);
+$sec7_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec7-dest-textarea-3', true);
+$sec7_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec7-dest-readmore-3', true);
+
+$sec8_dest_img_1	      = get_post_meta(get_the_ID(), 'sec8-dest-img-1', true);
+$sec8_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec8-dest-title-1', true);
+$sec8_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec8-dest-textarea-1', true);
+$sec8_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec8-dest-readmore-1', true);
+
+$sec8_dest_img_2 		= get_post_meta(get_the_ID(), 'sec8-dest-img-2', true);
+$sec8_dest_title_2   	= get_post_meta(get_the_ID(), 'sec8-dest-title-2', true);
+$sec8_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec8-dest-textarea-2', true);
+$sec8_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec8-dest-readmore-2', true);
+
+$sec8_dest_img_3		  = get_post_meta(get_the_ID(), 'sec8-dest-img-3', true);
+$sec8_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec8-dest-title-3', true);
+$sec8_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec8-dest-textarea-3', true);
+$sec8_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec8-dest-readmore-3', true);
+
+$sec9_dest_img_1	      = get_post_meta(get_the_ID(), 'sec9-dest-img-1', true);
+$sec9_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec9-dest-title-1', true);
+$sec9_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec9-dest-textarea-1', true);
+$sec9_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec9-dest-readmore-1', true);
+
+$sec9_dest_img_2 		= get_post_meta(get_the_ID(), 'sec9-dest-img-2', true);
+$sec9_dest_title_2   	= get_post_meta(get_the_ID(), 'sec9-dest-title-2', true);
+$sec9_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec9-dest-textarea-2', true);
+$sec9_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec9-dest-readmore-2', true);
+
+$sec9_dest_img_3		  = get_post_meta(get_the_ID(), 'sec9-dest-img-3', true);
+$sec9_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec9-dest-title-3', true);
+$sec9_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec9-dest-textarea-3', true);
+$sec9_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec9-dest-readmore-3', true);
+
+$sec10_dest_img_1	      = get_post_meta(get_the_ID(), 'sec10-dest-img-1', true);
+$sec10_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec10-dest-title-1', true);
+$sec10_dest_textarea_1	  = get_post_meta(get_the_ID(), 'sec10-dest-textarea-1', true);
+$sec10_dest_readmore_1	  = get_post_meta(get_the_ID(), 'sec10-dest-readmore-1', true);
+
+$sec10_dest_img_2 		= get_post_meta(get_the_ID(), 'sec10-dest-img-2', true);
+$sec10_dest_title_2   	= get_post_meta(get_the_ID(), 'sec10-dest-title-2', true);
+$sec10_dest_textarea_2	= get_post_meta(get_the_ID(), 'sec10-dest-textarea-2', true);
+$sec10_dest_readmore_2	= get_post_meta(get_the_ID(), 'sec10-dest-readmore-2', true);
+
+$sec10_dest_img_3		  = get_post_meta(get_the_ID(), 'sec10-dest-img-3', true);
+$sec10_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec10-dest-title-3', true);
+$sec10_dest_textarea_3	  = get_post_meta(get_the_ID(), 'sec10-dest-textarea-3', true);
+$sec10_dest_readmore_3	  = get_post_meta(get_the_ID(), 'sec10-dest-readmore-3', true);
