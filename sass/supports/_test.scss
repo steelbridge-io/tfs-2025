@@ -1,25 +1,9 @@
-.carousel-indicators button {
-  width: auto !important;
-  height: auto !important;
-  text-indent: 0 !important;
-  background-color: rgba(255, 255, 255, 0.5) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  border-radius: 4px !important;
-  padding: 8px 16px !important;
-  margin: 0 5px !important;
-  font-size: 14px !important;
-  color: white !important;
-  opacity: 0.7;
-  transition: all 0.3s ease;
-}
+// _test.scss
+// Purpose: Temporary and incremental CSS should be added here (SCSS), not in style.css.
+// Notes:
+// - This file is imported by sass/style.scss via @import "supports/test".
+// - Do NOT edit the compiled style.css directly. Add styles here and let the build process compile.
+// - When finalized, move rules into their proper SCSS partials.
 
-.carousel-indicators button {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  color: #333 !important;
-  opacity: 1;
-}
-
-.carousel-indicators button:hover {
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  opacity: 0.9;
-}
+// Example placeholder (safe no-op):
+// .tfs-test-placeholder { display: block; }

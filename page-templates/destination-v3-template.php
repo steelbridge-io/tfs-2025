@@ -115,7 +115,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
     <section id="tabbed-destination-content" class="container-fluid mt-5">
       <div class="container">
           <!-- Bootstrap 5 Nav Tabs -->
-          <ul class="nav nav-tabs destination-tabs" id="destinationTabs" role="tablist">
+          <ul class="nav nav-pills nav-tabs destination-tabs" id="destinationTabs" role="tablist">
               <?php if ($travel_costs_image !== '') : ?>
                   <li class="nav-item" role="presentation">
                       <button class="nav-link active" id="inclusions-tab" data-bs-toggle="tab"
