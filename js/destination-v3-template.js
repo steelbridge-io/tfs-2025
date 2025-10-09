@@ -502,3 +502,54 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /** /End Dynamic Overlay Positioning */
+
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const section = document.getElementById('tabbed-destination-content');
+    const tabs = document.getElementById('destinationTabs');
+    const nav = document.getElementById('site-navigation');
+    if (!section || !tabs || !nav) return;
+
+    const getAdminBarHeight = () => {
+    const bar = document.getElementById('wpadminbar');
+    return bar ? bar.offsetHeight : 0;
+};
+
+    // Ensure correct initial state
+    nav.classList.remove('nav-hidden-by-tabs');
+    tabs.classList.remove('is-pinned');
+
+    // Create a bottom sentinel to detect when we leave the tabbed section
+    const bottomSentinel = document.createElement('div');
+    bottomSentinel.setAttribute('aria-hidden', 'true');
+    bottomSentinel.style.height = '1px';
+    section.appendChild(bottomSentinel);
+
+    const updateState = () => {
+    const threshold = getAdminBarHeight();
+    const topRect = section.getBoundingClientRect();
+    const bottomRect = bottomSentinel.getBoundingClientRect();
+
+    const atOrPastTop = topRect.top <= threshold;
+    const passedBottom = bottomRect.top <= threshold;
+
+    if (atOrPastTop && !passedBottom) {
+    // Inside the tabbed section: tabs pinned, hide nav
+    nav.classList.add('nav-hidden-by-tabs');
+    tabs.classList.add('is-pinned');
+} else {
+    // Above or below the tabbed section: show nav, unpin tabs
+    nav.classList.remove('nav-hidden-by-tabs');
+    tabs.classList.remove('is-pinned');
+}
+};
+
+    window.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState, { passive: true });
+    window.addEventListener('orientationchange', updateState);
+
+    requestAnimationFrame(updateState);
+    setTimeout(updateState, 0);
+});
+
