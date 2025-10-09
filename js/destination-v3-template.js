@@ -502,10 +502,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /** /End Dynamic Overlay Positioning */
-
-
-
     document.addEventListener('DOMContentLoaded', function () {
+    /**
+     * Represents the HTML element with the ID 'tabbed-destination-content'.
+     * Typically used to interact with a specific section of the web page,
+     * often for dynamic updates or event handling.
+     *
+     * @type {HTMLElement | null}
+     */
     const section = document.getElementById('tabbed-destination-content');
     const tabs = document.getElementById('destinationTabs');
     const nav = document.getElementById('site-navigation');
