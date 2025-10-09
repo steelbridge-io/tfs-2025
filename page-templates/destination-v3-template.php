@@ -703,15 +703,6 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
       </div>
     </section>
 
-
-<!-- Testing ------------------------->
-
-<!-- /Testing ------------------------>
-
-
-
-
-
     <?php if (!empty($whywe_content_2)) : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
         <div class="container">
