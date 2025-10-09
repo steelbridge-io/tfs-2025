@@ -703,6 +703,15 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
       </div>
     </section>
 
+
+<!-- Testing ------------------------->
+
+<!-- /Testing ------------------------>
+
+
+
+
+
     <?php if (!empty($whywe_content_2)) : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
         <div class="container">
@@ -1172,5 +1181,40 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
     </div>
 <?php
 include get_template_directory() . '/page-templates/template-modals/destination-template-modals.php'; ?>
+
+<section id="front-page-cta">
+    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
+        <div class="container text-center text-md-end">
+            <div class="row justify-content-end">
+                <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+                        </div>
+                        <div class="col-6">
+                            <h5 class="mb-4 fw-bold">Stay Updated</h5>
+                            <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+                        </div>
+                    </div>
+                    <form id="subscribe-form">
+                        <div class="form-floating mb-3">
+                            <input
+                                    type="email"
+                                    class="form-control shadow-sm"
+                                    id="subscriberEmail"
+                                    placeholder="name@example.com"
+                                    required
+                            />
+                            <label for="subscriberEmail" class="text-muted">Enter your email</label>
+                        </div>
+                        <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer();
