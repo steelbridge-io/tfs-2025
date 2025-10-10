@@ -282,6 +282,10 @@ if (is_front_page()) {
  wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
 }
 
+if(!is_front_page()) {
+ wp_enqueue_script('hero-dynamic-logo-position-js', get_template_directory_uri() . '/js/hero-dynamic-logo-position.js', array(), '20200415', true);
+}
+
 if (is_singular() && comments_open() && get_option('thread_comments')) {
 wp_enqueue_script('comment-reply');
 }
