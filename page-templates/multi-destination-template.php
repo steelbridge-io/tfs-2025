@@ -14,7 +14,7 @@
  */
 
 include_once( 'post-meta/post-meta-multi-destination.php' );
-get_header();
+get_header('multi-dest-header');
 
 if (has_post_thumbnail()) : ?>
 
@@ -31,6 +31,11 @@ if (has_post_thumbnail()) : ?>
 
 	 <!-- Overlay Content -->
 	 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+             <div id="mobile-logo-container">
+                 <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
+                 <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+             </div>
+         <
 		<!-- Page Title -->
 		<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 	 </div>
@@ -43,6 +48,12 @@ if (has_post_thumbnail()) : ?>
 	 <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp" class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
 	 <!-- Overlay Content -->
 	 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+         <div id="below-nav-logo" class="below-nav-logo-container mobile-logo-container">
+             <a href="#">
+                 <img class="tfs-nav-logo scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
+                 <img class="tfs-nav-logo no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+             </a>
+         </div>
 		<!-- Page Title -->
 		<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 	 </div>
