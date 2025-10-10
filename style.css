@@ -1325,6 +1325,25 @@ a {
   box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.4); }
 
 .hero-overlay {
+  transition: top 220ms ease, transform 220ms ease; }
+
+.hero-overlay-no-transition {
+  transition: none !important; }
+
+.hero-overlay .hero-title {
+  will-change: opacity, transform; }
+
+.hero-title-hidden {
+  opacity: 0;
+  transform: translateY(18px); }
+
+.hero-title-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 320ms ease-out, transform 320ms ease-out;
+  transition-delay: 80ms; }
+
+.hero-overlay {
   transition: top 0.3s ease-in-out !important; }
 
 .hero-image .ratio > * {
@@ -4219,6 +4238,22 @@ html {
     margin-bottom: 1rem !important; }
 
 /* Destination V2 Template Styles */
+#site-navigation.nav-hidden-by-tabs {
+  display: none; }
+
+#tabbed-destination-content .destination-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 1055;
+  background: #fff; }
+
+.logged-in.admin-bar #tabbed-destination-content .destination-tabs {
+  top: 32px; }
+
+#tabbed-destination-content .destination-tabs.is-pinned {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+
 #destinationTabContent {
   height: auto;
   border: 1px solid #dee2e6;
@@ -5304,23 +5339,13 @@ html {
         display: inline-block;
         margin: 0 0.5rem; } }
 
-/* Hide the nav only while it's being replaced by the tabs */
-#site-navigation.nav-hidden-by-tabs {
-  display: none; }
-
-/* Make the tabs sticky (not fixed on load, they pin only after scroll reaches them) */
-#tabbed-destination-content .destination-tabs {
-  position: sticky;
-  top: 0;
-  z-index: 1055;
-  background: #fff; }
-
-.logged-in.admin-bar #tabbed-destination-content .destination-tabs {
-  top: 32px; }
-
-/* Optional styling when pinned */
-#tabbed-destination-content .destination-tabs.is-pinned {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06); }
+@media (min-width: 992px) {
+  .mobile-logo {
+    display: none; } }
+@media (max-width: 991.98px) {
+  .hero-overlay #mobile-logo-container img.mobile-logo {
+    display: block;
+    width: 50%;
+    margin: 0 auto; } }
 
 /*# sourceMappingURL=style.css.map */
