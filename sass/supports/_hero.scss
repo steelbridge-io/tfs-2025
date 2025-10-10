@@ -1,4 +1,25 @@
 .hero-overlay {
+  transition: top 220ms ease, transform 220ms ease;
+}
+.hero-overlay-no-transition {
+  transition: none !important;
+}
+
+.hero-overlay .hero-title {
+  will-change: opacity, transform;
+}
+.hero-title-hidden {
+  opacity: 0;
+  transform: translateY(18px);
+}
+.hero-title-show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 320ms ease-out, transform 320ms ease-out;
+  transition-delay: 80ms;
+}
+
+.hero-overlay {
   transition: top 0.3s ease-in-out !important;
 }
 
