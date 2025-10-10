@@ -5339,6 +5339,9 @@ html {
         display: inline-block;
         margin: 0 0.5rem; } }
 
+ul.navbar-nav {
+  margin: 0; }
+
 @media (min-width: 992px) {
   .mobile-logo {
     display: none; } }
