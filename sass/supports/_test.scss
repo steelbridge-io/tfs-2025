@@ -8,6 +8,10 @@
 // Example placeholder (safe no-op):
 // .tfs-test-placeholder { display: block; }
 
+ul.navbar-nav {
+  margin: 0;
+}
+
 @media (min-width: 992px) {
   .mobile-logo {
     display: none;
