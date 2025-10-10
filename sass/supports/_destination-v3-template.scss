@@ -1,9 +1,29 @@
 /* Destination V2 Template Styles */
 
+#site-navigation.nav-hidden-by-tabs {
+  display: none;
+}
+
+#tabbed-destination-content .destination-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 1055;
+  background: #fff;
+}
+
+.logged-in.admin-bar {
+  #tabbed-destination-content .destination-tabs {
+    top: 32px;
+  }
+}
+
+#tabbed-destination-content .destination-tabs.is-pinned {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
 #destinationTabContent {
   height: auto;
-  //max-height: 800px;
-  //overflow-y: auto;
   border: 1px solid #dee2e6;
   border-top: none;
   border-radius: 0 0 0.375rem 0.375rem;
