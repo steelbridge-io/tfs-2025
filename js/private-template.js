@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScrollStages();
 });
 
-/** Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING */
+/** Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING
 document.addEventListener("DOMContentLoaded", function () {
     // CACHE INITIAL POSITION: Store the correct position when logo is in natural state
     let initialPosition = null;
@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
             attributeFilter: ['src', 'style']
         });
     }
-});
+}); ****/
 
 /** /End Dynamic Overlay Positioning */
 

@@ -5,7 +5,7 @@ AOS.init({
     once: true,
 });
 
-/** Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING */
+/** Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING
 document.addEventListener("DOMContentLoaded", function () {
     let initialPosition = null;
     let isCalculatingInitial = false;
@@ -180,7 +180,7 @@ document.addEventListener("DOMContentLoaded", function () {
             clearInterval(transitionInterval);
         }
     }, 1000);
-});
+}); ****/
 
 /** /Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING */
 

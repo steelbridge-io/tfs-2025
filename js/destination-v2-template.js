@@ -378,10 +378,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-/**
- * Test
- */
-
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
 
@@ -418,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScrollStages();
 });
 
-/** Dynamic Hero Overlay Positioning */
+/** Dynamic Hero Overlay Positioning
 document.addEventListener("DOMContentLoaded", function () {
     function adjustHeroOverlayPosition() {
         const belowNavLogo = document.querySelector('#below-nav-logo');
@@ -492,4 +488,4 @@ document.addEventListener("DOMContentLoaded", function () {
             attributeFilter: ['src', 'style']
         });
     }
-});
+}); *****/
