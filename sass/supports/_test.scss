@@ -8,27 +8,20 @@
 // Example placeholder (safe no-op):
 // .tfs-test-placeholder { display: block; }
 
-/* Hide the nav only while it's being replaced by the tabs */
-#site-navigation.nav-hidden-by-tabs {
-  display: none;
-}
-
-/* Make the tabs sticky (not fixed on load, they pin only after scroll reaches them) */
-#tabbed-destination-content .destination-tabs {
-  position: sticky;
-  top: 0;
-  z-index: 1055;
-  background: #fff;
-}
-
-.logged-in.admin-bar {
-  #tabbed-destination-content .destination-tabs {
-    top: 32px;
+@media (min-width: 992px) {
+  .mobile-logo {
+    display: none;
   }
 }
 
-/* Optional styling when pinned */
-#tabbed-destination-content .destination-tabs.is-pinned {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+@media (max-width: 991.98px) {
+  .hero-overlay {
+    #mobile-logo-container {
+      img.mobile-logo {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+      }
+    }
+  }
 }
