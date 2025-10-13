@@ -23,9 +23,72 @@ ul.navbar-nav {
     #mobile-logo-container {
       img.mobile-logo {
         display: block;
-        width: 50%;
+        /*width: 50%;*/
         margin: 0 auto;
       }
     }
   }
+}
+
+/** Carousel Tabs In Multi-Destionation Template */
+
+/* Scope to your carousels so we can safely out-specificity Bootstrap */
+#carousel-wrap .carousel.slide {
+  position: relative;
+}
+
+.carousel-item {
+  box-shadow: $tfs__box-shadow;
+  img {
+    box-shadow: $tfs__box-shadow;
+  }
+}
+
+#carousel-wrap .carousel.slide .carousel-indicators {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;        /* stick to bottom edge */
+  margin: 0;        /* no margin-bottom */
+  padding: 0;       /* no padding-bottom */
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+}
+
+/* Make indicators behave like tabs (override Bootstrap's dots) */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
+  width: auto;                 /* override fixed dot size */
+  height: auto;
+  text-indent: 0;              /* show text */
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.55rem 0.95rem;    /* comfy, no extra bottom padding */
+  border: 1px solid #cfcfcf;
+  border-bottom: none;         /* tab edge sits on image bottom */
+  border-radius: 8px 8px 0 0;
+  background-color: #f6f6f6;
+  color: #333;
+  font-size: 0.92rem;
+  line-height: 1;
+  opacity: 1;                  /* Bootstrap sets 0.5; we want full */
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+/* Active tab */
+#carousel-wrap .carousel.slide .carousel-indicators .active,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
+  background-color: #fff;
+  color: #000;
+  border-color: #bdbdbd;
+}
+
+/* Optional hover/focus without !important */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
+  background-color: #fff;
+  color: #000;
+  border-color: #bdbdbd;
+  outline: 0;
 }
