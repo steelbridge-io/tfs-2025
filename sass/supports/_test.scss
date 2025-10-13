@@ -8,6 +8,14 @@
 // Example placeholder (safe no-op):
 // .tfs-test-placeholder { display: block; }
 
+.container-wide {
+  max-width: 1640px; /* your cap */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--bs-gutter-x, .75rem);
+  padding-right: var(--bs-gutter-x, .75rem);
+}
+
 ul.navbar-nav {
   margin: 0;
 }
