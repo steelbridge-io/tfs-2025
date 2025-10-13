@@ -31,11 +31,10 @@ if (has_post_thumbnail()) : ?>
 
 	 <!-- Overlay Content -->
 	 <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-             <div id="mobile-logo-container">
-                 <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
-                 <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
-             </div>
-         <
+         <div id="mobile-logo-container">
+             <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
+             <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+         </div>
 		<!-- Page Title -->
 		<h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
 	 </div>
@@ -101,6 +100,7 @@ if (has_post_thumbnail()) : ?>
          <?php elseif( !empty($sections_1_image) && empty($sections_1_video) ) : ?>
           <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
          <?php else : ?>
+         <div id="carousel-wrap">
           <div id="sec1-dest-indicator-1" class="carousel slide">
            <div class="carousel-indicators">
             <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -139,6 +139,7 @@ if (has_post_thumbnail()) : ?>
             <span class="visually-hidden">Next</span>
            </button>
           </div>
+        </div>
          <?php endif; ?>
         </div>
        </div>
@@ -201,6 +202,7 @@ if (has_post_thumbnail()) : ?>
                         <?php elseif( !empty($sections_2_image) && empty($sections_2_video) ) : ?>
                             <img src="<?php echo $sections_2_image; ?>" alt="The Fly Shop Travel Image"/>
                         <?php else : ?>
+                            <div id="carousel-wrap">
                             <div id="sec2-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -239,6 +241,7 @@ if (has_post_thumbnail()) : ?>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
+                        </div>
                         <?php endif; ?>
                 </div>
             </div>
@@ -300,6 +303,7 @@ if (has_post_thumbnail()) : ?>
                         <?php elseif( !empty($sections_3_image) && empty($sections_3_video) ) : ?>
                             <img src="<?php echo $sections_3_image; ?>" alt="The Fly Shop Travel Image"/>
                         <?php else : ?>
+                        <div id="carousel-wrap">
                             <div id="sec3-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -338,6 +342,7 @@ if (has_post_thumbnail()) : ?>
                                     <span class="visually-hidden">Next</span>
                                 </button>
                             </div>
+                        </div>
                         <?php endif; ?>
                 </div>
             </div>
@@ -400,6 +405,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_4_image) && empty($sections_4_video) ) : ?>
                         <img src="<?php echo $sections_4_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec4-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -438,6 +444,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -500,6 +507,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_5_image) && empty($sections_5_video) ) : ?>
                         <img src="<?php echo $sections_5_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec5-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -538,6 +546,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -600,6 +609,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_6_image) && empty($sections_6_video) ) : ?>
                         <img src="<?php echo $sections_6_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec6-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -638,6 +648,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -700,6 +711,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_7_image) && empty($sections_7_video) ) : ?>
                         <img src="<?php echo $sections_7_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec7-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -738,6 +750,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -800,6 +813,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_8_image) && empty($sections_8_video) ) : ?>
                         <img src="<?php echo $sections_8_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec8-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -838,6 +852,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -900,6 +915,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_9_image) && empty($sections_9_video) ) : ?>
                         <img src="<?php echo $sections_9_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec9-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -938,6 +954,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1000,6 +1017,7 @@ if (has_post_thumbnail()) : ?>
                     <?php elseif( !empty($sections_10_image) && empty($sections_10_video) ) : ?>
                         <img src="<?php echo $sections_10_image; ?>" alt="The Fly Shop Travel Image"/>
                     <?php else : ?>
+                    <div id="carousel-wrap">
                         <div id="sec10-dest-indicator-1" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
@@ -1038,6 +1056,7 @@ if (has_post_thumbnail()) : ?>
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
+                    </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1089,8 +1108,6 @@ if (has_post_thumbnail()) : ?>
 <?php if ( ! empty( $galleryphoto_1_image ) ) { ?>
  <section id="three" class="wrapper style7 special">
 	<div class="inner container">
-
-	 <h2>Additional Information</h2>
 	 <div class="row g-4 additional-listing regional-waters">
 
 		<?php if (get_post_meta(get_the_ID(), 'galleryphoto-1-image', TRUE)) {
