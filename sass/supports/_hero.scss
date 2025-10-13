@@ -31,12 +31,19 @@
 }
 
 .hero-overlay:not([style*="top"]) {
-  top: 60% !important;
+  top: 50% !important;
+  left: 50% !important;
+}
+
+@media (max-width: 991.98px) {
+  .hero-overlay:not([style*="top"]) {
+    left: 50%;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-overlay:not([style*="top"]) {
-    top: 55% !important;
+    top: 50% !important;
   }
 }
 
