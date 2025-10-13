@@ -278,6 +278,10 @@ if (is_page_template('page-templates/fish-camp-course.php')) {
  wp_enqueue_script('fish-camp-course-js', get_template_directory_uri() . '/js/fish-camp-course.js', array('jquery'), _S_VERSION, true);
 }
 
+if (is_page_template('page-templates/lower-48-destination-template.php')) {
+  wp_enqueue_script('lower-48-desunation-js', get_template_directory_uri() . '/js/lower-48-destination-template.js', array('jquery'), _S_VERSION, true);
+}
+
 if (is_front_page()) {
  wp_enqueue_script('front-page-js', get_template_directory_uri() . '/js/front-page.js', array(), '20200415', true);
 }
