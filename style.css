@@ -1351,11 +1351,15 @@ a {
   height: 100vh !important; }
 
 .hero-overlay:not([style*="top"]) {
-  top: 60% !important; }
+  top: 50% !important;
+  left: 50% !important; }
 
+@media (max-width: 991.98px) {
+  .hero-overlay:not([style*="top"]) {
+    left: 50%; } }
 @media (max-width: 768px) {
   .hero-overlay:not([style*="top"]) {
-    top: 55% !important; } }
+    top: 50% !important; } }
 @media (max-width: 576px) {
   .hero-overlay:not([style*="top"]) {
     top: 50% !important; } }
@@ -2201,6 +2205,18 @@ ul.dropdown-menu ul.dropdown-menu {
       margin: 0 auto;
       display: block; }
 
+@media (max-width: 991.98px) {
+  #page .hero-image {
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    max-height: 90vh;
+    overflow: hidden; }
+    #page .hero-image img {
+      width: 200px;
+      height: 100%;
+      object-fit: cover;
+      object-position: center; } }
 /** Prime Travel
 ======================= */
 .prime-travel-left-col {
@@ -5177,7 +5193,7 @@ html {
   height: 100%;
   object-fit: cover; }
 
-.carousel-indicators button {
+/*.carousel-indicators button {
   width: auto !important;
   height: auto !important;
   text-indent: 0 !important;
@@ -5189,17 +5205,19 @@ html {
   font-size: 14px !important;
   color: white !important;
   opacity: 0.7;
-  transition: all 0.3s ease; }
+  transition: all 0.3s ease;
+}
 
 .carousel-indicators button {
   background-color: rgba(255, 255, 255, 0.9) !important;
   color: #333 !important;
-  opacity: 1; }
+  opacity: 1;
+}
 
 .carousel-indicators button:hover {
   background-color: rgba(255, 255, 255, 0.8) !important;
-  opacity: 0.9; }
-
+  opacity: 0.9;
+}*/
 /*** Fly Fishing School Template **/
 #fly-fishing-school-image-container .thumbnail a img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
@@ -5348,7 +5366,69 @@ ul.navbar-nav {
 @media (max-width: 991.98px) {
   .hero-overlay #mobile-logo-container img.mobile-logo {
     display: block;
-    width: 50%;
+    /*width: 50%;*/
     margin: 0 auto; } }
+/** Carousel Tabs In Multi-Destionation Template */
+/* Scope to your carousels so we can safely out-specificity Bootstrap */
+#carousel-wrap .carousel.slide {
+  position: relative; }
+
+.carousel-item {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+  .carousel-item img {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
+
+#carousel-wrap .carousel.slide .carousel-indicators {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* stick to bottom edge */
+  margin: 0;
+  /* no margin-bottom */
+  padding: 0;
+  /* no padding-bottom */
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent; }
+
+/* Make indicators behave like tabs (override Bootstrap's dots) */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
+  width: auto;
+  /* override fixed dot size */
+  height: auto;
+  text-indent: 0;
+  /* show text */
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0.55rem 0.95rem;
+  /* comfy, no extra bottom padding */
+  border: 1px solid #cfcfcf;
+  border-bottom: none;
+  /* tab edge sits on image bottom */
+  border-radius: 8px 8px 0 0;
+  background-color: #f6f6f6;
+  color: #333;
+  font-size: 0.92rem;
+  line-height: 1;
+  opacity: 1;
+  /* Bootstrap sets 0.5; we want full */
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease; }
+
+/* Active tab */
+#carousel-wrap .carousel.slide .carousel-indicators .active,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
+  background-color: #fff;
+  color: #000;
+  border-color: #bdbdbd; }
+
+/* Optional hover/focus without !important */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
+  background-color: #fff;
+  color: #000;
+  border-color: #bdbdbd;
+  outline: 0; }
 
 /*# sourceMappingURL=style.css.map */
