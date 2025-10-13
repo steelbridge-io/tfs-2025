@@ -1,19 +1,36 @@
-/** Dynamic Hero Overlay Positioning - UPDATED WITH FADE-IN-UP TITLE + DISABLE BELOW 992px */
+/** Dynamic Hero Overlay Positioning - UPDATED WITH RESPONSIVE HARD STOP BELOW 992px */
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Disable all logic on tablet/phone (match Bootstrap lg breakpoint)
-    const isSmall = () => window.matchMedia('(max-width: 991.98px)').matches;
+    // Match Bootstrap lg breakpoint
+    const mq = window.matchMedia('(max-width: 991.98px)');
+    const isSmall = () => mq.matches;
 
-    if (isSmall()) {
-        // Ensure the title is visible and overlay stays centered by classes
+    // Helper to reset overlay back to pure Bootstrap centering on small screens
+    function resetForSmallScreens() {
+        const overlay = document.querySelector('.hero-overlay');
         const title = document.querySelector('.hero-overlay .hero-title');
+        if (!overlay) return;
+
+        // Remove JS-applied inline top and classes that could drag it down
+        overlay.style.top = '';
+        overlay.classList.remove('start-50', 'translate-middle-x', 'hero-overlay-no-transition');
+        // Restore Bootstrap’s vertical center
+        overlay.classList.add('top-50', 'translate-middle');
+
+        // Ensure title is visible (no JS animation classes)
         if (title) {
             title.classList.remove('hero-title-hidden');
             title.classList.add('hero-title-show');
         }
-        return; // Do not run morph/positioning JS on small screens
     }
 
+    // If already small at load, reset and fully disable
+    if (isSmall()) {
+        resetForSmallScreens();
+        return;
+    }
+
+    // --- Existing desktop-only logic (unchanged) ---
     let initialPosition = null;
     let isCalculatingInitial = false;
     let pendingRaf = null;
@@ -58,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Prevent bounce on first paint and start with hidden title
+    // Desktop init
     ensureNoTransitionState();
     hideTitle();
 
@@ -130,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function adjustHeroOverlayPosition() {
+        if (isSmall()) return; // hard stop if resized to small
         const belowNavLogo = document.querySelector('#below-nav-logo');
         const overlay = document.querySelector('.hero-overlay');
         if (!belowNavLogo || !overlay) return;
@@ -174,8 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
         hasAppliedFirstPosition = true;
     }
 
-    // Initial sequence: compute -> position -> reveal title
+    // Initial sequence
     window.addEventListener('load', function() {
+        if (isSmall()) return resetForSmallScreens();
         calculateInitialPosition().then(() => {
             raf(() => {
                 adjustHeroOverlayPosition();
@@ -185,6 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     setTimeout(() => {
+        if (isSmall()) return;
         calculateInitialPosition().then(() => {
             raf(() => {
                 adjustHeroOverlayPosition();
@@ -193,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, 800);
 
-    // Scroll/resize updates (guarded by size check so behavior stops if user resizes below lg)
+    // Scroll updates
     let scrollTimeout, isScrolling = false;
     function handleScroll() {
         if (isSmall()) return;
@@ -209,17 +229,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
 
+    // Resize listener: when crossing to small, immediately reset and stop
     let resizeTimeout;
-    window.addEventListener('resize', function() {
+    function onResize() {
         clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(async () => {
-            if (isSmall()) return; // stop updates under 992px
-            if (window.scrollY <= 50) await calculateInitialPosition();
-            raf(adjustHeroOverlayPosition);
-        }, 150);
-    });
+        resizeTimeout = setTimeout(() => {
+            if (isSmall()) {
+                resetForSmallScreens();
+            } else {
+                // back to desktop
+                calculateInitialPosition().then(() => raf(adjustHeroOverlayPosition));
+            }
+        }, 100);
+    }
+    window.addEventListener('resize', onResize);
+    mq.addEventListener ? mq.addEventListener('change', onResize) : mq.addListener(onResize); // Safari fallback
 
-    // React to logo transitions/mutations
+    // Logo transitions/mutations
     const belowNavLogo = document.querySelector('#below-nav-logo');
     if (belowNavLogo) {
         belowNavLogo.addEventListener('transitionend', async (e) => {
@@ -263,10 +289,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             });
         };
-        if (heroMedia.tagName === 'VIDEO') {
-            heroMedia.addEventListener('loadeddata', handler, { once: true });
-        } else {
-            heroMedia.addEventListener('load', handler, { once: true });
-        }
+        if (heroMedia.tagName === 'VIDEO') heroMedia.addEventListener('loadeddata', handler, { once: true });
+        else heroMedia.addEventListener('load', handler, { once: true });
     }
 });
