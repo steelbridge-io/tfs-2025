@@ -81,15 +81,16 @@ if (has_post_thumbnail()) : ?>
 		 </main>
 		</div>
 	 </div>
-
 	</div>
  </section>
+
+<div class="container-fluid container-wide">
 
  <!-- ==== Section #1 ==== -->
 
      <section class="spotlight-multi-destination mt-5 mb-5">
       <div class="row align-items-center">
-       <div class="col-md-4 col-lg-4">
+       <div class="col-md-5 col-lg-5">
         <div class="image">
          <!-- Costs Video/Text/Image Option -->
          <?php
@@ -143,7 +144,7 @@ if (has_post_thumbnail()) : ?>
          <?php endif; ?>
         </div>
        </div>
-       <div class="col-md-6 col-lg-6">
+       <div class="col-md-7 col-lg-7">
         <div class="content">
          <div id="travel-style">
           <?php if( empty($sections_1_image) && empty($sections_1_video) ) : ?>
@@ -191,7 +192,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center flex-row-reverse">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -245,7 +246,7 @@ if (has_post_thumbnail()) : ?>
                         <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_2_image) && empty($sections_2_video) ) : ?>
@@ -292,7 +293,7 @@ if (has_post_thumbnail()) : ?>
     <!-- ==== Section #3 ==== -->
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -346,7 +347,7 @@ if (has_post_thumbnail()) : ?>
                         <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_3_image) && empty($sections_3_video) ) : ?>
@@ -394,7 +395,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center flex-row-reverse">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -448,7 +449,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_4_image) && empty($sections_4_video) ) : ?>
@@ -496,7 +497,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -550,7 +551,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_5_image) && empty($sections_5_video) ) : ?>
@@ -598,7 +599,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center flex-row-reverse">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -652,7 +653,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_6_image) && empty($sections_6_video) ) : ?>
@@ -700,7 +701,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -754,7 +755,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_7_image) && empty($sections_7_video) ) : ?>
@@ -802,7 +803,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center flex-row-reverse">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -856,7 +857,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_8_image) && empty($sections_8_video) ) : ?>
@@ -904,7 +905,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -958,7 +959,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_9_image) && empty($sections_9_video) ) : ?>
@@ -1006,7 +1007,7 @@ if (has_post_thumbnail()) : ?>
 
     <section class="spotlight-multi-destination mt-5 mb-5">
         <div class="row align-items-center flex-row-reverse">
-            <div class="col-md-4 col-lg-4">
+            <div class="col-md-5 col-lg-5">
                 <div class="image">
                     <!-- Costs Video/Text/Image Option -->
                     <?php
@@ -1060,7 +1061,7 @@ if (has_post_thumbnail()) : ?>
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6">
+            <div class="col-md-7 col-lg-7">
                 <div class="content">
                     <div id="travel-style">
                         <?php if( empty($sections_10_image) && empty($sections_10_video) ) : ?>
@@ -1103,6 +1104,9 @@ if (has_post_thumbnail()) : ?>
             </div>
         </div>
     </section>
+
+</div>
+
 
 
 <?php if ( ! empty( $galleryphoto_1_image ) ) { ?>
@@ -1260,154 +1264,155 @@ if (has_post_thumbnail()) : ?>
         </div>
     </section>
 
-<!-- MODAL -->
-<div class="container">
-
- <div class="modal fade guide-modal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-	 <div class="modal-content">
-		<div class="modal-body p-0">
-		 <!-- Carousel -->
-		 <div id="guide-carousel" class="carousel slide">
-			<!-- Carousel indicators -->
-			<div class="carousel-indicators">
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-1-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-2-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-3-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-4-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-5-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-6-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-7-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-8-image', TRUE)) {
-				echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>';
-			 } ?>
-			</div>
-
-			<!-- Carousel items -->
-			<div class="carousel-inner">
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-1-image', TRUE)) {
-				echo '<div class="carousel-item active">
-                <img src="' . $galleryphoto_1_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-2-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_2_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-3-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_3_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-4-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_4_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-5-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_5_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-6-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_6_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-7-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_7_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-
-			 <?php if (get_post_meta(get_the_ID(), 'galleryphoto-8-image', TRUE)) {
-				echo '<div class="carousel-item">
-                <img src="' . $galleryphoto_8_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
-              </div>';
-			 } ?>
-			</div>
-
-			<!-- Carousel controls -->
-			<button class="carousel-control-prev" type="button" data-bs-target="#guide-carousel" data-bs-slide="prev">
-			 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			 <span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#guide-carousel" data-bs-slide="next">
-			 <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			 <span class="visually-hidden">Next</span>
-			</button>
-		 </div>
-		</div>
-	 </div>
-	</div>
- </div>
-</div><!-- /Modal .container -->
- <section id="front-page-cta">
-	<div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
-	 <div class="container text-center text-md-end">
-		<div class="row justify-content-end">
-		 <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
-			<div class="row">
-			 <div class="col-6">
-				<img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
-			 </div>
-			 <div class="col-6">
-				<h5 class="mb-4 fw-bold">Stay Updated</h5>
-				<p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
-			 </div>
-			</div>
-			<form id="subscribe-form">
-			 <div class="form-floating mb-3">
-				<input
-				 type="email"
-				 class="form-control shadow-sm"
-				 id="subscriberEmail"
-				 placeholder="name@example.com"
-				 required
-				/>
-				<label for="subscriberEmail" class="text-muted">Enter your email</label>
-			 </div>
-			 <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
-				Subscribe
-			 </button>
-			</form>
-		 </div>
-		</div>
-	 </div>
-	</div>
- </section>
+    <section id="front-page-cta">
+    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
+     <div class="container text-center text-md-end">
+        <div class="row justify-content-end">
+         <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+            <div class="row">
+             <div class="col-6">
+                <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+             </div>
+             <div class="col-6">
+                <h5 class="mb-4 fw-bold">Stay Updated</h5>
+                <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+             </div>
+            </div>
+            <form id="subscribe-form">
+             <div class="form-floating mb-3">
+                <input
+                 type="email"
+                 class="form-control shadow-sm"
+                 id="subscriberEmail"
+                 placeholder="name@example.com"
+                 required
+                />
+                <label for="subscriberEmail" class="text-muted">Enter your email</label>
+             </div>
+             <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+                Subscribe
+             </button>
+            </form>
+         </div>
+        </div>
+     </div>
+    </div>
+    </section>
 
 
 <?php
 include_once( get_template_directory() . '/page-templates/template-functions/multi-destination-template-functions.php' );
 
-get_footer();
+get_footer(); ?>
+
+<!-- MODAL -->
+<div class="container">
+    <div class="modal fade guide-modal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <!-- Carousel -->
+                    <div id="guide-carousel" class="carousel slide">
+                        <!-- Carousel indicators -->
+                        <div class="carousel-indicators">
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-1-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-2-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-3-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-4-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="3" aria-label="Slide 4"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-5-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="4" aria-label="Slide 5"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-6-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="5" aria-label="Slide 6"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-7-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="6" aria-label="Slide 7"></button>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-8-image', TRUE)) {
+                                echo '<button type="button" data-bs-target="#guide-carousel" data-bs-slide-to="7" aria-label="Slide 8"></button>';
+                            } ?>
+                        </div>
+
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-1-image', TRUE)) {
+                                echo '<div class="carousel-item active">
+                <img src="' . $galleryphoto_1_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-2-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_2_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-3-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_3_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-4-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_4_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-5-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_5_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-6-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_6_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-7-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_7_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+
+                            <?php if (get_post_meta(get_the_ID(), 'galleryphoto-8-image', TRUE)) {
+                                echo '<div class="carousel-item">
+                <img src="' . $galleryphoto_8_image . '" class="d-block w-100" alt="The Fly Shop Guided Fly Fishing">
+              </div>';
+                            } ?>
+                        </div>
+
+                        <!-- Carousel controls -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#guide-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#guide-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Modal .container -->
 
