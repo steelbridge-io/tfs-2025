@@ -112,6 +112,8 @@ $galleryphoto_7_image     = get_post_meta(get_the_ID(), 'galleryphoto-7-image', 
 $galleryphoto_8_image     = get_post_meta(get_the_ID(), 'galleryphoto-8-image', true);
 
 $sec1_dest_img_1		  		= get_post_meta(get_the_ID(), 'sec1-dest-img-1', true);
+$sec1_dest_img_title_1	  = get_post_meta(get_the_ID(), 'sec1-dest-img-title-1', true);
+$sec1_dest_img_desc_1	    = get_post_meta(get_the_ID(), 'sec1-dest-img-desc-1', true);
 $sec1_dest_title_1   	  	= get_post_meta(get_the_ID(), 'sec1-dest-title-1', true);
 $sec1_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-textarea-1', true));
 $sec1_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-readmore-1', true));
