@@ -39,8 +39,20 @@ ul.navbar-nav {
 }
 
 /** Carousel Tabs In Multi-Destionation Template */
+#carousel-wrap {
+  .carousel {
+    .carousel-inner {
+      overflow: hidden;
+    }
+  }
+}
 
-/* Scope to your carousels so we can safely out-specificity Bootstrap */
+.spotlight-multi-destination {
+  .image {
+    box-shadow: $tfs__box-shadow;
+  }
+}
+
 #carousel-wrap .carousel.slide {
   position: relative;
 }
@@ -61,22 +73,22 @@ ul.navbar-nav {
   padding: 0;       /* no padding-bottom */
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.1rem;
   background: transparent;
 }
 
 /* Make indicators behave like tabs (override Bootstrap's dots) */
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
-  width: auto;                 /* override fixed dot size */
+  width: auto;
   height: auto;
-  text-indent: 0;              /* show text */
+  text-indent: 0;
   flex: 0 0 auto;
   margin: 0;
-  padding: 0.55rem 0.95rem;    /* comfy, no extra bottom padding */
+  padding: 1.3rem 1rem;
   border: 1px solid #cfcfcf;
-  border-bottom: none;         /* tab edge sits on image bottom */
-  border-radius: 8px 8px 0 0;
-  background-color: #f6f6f6;
+  border-bottom: none;
+  border-radius: 8px 8px 8px 8px;
+  background-color: #ccc;
   color: #333;
   font-size: 0.92rem;
   line-height: 1;
@@ -100,3 +112,61 @@ ul.navbar-nav {
   border-color: #bdbdbd;
   outline: 0;
 }
+
+
+
+// ... existing code ...
+/* Exaggerated white bowl/wave that can extend beyond the container */
+#carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.6rem 0.9rem;
+  z-index: 1; /* keep buttons above the wave */
+}
+
+#carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 39.6vw;      /* extend beyond container */
+  max-width: none;
+  height: 140px;     /* wave depth */
+  z-index: -1;       /* behind indicators */
+  pointer-events: none;
+  background:
+          url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'>\
+  <path fill='%23ffffff' d='M0,36L96,64C192,92,384,148,576,196C768,244,960,284,1152,250.7C1344,217,1536,109,1632,68L1728,36L1728,320L0,320Z'/>\
+</svg>") bottom / 100% 100% no-repeat;
+}
+
+/* Allow overflow from the indicators’ parent if it clips */
+#carousel-wrap .carousel.slide {
+  overflow: visible;
+}
+
+
+
+// ... existing code ...
+/* Add a subtle bottom-only shadow to the indicator "buttons" */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
+  // ... existing code ...
+  box-shadow: 0 2px 6px rgba(0,0,0,.12);
+}
+
+/* Stronger shadow for the active tab */
+#carousel-wrap .carousel.slide .carousel-indicators .active,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
+  // ... existing code ...
+  box-shadow: 0 3px 10px rgba(0,0,0,.16);
+}
+
+/* Optional: a bit more lift on hover/focus */
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
+#carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
+  // ... existing code ...
+  box-shadow: 0 3px 10px rgba(0,0,0,.18);
+}
+// ... existing code ...
