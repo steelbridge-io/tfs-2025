@@ -88,7 +88,7 @@ if (has_post_thumbnail()) : ?>
 
  <!-- ==== Section #1 ==== -->
 
-     <section class="spotlight-multi-destination mt-5 mb-5">
+     <section class="spotlight-multi-destination mt-7 mb-7">
       <div class="row align-items-center">
        <div class="col-md-5 col-lg-5">
         <div class="image">
@@ -103,7 +103,7 @@ if (has_post_thumbnail()) : ?>
          <?php elseif( !empty($sec1_dest_img_1) ) : ?>
          <div id="carousel-wrap">
           <div id="sec1-dest-indicator-1" class="carousel slide">
-           <div class="carousel-indicators">
+           <div class="carousel-indicators wave-bowl-exaggerated">
             <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">Reservations &amp; Rates</button>
             <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="1" aria-label="Slide 2">Getting To</button>
             <button type="button" data-bs-target="#sec1-dest-indicator-1" data-bs-slide-to="2" aria-label="Slide 3">Lodging</button>
@@ -112,8 +112,8 @@ if (has_post_thumbnail()) : ?>
             <div class="carousel-item active">
              <img src="<?php echo $sec1_dest_img_1 ?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_1 ?>">
              <div class="carousel-caption d-none d-md-block">
-              <h5>First slide label</h5>
-              <p>Some representative placeholder content for the first slide.</p>
+              <h5><?php echo $sec1_dest_img_title_1 ?></h5>
+              <p><?php echo $sec1_dest_img_desc_1 ?></p>
              </div>
             </div>
             <div class="carousel-item">
@@ -190,7 +190,7 @@ if (has_post_thumbnail()) : ?>
 
     <!-- ==== Section #2 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -202,7 +202,7 @@ if (has_post_thumbnail()) : ?>
                             </div>
                         <?php elseif( !empty($sections_2_image) && empty($sections_2_video) ) : ?>
                             <img src="<?php echo $sections_2_image; ?>" alt="The Fly Shop Travel Image"/>
-                        <?php else : ?>
+                        <?php elseif( !empty($sec2_dest_img_1) ) : ?>
                             <div id="carousel-wrap">
                             <div id="sec2-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators">
@@ -251,7 +251,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_2_image) && empty($sections_2_video) ) : ?>
                             <h2 id="sec2-dynamic-title"><?php echo $sec2_dest_title_1; ?></h2>
-                            <p id="sec2-dynamic-content" class="travel"><?php echo $sec2_dest_textarea_1; ?></p>
+                            <div id="sec2-dynamic-content" class="travel"><?php echo $sec2_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion2" style="<?php echo !empty($sec2_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -261,14 +261,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
                                         <div class="accordion-body">
-                                            <p id="sec2-dynamic-readmore" class="travel"><?php echo $sec2_dest_readmore_1; ?></p>
+                                            <div id="sec2-dynamic-readmore" class="travel"><?php echo $sec2_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_2_title; ?></h2>
-                            <p class="travel"><?php echo $sections_2_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_2_textarea; ?></div>
                             <div class="accordion" id="accordion2">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -278,7 +278,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo2" class="accordion-collapse collapse" data-bs-parent="#accordion2">
                                         <div class="accordion-body">
-                                            <p id="dynamic-readmore" class="travel"><?php echo $sections_2_readmore; ?></p>
+                                            <div id="dynamic-readmore" class="travel"><?php echo $sections_2_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -291,7 +291,7 @@ if (has_post_thumbnail()) : ?>
     </section>
 
     <!-- ==== Section #3 ==== -->
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -352,7 +352,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_3_image) && empty($sections_3_video) ) : ?>
                             <h2 id="sec3-dynamic-title"><?php echo $sec3_dest_title_1; ?></h2>
-                            <p id="sec3-dynamic-content" class="travel"><?php echo $sec3_dest_textarea_1; ?></p>
+                            <div id="sec3-dynamic-content" class="travel"><?php echo $sec3_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion3" style="<?php echo !empty($sec3_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -362,14 +362,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
                                         <div class="accordion-body">
-                                            <p id="sec3-dynamic-readmore" class="travel"><?php echo $sec3_dest_readmore_1; ?></p>
+                                            <div id="sec3-dynamic-readmore" class="travel"><?php echo $sec3_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_3_title; ?></h2>
-                            <p class="travel"><?php echo $sections_3_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_3_textarea; ?></div>
                             <div class="accordion" id="accordion3">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -379,7 +379,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo3" class="accordion-collapse collapse" data-bs-parent="#accordion3">
                                         <div class="accordion-body">
-                                            <p id="sec3-dynamic-readmore" class="travel"><?php echo $sections_3_readmore; ?></p>
+                                            <div id="sec3-dynamic-readmore" class="travel"><?php echo $sections_3_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -393,7 +393,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #4 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -454,7 +454,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_4_image) && empty($sections_4_video) ) : ?>
                             <h2 id="sec4-dynamic-title"><?php echo $sec4_dest_title_1; ?></h2>
-                            <p id="sec4-dynamic-content" class="travel"><?php echo $sec4_dest_textarea_1; ?></p>
+                            <div id="sec4-dynamic-content" class="travel"><?php echo $sec4_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion4" style="<?php echo !empty($sec4_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -464,14 +464,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
                                         <div class="accordion-body">
-                                            <p id="sec4-dynamic-readmore" class="travel"><?php echo $sec4_dest_readmore_1; ?></p>
+                                            <div id="sec4-dynamic-readmore" class="travel"><?php echo $sec4_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_4_title; ?></h2>
-                            <p class="travel"><?php echo $sections_4_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_4_textarea; ?></div>
                             <div class="accordion" id="accordion4">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -481,7 +481,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo4" class="accordion-collapse collapse" data-bs-parent="#accordion4">
                                         <div class="accordion-body">
-                                            <p id="sec4-dynamic-readmore" class="travel"><?php echo $sections_4_readmore; ?></p>
+                                            <div id="sec4-dynamic-readmore" class="travel"><?php echo $sections_4_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -495,7 +495,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #5 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -556,7 +556,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_5_image) && empty($sections_5_video) ) : ?>
                             <h2 id="sec5-dynamic-title"><?php echo $sec5_dest_title_1; ?></h2>
-                            <p id="sec5-dynamic-content" class="travel"><?php echo $sec5_dest_textarea_1; ?></p>
+                            <div id="sec5-dynamic-content" class="travel"><?php echo $sec5_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion5" style="<?php echo !empty($sec5_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -566,14 +566,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
                                         <div class="accordion-body">
-                                            <p id="sec5-dynamic-readmore" class="travel"><?php echo $sec5_dest_readmore_1; ?></p>
+                                            <div id="sec5-dynamic-readmore" class="travel"><?php echo $sec5_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_5_title; ?></h2>
-                            <p class="travel"><?php echo $sections_5_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_5_textarea; ?></div>
                             <div class="accordion" id="accordion5">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -583,7 +583,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo5" class="accordion-collapse collapse" data-bs-parent="#accordion5">
                                         <div class="accordion-body">
-                                            <p id="sec5-dynamic-readmore" class="travel"><?php echo $sections_5_readmore; ?></p>
+                                            <div id="sec5-dynamic-readmore" class="travel"><?php echo $sections_5_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -597,7 +597,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #6 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -658,7 +658,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_6_image) && empty($sections_6_video) ) : ?>
                             <h2 id="sec6-dynamic-title"><?php echo $sec6_dest_title_1; ?></h2>
-                            <p id="sec6-dynamic-content" class="travel"><?php echo $sec6_dest_textarea_1; ?></p>
+                            <div id="sec6-dynamic-content" class="travel"><?php echo $sec6_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion6" style="<?php echo !empty($sec6_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -668,14 +668,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
                                         <div class="accordion-body">
-                                            <p id="sec6-dynamic-readmore" class="travel"><?php echo $sec6_dest_readmore_1; ?></p>
+                                            <div id="sec6-dynamic-readmore" class="travel"><?php echo $sec6_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_6_title; ?></h2>
-                            <p class="travel"><?php echo $sections_6_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_6_textarea; ?></div>
                             <div class="accordion" id="accordion6">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -685,7 +685,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo6" class="accordion-collapse collapse" data-bs-parent="#accordion6">
                                         <div class="accordion-body">
-                                            <p id="sec6-dynamic-readmore" class="travel"><?php echo $sections_6_readmore; ?></p>
+                                            <div id="sec6-dynamic-readmore" class="travel"><?php echo $sections_6_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -699,7 +699,7 @@ if (has_post_thumbnail()) : ?>
 
     <!-- ==== Section #7 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -760,7 +760,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_7_image) && empty($sections_7_video) ) : ?>
                             <h2 id="sec7-dynamic-title"><?php echo $sec7_dest_title_1; ?></h2>
-                            <p id="sec7-dynamic-content" class="travel"><?php echo $sec7_dest_textarea_1; ?></p>
+                            <div id="sec7-dynamic-content" class="travel"><?php echo $sec7_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion7" style="<?php echo !empty($sec7_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -770,14 +770,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
                                         <div class="accordion-body">
-                                            <p id="sec7-dynamic-readmore" class="travel"><?php echo $sec7_dest_readmore_1; ?></p>
+                                            <div id="sec7-dynamic-readmore" class="travel"><?php echo $sec7_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_7_title; ?></h2>
-                            <p class="travel"><?php echo $sections_7_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_7_textarea; ?></div>
                             <div class="accordion" id="accordion7">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -787,7 +787,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo7" class="accordion-collapse collapse" data-bs-parent="#accordion7">
                                         <div class="accordion-body">
-                                            <p id="sec7-dynamic-readmore" class="travel"><?php echo $sections_7_readmore; ?></p>
+                                            <div id="sec7-dynamic-readmore" class="travel"><?php echo $sections_7_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -801,7 +801,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #8 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -862,7 +862,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_8_image) && empty($sections_8_video) ) : ?>
                             <h2 id="sec8-dynamic-title"><?php echo $sec8_dest_title_1; ?></h2>
-                            <p id="sec8-dynamic-content" class="travel"><?php echo $sec8_dest_textarea_1; ?></p>
+                            <div id="sec8-dynamic-content" class="travel"><?php echo $sec8_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion8" style="<?php echo !empty($sec8_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -872,14 +872,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
                                         <div class="accordion-body">
-                                            <p id="sec8-dynamic-readmore" class="travel"><?php echo $sec8_dest_readmore_1; ?></p>
+                                            <div id="sec8-dynamic-readmore" class="travel"><?php echo $sec8_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_8_title; ?></h2>
-                            <p class="travel"><?php echo $sections_8_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_8_textarea; ?></div>
                             <div class="accordion" id="accordion8">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -889,7 +889,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo8" class="accordion-collapse collapse" data-bs-parent="#accordion8">
                                         <div class="accordion-body">
-                                            <p id="sec8-dynamic-readmore" class="travel"><?php echo $sections_8_readmore; ?></p>
+                                            <div id="sec8-dynamic-readmore" class="travel"><?php echo $sections_8_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -903,7 +903,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #9 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -964,7 +964,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_9_image) && empty($sections_9_video) ) : ?>
                             <h2 id="sec9-dynamic-title"><?php echo $sec9_dest_title_1; ?></h2>
-                            <p id="sec9-dynamic-content" class="travel"><?php echo $sec9_dest_textarea_1; ?></p>
+                            <div id="sec9-dynamic-content" class="travel"><?php echo $sec9_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion9" style="<?php echo !empty($sec9_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -974,14 +974,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
                                         <div class="accordion-body">
-                                            <p id="sec9-dynamic-readmore" class="travel"><?php echo $sec9_dest_readmore_1; ?></p>
+                                            <div id="sec9-dynamic-readmore" class="travel"><?php echo $sec9_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_9_title; ?></h2>
-                            <p class="travel"><?php echo $sections_9_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_9_textarea; ?></div>
                             <div class="accordion" id="accordion9">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -991,7 +991,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo9" class="accordion-collapse collapse" data-bs-parent="#accordion9">
                                         <div class="accordion-body">
-                                            <p id="sec9-dynamic-readmore" class="travel"><?php echo $sections_9_readmore; ?></p>
+                                            <div id="sec9-dynamic-readmore" class="travel"><?php echo $sections_9_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1005,7 +1005,7 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #10 ==== -->
 
-    <section class="spotlight-multi-destination mt-5 mb-5">
+    <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center flex-row-reverse">
             <div class="col-md-5 col-lg-5">
                 <div class="image">
@@ -1066,7 +1066,7 @@ if (has_post_thumbnail()) : ?>
                     <div id="travel-style">
                         <?php if( empty($sections_10_image) && empty($sections_10_video) ) : ?>
                             <h2 id="sec10-dynamic-title"><?php echo $sec10_dest_title_1; ?></h2>
-                            <p id="sec10-dynamic-content" class="travel"><?php echo $sec10_dest_textarea_1; ?></p>
+                            <div id="sec10-dynamic-content" class="travel"><?php echo $sec10_dest_textarea_1; ?></div>
                             <div class="accordion" id="accordion10" style="<?php echo !empty($sec10_dest_readmore_1) ? '' : 'display: none;'; ?>">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -1076,14 +1076,14 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
                                         <div class="accordion-body">
-                                            <p id="sec10-dynamic-readmore" class="travel"><?php echo $sec10_dest_readmore_1; ?></p>
+                                            <div id="sec10-dynamic-readmore" class="travel"><?php echo $sec10_dest_readmore_1; ?></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         <?php else : ?>
                             <h2><?php echo $sections_10_title; ?></h2>
-                            <p class="travel"><?php echo $sections_10_textarea; ?></p>
+                            <div class="travel"><?php echo $sections_10_textarea; ?></div>
                             <div class="accordion" id="accordion10">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
@@ -1093,7 +1093,7 @@ if (has_post_thumbnail()) : ?>
                                     </h2>
                                     <div id="collapseTwo10" class="accordion-collapse collapse" data-bs-parent="#accordion10">
                                         <div class="accordion-body">
-                                            <p id="sec10-dynamic-readmore" class="travel"><?php echo $sections_10_readmore; ?></p>
+                                            <div id="sec10-dynamic-readmore" class="travel"><?php echo $sections_10_readmore; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1106,8 +1106,6 @@ if (has_post_thumbnail()) : ?>
     </section>
 
 </div>
-
-
 
 <?php if ( ! empty( $galleryphoto_1_image ) ) { ?>
  <section id="three" class="wrapper style7 special">
@@ -1230,7 +1228,7 @@ if (has_post_thumbnail()) : ?>
             <div id="cta-trigger" class="cta-trigger-area">
                 <header class="text-center">
                     <h2 class="cta-trigger-title"><?php echo $cta_schools_strong_intro;?></h2>
-                    <p class="cta-trigger-subtitle"><?php echo $cta_schools_content;?></p>
+                    <div class="cta-trigger-subtitle"><?php echo $cta_schools_content;?></div>
                     <button class="btn btn-primary cta-expand-btn" id="expandCTA">
                         Get Started <i class="fas fa-chevron-up"></i>
                     </button>
@@ -1255,8 +1253,7 @@ if (has_post_thumbnail()) : ?>
                         </div>
                         <!-- Fallback content if no form is available -->
                         <div class="contact-fallback">
-                            <p>Call us directly at <strong>(800) 669-3474</strong> or use the form above to get started.
-                            </p>
+                            <p>Call us directly at <strong>(800) 669-3474</strong> or use the form above to get started.</p>
                         </div>
                     </div>
                 </div>
