@@ -15,9 +15,9 @@ AOS.init({
             const t = document.getElementById(titleId);
             const c = document.getElementById(contentId);
             const r = document.getElementById(readmoreId);
-            if (t) t.textContent = d.title || '';
-            if (c) c.textContent = d.content || '';
-            if (r) r.textContent = d.readmore || '';
+            if (t) t.innerHTML = d.title || '';
+            if (c) c.innerHTML = d.content || '';
+            if (r) r.innerHTML = d.readmore || '';
             const acc = document.getElementById(accordionId);
             if (acc) acc.style.display = d.readmore && d.readmore.trim() ? 'block' : 'none';
         }
