@@ -96,11 +96,11 @@ if (has_post_thumbnail()) : ?>
          <?php
          if ( !empty($sections_1_video) ) :?>
           <div class="embed-responsive embed-responsive-16by9">
-           <iframe class="embed-responsive-item" src="<?php echo $sections_1_video; ?>" allowfullscreen></iframe>
+           <iframe class="embed-responsive-item" src="<?php echo $sections_1_video ?>" allowfullscreen></iframe>
           </div>
          <?php elseif( !empty($sections_1_image) && empty($sections_1_video) ) : ?>
-          <img src="<?php echo $sections_1_image; ?>" alt="The Fly Shop Travel Image"/>
-         <?php else : ?>
+          <img src="<?php echo esc_url($sections_1_image); ?>" alt="The Fly Shop Travel Image"/>
+         <?php elseif( !empty($sec1_dest_img_1) ) : ?>
          <div id="carousel-wrap">
           <div id="sec1-dest-indicator-1" class="carousel slide">
            <div class="carousel-indicators">
@@ -110,21 +110,21 @@ if (has_post_thumbnail()) : ?>
            </div>
            <div class="carousel-inner">
             <div class="carousel-item active">
-             <img src="<?php echo $sec1_dest_img_1	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_1 ?>">
+             <img src="<?php echo $sec1_dest_img_1 ?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_1 ?>">
              <div class="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>Some representative placeholder content for the first slide.</p>
              </div>
             </div>
             <div class="carousel-item">
-             <img src="<?php echo $sec1_dest_img_2	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_2 ?>">
+             <img src="<?php echo $sec1_dest_img_2 ?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_2 ?>">
              <div class="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>Some representative placeholder content for the second slide.</p>
              </div>
             </div>
             <div class="carousel-item">
-             <img src="<?php echo $sec1_dest_img_3	?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_3 ?>">
+             <img src="<?php echo $sec1_dest_img_3 ?>" class="d-block w-100" alt="<?php echo $sec1_dest_title_3 ?>">
              <div class="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>Some representative placeholder content for the third slide.</p>
@@ -148,8 +148,8 @@ if (has_post_thumbnail()) : ?>
         <div class="content">
          <div id="travel-style">
           <?php if( empty($sections_1_image) && empty($sections_1_video) ) : ?>
-           <h2 id="sec1-dynamic-title"><?php echo $sec1_dest_title_1; ?></h2>
-           <p id="sec1-dynamic-content" class="travel"><?php echo $sec1_dest_textarea_1; ?></p>
+           <h2 id="sec1-dynamic-title"><?php echo $sec1_dest_title_1 ?></h2>
+           <div id="sec1-dynamic-content" class="travel"><?php echo $sec1_dest_textarea_1; ?></div>
            <div class="accordion" id="accordion1" style="<?php echo !empty($sec1_dest_readmore_1) ? '' : 'display: none;'; ?>">
             <div class="accordion-item">
              <h2 class="accordion-header">
@@ -159,14 +159,14 @@ if (has_post_thumbnail()) : ?>
              </h2>
              <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
               <div class="accordion-body">
-               <p id="sec1-dynamic-readmore" class="travel"><?php echo $sec1_dest_readmore_1; ?></p>
+               <div id="sec1-dynamic-readmore" class="travel"><?php echo $sec1_dest_readmore_1; ?></div>
               </div>
              </div>
             </div>
            </div>
           <?php else : ?>
-           <h2><?php echo $sections_1_title; ?></h2>
-           <p class="travel"><?php echo $sections_1_textarea; ?></p>
+           <h2><?php echo $sections_1_title ?></h2>
+           <div class="travel"><?php echo $sections_1_textarea; ?></div>
            <div class="accordion" id="accordion1">
             <div class="accordion-item">
              <h2 class="accordion-header">
@@ -176,7 +176,7 @@ if (has_post_thumbnail()) : ?>
              </h2>
              <div id="collapseTwo1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
               <div class="accordion-body">
-               <p id="dynamic-readmore" class="travel"><?php echo $sections_1_readmore; ?></p>
+               <div id="dynamic-readmore" class="travel"><?php echo $sections_1_readmore ?></div>
               </div>
              </div>
             </div>
