@@ -9,7 +9,7 @@
 // .tfs-test-placeholder { display: block; }
 
 .container-wide {
-  max-width: 1640px; /* your cap */
+  max-width: 1640px;
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--bs-gutter-x, .75rem);
@@ -31,14 +31,12 @@ ul.navbar-nav {
     #mobile-logo-container {
       img.mobile-logo {
         display: block;
-        /*width: 50%;*/
         margin: 0 auto;
       }
     }
   }
 }
 
-/** Carousel Tabs In Multi-Destionation Template */
 #carousel-wrap {
   .carousel {
     .carousel-inner {
@@ -58,7 +56,27 @@ ul.navbar-nav {
 }
 
 .carousel-item {
+  position: relative;
   box-shadow: $tfs__box-shadow;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+    will-change: opacity; // GPU acceleration hint
+  }
+
+  .carousel-caption {
+    z-index: 2;
+  }
+
   img {
     box-shadow: $tfs__box-shadow;
   }
@@ -68,16 +86,15 @@ ul.navbar-nav {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;        /* stick to bottom edge */
-  margin: 0;        /* no margin-bottom */
-  padding: 0;       /* no padding-bottom */
+  bottom: 0;        
+  margin: 0;        
+  padding: 0;       
   display: flex;
   justify-content: center;
   gap: 0.1rem;
   background: transparent;
 }
 
-/* Make indicators behave like tabs (override Bootstrap's dots) */
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
   width: auto;
   height: auto;
@@ -85,43 +102,45 @@ ul.navbar-nav {
   flex: 0 0 auto;
   margin: 0;
   padding: 1.3rem 1rem;
-  border: 1px solid #cfcfcf;
+  border: 1px solid $color__background__royal__blue;
   border-bottom: none;
   border-radius: 8px 8px 8px 8px;
-  background-color: #ccc;
-  color: #333;
+  background-color: $color__background__royal__blue;
+  color: $tfs__white;
   font-size: 0.92rem;
   line-height: 1;
-  opacity: 1;                  /* Bootstrap sets 0.5; we want full */
+  opacity: 1;                  
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
 
-/* Active tab */
 #carousel-wrap .carousel.slide .carousel-indicators .active,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
-  background-color: #fff;
-  color: #000;
-  border-color: #bdbdbd;
+  background-color: $color__background__blue__active;
+  color: $tfs__white;
+  border-color: $color__background__blue__active;
 }
 
-/* Optional hover/focus without !important */
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
-  background-color: #fff;
-  color: #000;
-  border-color: #bdbdbd;
+  background-color: $color__background__blue__active;
+  color: $tfs__white;
+  border-color: $color__background__blue__active;
   outline: 0;
 }
 
-
-
-// ... existing code ...
-/* Exaggerated white bowl/wave that can extend beyond the container */
 #carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated {
   position: absolute;
   left: 0; right: 0; bottom: 0;
   padding: 0.6rem 0.9rem;
-  z-index: 1; /* keep buttons above the wave */
+  z-index: 1;
+}
+
+#carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.6rem 0.9rem;
+  z-index: 2;
+  overflow: visible;
 }
 
 #carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated::before {
@@ -130,10 +149,10 @@ ul.navbar-nav {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 39.6vw;      /* extend beyond container */
+  width: calc(39.6vw + 2px);
   max-width: none;
-  height: 140px;     /* wave depth */
-  z-index: -1;       /* behind indicators */
+  height: 140px;
+  z-index: -1;
   pointer-events: none;
   background:
           url("data:image/svg+xml;utf8,\
@@ -142,31 +161,28 @@ ul.navbar-nav {
 </svg>") bottom / 100% 100% no-repeat;
 }
 
-/* Allow overflow from the indicators’ parent if it clips */
 #carousel-wrap .carousel.slide {
   overflow: visible;
 }
 
-
-
-// ... existing code ...
-/* Add a subtle bottom-only shadow to the indicator "buttons" */
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target] {
-  // ... existing code ...
   box-shadow: 0 2px 6px rgba(0,0,0,.12);
 }
 
-/* Stronger shadow for the active tab */
 #carousel-wrap .carousel.slide .carousel-indicators .active,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
-  // ... existing code ...
   box-shadow: 0 3px 10px rgba(0,0,0,.16);
 }
 
-/* Optional: a bit more lift on hover/focus */
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
-  // ... existing code ...
   box-shadow: 0 3px 10px rgba(0,0,0,.18);
 }
-// ... existing code ...
+
+.multi-dest-accordion {
+  .accordion-button {
+    background-color: $color__background__royal__blue;
+    color: $tfs__white;
+  }
+
+}
