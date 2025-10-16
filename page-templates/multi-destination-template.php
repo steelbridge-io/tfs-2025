@@ -136,16 +136,16 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec1_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec1_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec1_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec1_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec1_dest_img_3 ?>" class="d-block w-100"
                                              alt="<?php echo $sec1_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                           <h4><?php echo $sec1_dest_img_title_3 ?></h4>
+                                           <p><?php echo $sec1_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>

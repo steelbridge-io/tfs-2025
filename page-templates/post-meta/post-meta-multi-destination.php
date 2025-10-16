@@ -101,7 +101,6 @@ $sections_10_readmore     = wpautop(get_post_meta(get_the_ID(), 'sections-10-rea
 $sections_10_image        = get_post_meta(get_the_ID(), 'sections-10-image', true);
 $sections_10_video        = get_post_meta(get_the_ID(), 'sections-10-video', true);
 
-
 $galleryphoto_1_image     = get_post_meta(get_the_ID(), 'galleryphoto-1-image', true);
 $galleryphoto_2_image     = get_post_meta(get_the_ID(), 'galleryphoto-2-image', true);
 $galleryphoto_3_image     = get_post_meta(get_the_ID(), 'galleryphoto-3-image', true);
@@ -119,11 +118,15 @@ $sec1_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-textar
 $sec1_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-readmore-1', true));
 
 $sec1_dest_img_2 	    		= get_post_meta(get_the_ID(), 'sec1-dest-img-2', true);
+$sec1_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec1-dest-img-title-2', true);
+$sec1_dest_img_desc_2	    = get_post_meta(get_the_ID(), 'sec1-dest-img-desc-2', true);
 $sec1_dest_title_2   			= get_post_meta(get_the_ID(), 'sec1-dest-title-2', true);
 $sec1_dest_textarea_2			= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-textarea-2', true));
 $sec1_dest_readmore_2			= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-readmore-2', true));
 
 $sec1_dest_img_3		  		= get_post_meta(get_the_ID(), 'sec1-dest-img-3', true);
+$sec1_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec1-dest-img-title-3', true);
+$sec1_dest_img_desc_3	    = get_post_meta(get_the_ID(), 'sec1-dest-img-desc-3', true);
 $sec1_dest_title_3   	  	= get_post_meta(get_the_ID(), 'sec1-dest-title-3', true);
 $sec1_dest_textarea_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-textarea-3', true));
 $sec1_dest_readmore_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec1-dest-readmore-3', true));
