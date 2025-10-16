@@ -102,10 +102,10 @@ ul.navbar-nav {
   flex: 0 0 auto;
   margin: 0;
   padding: 1.3rem 1rem;
-  border: 1px solid $color__background__royal__blue;
+  border: 1px solid $tfs__red;
   border-bottom: none;
   border-radius: 8px 8px 8px 8px;
-  background-color: $color__background__royal__blue;
+  background-color: $tfs__red;
   color: $tfs__white;
   font-size: 0.92rem;
   line-height: 1;
@@ -115,16 +115,16 @@ ul.navbar-nav {
 
 #carousel-wrap .carousel.slide .carousel-indicators .active,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target][aria-current="true"] {
-  background-color: $color__background__blue__active;
+  background-color: $tfs__red-active;
   color: $tfs__white;
-  border-color: $color__background__blue__active;
+  border-color: $tfs__red-active;
 }
 
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:hover,
 #carousel-wrap .carousel.slide .carousel-indicators [data-bs-target]:focus {
-  background-color: $color__background__blue__active;
+  background-color: $tfs__red-active;
   color: $tfs__white;
-  border-color: $color__background__blue__active;
+  border-color: $tfs__red-active;
   outline: 0;
 }
 
@@ -139,11 +139,11 @@ ul.navbar-nav {
   position: absolute;
   left: 0; right: 0; bottom: 0;
   padding: 0.6rem 0.9rem;
-  z-index: 2;
+  z-index: 3;
   overflow: visible;
 }
 
-#carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated::before {
+/** #carousel-wrap .carousel.slide .carousel-indicators.wave-bowl-exaggerated::before {
   content: "";
   position: absolute;
   left: 50%;
@@ -159,7 +159,7 @@ ul.navbar-nav {
 <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320' preserveAspectRatio='none'>\
   <path fill='%23ffffff' d='M0,36L96,64C192,92,384,148,576,196C768,244,960,284,1152,250.7C1344,217,1536,109,1632,68L1728,36L1728,320L0,320Z'/>\
 </svg>") bottom / 100% 100% no-repeat;
-}
+} **/
 
 #carousel-wrap .carousel.slide {
   overflow: visible;
@@ -180,11 +180,15 @@ ul.navbar-nav {
 }
 
 .multi-dest-accordion {
-  .accordion-button {
-    background-color: $color__background__royal__blue;
+  .accordion-button[aria-expanded="false"] {
+    background-color: $tfs__red;
     color: $tfs__white;
   }
 
+  .accordion-button[aria-expanded="true"] {
+    background-color: $tfs__red-active;
+    color: $tfs__white;
+  }
 }
 
 
