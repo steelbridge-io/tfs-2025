@@ -223,81 +223,102 @@ $sec6_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-textar
 $sec6_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-readmore-1', true));
 
 $sec6_dest_img_2 					= get_post_meta(get_the_ID(), 'sec6-dest-img-2', true);
-
-
-
-
 $sec6_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec6-dest-img-title-2', true);
 $sec6_dest_img_desc_2	    = get_post_meta(get_the_ID(), 'sec6-dest-img-desc-2', true);
-
-
-
-
 $sec6_dest_title_2   			= get_post_meta(get_the_ID(), 'sec6-dest-title-2', true);
 $sec6_dest_textarea_2			= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-textarea-2', true));
 $sec6_dest_readmore_2			= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-readmore-2', true));
 
 $sec6_dest_img_3		  		= get_post_meta(get_the_ID(), 'sec6-dest-img-3', true);
+$sec6_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec6-dest-img-title-3', true);
+$sec6_dest_img_desc_3	    = get_post_meta(get_the_ID(), 'sec6-dest-img-desc-3', true);
 $sec6_dest_title_3   	  	= get_post_meta(get_the_ID(), 'sec6-dest-title-3', true);
 $sec6_dest_textarea_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-textarea-3', true));
 $sec6_dest_readmore_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec6-dest-readmore-3', true));
 
 $sec7_dest_img_1	      	= get_post_meta(get_the_ID(), 'sec7-dest-img-1', true);
+$sec7_dest_img_title_1	  = get_post_meta(get_the_ID(), 'sec7-dest-img-title-1', true);
+$sec7_dest_img_desc_1	    = get_post_meta(get_the_ID(), 'sec7-dest-img-desc-1', true);
 $sec7_dest_title_1   	  	= get_post_meta(get_the_ID(), 'sec7-dest-title-1', true);
 $sec7_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-textarea-1', true));
 $sec7_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-readmore-1', true));
 
 $sec7_dest_img_2 					= get_post_meta(get_the_ID(), 'sec7-dest-img-2', true);
+$sec7_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec7-dest-img-title-2', true);
+$sec7_dest_img_desc_2	    = get_post_meta(get_the_ID(), 'sec7-dest-img-desc-2', true);
 $sec7_dest_title_2   			= get_post_meta(get_the_ID(), 'sec7-dest-title-2', true);
 $sec7_dest_textarea_2			= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-textarea-2', true));
 $sec7_dest_readmore_2			= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-readmore-2', true));
 
 $sec7_dest_img_3		  		= get_post_meta(get_the_ID(), 'sec7-dest-img-3', true);
+$sec7_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec7-dest-img-title-3', true);
+$sec7_dest_img_desc_3	    = get_post_meta(get_the_ID(), 'sec7-dest-img-desc-3', true);
 $sec7_dest_title_3   	  	= get_post_meta(get_the_ID(), 'sec7-dest-title-3', true);
 $sec7_dest_textarea_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-textarea-3', true));
 $sec7_dest_readmore_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec7-dest-readmore-3', true));
 
 $sec8_dest_img_1	      	= get_post_meta(get_the_ID(), 'sec8-dest-img-1', true);
+$sec8_dest_img_title_1	  = get_post_meta(get_the_ID(), 'sec8-dest-img-title-1', true);
+$sec8_dest_img_desc_1	    = get_post_meta(get_the_ID(), 'sec8-dest-img-desc-1', true);
 $sec8_dest_title_1   	  	= get_post_meta(get_the_ID(), 'sec8-dest-title-1', true);
 $sec8_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-textarea-1', true));
 $sec8_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-readmore-1', true));
 
 $sec8_dest_img_2 					= get_post_meta(get_the_ID(), 'sec8-dest-img-2', true);
+$sec8_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec8-dest-img-title-2', true);
+$sec8_dest_img_desc_2	    = get_post_meta(get_the_ID(), 'sec8-dest-img-desc-2', true);
 $sec8_dest_title_2   			= get_post_meta(get_the_ID(), 'sec8-dest-title-2', true);
 $sec8_dest_textarea_2			= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-textarea-2', true));
 $sec8_dest_readmore_2			= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-readmore-2', true));
 
 $sec8_dest_img_3		  		= get_post_meta(get_the_ID(), 'sec8-dest-img-3', true);
+$sec8_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec8-dest-img-title-3', true);
+$sec8_dest_img_desc_3	    = get_post_meta(get_the_ID(), 'sec8-dest-img-desc-3', true);
 $sec8_dest_title_3   	  	= get_post_meta(get_the_ID(), 'sec8-dest-title-3', true);
 $sec8_dest_textarea_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-textarea-3', true));
 $sec8_dest_readmore_3	  	= wpautop(get_post_meta(get_the_ID(), 'sec8-dest-readmore-3', true));
 
 $sec9_dest_img_1	      	= get_post_meta(get_the_ID(), 'sec9-dest-img-1', true);
+$sec9_dest_img_title_1	  = get_post_meta(get_the_ID(), 'sec9-dest-img-title-1', true);
+$sec9_dest_img_desc_1	    = get_post_meta(get_the_ID(), 'sec9-dest-img-desc-1', true);
 $sec9_dest_title_1   	  	= get_post_meta(get_the_ID(), 'sec9-dest-title-1', true);
 $sec9_dest_textarea_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-textarea-1', true));
 $sec9_dest_readmore_1	  	= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-readmore-1', true));
 
 $sec9_dest_img_2 					= get_post_meta(get_the_ID(), 'sec9-dest-img-2', true);
+$sec9_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec9-dest-img-title-2', true);
+$sec9_dest_img_desc_2	    = get_post_meta(get_the_ID(), 'sec9-dest-img-desc-2', true);
 $sec9_dest_title_2   			= get_post_meta(get_the_ID(), 'sec9-dest-title-2', true);
 $sec9_dest_textarea_2			= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-textarea-2', true));
 $sec9_dest_readmore_2			= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-readmore-2', true));
 
 $sec9_dest_img_3		  	 	= get_post_meta(get_the_ID(), 'sec9-dest-img-3', true);
+$sec9_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec9-dest-img-title-3', true);
+$sec9_dest_img_desc_3	    = get_post_meta(get_the_ID(), 'sec9-dest-img-desc-3', true);
 $sec9_dest_title_3   	 	 	= get_post_meta(get_the_ID(), 'sec9-dest-title-3', true);
 $sec9_dest_textarea_3	 	 	= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-textarea-3', true));
 $sec9_dest_readmore_3	 	 	= wpautop(get_post_meta(get_the_ID(), 'sec9-dest-readmore-3', true));
 
 $sec10_dest_img_1	      	= get_post_meta(get_the_ID(), 'sec10-dest-img-1', true);
+$sec10_dest_img_title_1	  = get_post_meta(get_the_ID(), 'sec10-dest-img-title-1', true);
+$sec10_dest_img_desc_1	  = get_post_meta(get_the_ID(), 'sec10-dest-img-desc-1', true);
 $sec10_dest_title_1   	  = get_post_meta(get_the_ID(), 'sec10-dest-title-1', true);
 $sec10_dest_textarea_1	  = wpautop(get_post_meta(get_the_ID(), 'sec10-dest-textarea-1', true));
 $sec10_dest_readmore_1	  = wpautop(get_post_meta(get_the_ID(), 'sec10-dest-readmore-1', true));
 
 $sec10_dest_img_2 				= get_post_meta(get_the_ID(), 'sec10-dest-img-2', true);
+$sec10_dest_img_title_2	  = get_post_meta(get_the_ID(), 'sec10-dest-img-title-2', true);
+$sec10_dest_img_desc_2	  = get_post_meta(get_the_ID(), 'sec10-dest-img-desc-2', true);
 $sec10_dest_title_2   		= get_post_meta(get_the_ID(), 'sec10-dest-title-2', true);
 $sec10_dest_textarea_2		= wpautop(get_post_meta(get_the_ID(), 'sec10-dest-textarea-2', true));
 $sec10_dest_readmore_2		= wpautop(get_post_meta(get_the_ID(), 'sec10-dest-readmore-2', true));
 
 $sec10_dest_img_3		  		= get_post_meta(get_the_ID(), 'sec10-dest-img-3', true);
+$sec10_dest_img_title_3	  = get_post_meta(get_the_ID(), 'sec10-dest-img-title-3', true);
+$sec10_dest_img_desc_3	  = get_post_meta(get_the_ID(), 'sec10-dest-img-desc-3', true);
 $sec10_dest_title_3   	  = get_post_meta(get_the_ID(), 'sec10-dest-title-3', true);
 $sec10_dest_textarea_3	  = wpautop(get_post_meta(get_the_ID(), 'sec10-dest-textarea-3', true));
 $sec10_dest_readmore_3	  = wpautop(get_post_meta(get_the_ID(), 'sec10-dest-readmore-3', true));
+
+$multi_dest_cta_title     = get_post_meta(get_the_ID(), 'multi-dest-cta-title', true);
+$multi_dest_cta_text      = wpautop(get_post_meta(get_the_ID(), 'multi-dest-cta-text', true));

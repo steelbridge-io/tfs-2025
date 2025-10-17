@@ -94,7 +94,6 @@ if (has_post_thumbnail()) : ?>
 <div class="container-fluid container-wide">
 
     <!-- ==== Section #1 ==== -->
-
     <section class="spotlight-multi-destination mt-7 mb-7">
         <div class="row align-items-center">
             <div class="col-md-5 col-lg-5">
@@ -252,24 +251,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec2_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec2_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                         <h4><?php echo $sec2_dest_img_title_1 ?></h4>
-                                         <p><?php echo $sec2_dest_img_desc_1 ?></p>
+                                             <h4><?php echo $sec2_dest_img_title_1 ?></h4>
+                                             <p><?php echo $sec2_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec2_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec2_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec2_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec2_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec2_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec2_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec2_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec2_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -375,24 +374,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec3_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec3_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec3_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec3_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec3_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec3_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec3_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec3_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec3_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec3_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec3_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec3_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -499,24 +498,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec4_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec4_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec4_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec4_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec4_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec4_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec4_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec4_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec4_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec4_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec4_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec4_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -623,24 +622,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec5_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec5_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec5_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec5_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec5_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec5_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec5_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec5_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec5_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec5_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec5_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec5_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -747,24 +746,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec6_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec6_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec6_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec6_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec6_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec6_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec6_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec6_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec6_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec6_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec6_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec6_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -871,24 +870,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec7_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec7_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec7_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec7_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec7_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec7_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec7_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec7_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec7_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec7_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec7_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec7_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -995,24 +994,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec8_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec8_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec8_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec8_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec8_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec8_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec8_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec8_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec8_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec8_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec8_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec8_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1119,24 +1118,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec9_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec9_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec9_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec9_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec9_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec9_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec9_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec9_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec9_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec9_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec9_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec9_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1243,24 +1242,24 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec10_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec10_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                            <h4><?php echo $sec10_dest_img_title_1 ?></h4>
+                                            <p><?php echo $sec10_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec10_dest_img_2 ?>" class="d-block w-100"
                                              alt="<?php echo $sec10_dest_title_2 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Second slide label</h4>
-                                            <p>Some representative placeholder content for the second slide.</p>
+                                            <h4><?php echo $sec10_dest_img_title_2 ?></h4>
+                                            <p><?php echo $sec10_dest_img_desc_2 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
                                         <img src="<?php echo $sec10_dest_img_3 ?>" class="d-block w-200"
                                              alt="<?php echo $sec10_dest_title_3 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>Third slide label</h4>
-                                            <p>Some representative placeholder content for the third slide.</p>
+                                            <h4><?php echo $sec10_dest_img_title_3 ?></h4>
+                                            <p><?php echo $sec10_dest_img_desc_3 ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -1454,8 +1453,8 @@ if (has_post_thumbnail()) : ?>
     <div class="inner container">
         <div id="cta-trigger" class="cta-trigger-area">
             <header class="text-center">
-                <h2 class="cta-trigger-title"><?php echo $cta_schools_strong_intro; ?></h2>
-                <div class="cta-trigger-subtitle"><?php echo $cta_schools_content; ?></div>
+                <h2 class="cta-trigger-title"><?php echo $multi_dest_cta_title ?></h2>
+                <div class="cta-trigger-subtitle"><?php echo $multi_dest_cta_text ?></div>
                 <button class="btn btn-primary cta-expand-btn" id="expandCTA">
                     Get Started <i class="fas fa-chevron-up"></i>
                 </button>
