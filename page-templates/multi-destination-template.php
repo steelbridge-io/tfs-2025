@@ -252,8 +252,8 @@ if (has_post_thumbnail()) : ?>
                                         <img src="<?php echo $sec2_dest_img_1 ?>" class="d-block w-100"
                                              alt="<?php echo $sec2_dest_title_1 ?>">
                                         <div class="carousel-caption d-none d-md-block">
-                                            <h4>First slide label</h4>
-                                            <p>Some representative placeholder content for the first slide.</p>
+                                         <h4><?php echo $sec2_dest_img_title_1 ?></h4>
+                                         <p><?php echo $sec2_dest_img_desc_1 ?></p>
                                         </div>
                                     </div>
                                     <div class="carousel-item">
