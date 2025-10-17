@@ -60,6 +60,9 @@ html {
   flex-flow: row wrap;
   justify-content: center;
   padding: 0;
+  .col-6.col-md-3 {
+    padding: 0;
+  }
 }
 
 /* Style for clickable items */
