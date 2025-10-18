@@ -232,11 +232,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec2-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec2_dest_title_1) ? esc_html($sec2_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec2_dest_btn_title_1) ? esc_html($sec2_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec2_dest_title_2) ? esc_html($sec2_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec2_dest_btn_title_2) ? esc_html($sec2_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec2-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec2_dest_title_3) ? esc_html($sec2_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec2_dest_btn_title_3) ? esc_html($sec2_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -351,11 +351,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec3-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec3_dest_title_1) ? esc_html($sec3_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec3_dest_btn_title_1) ? esc_html($sec3_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec3_dest_title_2) ? esc_html($sec3_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec3_dest_btn_title_2) ? esc_html($sec3_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec3-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec3_dest_title_3) ? esc_html($sec3_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec3_dest_btn_title_3) ? esc_html($sec3_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -471,11 +471,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec4-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec4_dest_title_1) ? esc_html($sec4_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec4_dest_btn_title_1) ? esc_html($sec4_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec4_dest_title_2) ? esc_html($sec4_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec4_dest_btn_title_2) ? esc_html($sec4_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec4-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec4_dest_title_3) ? esc_html($sec4_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec4_dest_btn_title_3) ? esc_html($sec4_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -591,11 +591,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec5-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec5_dest_title_1) ? esc_html($sec5_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec5_dest_btn_title_1) ? esc_html($sec5_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec5_dest_title_2) ? esc_html($sec5_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec5_dest_btn_title_2) ? esc_html($sec5_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec5-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec5_dest_title_3) ? esc_html($sec5_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec5_dest_btn_title_3) ? esc_html($sec5_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -711,11 +711,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec6-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec6_dest_title_1) ? esc_html($sec6_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec6_dest_btn_title_1) ? esc_html($sec6_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec6_dest_title_2) ? esc_html($sec6_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec6_dest_btn_title_2) ? esc_html($sec6_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec6-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec6_dest_title_3) ? esc_html($sec6_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec6_dest_btn_title_3) ? esc_html($sec6_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -831,11 +831,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec7-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec7_dest_title_1) ? esc_html($sec7_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec7_dest_btn_title_1) ? esc_html($sec7_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec7_dest_title_2) ? esc_html($sec7_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec7_dest_btn_title_2) ? esc_html($sec7_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec7-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec7_dest_title_3) ? esc_html($sec7_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec7_dest_btn_title_3) ? esc_html($sec7_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -951,11 +951,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec8-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec8_dest_title_1) ? esc_html($sec8_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec8_dest_btn_title_1) ? esc_html($sec8_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec8_dest_title_2) ? esc_html($sec8_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec8_dest_btn_title_2) ? esc_html($sec8_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec8-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec8_dest_title_3) ? esc_html($sec8_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec8_dest_btn_title_3) ? esc_html($sec8_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -1071,11 +1071,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec9-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec9_dest_title_1) ? esc_html($sec9_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec9_dest_btn_title_1) ? esc_html($sec9_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec9_dest_title_2) ? esc_html($sec9_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec9_dest_btn_title_2) ? esc_html($sec9_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec9-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec9_dest_title_3) ? esc_html($sec9_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec9_dest_btn_title_3) ? esc_html($sec9_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
@@ -1191,11 +1191,11 @@ if (has_post_thumbnail()) : ?>
                             <div id="sec10-dest-indicator-1" class="carousel slide">
                                 <div class="carousel-indicators wave-bowl-exaggerated">
                                     <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="0"
-                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec10_dest_title_1) ? esc_html($sec10_dest_title_1) : 'Reservations &amp; Rates'; ?></button>
+                                            class="active" aria-current="true" aria-label="Slide 1"><?php echo !empty($sec10_dest_btn_title_1) ? esc_html($sec10_dest_btn_title_1) : 'Reservations &amp; Rates'; ?></button>
                                     <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="1"
-                                            aria-label="Slide 2"><?php echo !empty($sec10_dest_title_2) ? esc_html($sec10_dest_title_2) : 'Getting To'; ?></button>
+                                            aria-label="Slide 2"><?php echo !empty($sec10_dest_btn_title_2) ? esc_html($sec10_dest_btn_title_2) : 'Getting To'; ?></button>
                                     <button type="button" data-bs-target="#sec10-dest-indicator-1" data-bs-slide-to="2"
-                                            aria-label="Slide 3"><?php echo !empty($sec10_dest_title_3) ? esc_html($sec10_dest_title_3) : 'Lodging'; ?></button>
+                                            aria-label="Slide 3"><?php echo !empty($sec10_dest_btn_title_3) ? esc_html($sec10_dest_btn_title_3) : 'Lodging'; ?></button>
                                 </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
