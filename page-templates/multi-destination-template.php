@@ -1290,7 +1290,6 @@ if (has_post_thumbnail()) : ?>
             </div>
         </div>
     </section>
-
 </div>
 
 <?php if (!empty($galleryphoto_1_image)) { ?>
