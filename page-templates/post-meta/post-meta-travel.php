@@ -41,10 +41,10 @@ $travel_temp_video_poster = get_post_meta( get_the_ID(), 'travel-temp-video-post
 
 $feature_1_title                  = get_post_meta( get_the_ID(), 'feature-1-title', true );
 $feature_1_readmore                = get_post_meta( get_the_ID(), 'feature-1-readmore', true );
-$feature_1_cost_textarea          = get_post_meta( get_the_ID(), 'feature-1-cost-textarea', true );
-$feature_1_inclusions_textarea    = get_post_meta( get_the_ID(), 'feature-1-inclusions-textarea', true );
-$feature_1_noninclusions_textarea = get_post_meta( get_the_ID(), 'feature-1-noninclusions-textarea', true );
-$feature_1_travelins_textarea     = get_post_meta( get_the_ID(), 'feature-1-travelins-textarea', true );
+$feature_1_cost_textarea          = wpautop(get_post_meta( get_the_ID(), 'feature-1-cost-textarea', true ));
+$feature_1_inclusions_textarea    = wpautop(get_post_meta( get_the_ID(), 'feature-1-inclusions-textarea', true ));
+$feature_1_noninclusions_textarea = wpautop(get_post_meta( get_the_ID(), 'feature-1-noninclusions-textarea', true ));
+$feature_1_travelins_textarea     = wpautop(get_post_meta( get_the_ID(), 'feature-1-travelins-textarea', true ));
 $feature_1_image                  = get_post_meta( get_the_ID(), 'feature-1-image', true );
 $travel_costs_image               = get_post_meta( get_the_ID(), 'travel-costs-image', true );
 
