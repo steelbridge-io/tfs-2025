@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 /*
-Template Name: Lower 48 Destination
+Template Name: Lower 48 Destination Template
 Template Post Type: post, page, travel_cpt, lower48, guide_service
 */
 
