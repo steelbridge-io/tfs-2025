@@ -250,7 +250,8 @@ if (is_page_template('page-templates/destination-v2-template.php')) {
     wp_enqueue_script('destination-v2-template-js', get_template_directory_uri() . '/js/destination-v2-template.js', array('jquery'),_S_VERSION, true);
 }
 
-if (is_page_template('page-templates/destination-v3-template.php')) {
+if (is_page_template('page-templates/destination-v3-template.php') ||
+    is_page_template('page-templates/guide-destination-template.php')) {
  wp_enqueue_script('destination-v3-template-js', get_template_directory_uri() . '/js/destination-v3-template.js', array('jquery'),_S_VERSION, true);
 }
 
