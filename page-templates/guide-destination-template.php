@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 /*
-Template Name: Destination V3 Template
-Template Post Type: post, page, travel_cpt, lower48, guide_service
+Template Name: Guide Destination Template
+Template Post Type: guide_service
 */
 
 /**
- * This is the meta field file for the Destination V3 Template.
+ * This is the meta field file for the Guide Destination Template.
  * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_travel.php
  */
 
@@ -67,8 +67,12 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
 
     <!-- Overlay Content -->
     <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-     <!-- Page Title -->
-     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+        <div id="mobile-logo-container">
+            <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
+            <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+        </div>
+        <!-- Page Title -->
+        <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
     </div>
    </div>
   </div>
@@ -80,8 +84,12 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
          class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
     <!-- Overlay Content -->
     <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-     <!-- Page Title -->
-     <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+        <div id="mobile-logo-container">
+        <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
+        <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+        </div>
+        <!-- Page Title -->
+        <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
     </div>
    </div>
   </div>
@@ -270,7 +278,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                            ?>
 
                               <?php
-                              echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+                              echo '<div><p><b>Costs:</b>&nbsp;' . $feature_1_cost_textarea . '</p></div>';
                               echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
                               echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
                               echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
@@ -333,7 +341,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                           <div class="feature-content">
                               <h2><?php echo $feature_2_seasons_title ?></h2>
                               <?php
-                              echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+                              echo '<div>' . $feature_2_seasons_content . '</p></div>';
 
                               // NEW MULTI-SEASON CALENDAR - This is ADDITIONAL functionality
                               if ($monthly_range_checkbox === 'yes'):
@@ -508,7 +516,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                           <div class="feature-content">
                               <h2><?php echo $feature_3_get_to_title ?></h2>
                               <?php
-                              echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
+                              echo '<div>' . $feature_3_get_to_content . '</div>';
 
                               if (!empty($feature_3_get_to_readmore)) :
                               echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
@@ -568,7 +576,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                           <div class="feature-content">
                               <h2><?php echo $feature_4_lodging_title ?></h2>
                               <?php
-                              echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
+                              echo '<div>' . $feature_4_lodging_content . '</p></div>';
 
                               if (!empty($feature_4_lodging_readmore)) {
                                echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
@@ -627,7 +635,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                           <div class="feature-content">
                               <h2><?php echo $feature_5_angling_title ?></h2>
                               <?php
-                              echo '<div><p>' . $feature_5_angling_content . '</p></div>';
+                              echo '<div>' . $feature_5_angling_content . '</p></div>';
 
                               if (!empty($feature_5_angling_readmore)) :
                                echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
@@ -687,7 +695,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                  <h2><?php echo $feature_6_species_title ?></h2>
                  <?php
                  $feature_6_species_content = get_post_meta( get_the_ID(), 'feature-6-species-content', true );
-                 echo '<div><p>' . $feature_6_species_content . '</p></div>';
+                 echo '<div>' . $feature_6_species_content . '</p></div>';
 
                  $feature_6_species_readmore = get_post_meta( get_the_ID(), 'feature-6-species-readmore', true );
                  if (!empty($feature_6_species_readmore)) :
@@ -1172,5 +1180,40 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
     </div>
 <?php
 include get_template_directory() . '/page-templates/template-modals/destination-template-modals.php'; ?>
+
+<section id="front-page-cta">
+    <div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
+        <div class="container text-center text-md-end">
+            <div class="row justify-content-end">
+                <div class="col-md-6 col-lg-5 form-container shadow-lg p-5">
+                    <div class="row">
+                        <div class="col-6">
+                            <img src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop Logo" />
+                        </div>
+                        <div class="col-6">
+                            <h5 class="mb-4 fw-bold">Stay Updated</h5>
+                            <p class="lead text-muted mb-4">Subscribe to our newsletter and never miss an update!</p>
+                        </div>
+                    </div>
+                    <form id="subscribe-form">
+                        <div class="form-floating mb-3">
+                            <input
+                                    type="email"
+                                    class="form-control shadow-sm"
+                                    id="subscriberEmail"
+                                    placeholder="name@example.com"
+                                    required
+                            />
+                            <label for="subscriberEmail" class="text-muted">Enter your email</label>
+                        </div>
+                        <button type="submit" class="btn btn-tfs btn-lg px-4 shadow-sm">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <?php get_footer();
