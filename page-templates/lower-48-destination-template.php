@@ -2,7 +2,7 @@
 declare(strict_types=1);
 /*
 Template Name: Lower 48 Destination Template
-Template Post Type: post, page, travel_cpt, lower48, guide_service
+Template Post Type: lower48
 */
 
 /**
@@ -10,15 +10,8 @@ Template Post Type: post, page, travel_cpt, lower48, guide_service
  * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_travel.php
  */
 
-if (get_post_type() === 'travel_cpt') {
-    get_header('travel-header');
-} elseif (get_post_type() === 'lower48') {
-    get_header('travel-header');
-} elseif (get_post_type() === 'lower48blog') {
-    get_header('lower48-blog');
-} else {
-    get_header('destination-header');
-}
+
+get_header('lower48');
 
 include_once('post-meta/post-meta-travel.php');
 
@@ -102,7 +95,6 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
 
   <section id="destination-template-content" class="content-destination-template content">
       <div class="container">
-          <!--<div id="scrollto"></div>-->
           <div id="primary" class="content-area row">
               <main id="main-main" class="site-main col-md-12" role="main">
 
