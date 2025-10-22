@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Schools Template
+ * Template Name: Schools Template depreciated
 
  * Template Post Type: schools_cpt
  * Developed for The Fly Shop
