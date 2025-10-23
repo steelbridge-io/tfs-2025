@@ -1,7 +1,7 @@
 <?php
 /*
 	* Template Name: Sections Template
-	* Template Post Type: post, page, travel_cpt, schools_cpt, adventures, guide_service, fishcamp_cpt, travel-blog
+	* Template Post Type: post, page, travel_cpt, schools_cpt, guide_service, fishcamp_cpt, travel-blog
 	* Developed for The Fly Shop
 	* Author: Chris Parsons
 	* Author URL: https://steelbridge.io
