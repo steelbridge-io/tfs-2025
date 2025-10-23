@@ -10,10 +10,7 @@
      * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_school_v3.php
      */
 
-
     get_header('schools-header');
-
-
 
     include_once('post-meta/post-meta-schoolv3.php');
 
