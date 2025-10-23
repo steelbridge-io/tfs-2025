@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Private Template
+ * Template Name: Private Template Depreciated
  * Template Post Type: adventures
  * Developed for The Fly Shop
  * @package The_Fly_Shop
