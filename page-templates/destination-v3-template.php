@@ -656,7 +656,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                   <button class="close-overlay">&times;</button>
                  </div>
                  <div class="overlay-content">
-                  <div><?php echo get_post_meta( get_the_ID(), 'feature-6-species-content', true ) . '&nbsp;' . get_post_meta( get_the_ID(), 'feature-6-species-readmore', true ); ?></div>
+                  <div><?php echo $feature_6_species_content . '&nbsp;' . $feature_6_species_readmore ?></div>
                  </div>
                 </div>
 
@@ -694,10 +694,8 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                 <div class="feature-content">
                  <h2><?php echo $feature_6_species_title ?></h2>
                  <?php
-                 $feature_6_species_content = get_post_meta( get_the_ID(), 'feature-6-species-content', true );
                  echo '<div><p>' . $feature_6_species_content . '</p></div>';
 
-                 $feature_6_species_readmore = get_post_meta( get_the_ID(), 'feature-6-species-readmore', true );
                  if (!empty($feature_6_species_readmore)) :
                   echo '<button type="button" class="btn destination btn-tfs" data-target="speciesReadmore">Read more...</button>';
                  endif;
