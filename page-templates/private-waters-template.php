@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Private Waters
+ * Template Name: Private Waters Main
  * Template Post Type: adventures
  * Developed for The Fly Shop
  * @package The_Fly_Shop_2025
