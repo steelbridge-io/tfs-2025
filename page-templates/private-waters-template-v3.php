@@ -1,92 +1,91 @@
 <?php
-declare(strict_types=1);
-/*
-Template Name: Private Waters Destination
-Template Post Type: adventures
-*/
+    declare(strict_types=1);
+    /*
+    Template Name: Private Waters Destination
+    Template Post Type: adventures
+    */
 
-/**
- * This is the meta field file for the Destination V3 Template.
- * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_travel.php
- */
-
-
- get_header('private-waters');
+    /**
+     * This is the meta field file for the Private Waters Destination template.
+     * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_private_waters_v3.php
+     */
 
 
-include_once('post-meta/post-meta-private-waters-dest.php');
+    get_header('private-waters');
 
-$travel_hero_video = get_post_meta( get_the_ID(), 'travel-hero-video', true );
-$has_hero_video = !empty(trim($travel_hero_video));
-$fallback_image = 'https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp';
+    include_once('post-meta/post-meta-private-waters-dest.php');
 
-if ($has_hero_video || has_post_thumbnail()) : ?>
+    $travel_hero_video = get_post_meta( get_the_ID(), 'travel-hero-video', true );
+    $has_hero_video = !empty(trim($travel_hero_video));
+    $fallback_image = 'https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/01/Staff_Main6.webp';
 
-  <div class="container-fluid travel-template-hero p-0">
-   <div class="hero-image position-relative">
+    if ($has_hero_video || has_post_thumbnail()) : ?>
 
-    <?php if ($has_hero_video) : ?>
-     <!-- Hero Video -->
-     <div class="ratio ratio-21x9">
-      <video
-       class="w-100"
-       autoplay
-       muted
-       loop
-       playsinline
-       preload="auto"
-       style="object-fit: cover;"
-       <?php if (has_post_thumbnail()) : ?>
-        poster="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
-       <?php endif; ?>
-      >
-       <source src="<?php echo esc_url($travel_hero_video); ?>" type="video/mp4">
-       <!-- Fallback to image if video fails -->
-       <img src="<?php echo esc_url(
-        has_post_thumbnail() ?
-         get_the_post_thumbnail_url(get_the_ID(), 'full') :
-         $fallback_image
-       ); ?>"
-            class="img-fluid w-100"
-            alt="<?php the_title_attribute(); ?>">
-       Your browser does not support the video tag.
-      </video>
-     </div>
-    <?php else : ?>
-     <!-- Fallback to Featured Image -->
-     <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
-          class="img-fluid w-100"
-          alt="<?php the_title_attribute(); ?>">
-    <?php endif; ?>
+    <div class="container-fluid travel-template-hero p-0">
+        <div class="hero-image position-relative">
 
-    <!-- Overlay Content -->
-    <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-        <div id="mobile-logo-container">
+        <?php if ($has_hero_video) : ?>
+         <!-- Hero Video -->
+         <div class="ratio ratio-21x9">
+          <video
+           class="w-100"
+           autoplay
+           muted
+           loop
+           playsinline
+           preload="auto"
+           style="object-fit: cover;"
+           <?php if (has_post_thumbnail()) : ?>
+            poster="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+           <?php endif; ?>
+          >
+           <source src="<?php echo esc_url($travel_hero_video); ?>" type="video/mp4">
+           <!-- Fallback to image if video fails -->
+           <img src="<?php echo esc_url(
+            has_post_thumbnail() ?
+             get_the_post_thumbnail_url(get_the_ID(), 'full') :
+             $fallback_image
+           ); ?>"
+                class="img-fluid w-100"
+                alt="<?php the_title_attribute(); ?>">
+           Your browser does not support the video tag.
+          </video>
+         </div>
+        <?php else : ?>
+         <!-- Fallback to Featured Image -->
+         <img src="<?php echo esc_url(get_the_post_thumbnail_url(get_the_ID(), 'full')); ?>"
+              class="img-fluid w-100"
+              alt="<?php the_title_attribute(); ?>">
+        <?php endif; ?>
+
+        <!-- Overlay Content -->
+        <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+            <div id="mobile-logo-container">
+                <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
+                <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+            </div>
+            <!-- Page Title -->
+            <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
+        </div>
+        </div>
+    </div>
+    <?php else: ?>
+    <div class="container-fluid travel-template-hero p-0">
+        <div class="hero-image position-relative">
+        <!-- Default Fallback Image -->
+        <img src="<?php echo esc_url($fallback_image); ?>"
+             class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
+        <!-- Overlay Content -->
+        <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
+            <div id="mobile-logo-container">
             <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
             <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
+            </div>
+            <!-- Page Title -->
+            <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
         </div>
-        <!-- Page Title -->
-        <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
-    </div>
-   </div>
-  </div>
-  <?php else: ?>
-  <div class="container-fluid travel-template-hero p-0">
-   <div class="hero-image position-relative">
-    <!-- Default Fallback Image -->
-    <img src="<?php echo esc_url($fallback_image); ?>"
-         class="img-fluid w-100" alt="<?php echo get_the_title(); ?>">
-    <!-- Overlay Content -->
-    <div class="hero-overlay position-absolute top-50 start-50 translate-middle text-center">
-        <div id="mobile-logo-container">
-        <!--<img class="scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />-->
-        <img class="no-scroll mobile-logo" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
         </div>
-        <!-- Page Title -->
-        <h1 class="hero-title display-4 text-white"><?php echo get_the_title(); ?></h1>
     </div>
-   </div>
-  </div>
   <?php endif; ?>
 
     <!-- Breadcrumbs -->
@@ -113,7 +112,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
           </div>
       </div>
   </section>
-<?php if ($travel_costs_image !== '') : ?>
+  <?php if ($travel_costs_image !== '') : ?>
   <section id="tabbed-destination-content" class="container-fluid mt-5">
     <div class="container">
         <!-- Bootstrap 5 Nav Tabs -->
