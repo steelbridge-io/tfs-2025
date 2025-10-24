@@ -1,7 +1,7 @@
 <?php
   /**
 	 * Template Name: Signature Template
-	 * Template Post Type: post, page, travel_cpt, schools_cpt, guide_service, fishcamp_cpt, lower48
+	 * Template Post Type: post, page, travel_cpt, schools_cpt, guide_service, lower48
 	 * Developed for The Fly Shop
 	 * @package The_Fly_Shop
 	 * Author: Chris Parsons
