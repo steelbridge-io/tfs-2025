@@ -300,211 +300,6 @@ document.addEventListener("DOMContentLoaded", function () {
     handleScrollStages();
 });
 
-/** Dynamic Hero Overlay Positioning - UPDATED TO FIX STUCK POSITIONING
-document.addEventListener("DOMContentLoaded", function () {
-    // CACHE INITIAL POSITION: Store the correct position when logo is in natural state
-    let initialPosition = null;
-    let isCalculatingInitial = false;
-
-    // CALCULATE INITIAL POSITION: Ensures we get the correct baseline position
-    async function calculateInitialPosition() {
-        if (isCalculatingInitial) return null;
-        isCalculatingInitial = true;
-
-        const belowNavLogo = document.querySelector('#below-nav-logo');
-        const heroOverlay = document.querySelector('.hero-overlay');
-        if (!belowNavLogo || !heroOverlay) {
-            isCalculatingInitial = false;
-            return;
-        }
-
-        // Ensure logo images are loaded before measuring
-        const logoImgs = belowNavLogo.querySelectorAll('img');
-        await waitForImagesToLoad(logoImgs);
-
-        // Ensure hero media is ready enough to be laid out
-        const heroMedia = document.querySelector('.travel-template-hero .hero-image img, .travel-template-hero .hero-image video');
-        if (heroMedia && heroMedia.tagName === 'IMG') {
-            await waitForImagesToLoad([heroMedia]);
-        }
-
-        // NOTE: Do not force scroll to top; respect current position
-        // window.scrollTo(0, 0); // removed
-
-        // Wait a moment for any CSS layout/paint to settle
-        await new Promise(r => setTimeout(r, 50));
-
-        const logoRect = belowNavLogo.getBoundingClientRect();
-        const logoStyle = window.getComputedStyle(belowNavLogo);
-        const isLogoVisible = logoStyle.display !== 'none' &&
-            logoStyle.visibility !== 'hidden' &&
-            logoStyle.opacity !== '0' &&
-            logoRect.height > 0;
-
-        if (isLogoVisible) {
-            const logoBottom = logoRect.bottom;
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : 80;
-            const minSpacing = Math.max(navbarHeight * 0.3, 20);
-            const heroTop = logoBottom + minSpacing;
-            const viewportHeight = window.innerHeight;
-            const topPercentage = (heroTop / viewportHeight) * 100;
-
-            initialPosition = Math.min(topPercentage, 85);
-        }
-
-        isCalculatingInitial = false;
-    }
-
-    // MAIN POSITIONING FUNCTION: Enhanced to use cached initial position
-    function adjustHeroOverlayPosition() {
-        const belowNavLogo = document.querySelector('#below-nav-logo');
-        const heroOverlay = document.querySelector('.hero-overlay');
-
-        if (!belowNavLogo || !heroOverlay) {
-            return;
-        }
-
-        const currentScrollY = window.scrollY;
-        console.log('Scroll position:', currentScrollY);
-
-        // Clear all existing positioning first
-        heroOverlay.classList.remove('top-50', 'top-lg-50-mw', 'top-lg-60', 'translate-middle', 'translate-middle-x', 'start-50');
-        heroOverlay.style.top = '';
-
-        // SCROLL POSITION LOGIC: Use cached initial position when at top
-        if (currentScrollY <= 50 && initialPosition !== null) {
-            console.log('Using initial position:', initialPosition + '%');
-            heroOverlay.style.top = initialPosition + '%';
-            heroOverlay.classList.add('start-50', 'translate-middle-x');
-            return;
-        }
-
-        // For scrolled positions, check logo visibility
-        const logoRect = belowNavLogo.getBoundingClientRect();
-        const logoStyle = window.getComputedStyle(belowNavLogo);
-        const isLogoVisible = logoStyle.display !== 'none' &&
-            logoStyle.visibility !== 'hidden' &&
-            logoStyle.opacity !== '0' &&
-            logoRect.height > 0;
-
-        console.log('Logo visible:', isLogoVisible);
-
-        if (!isLogoVisible) {
-            // Logo is hidden, use fallback position
-            const navbar = document.querySelector('.navbar');
-            const navbarHeight = navbar ? navbar.offsetHeight : 80;
-            const fallbackTop = navbarHeight + 20;
-            const viewportHeight = window.innerHeight;
-            const topPercentage = (fallbackTop / viewportHeight) * 100;
-            const finalPosition = Math.min(topPercentage, 85);
-
-            console.log('Using fallback position:', finalPosition + '%');
-            heroOverlay.style.top = finalPosition + '%';
-            heroOverlay.classList.add('start-50', 'translate-middle-x');
-            return;
-        }
-
-        // Logo is visible, calculate based on its current position
-        const logoBottom = logoRect.bottom;
-        const navbar = document.querySelector('.navbar');
-        const navbarHeight = navbar ? navbar.offsetHeight : 80;
-        const minSpacing = Math.max(navbarHeight * 0.3, 20);
-        const heroTop = logoBottom + minSpacing;
-        const viewportHeight = window.innerHeight;
-        const topPercentage = (heroTop / viewportHeight) * 100;
-        const finalPosition = Math.min(topPercentage, 85);
-
-        console.log('Using calculated position:', finalPosition + '%');
-        heroOverlay.style.top = finalPosition + '%';
-        heroOverlay.classList.add('start-50', 'translate-middle-x');
-    }
-
-    // INITIAL POSITION CALCULATION: Run when page loads
-    window.addEventListener('load', function() {
-        setTimeout(calculateInitialPosition, 500);
-    });
-
-    // Also try to calculate it immediately
-    setTimeout(calculateInitialPosition, 1000);
-
-    // ENHANCED SCROLL HANDLER: Improved to handle scroll direction and transitions
-    let scrollTimeout;
-    let isScrolling = false;
-
-    function handleScroll() {
-        if (!isScrolling) {
-            window.requestAnimationFrame(function() {
-                const currentScrollY = window.scrollY;
-
-                // Clear any pending adjustments
-                clearTimeout(scrollTimeout);
-
-                // Immediate adjustment for major scroll changes
-                if (Math.abs(currentScrollY - (window.lastScrollY || 0)) > 30) {
-                    adjustHeroOverlayPosition();
-                }
-
-                // Delayed adjustment to catch CSS transition completions
-                scrollTimeout = setTimeout(adjustHeroOverlayPosition, 300);
-
-                window.lastScrollY = currentScrollY;
-                isScrolling = false;
-            });
-            isScrolling = true;
-        }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    // ENHANCED RESIZE HANDLER: Recalculate initial position on resize
-    let resizeTimeout;
-    window.addEventListener('resize', function() {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            // Recalculate initial position on resize
-            if (window.scrollY <= 50) {
-                calculateInitialPosition();
-            }
-            adjustHeroOverlayPosition();
-        }, 300);
-    });
-
-    // TRANSITION MONITORING: Force recalculation during CSS transitions
-    let transitionCheckCount = 0;
-    const transitionInterval = setInterval(function() {
-        if (window.scrollY <= 50 && initialPosition !== null) {
-            adjustHeroOverlayPosition();
-        }
-
-        transitionCheckCount++;
-        if (transitionCheckCount >= 10) { // 10 * 1000ms = 10 seconds
-            clearInterval(transitionInterval);
-        }
-    }, 1000);
-
-    // MUTATION OBSERVER: Watch for logo changes (keep existing functionality)
-    const belowNavLogo = document.querySelector('#below-nav-logo');
-    if (belowNavLogo && window.MutationObserver) {
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList' ||
-                    (mutation.type === 'attributes' &&
-                        (mutation.attributeName === 'src' || mutation.attributeName === 'style'))) {
-                    setTimeout(() => adjustHeroOverlayPosition(), 100);
-                }
-            });
-        });
-
-        observer.observe(belowNavLogo, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ['src', 'style']
-        });
-    }
-}); *****/
-
 /** /End Dynamic Overlay Positioning */
     document.addEventListener('DOMContentLoaded', function () {
     /**
@@ -559,5 +354,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
     requestAnimationFrame(updateState);
     setTimeout(updateState, 0);
-});
 
+
+
+
+        // ========== CAROUSEL MODAL INITIALIZATION ==========
+        const carouselElement = document.getElementById('travel-carousel');
+        const modalElement = document.getElementById('travelTableModal');
+
+        if (carouselElement && modalElement) {
+            let targetSlideIndex = 0; // Store the target slide index
+
+            // Use event delegation on document to capture clicks BEFORE Bootstrap
+            document.addEventListener('click', function(e) {
+                // Check if the clicked element or its parent is a thumbnail link
+                const link = e.target.closest('.additional-listing a[href="#travel-carousel"]');
+
+                if (link) {
+                    console.log('Link clicked:', link);
+
+                    // Get the slide index
+                    const slideIndex = parseInt(link.getAttribute('data-slide-to'));
+                    console.log('Slide index:', slideIndex);
+
+                    // Store it for later use
+                    targetSlideIndex = slideIndex || 0;
+                    console.log('Stored target slide:', targetSlideIndex);
+                }
+            }, true); // Use capture phase to run before Bootstrap
+
+            // Initialize or get carousel instance
+            let carousel = bootstrap.Carousel.getInstance(carouselElement);
+            if (!carousel) {
+                carousel = new bootstrap.Carousel(carouselElement, {
+                    interval: false,
+                    wrap: true,
+                    keyboard: true,
+                    ride: false
+                });
+            }
+
+            // When modal shows, navigate to the stored slide
+            modalElement.addEventListener('shown.bs.modal', function() {
+                console.log('Modal shown, navigating to:', targetSlideIndex);
+                carousel.to(targetSlideIndex);
+            });
+
+            // Reset when modal closes
+            modalElement.addEventListener('hidden.bs.modal', function() {
+                carousel.pause();
+                targetSlideIndex = 0;
+            });
+        }
+        // ========== END CAROUSEL MODAL INITIALIZATION ==========
+    });
