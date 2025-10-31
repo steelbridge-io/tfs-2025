@@ -154,7 +154,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-1-option-checkbox', true ) == 'yes' ) : ?>
 	<section class="spotlight">
-	 <div class="row">
+	 <div class="row align-items-center">
 	 <div class="col-md-6 col-lg-6">
 	 <div class="image">
 		<!-- Costs Video/Text/Image Option -->
@@ -175,7 +175,7 @@ if (has_post_thumbnail()) : ?>
 
 	 </div>
 	 </div>
-		<div class="col-md-6 col-lg-6">
+		<div class="col-md-6 col-lg-6 content-side">
 		 <div class="content">
 			<div id="travel-style">
 			 <h2><?php echo $sections_1_title; ?></h2>
@@ -184,7 +184,7 @@ if (has_post_thumbnail()) : ?>
 			 <?php // Displays read more section if needed
 			 if ( get_post_meta( get_the_ID(), 'sections-1-readmore-checkbox', true ) == 'yes' ) :?>
 
-				<div class="accordion" id="accordion1">
+				<div class="accordion readmore" id="accordion1">
 				 <div class="accordion-item">
 					<h2 class="accordion-header">
 					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
@@ -213,7 +213,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-2-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row flex-row-reverse ">
+		<div class="row flex-row-reverse align-items-center">
  			<div class="col-md-6 col-lg-6">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
@@ -227,14 +227,14 @@ if (has_post_thumbnail()) : ?>
 				<?php endif; ?>
 			 </div>
 			</div>
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 content-side">
 			<div class="content">
 			 <div id="travel-style">
 				<h2><?php echo $sections_2_title; ?></h2>
 				<p class="travel"><?php echo $sections_2_textarea; ?></p>
 				<?php // Displays read more section if needed
 				if ( get_post_meta( get_the_ID(), 'sections-2-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion2">
+				 <div class="accordion readmore" id="accordion2">
 					<div class="accordion-item">
 					 <h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -262,7 +262,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-3-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row">
+		<div class="row align-items-center">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -276,14 +276,14 @@ if (has_post_thumbnail()) : ?>
 			 <?php endif; ?>
 			</div>
 		 </div>
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 content-side">
 			<div class="content">
 			 <div id="travel-style">
 				<h2><?php echo $sections_3_title; ?></h2>
 				<p class="travel"><?php echo $sections_3_textarea; ?></p>
 				<?php // Displays read more section if needed
 				if ( get_post_meta( get_the_ID(), 'sections-3-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion3">
+				 <div class="accordion readmore" id="accordion3">
 					<div class="accordion-item">
 					 <h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -311,7 +311,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-4-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row flex-row-reverse">
+		<div class="row flex-row-reverse align-items-center">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -326,7 +326,7 @@ if (has_post_thumbnail()) : ?>
 
 			</div>
 		 </div>
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 content-side">
 			<div class="content">
 			 <div id="travel-style">
 				<h2><?php echo $sections_4_title; ?></h2>
@@ -334,7 +334,7 @@ if (has_post_thumbnail()) : ?>
 
 				<?php // Displays read more section if needed
 				if ( get_post_meta( get_the_ID(), 'sections-4-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion4">
+				 <div class="accordion readmore" id="accordion4">
 					<div class="accordion-item">
 					 <h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -362,7 +362,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-5-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row">
+		<div class="row align-items-center">
 		 <div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
@@ -376,14 +376,14 @@ if (has_post_thumbnail()) : ?>
 			<?php endif; ?>
 		 </div>
 		 </div>
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 content-side">
 			<div class="content">
 			 <div id="travel-style">
 				<h2><?php echo $sections_5_title; ?></h2>
 				<p class="travel"><?php echo $sections_5_textarea; ?></p>
 				<?php // Displays read more section if needed
 				if ( get_post_meta( get_the_ID(), 'sections-5-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion5">
+				 <div class="accordion readmore" id="accordion5">
 					<div class="accordion-item">
 					 <h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -411,7 +411,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-6-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row flex-row-reverse">
+		<div class="row flex-row-reverse align-items-center">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -425,14 +425,14 @@ if (has_post_thumbnail()) : ?>
 			 <?php endif; ?>
 			</div>
 		 </div>
-		 <div class="col-md-6 col-lg-6">
+		 <div class="col-md-6 col-lg-6 content-side">
 			<div class="content">
 			 <div id="travel-style">
 				<h2><?php echo $sections_6_title; ?></h2>
 				<p class="travel"><?php echo $sections_6_textarea; ?></p>
 				<?php // Displays read more section if needed
 				if ( get_post_meta( get_the_ID(), 'sections-6-readmore-checkbox', true ) == 'yes' ) :?>
-				 <div class="accordion" id="accordion6">
+				 <div class="accordion readmore" id="accordion6">
 					<div class="accordion-item">
 					 <h2 class="accordion-header">
 						<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -460,7 +460,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-7-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row">
+		<div class="row align-items-center">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -474,14 +474,14 @@ if (has_post_thumbnail()) : ?>
 			 <?php endif; ?>
 			</div>
 		 </div>
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 content-side">
 			 <div class="content">
 				<div id="travel-style">
 				 <h2><?php echo $sections_7_title; ?></h2>
 				 <p class="travel"><?php echo $sections_7_textarea; ?></p>
 				 <?php // Displays read more section if needed
 				 if ( get_post_meta( get_the_ID(), 'sections-7-readmore-checkbox', true ) == 'yes' ) :?>
-					<div class="accordion" id="accordion7">
+					<div class="accordion readmore" id="accordion7">
 					 <div class="accordion-item">
 						<h2 class="accordion-header">
 						 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -509,7 +509,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-8-option-checkbox', true ) == 'yes' ) : ?>
 	 <section class="spotlight">
-		<div class="row flex-row-reverse">
+		<div class="row flex-row-reverse align-items-center">
 			<div class="col-md-6 col-lg-6">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
@@ -523,14 +523,14 @@ if (has_post_thumbnail()) : ?>
 				<?php endif; ?>
 			 </div>
 			</div>
-			<div class="col-md-6 col-lg-6">
+			<div class="col-md-6 col-lg-6 content-side">
 			 <div class="content">
 				<div id="travel-style">
 				 <h2><?php echo $sections_8_title; ?></h2>
 				 <p class="travel"><?php echo $sections_8_textarea; ?></p>
 				 <?php // Displays read more section if needed
 				 if ( get_post_meta( get_the_ID(), 'sections-8-readmore-checkbox', true ) == 'yes' ) :?>
-					<div class="accordion" id="accordion8">
+					<div class="accordion readmore" id="accordion8">
 					 <div class="accordion-item">
 						<h2 class="accordion-header">
 						 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -558,7 +558,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-9-option-checkbox', true ) == 'yes' ) : ?>
 	<section class="spotlight">
-	 <div class="row">
+	 <div class="row align-items-center">
 		<div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
@@ -572,14 +572,14 @@ if (has_post_thumbnail()) : ?>
 			<?php endif; ?>
 		 </div>
 		</div>
-		<div class="col-md-6 col-lg-6">
+		<div class="col-md-6 col-lg-6 content-side">
 		 <div class="content">
 			<div id="travel-style">
 			 <h2><?php echo $sections_9_title; ?></h2>
 			 <p class="travel"><?php echo $sections_9_textarea; ?></p>
 			 <?php // Displays read more section if needed
 			 if ( get_post_meta( get_the_ID(), 'sections-9-readmore-checkbox', true ) == 'yes' ) :?>
-				<div class="accordion" id="accordion9">
+				<div class="accordion readmore" id="accordion9">
 				 <div class="accordion-item">
 					<h2 class="accordion-header">
 					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -607,7 +607,7 @@ if (has_post_thumbnail()) : ?>
 	<?php
 	if ( get_post_meta( get_the_ID(), 'sections-10-option-checkbox', true ) == 'yes' ) : ?>
 	<section class="spotlight">
-	 <div class="row flex-row-reverse">
+	 <div class="row flex-row-reverse align-items-center">
 		<div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
@@ -621,14 +621,14 @@ if (has_post_thumbnail()) : ?>
 			<?php endif; ?>
 		 </div>
 		</div>
-		<div class="col-md-6 col-lg-6">
+		<div class="col-md-6 col-lg-6 content-side">
 		 <div class="content">
 			<div id="travel-style">
 			 <h2><?php echo $sections_10_title; ?></h2>
 			 <p class="travel"><?php echo $sections_10_textarea; ?></p>
 			 <?php // Displays read more section if needed
 			 if ( get_post_meta( get_the_ID(), 'sections-10-readmore-checkbox', true ) == 'yes' ) :?>
-				<div class="accordion" id="accordion10">
+				<div class="accordion readmore" id="accordion10">
 				 <div class="accordion-item">
 					<h2 class="accordion-header">
 					 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
