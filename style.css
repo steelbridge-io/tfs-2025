@@ -3925,10 +3925,42 @@ Testong
     margin-top: 2rem;
   }
 }
+.travel_cpt-template-sections-template .inner .container {
+  padding-right: calc(var(--bs-gutter-x) * 1);
+  padding-left: calc(var(--bs-gutter-x) * 1);
+}
+
+#two .spotlight {
+  margin: 8em 0;
+}
 #two .spotlight .row .col-md-6.col-lg-6 img {
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
 }
+#two .spotlight #travel-style .accordion {
+  --bs-accordion-bg: #A21418;
+  --bs-accordion-color: #fff;
+}
+#two .spotlight #travel-style .accordion .accordion-body {
+  background-color: #fff;
+  color: #000;
+}
+#two .spotlight #travel-style .accordion .accordion-button.collapsed {
+  color: #fff;
+}
+#two .spotlight #travel-style .accordion .accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  --bs-accordion-active-bg: #ccc;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+#two .spotlight #travel-style .accordion .accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-active-icon);
+}
 
+@media (max-width: 767.98px) {
+  #two .spotlight .col-md-6.col-lg-6.content-side {
+    margin-top: 2em;
+  }
+}
 .page-sidebar h3 {
   font-size: 1.45rem;
   margin-top: 1rem;
@@ -3991,6 +4023,7 @@ Testong
 }
 
 #travel-template-grid {
+  padding-top: 3.618em;
   /* Keep the existing movement animation */
 }
 #travel-template-grid .travel-template-row {
