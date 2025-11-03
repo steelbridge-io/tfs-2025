@@ -46,10 +46,10 @@ $feature_1_inclusions_textarea    = wpautop(get_post_meta( get_the_ID(), 'featur
 $feature_1_noninclusions_textarea = wpautop(get_post_meta( get_the_ID(), 'feature-1-noninclusions-textarea', true ));
 $feature_1_travelins_textarea     = wpautop(get_post_meta( get_the_ID(), 'feature-1-travelins-textarea', true ));
 $feature_1_image                  = get_post_meta( get_the_ID(), 'feature-1-image', true );
-$travel_costs_image               = get_post_meta( get_the_ID(), 'travel-costs-image', true );
+$travel_costs_image               = get_post_meta( get_the_ID(), 'schoolv3-costs-image', true );
 
 $feature_2_image                 = get_post_meta( get_the_ID(), 'feature-2-image', true );
-$travel_seasons_image            = get_post_meta( get_the_ID(), 'travel-seasons-image', true );
+$travel_seasons_image            = get_post_meta( get_the_ID(), 'schoolv3-seasons-image', true );
 $feature_2_seasons_title         = get_post_meta( get_the_ID(), 'feature-2-seasons-title', true );
 $feature_2_seasons_content       = wpautop(get_post_meta( get_the_ID(), 'feature-2-seasons-content', true ));
 $feature_2_seasons_readmore      = wpautop(get_post_meta( get_the_ID(), 'feature-2-seasons-readmore', true ));
