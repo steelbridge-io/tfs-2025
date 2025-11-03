@@ -79,7 +79,7 @@ get_header();
     </main><!-- #main -->
     </div>
 <div class="col-md-4 page-sidebar">
-<?php get_sidebar(); ?>
+<?php dynamic_sidebar('sidebar-14'); ?>
 </div>
 </div>
 </div>
