@@ -37,7 +37,7 @@ get_header();
                                <img src="<?php the_post_thumbnail_url('medium-large'); ?>" class="img-fluid-archive rounded" alt="<?php the_title_attribute(); ?>" />
                            </a>
                        </div>
-                      <?php endif; ?>
+																			<?php endif; ?>
                       <div class="col-md-7">
                           <h2 class="h5 mb-2">
                               <a href="<?php the_permalink(); ?>" class="text-dark text-decoration-none"><?php the_title(); ?></a>
