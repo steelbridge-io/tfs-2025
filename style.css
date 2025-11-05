@@ -1447,17 +1447,6 @@ a {
 NAVBAR DROPDOWNS
 ********************************************************/
 /* General styles for dropdown menus */
-.dropdown-menu {
-  /*background: linear-gradient(to bottom, #121417, #1d2026);
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 10px 0;
-  transform: translateY(10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;*/ }
-
 /* Show dropdown on hover */
 .nav-item:hover > .dropdown-menu,
 .dropdown-item:focus > .dropdown-menu {
@@ -1481,13 +1470,6 @@ NAVBAR DROPDOWNS
   background: #ffffff;
   border-radius: 0;
   margin-top: -5px; }
-
-.dropdown-item.dropdown-toggle::after {
-  /* content: "►";
-   float: right;
-   font-size: 0.8em;
-   color: #ffffff;
-   transition: all 0.2s ease;*/ }
 
 .dropdown-item.dropdown-toggle:hover::after {
   color: #121417; }
@@ -1522,20 +1504,13 @@ NAVBAR DROPDOWNS
 DROP DOWN MEDIA QURIES
 **********************************************************/
 /* Mobile-specific dropdown adjustments */
-@media (max-width: 992px) {
-  .dropdown-menu {
-    /* position: static;
-     opacity: 1;
-     visibility: visible;
-     box-shadow: none;
-     transform: none;*/ }
-
+@media (max-width: 991.98px) {
   .dropdown-item {
     text-align: center; }
 
-  .dropdown-menu .dropdown-menu {
-    /* margin-left: 0;
-     margin-top: 5px; */ } }
+  .tel-number {
+    display: initial;
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x); } }
 /**
 ANIMATION STYLING
 *********************************************************/
@@ -1557,9 +1532,11 @@ ANIMATION STYLING
   .navbar .dropdown-toggle:hover .sub-menu {
     display: block;
     opacity: 1;
-    visibility: visible; } }
+    visibility: visible; }
+
+  .tel-number {
+    display: none; } }
 li.dropdown-item .dropdown-menu {
-  /*display: none; */
   border: 0;
   color: #212529;
   font-size: 0.5rem;
@@ -1757,6 +1734,9 @@ ul.dropdown-menu ul.dropdown-menu {
   #site-navigation .container .navbar-collapse .left-menu,
   #site-navigation .container .navbar-collapse .right-menu {
     width: 100%; }
+  #site-navigation .container .navbar-collapse.collapse.show {
+    padding-left: 0.5em;
+    padding-right: 0.5em; }
 
   .navbar-toggler-icon.mobile-icon-404 {
     background-image: var(--bs-navbar-toggler-icon-bg); } }
@@ -1777,7 +1757,6 @@ ul.dropdown-menu ul.dropdown-menu {
   transition: all 0.3s ease;
   border-radius: 0.5rem;
   overflow: hidden;
-  /*box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);*/
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3); }
 
 .nav-previous a,
@@ -2135,6 +2114,9 @@ ul.dropdown-menu ul.dropdown-menu {
     #site-navigation.scrolled .navbar-brand .tfs-nav-logo {
       width: 90px;
       /* Smaller logo when scrolled */ } }
+@media (max-width: 991.98px) {
+  #site-navigation .navbar-brand .tfs-nav-logo.scroll {
+    margin-left: 10px; } }
 #page {
   /* Logo styling */ }
   #page .container-fluid.top-fade {

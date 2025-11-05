@@ -101,8 +101,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 	const navbar = document.querySelector(".navbar");
 	const belowNavLogo = document.getElementById("below-nav-logo");
+	const isArchive = document.body.classList.contains('archive');
 
 	const addScrolledClass = () => {
+		if (isArchive) {
+			// Always show navbar logo on archive pages
+			navbar.classList.add('scrolled');
+			return;
+		}
 		// If the page is scrolled down more than 50px, add the "scrolled" class
 		if (window.scrollY > 50) {
 			navbar.classList.add("scrolled");
@@ -112,7 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	};
 
 	// Run function on scroll and on page load
-	window.addEventListener("scroll", addScrolledClass);
+	if (!isArchive) {
+		window.addEventListener("scroll", addScrolledClass);
+	}
 	addScrolledClass();
 });
 
@@ -120,6 +128,13 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener('DOMContentLoaded', function() {
 	const nav = document.querySelector('#site-navigation');
 	const belowNavLogo = document.querySelector('.below-nav-logo-container');
+	const isArchive = document.body.classList.contains('archive');
+
+	// On archive pages, force scrolled state and skip listeners
+	if (isArchive) {
+		nav.classList.add('scrolled');
+		return;
+	}
 
 	// Function to handle scroll effects
 	function handleScroll() {
@@ -151,6 +166,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener("DOMContentLoaded", function () {
 	const navbar = document.querySelector(".navbar");
+	const isArchive = document.body.classList.contains('archive');
+
+	if (isArchive) {
+		// On archive pages, we keep the navbar in post-scroll state and skip stage classes
+		navbar.classList.add('scrolled');
+		return;
+	}
 
 	const handleScrollStages = () => {
 		const scrollY = window.scrollY;
