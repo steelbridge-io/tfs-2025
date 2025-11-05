@@ -33,7 +33,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
                     <span class="navbar-toggler-icon mobile-icon-404"></span>
                 </button>
-                <span class="tel-number"><a href="tel:1-800-669-3474">1-800-669-3474</a></span>
+                <span class="tel-number"><a class="tel-number-dial" href="tel:1-800-669-3474">1-800-669-3474</a></span>
 
                 <div class="collapse navbar-collapse" id="homepage">
                     <?php
