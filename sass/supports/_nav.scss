@@ -116,17 +116,6 @@
 NAVBAR DROPDOWNS
 ********************************************************/
 /* General styles for dropdown menus */
-.dropdown-menu {
-  /*background: linear-gradient(to bottom, #121417, #1d2026);
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 10px 0;
-  transform: translateY(10px);
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;*/
-}
 
 /* Show dropdown on hover */
 .nav-item:hover > .dropdown-menu,
@@ -155,14 +144,6 @@ NAVBAR DROPDOWNS
   background: $tfs__white;
   border-radius: 0;
   margin-top: -5px;
-}
-
-.dropdown-item.dropdown-toggle::after {
-  /* content: "►";
-   float: right;
-   font-size: 0.8em;
-   color: #ffffff;
-   transition: all 0.2s ease;*/
 }
 
 .dropdown-item.dropdown-toggle:hover::after {
@@ -207,22 +188,13 @@ DROP DOWN MEDIA QURIES
 **********************************************************/
 
 /* Mobile-specific dropdown adjustments */
-@media (max-width: 992px) {
-  .dropdown-menu {
-    /* position: static;
-     opacity: 1;
-     visibility: visible;
-     box-shadow: none;
-     transform: none;*/
-  }
-
+@media (max-width: 991.98px) {
   .dropdown-item {
     text-align: center;
   }
-
-  .dropdown-menu .dropdown-menu {
-    /* margin-left: 0;
-     margin-top: 5px; */
+  .tel-number {
+    display: initial;
+    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
   }
 }
 
@@ -259,14 +231,15 @@ ANIMATION STYLING
     opacity: 1;
     visibility: visible;
   }
+  .tel-number {
+    display: none;
+  }
 }
 
 li.dropdown-item {
   .dropdown-menu {
-    /*display: none; */
     border: 0;
     color: #212529;
-    //display: block;
     font-size: 0.5rem;
     font-weight: 400;
     font-family: "Arimo", serif;
@@ -285,15 +258,6 @@ li.dropdown-item {
 }
 
 /* Dropdown links */
-.dropdown-item {
-
-  //color: #ffffff;
-
-  //font-size: 0.95em;
-  //border-radius: 5px;
-  //transition: all 0.2s ease;
-}
-
 
 @media (min-width: 992px) {
   .nav-item:hover > .dropdown-menu,
@@ -556,6 +520,10 @@ ul.dropdown-menu ul.dropdown-menu {
         .right-menu {
           width: 100%;
         }
+        &.collapse.show {
+          padding-left: 0.5em;
+          padding-right: 0.5em;
+        }
       }
     }
   }
@@ -587,7 +555,6 @@ ul.dropdown-menu ul.dropdown-menu {
   transition: all 0.3s ease;
   border-radius: 0.5rem;
   overflow: hidden;
-  /*box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);*/
   box-shadow: $tfs__box-shadow;
 }
 

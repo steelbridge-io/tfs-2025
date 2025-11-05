@@ -345,3 +345,13 @@
     }
   }
 }
+
+@media (max-width: 991.98px) {
+  #site-navigation {
+    .navbar-brand {
+      .tfs-nav-logo.scroll {
+        margin-left: 10px;
+      }
+    }
+  }
+}
