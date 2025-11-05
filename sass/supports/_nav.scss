@@ -195,6 +195,17 @@ DROP DOWN MEDIA QURIES
   .tel-number {
     display: initial;
     padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+    color: $tfs__white;
+    a.tel-number-dial {
+      color: $tfs__white;
+    }
+  }
+  #site-navigation {
+    &.scrolled {
+      a.tel-number-dial {
+        color: $tfs__black;
+      }
+    }
   }
 }
 
@@ -328,7 +339,9 @@ ul.dropdown-menu ul.dropdown-menu {
     width: 40px;
     height: 40px;
     border: none;
-
+    &:hover {
+      filter: invert(1);
+    }
   }
   .scrolled {
     .navbar-toggler-icon {
@@ -359,6 +372,17 @@ ul.dropdown-menu ul.dropdown-menu {
     }
     li.menu-item {
       a {
+        color: $tfs__black;
+      }
+    }
+  }
+
+  #site-navigation:hover {
+    .navbar-toggler-icon {
+      filter: invert(1);
+    }
+    .tel-number {
+      .tel-number-dial {
         color: $tfs__black;
       }
     }
@@ -534,7 +558,6 @@ ul.dropdown-menu ul.dropdown-menu {
     }
   }
 }
-
 
 /* Post Navigation Styling with Bootstrap 5 and LineIcons */
 .post-navigation {
