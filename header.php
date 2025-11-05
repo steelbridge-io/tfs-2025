@@ -29,11 +29,12 @@
     <header id="masthead" class="site-header">
         <!-- .site-branding -->
 
-        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
+        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light<?php echo is_archive() ? ' scrolled archive-static-logo' : ''; ?>">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <span class="tel-number"><a href="tel:1-800-669-3474">1-800-669-3474</a></span>
 
                 <div class="collapse navbar-collapse" id="homepage">
                     <?php
@@ -77,6 +78,7 @@
             </div>
         </nav>
 
+        <?php if ( ! is_archive() ) : ?>
         <!-- Below navigation logo container - Shows initially, hides on scroll -->
         <div id="below-nav-logo" class="below-nav-logo-container">
             <a href="#">
@@ -84,4 +86,5 @@
                 <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2025/09/tfs-logo-600x484-1-1.png" alt="The Fly Shop 2025" />
             </a>
         </div>
+        <?php endif; ?>
     </header><!-- #masthead -->
