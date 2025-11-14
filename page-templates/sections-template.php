@@ -152,13 +152,20 @@ if (has_post_thumbnail()) : ?>
  <?php endif; ?>
 
  <div id="two" class="container mt-5">
+<?php
+    // Running index of actually rendered spotlight sections to ensure alternating layout
+    $spotlight_index = 0;
+?>
 
 	<!-- ==== Section #1 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-1-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
-	 <div class="row align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-1-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+ <section class="spotlight">
+  <div class="row align-items-center<?php echo $row_dir_class; ?>">
 	 <div class="col-md-6 col-lg-6">
 	 <div class="image">
 		<!-- Costs Video/Text/Image Option -->
@@ -214,10 +221,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #2 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-2-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row flex-row-reverse align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-2-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
  			<div class="col-md-6 col-lg-6">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
@@ -263,10 +273,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #3 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-3-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-3-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -312,10 +325,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #4 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-4-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row flex-row-reverse align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-4-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -363,10 +379,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #5 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-5-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-5-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		 <div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
@@ -412,10 +431,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #6 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-6-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row flex-row-reverse align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-6-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -461,10 +483,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #7 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-7-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-7-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		 <div class="col-md-6 col-lg-6">
 			<div class="image">
 			 <!-- Costs Video/Text/Image Option -->
@@ -510,10 +535,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #8 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-8-option-checkbox', true ) == 'yes' ) : ?>
-	 <section class="spotlight">
-		<div class="row flex-row-reverse align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-8-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+  <section class="spotlight">
+     <div class="row align-items-center<?php echo $row_dir_class; ?>">
 			<div class="col-md-6 col-lg-6">
 			 <div class="image">
 				<!-- Costs Video/Text/Image Option -->
@@ -559,10 +587,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #9 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-9-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
-	 <div class="row align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-9-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+ <section class="spotlight">
+  <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		<div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
@@ -608,10 +639,13 @@ if (has_post_thumbnail()) : ?>
 
 	<!-- ==== Section #10 ==== -->
 
-	<?php
-	if ( get_post_meta( get_the_ID(), 'sections-10-option-checkbox', true ) == 'yes' ) : ?>
-	<section class="spotlight">
-	 <div class="row flex-row-reverse align-items-center">
+ <?php
+ if ( get_post_meta( get_the_ID(), 'sections-10-option-checkbox', true ) == 'yes' ) :
+     $spotlight_index++;
+     $row_dir_class = ($spotlight_index % 2 === 0) ? ' flex-row-reverse' : '';
+ ?>
+ <section class="spotlight">
+  <div class="row align-items-center<?php echo $row_dir_class; ?>">
 		<div class="col-md-6 col-lg-6">
 		 <div class="image">
 			<!-- Costs Video/Text/Image Option -->
