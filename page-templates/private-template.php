@@ -170,8 +170,8 @@ get_header(); ?>
 
         </div>
 
-        <div class="accordion-item privatewaters1">
-         <?php if(!empty($feature_pw1_travelins_textarea)) : ?>
+        <!-- <div class="accordion-item privatewaters1">
+         <?php // if(!empty($feature_pw1_travelins_textarea)) : ?>
           <h2 class="accordion-header">
            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour1" aria-expanded="false" aria-controls="collapseFour1">
             <span class="travel">Travel Insurance&nbsp;<span class="arrow-down"></span></span>
@@ -179,11 +179,11 @@ get_header(); ?>
           </h2>
           <div id="collapseFour1" class="accordion-collapse collapse" data-bs-parent="#accordion1">
            <div class="accordion-body">
-            <p class="travel"><?php echo $feature_pw1_travelins_textarea;?></p>
+            <p class="travel"><?php // echo $feature_pw1_travelins_textarea;?></p>
            </div>
-          </div>
+          </div> -->
 
-         <?php endif; ?>
+         <?php //endif; ?>
 
         </div>
         <div class="accordion-item privatewaters1">
