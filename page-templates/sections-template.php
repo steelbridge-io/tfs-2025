@@ -7,6 +7,10 @@
 	* Author URL: https://steelbridge.io
 */
 
+/**
+ * The meta-fields for this template are located in the /wp-content/plugins/sbm-image-field/includes/sections_image_field.php
+ */
+
 $sections_featured_img = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
 $the_sections_default  = get_bloginfo( 'template_directory' ) . '/images/default/default-page-header.png';
 $sections_page_logo    = get_theme_mod( 'sections_page_logo' );
