@@ -10,7 +10,6 @@
      * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_private_waters_v3.php
      */
 
-
     get_header('private-waters');
 
     include_once('post-meta/post-meta-private-waters-dest.php');
@@ -274,7 +273,7 @@
                             echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
                             echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
                             echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
-                            echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+                            //echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
                             ?>
                             <?php if (!empty($feature_1_readmore)) : ?>
                                 <button type="button" class="btn destination btn-tfs"
