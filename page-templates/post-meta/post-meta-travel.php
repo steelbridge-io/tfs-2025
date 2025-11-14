@@ -8,10 +8,8 @@
  */
 
 $multi_season_calendar_title = get_post_meta( get_the_ID(), 'multi-season-calendar-title', true );
-$multi_season_calendar_title_2 = get_post_meta( get_the_ID(), 'multi-season-calendar-title-2', true );
 
 $monthly_range_checkbox = get_post_meta( get_the_ID(), 'monthly-range-checkbox', true );
-$monthly_range_checkbox_2 = get_post_meta( get_the_ID(), 'monthly-range-checkbox-2', true );
 $seasons = array();
 for ($season = 1; $season <= 3; $season++) {
     $seasons[$season] = array(
@@ -21,19 +19,13 @@ for ($season = 1; $season <= 3; $season++) {
         'end_part'    => get_post_meta( get_the_ID(), "season{$season}-end-part", true ),
         'color'       => get_post_meta( get_the_ID(), "season{$season}-color", true ),
         'name'        => get_post_meta( get_the_ID(), "season{$season}-name", true ),
-    );
-}
-
-// Second, optional multi-season calendar (Season 4..6)
-$seasons2 = array();
-for ($season = 4; $season <= 6; $season++) {
-    $seasons2[$season] = array(
-        'start_month' => get_post_meta( get_the_ID(), "season{$season}-start-month", true ),
-        'end_month'   => get_post_meta( get_the_ID(), "season{$season}-end-month", true ),
-        'start_part'  => get_post_meta( get_the_ID(), "season{$season}-start-part", true ),
-        'end_part'    => get_post_meta( get_the_ID(), "season{$season}-end-part", true ),
-        'color'       => get_post_meta( get_the_ID(), "season{$season}-color", true ),
-        'name'        => get_post_meta( get_the_ID(), "season{$season}-name", true ),
+        // Range 2 (optional)
+        'start_month_2' => get_post_meta( get_the_ID(), "season{$season}-start-month-2", true ),
+        'end_month_2'   => get_post_meta( get_the_ID(), "season{$season}-end-month-2", true ),
+        'start_part_2'  => get_post_meta( get_the_ID(), "season{$season}-start-part-2", true ),
+        'end_part_2'    => get_post_meta( get_the_ID(), "season{$season}-end-part-2", true ),
+        'color_2'       => get_post_meta( get_the_ID(), "season{$season}-color-2", true ),
+        'name_2'        => get_post_meta( get_the_ID(), "season{$season}-name-2", true ),
     );
 }
 

@@ -356,7 +356,7 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                                   if ($hasActiveSeasons):
                                       ?>
                                       <div class="multi-season-calendar" style="margin: 20px 0;">
-                                          <h4><?php echo $multi_season_calendar_title; ?></h4>
+                                          <h4><?php echo esc_html($multi_season_calendar_title); ?></h4>
                                           <div class="month-display-grid">
                                               <?php
                                               $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -368,64 +368,76 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
 
                                                   $periods = ['early', 'mid', 'late'];
                                                   foreach ($periods as $period):
-                                                      $backgroundColor = '#f8f8f8';
-                                                      $activeSeasonName = '';
+                                                      $contributors = [];
 
-                                                      // Check each season for this month/period
-                                                      foreach ($seasons as $seasonNum => $season) {
-                                                          if ($season['start_month'] > 0 && $season['end_month'] > 0) {
-                                                              $startMonth = (int)$season['start_month'];
-                                                              $endMonth = (int)$season['end_month'];
-                                                              $startPart = $season['start_part'] ?: 'full';
-                                                              $endPart = $season['end_part'] ?: 'full';
+                                                      // Helper to determine if a given range colors this month/period
+                                                      $matchesRange = function($startMonth, $endMonth, $startPart, $endPart) use ($month, $period, $periods) {
+                                                          if (!($startMonth > 0 && $endMonth > 0)) return false;
+                                                          $inSeason = ($startMonth <= $endMonth)
+                                                              ? ($month >= $startMonth && $month <= $endMonth)
+                                                              : ($month >= $startMonth || $month <= $endMonth); // wrap
+                                                          if (!$inSeason) return false;
+                                                          if ($month === $startMonth && $month === $endMonth) {
+                                                              $startIdx = array_search($startPart, $periods);
+                                                              $endIdx   = array_search($endPart, $periods);
+                                                              $periodIdx= array_search($period, $periods);
+                                                              return ($periodIdx >= $startIdx && $periodIdx <= $endIdx);
+                                                          } elseif ($month === $startMonth) {
+                                                              if ($startPart === 'full') return true;
+                                                              $startIdx = array_search($startPart, $periods);
+                                                              $periodIdx= array_search($period, $periods);
+                                                              return ($periodIdx >= $startIdx);
+                                                          } elseif ($month === $endMonth) {
+                                                              if ($endPart === 'full') return true;
+                                                              $endIdx = array_search($endPart, $periods);
+                                                              $periodIdx= array_search($period, $periods);
+                                                              return ($periodIdx <= $endIdx);
+                                                          }
+                                                          return true; // full months in between
+                                                      };
 
-                                                              $inSeason = false;
-
-                                                              if ($startMonth <= $endMonth) {
-                                                                  $inSeason = $month >= $startMonth && $month <= $endMonth;
-                                                              } else {
-                                                                  $inSeason = $month >= $startMonth || $month <= $endMonth;
-                                                              }
-
-                                                              if ($inSeason) {
-                                                                  $shouldColor = false;
-
-                                                                  if ($month === $startMonth && $month === $endMonth) {
-                                                                      // Same month start and end
-                                                                      $startIdx = array_search($startPart, $periods);
-                                                                      $endIdx = array_search($endPart, $periods);
-                                                                      $periodIdx = array_search($period, $periods);
-                                                                      $shouldColor = $periodIdx >= $startIdx && $periodIdx <= $endIdx;
-                                                                  } else if ($month === $startMonth) {
-                                                                      // Start month
-                                                                      if ($startPart === 'full') $shouldColor = true;
-                                                                      else {
-                                                                          $startIdx = array_search($startPart, $periods);
-                                                                          $periodIdx = array_search($period, $periods);
-                                                                          $shouldColor = $periodIdx >= $startIdx;
-                                                                      }
-                                                                  } else if ($month === $endMonth) {
-                                                                      // End month
-                                                                      if ($endPart === 'full') $shouldColor = true;
-                                                                      else {
-                                                                          $endIdx = array_search($endPart, $periods);
-                                                                          $periodIdx = array_search($period, $periods);
-                                                                          $shouldColor = $periodIdx <= $endIdx;
-                                                                      }
-                                                                  } else {
-                                                                      // Full months in between
-                                                                      $shouldColor = true;
-                                                                  }
-
-                                                                  if ($shouldColor) {
-                                                                      $backgroundColor = $season['color'] ?: '#28a745';
-                                                                      $activeSeasonName = $season['name'] ?: "Season {$seasonNum}";
-                                                                  }
-                                                              }
+                                                      // Priority order: S1R1, S1R2, S2R1, S2R2, S3R1, S3R2
+                                                      foreach ([1,2,3] as $sn) {
+                                                          $s = isset($seasons[$sn]) ? $seasons[$sn] : null;
+                                                          if (!$s) continue;
+                                                          // Range 1
+                                                          $sm = (int)($s['start_month'] ?? 0);
+                                                          $em = (int)($s['end_month'] ?? 0);
+                                                          $sp = $s['start_part'] ?: 'full';
+                                                          $ep = $s['end_part'] ?: 'full';
+                                                          if ($matchesRange($sm, $em, $sp, $ep)) {
+                                                              $contributors[] = [
+                                                                  'color' => ($s['color'] ?: '#28a745'),
+                                                                  'name'  => ($s['name']  ?: 'Season ' . $sn),
+                                                              ];
+                                                          }
+                                                          // Range 2
+                                                          $sm2 = (int)($s['start_month_2'] ?? 0);
+                                                          $em2 = (int)($s['end_month_2'] ?? 0);
+                                                          $sp2 = $s['start_part_2'] ?: 'full';
+                                                          $ep2 = $s['end_part_2'] ?: 'full';
+                                                          if ($matchesRange($sm2, $em2, $sp2, $ep2)) {
+                                                              $contributors[] = [
+                                                                  'color' => ($s['color_2'] ?: ($s['color'] ?: '#28a745')),
+                                                                  'name'  => ($s['name_2']  ?: ($s['name'] ?: 'Season ' . $sn)),
+                                                              ];
                                                           }
                                                       }
 
-                                                      echo '<div class="period-' . $period . '" style="flex: 1; background-color: ' . $backgroundColor . ';" title="' . ucfirst($period) . ($activeSeasonName ? ' - ' . $activeSeasonName : '') . '"></div>';
+                                                      // Decide background and tooltip
+                                                      $bgStyle = 'background-color: #f8f8f8;';
+                                                      $titleText = ucfirst($period);
+                                                      if (count($contributors) === 1) {
+                                                          $bgStyle = 'background-color: ' . esc_attr($contributors[0]['color']) . ';';
+                                                          $titleText .= ' - ' . esc_attr($contributors[0]['name']);
+                                                      } elseif (count($contributors) >= 2) {
+                                                          $c1 = esc_attr($contributors[0]['color']);
+                                                          $c2 = esc_attr($contributors[1]['color']);
+                                                          $bgStyle = 'background: linear-gradient(90deg, ' . $c1 . ' 0%, ' . $c1 . ' 50%, ' . $c2 . ' 50%, ' . $c2 . ' 100%);';
+                                                          $titleText .= ' - ' . esc_attr($contributors[0]['name']) . ' + ' . esc_attr($contributors[1]['name']);
+                                                      }
+
+                                                      echo '<div class="period-' . $period . '" style="flex: 1; ' . $bgStyle . '" title="' . esc_attr($titleText) . '"></div>';
                                                   endforeach;
 
                                                   echo '</div>';
@@ -437,135 +449,28 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
                                           <!-- Season Legend -->
                                           <div class="season-legend"
                                                style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center;">
-                                              <?php foreach ($seasons as $seasonNum => $season):
-                                                  if ($season['start_month'] > 0 && $season['end_month'] > 0): ?>
-                                                      <div class="legend-item"
-                                                           style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                                                          <div class="legend-color"
-                                                               style="width: 20px; height: 20px; background-color: <?php echo $season['color'] ?: '#28a745'; ?>; border: 2px solid #333; border-radius: 3px;"></div>
-                                                          <span style="font-weight: 500;"><?php echo $season['name'] ?: "Season {$seasonNum}"; ?></span>
-                                                      </div>
-                                                  <?php endif; endforeach; ?>
-                                          </div>
-
-                                          <div style="margin-top: 15px; font-size: 13px; color: #666; text-align: center;">
-                                              <em>Each month is divided into early, mid, and late periods for precise
-                                                  season timing</em>
-                                          </div>
-
-                                      </div>
-                                  <?php endif; endif; ?>
-
-                              <?php
-                              // SECOND OPTIONAL CALENDAR, renders below the existing one
-                              if ($monthly_range_checkbox_2 === 'yes'):
-                                  $hasActiveSeasons2 = false;
-                                  if (!empty($seasons2)) {
-                                      foreach ($seasons2 as $season) {
-                                          if ((int)($season['start_month']) > 0 && (int)($season['end_month']) > 0) {
-                                              $hasActiveSeasons2 = true;
-                                              break;
-                                          }
-                                      }
-                                  }
-
-                                  if ($hasActiveSeasons2):
-                                      ?>
-                                      <div class="multi-season-calendar" style="margin: 30px 0 10px;">
-                                          <h4><?php echo esc_html($multi_season_calendar_title_2); ?></h4>
-                                          <div class="month-display-grid">
                                               <?php
-                                              $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-                                              for ($month = 1; $month <= 12; $month++):
-                                                  echo '<div class="month-display-container">';
-                                                  echo '<div class="month-label">' . $months[$month - 1] . '</div>';
-                                                  echo '<div class="month-visual">';
-
-                                                  $periods = ['early', 'mid', 'late'];
-                                                  foreach ($periods as $period):
-                                                      $backgroundColor = '#f8f8f8';
-                                                      $activeSeasonName = '';
-
-                                                      // Check each season for this month/period
-                                                      foreach ($seasons2 as $seasonNum => $season) {
-                                                          if ((int)($season['start_month']) > 0 && (int)($season['end_month']) > 0) {
-                                                              $startMonth = (int)$season['start_month'];
-                                                              $endMonth = (int)$season['end_month'];
-                                                              $startPart = $season['start_part'] ?: 'full';
-                                                              $endPart = $season['end_part'] ?: 'full';
-
-                                                              $inSeason = false;
-
-                                                              if ($startMonth <= $endMonth) {
-                                                                  $inSeason = $month >= $startMonth && $month <= $endMonth;
-                                                              } else {
-                                                                  $inSeason = $month >= $startMonth || $month <= $endMonth;
-                                                              }
-
-                                                              if ($inSeason) {
-                                                                  $shouldColor = false;
-
-                                                                  if ($month === $startMonth && $month === $endMonth) {
-                                                                      // Same month start and end
-                                                                      $startIdx = array_search($startPart, $periods);
-                                                                      $endIdx = array_search($endPart, $periods);
-                                                                      $periodIdx = array_search($period, $periods);
-                                                                      $shouldColor = $periodIdx >= $startIdx && $periodIdx <= $endIdx;
-                                                                  } else if ($month === $startMonth) {
-                                                                      // Start month
-                                                                      if ($startPart === 'full') $shouldColor = true;
-                                                                      else {
-                                                                          $startIdx = array_search($startPart, $periods);
-                                                                          $periodIdx = array_search($period, $periods);
-                                                                          $shouldColor = $periodIdx >= $startIdx;
-                                                                      }
-                                                                  } else if ($month === $endMonth) {
-                                                                      // End month
-                                                                      if ($endPart === 'full') $shouldColor = true;
-                                                                      else {
-                                                                          $endIdx = array_search($endPart, $periods);
-                                                                          $periodIdx = array_search($period, $periods);
-                                                                          $shouldColor = $periodIdx <= $endIdx;
-                                                                      }
-                                                                  } else {
-                                                                      // Full months in between
-                                                                      $shouldColor = true;
-                                                                  }
-
-                                                                  if ($shouldColor) {
-                                                                      $backgroundColor = $season['color'] ?: '#28a745';
-                                                                      $activeSeasonName = $season['name'] ?: "Season {$seasonNum}";
-                                                                  }
-                                                              }
-                                                          }
-                                                      }
-
-                                                      echo '<div class="period-' . $period . '" style="flex: 1; background-color: ' . $backgroundColor . ';" title="' . ucfirst($period) . ($activeSeasonName ? ' - ' . esc_attr($activeSeasonName) : '') . '"></div>';
-                                                  endforeach;
-
-                                                  echo '</div>';
-                                                  echo '</div>';
-                                              endfor;
-                                              ?>
-                                          </div>
-
-                                          <!-- Season Legend 2 -->
-                                          <div class="season-legend"
-                                               style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center;">
-                                              <?php foreach ($seasons2 as $seasonNum => $season):
-                                                  if ((int)($season['start_month']) > 0 && (int)($season['end_month']) > 0): ?>
-                                                      <div class="legend-item"
-                                                           style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                                                          <div class="legend-color"
-                                                               style="width: 20px; height: 20px; background-color: <?php echo $season['color'] ?: '#28a745'; ?>; border: 2px solid #333; border-radius: 3px;"></div>
+                                              foreach ($seasons as $seasonNum => $season):
+                                                  // Range 1 legend
+                                                  if (!empty($season['start_month']) && !empty($season['end_month']) && (int)$season['start_month'] > 0 && (int)$season['end_month'] > 0): ?>
+                                                      <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                                          <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color'] ?: '#28a745'); ?>; border: 2px solid #333; border-radius: 3px;"></div>
                                                           <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name'] ?: "Season {$seasonNum}"); ?></span>
                                                       </div>
-                                                  <?php endif; endforeach; ?>
+                                                  <?php endif;
+                                                  // Range 2 legend: render only when a Name is provided (non-empty)
+                                                  if (!empty($season['name_2'])): ?>
+                                                      <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                                          <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color_2'] ?: ($season['color'] ?: '#28a745')); ?>; border: 2px solid #333; border-radius: 3px;"></div>
+                                                          <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name_2']); ?></span>
+                                                      </div>
+                                                  <?php endif;
+                                              endforeach; ?>
                                           </div>
 
                                           <div style="margin-top: 15px; font-size: 13px; color: #666; text-align: center;">
-                                              <em>Each month is divided into early, mid, and late periods for precise season timing</em>
+                                              <!--<em>Each month is divided into early, mid, and late periods for precise
+                                                  season timing</em>-->
                                           </div>
 
                                       </div>
