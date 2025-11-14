@@ -283,7 +283,7 @@
                               }
 
                               if (!empty($feature_1_travelins_textarea)) {
-                                  echo '<div><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</div>';
+                                  //echo '<div><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</div>';
                               }
                               ?>
                               <?php if (!empty($feature_1_readmore)) : ?>
