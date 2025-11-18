@@ -54,6 +54,7 @@ function the_fly_shop_2025_setup() {
 		 'regional-waters-menu' => esc_html__( 'Regional Waters', 'the-fly-shop-2025' ),
 		 'outfitters-blog-menu' => esc_html__( 'Outfitters Blog', 'the-fly-shop-2025' ),
 		 'schools-menu' => esc_html__( 'Schools', 'the-fly-shop-2025' ),
+     'signature-waters-menu' => esc_html__( 'Signature Waters', 'the-fly-shop-2025' ),
 	)
  );
 
