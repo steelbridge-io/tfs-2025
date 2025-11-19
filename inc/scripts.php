@@ -32,7 +32,7 @@ if (is_page_template('page-templates/fish-camp-template.php')) {
   _S_VERSION, true);
 }
 
-if (is_page_template('page-templates/news-blog-template.php')) {
+if (is_page_template('page-templates/news-blog-template.php') || is_page_template('page-templates/news-blog-wide-template.php')) {
  wp_enqueue_script('fishing-news-js', get_template_directory_uri() . '/js/fishing-news.js', array('jquery'),
   _S_VERSION, true);
 }
