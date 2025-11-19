@@ -408,3 +408,63 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         // ========== END CAROUSEL MODAL INITIALIZATION ==========
     });
+
+    // ========== VIDEO HANDLING IN TABBED SECTIONS ==========
+    (function initTabbedVideos() {
+        const tabsNav = document.getElementById('destinationTabs');
+        const tabSection = document.getElementById('tabbed-destination-content');
+        if (!tabsNav || !tabSection) return;
+
+        const getAllTabVideos = () => tabSection.querySelectorAll('.tab-pane video');
+
+        function resetVideoToPoster(video) {
+            if (!video) return;
+            try {
+                // Pause and rewind
+                video.pause();
+                // Some browsers require small try/catch around currentTime when not seekable
+                try { video.currentTime = 0; } catch (e) {}
+
+                // Force poster repaint for browsers that show last black frame
+                // Prefer a lightweight reload; if a poster exists, load() helps repaint it
+                if (video.getAttribute('poster')) {
+                    // Safari sometimes needs a load() to repaint the poster
+                    video.load();
+                }
+            } catch (e) {
+                // noop
+            }
+        }
+
+        // Reset to poster when any tab video ends
+        getAllTabVideos().forEach(v => {
+            v.addEventListener('ended', () => resetVideoToPoster(v));
+        });
+
+        // On tab change, pause and reset videos in the tab being hidden
+        // and ensure only the active tab can continue playback.
+        tabsNav.querySelectorAll('[data-bs-toggle="tab"]').forEach(tabTrigger => {
+            tabTrigger.addEventListener('shown.bs.tab', function (e) {
+                // Determine active pane
+                const targetSelector = e.target.getAttribute('data-bs-target') || e.target.getAttribute('href');
+                const activePane = targetSelector ? document.querySelector(targetSelector) : null;
+
+                // Reset all videos not in the active pane
+                getAllTabVideos().forEach(v => {
+                    if (!activePane || !activePane.contains(v)) {
+                        resetVideoToPoster(v);
+                    }
+                });
+            });
+
+            tabTrigger.addEventListener('hidden.bs.tab', function (e) {
+                // When a tab is hidden, reset its videos so the poster shows next time
+                const hiddenSelector = e.target.getAttribute('data-bs-target') || e.target.getAttribute('href');
+                const hiddenPane = hiddenSelector ? document.querySelector(hiddenSelector) : null;
+                if (hiddenPane) {
+                    hiddenPane.querySelectorAll('video').forEach(v => resetVideoToPoster(v));
+                }
+            });
+        });
+    })();
+    // ========== END VIDEO HANDLING ==========
