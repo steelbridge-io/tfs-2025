@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: News Template
+ * Template Name: News Template Wide
  * Template Post Type: post, page
  * Developed for The Fly Shop
  * @package The_Fly_Shop
@@ -72,8 +72,9 @@ get_header();
  <div class="container mt-4">
 	<?php the_fly_shop_breadcrumbs(); ?>
  </div>
-
- <div id="news-header" class="container featured-post">
+ <div class="container news-wide-wrppaer">
+ <!--<div id="news-header" class="container featured-post">-->
+ <div id="news-header" class="featured-post">
 
 	<?php
 	$hasposts_post = get_posts('post_type=post');
@@ -139,9 +140,10 @@ get_header();
 	<?php } ?>
  </div>
 
+ <!--<div id="news-blog-template" class="container blog-posts">-->
  <div id="news-blog-template" class="container blog-posts">
 	<div class="row news-blog-template-wrap">
-	 <div class="col-lg-9">
+	 <div class="col-12">
 
 		<?php $hasposts_post = get_posts('post_type=post');
 		if(!empty($hasposts_post)) { ?>
@@ -657,12 +659,13 @@ get_header();
 		<?php } ?>
 
 	 </div>
-	 <div class="col-lg-3 page-sidebar">
+	 <!--<div class="col-lg-3 page-sidebar">
 		<?php
-		$selectsidebar = get_post_meta(get_the_ID(), 'news-template-select-sidebar', true);
-		get_sidebar($selectsidebar); ?>
-	 </div>
+		//$selectsidebar = get_post_meta(get_the_ID(), 'news-template-select-sidebar', true);
+		//get_sidebar($selectsidebar); ?>
+	 </div>-->
 	</div>
+ </div>
  </div>
  <section id="front-page-cta">
 	<div class="container-fluid container-row background-image-cta d-flex align-items-center mt-5" data-aos="fade-in" data-aos-duration="1500" data-aos-delay="500" data-aos-once="true">
