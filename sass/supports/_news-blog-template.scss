@@ -23,6 +23,17 @@
 // Common margins
 $standard-margin: 0 0 0.5em 0;
 
+.container.news-wide-wrppaer {
+  box-shadow: $tfs__box-shadow;
+  padding: 1.618em;
+}
+
+.page-template-news-blog-wide-template {
+  .caption {
+    margin-top: 1.618em;
+  }
+}
+
 // Readmore section styling
 .readmore-bg-img {
   @media(min-width: 992px) {
