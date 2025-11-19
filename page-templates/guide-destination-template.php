@@ -10,7 +10,7 @@ Template Post Type: guide_service
  * /wp-content/plugins/tfs-custom-fields/sbm_custom_fields_travel.php
  */
 
-if (get_post_type() === 'travel_cpt') {
+/*if (get_post_type() === 'travel_cpt') {
     get_header('travel-header');
 } elseif (get_post_type() === 'lower48') {
     get_header('travel-header');
@@ -18,7 +18,9 @@ if (get_post_type() === 'travel_cpt') {
     get_header('lower48-blog');
 } else {
     get_header('destination-header');
-}
+}*/
+
+get_header('guide-destination');
 
 include_once('post-meta/post-meta-travel.php');
 
