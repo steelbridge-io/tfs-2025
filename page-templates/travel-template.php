@@ -1,7 +1,7 @@
 <?php
 /*
 Template Name: Travel Template
-Template Post Type: post, page, travel_cpt, lower48, guide_service
+Template Post Type: travel_cpt, lower48, guide_service
 */
 
 include_once('post-meta/post-meta-travel-signature.php');
