@@ -47,6 +47,7 @@ function the_fly_shop_2025_setup() {
 		 'lower-48' => esc_html__( 'Lower 48', 'the-fly-shop-2025' ),
 		 'lower-48blog'     => esc_html__( 'Lower 48 Blog', 'the-fly-shop-2025' ),
 		 'guided-fishing' => esc_html__( 'Guided Fishing', 'the-fly-shop-2025' ),
+     'guide-destination' => esc_html__( 'Guide Destination Template', 'the-fly-shop-2025' ),
 		 'private-waters' => esc_html__( 'Private Waters', 'the-fly-shop-2025' ),
 		 'fly-fishing-schools' => esc_html__( 'Fly Fishing Schools', 'the-fly-shop-2025' ),
 		 'fish-camp' => esc_html__( 'Fish Camp', 'the-fly-shop-2025' ),
