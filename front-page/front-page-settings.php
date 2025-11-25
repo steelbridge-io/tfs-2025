@@ -14,6 +14,7 @@ function tfs_front_page_settings_init() {
 
  // Register settings for Card Grid
  register_setting('tfs_card_grid_options_group', 'tfs_card_grid_options', 'tfs_sanitize_card_grid');
+ register_setting('tfs_front_page_seo_options_group', 'tfs_front_page_seo_options');
 }
 add_action('admin_init', 'tfs_front_page_settings_init');
 
@@ -250,6 +251,16 @@ function tfs_front_page_settings_page() {
  $card_grid_options = get_option('tfs_card_grid_options', array());
  $cards = isset($card_grid_options['cards']) ? $card_grid_options['cards'] : array();
 
+ // Get SEO options
+ $seo_options = get_option('tfs_front_page_seo_options', array());
+ $seo_title = isset($seo_options['title']) ? $seo_options['title'] : '';
+ $seo_desc = isset($seo_options['description']) ? $seo_options['description'] : '';
+ $seo_tags = isset($seo_options['meta_tags']) ? $seo_options['meta_tags'] : '';
+
+ // Get card grid options
+ $card_grid_options = get_option('tfs_card_grid_options', array());
+ $cards = isset($card_grid_options['cards']) ? $card_grid_options['cards'] : array();
+
  // Enqueue required scripts
  wp_enqueue_media();
  wp_enqueue_script('jquery-ui-sortable');
@@ -277,6 +288,7 @@ function tfs_front_page_settings_page() {
   <h2 class="nav-tab-wrapper">
    <a href="?page=tfs-front-page-settings&tab=carousel" class="nav-tab <?php echo $active_tab == 'carousel' ? 'nav-tab-active' : ''; ?>">Homepage Slider</a>
    <a href="?page=tfs-front-page-settings&tab=card-grid" class="nav-tab <?php echo $active_tab == 'card-grid' ? 'nav-tab-active' : ''; ?>">Homepage Grid</a>
+   <a href="?page=tfs-front-page-settings&tab=seo" class="nav-tab <?php echo $active_tab == 'seo' ? 'nav-tab-active' : ''; ?>">SEO</a>
    <a href="?page=tfs-front-page-settings&tab=footer" class="nav-tab <?php echo $active_tab == 'footer' ? 'nav-tab-active' : ''; ?>">Theme Footer</a>
    <a href="?page=tfs-front-page-settings&tab=dashboard-customizer" class="nav-tab <?php echo $active_tab == 'dashboard-customizer' ? 'nav-tab-active' : ''; ?>">Dashboard Customizer</a>
   </h2>
@@ -342,6 +354,38 @@ function tfs_front_page_settings_page() {
 
 		<?php submit_button('Save Card Grid'); ?>
    </form>
+
+    <?php elseif ($active_tab == 'seo'): ?>
+        <!-- SEO Interface -->
+        <form method="post" action="options.php">
+            <?php
+            // Ensure you register this setting group in your admin init: register_setting('tfs_front_page_seo_options_group', 'tfs_front_page_seo_options');
+            settings_fields('tfs_front_page_seo_options_group');
+            ?>
+            <table class="form-table">
+                <tr valign="top">
+                    <th scope="row">Front Page Title Tag</th>
+                    <td>
+                        <input type="text" name="tfs_front_page_seo_options[title]" value="<?php echo esc_attr($seo_title); ?>" class="regular-text" />
+                        <p class="description">Max 56 characters recommended.</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">SEO Description</th>
+                    <td>
+                        <textarea name="tfs_front_page_seo_options[description]" rows="3" cols="50" class="large-text"><?php echo esc_textarea($seo_desc); ?></textarea>
+                        <p class="description">Max 156 characters recommended.</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">SEO Meta Tags (Keywords)</th>
+                    <td>
+                        <textarea name="tfs_front_page_seo_options[meta_tags]" rows="3" cols="50" class="large-text"><?php echo esc_textarea($seo_tags); ?></textarea>
+                    </td>
+                </tr>
+            </table>
+            <?php submit_button('Save SEO Settings'); ?>
+        </form>
 
 	<?php elseif ($active_tab == 'footer') : ?>
 
