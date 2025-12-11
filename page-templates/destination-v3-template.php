@@ -120,614 +120,617 @@ if ($has_hero_video || has_post_thumbnail()) : ?>
       </div>
   </section>
 
-    <section id="tabbed-destination-content" class="container-fluid mt-5">
-      <div class="container">
-          <!-- Bootstrap 5 Nav Tabs -->
-          <ul class="nav nav-pills nav-tabs destination-tabs" id="destinationTabs" role="tablist">
-              <?php if ($travel_costs_image !== '') : ?>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="inclusions-tab" data-bs-toggle="tab"
-                              data-bs-target="#inclusions-pane" type="button" role="tab"
-                              aria-controls="inclusions-pane" aria-selected="true">
-                          <i class="lni lni-user-info-circle"></i> <?php echo $feature_1_title ?>
-                      </button>
-                  </li>
-              <?php endif;
-              if ($travel_seasons_image !== '') : ?>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons-pane"
-                              type="button" role="tab" aria-controls="seasons-pane" aria-selected="false">
-                          <i class="lni lni-calendar-days"></i> <?php echo $feature_2_seasons_title ?>
-                      </button>
-                  </li>
-              <?php endif;
-              if ($feature_3_getting_to_image !== '') : ?>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="getting-there-tab" data-bs-toggle="tab"
-                              data-bs-target="#getting-there-pane" type="button" role="tab"
-                              aria-controls="getting-there-pane" aria-selected="false">
-                          <i class="lni lni-suitcase-1"></i> <?php echo $feature_3_get_to_title ?>
-                      </button>
-                  </li>
-              <?php endif;
-              if ($feature_4_lodging_img !== '') : ?>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="lodging-tab" data-bs-toggle="tab" data-bs-target="#lodging-pane"
-                              type="button" role="tab" aria-controls="lodging-pane" aria-selected="false">
-                          <i class="lni lni-home-4"></i> <?php echo $feature_4_lodging_title ?>
-                      </button>
-                  </li>
-              <?php endif;
-              if ($feature_5_angling_img !== '') : ?>
-                  <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="angling-tab" data-bs-toggle="tab" data-bs-target="#angling-pane"
-                              type="button" role="tab" aria-controls="angling-pane" aria-selected="false">
-                          <i class="lni lni-fish-1"></i> <?php echo $feature_5_angling_title ?>
-                      </button>
-                  </li>
-              <?php endif;
-              if ($feature_6_species_img !== '') : ?>
+<section id="tabbed-destination-content" class="container-fluid mt-5">
+  <div class="container">
+      <!-- Bootstrap 5 Nav Tabs -->
+      <ul class="nav nav-pills nav-tabs destination-tabs" id="destinationTabs" role="tablist">
+          <?php if ($travel_seasons_image !== '') : ?>
               <li class="nav-item" role="presentation">
-               <button class="nav-link" id="species-tab" data-bs-toggle="tab" data-bs-target="#species-pane"
-                       type="button" role="tab" aria-controls="species-pane" aria-selected="false">
-                <i class="lni lni-fish-2"></i> <?php echo $feature_6_species_title ?>
-               </button>
+                  <button class="nav-link active" id="seasons-tab" data-bs-toggle="tab" data-bs-target="#seasons-pane"
+                          type="button" role="tab" aria-controls="seasons-pane" aria-selected="false">
+                      <i class="lni lni-calendar-days"></i> <?php echo $feature_2_seasons_title ?>
+                  </button>
               </li>
-              <?php endif; ?>
-          </ul>
+          <?php endif;
+          if ($feature_3_getting_to_image !== '') : ?>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="getting-there-tab" data-bs-toggle="tab"
+                          data-bs-target="#getting-there-pane" type="button" role="tab"
+                          aria-controls="getting-there-pane" aria-selected="false">
+                      <i class="lni lni-suitcase-1"></i> <?php echo $feature_3_get_to_title ?>
+                  </button>
+              </li>
+          <?php endif;
+          if ($feature_4_lodging_img !== '') : ?>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="lodging-tab" data-bs-toggle="tab" data-bs-target="#lodging-pane"
+                          type="button" role="tab" aria-controls="lodging-pane" aria-selected="false">
+                      <i class="lni lni-home-4"></i> <?php echo $feature_4_lodging_title ?>
+                  </button>
+              </li>
+          <?php endif;
+          if ($feature_5_angling_img !== '') : ?>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="angling-tab" data-bs-toggle="tab" data-bs-target="#angling-pane"
+                          type="button" role="tab" aria-controls="angling-pane" aria-selected="false">
+                      <i class="lni lni-fish-1"></i> <?php echo $feature_5_angling_title ?>
+                  </button>
+              </li>
+          <?php endif;
+          if ($feature_6_species_img !== '') : ?>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="species-tab" data-bs-toggle="tab" data-bs-target="#species-pane"
+                          type="button" role="tab" aria-controls="species-pane" aria-selected="false">
+                      <i class="lni lni-fish-2"></i> <?php echo $feature_6_species_title ?>
+                  </button>
+              </li>
+          <?php endif;
+          if ($travel_costs_image !== '') : ?>
+              <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="inclusions-tab" data-bs-toggle="tab"
+                          data-bs-target="#inclusions-pane" type="button" role="tab"
+                          aria-controls="inclusions-pane" aria-selected="true">
+                      <i class="lni lni-user-info-circle"></i> <?php echo $feature_1_title ?>
+                  </button>
+              </li>
+          <?php endif; ?>
+      </ul>
 
-          <!-- Tab Content -->
-          <div class="tab-content destination-tab-content" id="destinationTabContent">
-              <!-- Inclusions Tab -->
-              <div class="tab-pane fade show active" id="inclusions-pane" role="tabpanel"
-                   aria-labelledby="inclusions-tab">
-                  <?php if ($travel_costs_image !== '') : ?>
-                      <div class="tab-container-wrapper">
-                          <div id="inclusionsReadmore" class="readmore-info">
-                              <div class="overlay-header">
-                                  <h3>Inclusions Details</h3>
-                                  <button class="close-overlay">&times;</button>
-                              </div>
-                              <div class="overlay-content">
-                                  <div><?php echo $feature_1_readmore; ?></div>
-                              </div>
+      <!-- Tab Content -->
+      <div class="tab-content destination-tab-content" id="destinationTabContent">
+          <!-- Seasons Tab Content -->
+          <div class="tab-pane fade show active" id="seasons-pane" role="tabpanel" aria-labelledby="seasons-tab">
+              <?php if ($travel_seasons_image !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="seasonsReadmore" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Seasons Details</h3>
+                              <button class="close-overlay">&times;</button>
                           </div>
-
-                          <!-- NEW: Image and Video spans full width above content -->
-                          <div class="feature-image">
-                              <?php
-                              // Video support for Feature 1 (Inclusions)
-                              $feature_1_video_url = trim((string)get_post_meta(get_the_ID(), 'feature_1_video_url', true));
-                              $feature_1_video_id = trim((string)get_post_meta(get_the_ID(), 'feature_1_video_id', true));
-                              $feature_1_video_src = '';
-
-                              if ($feature_1_video_url !== '') {
-                                  $feature_1_video_src = esc_url($feature_1_video_url);
-                              } elseif ($feature_1_video_id !== '' && is_numeric($feature_1_video_id)) {
-                                  $tmp_src = wp_get_attachment_url((int)$feature_1_video_id);
-                                  if ($tmp_src) {
-                                      $feature_1_video_src = esc_url($tmp_src);
-                                  }
-                              }
-
-                              if ($feature_1_video_src) :
-                                  ?>
-                                  <div class="ratio ratio-16x9">
-                                      <video class="w-100" controls playsinline preload="metadata"
-                                             poster="<?php echo esc_url($travel_costs_image); ?>">
-                                          <source src="<?php echo $feature_1_video_src; ?>" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                      </video>
-                                  </div>
-                              <?php else: ?>
-                                  <img class="img-fluid inclusions-image"
-                                       src="<?php echo esc_url($travel_costs_image); ?>"
-                                       alt="The Fly Shop Travel Image">
-                              <?php endif; ?>
-                          </div>
-
-                          <!-- Content below image -->
-                          <div class="feature-content inclusions-content">
-                              <h2><?php echo $feature_1_title ?></h2>
-
-                           <?php
-                           // Get the dynamic pricing table data
-                           $table_config = get_post_meta(get_the_ID(), 'pricing-table-config', true);
-                           $table_data = get_post_meta(get_the_ID(), 'pricing-table-data', true);
-
-                           if ($table_config && $table_data) {
-                            $config = json_decode( $table_config, true );
-                            $data   = json_decode( $table_data, true );
-
-                            if ( $config && $data ) {
-                             $columns = $config['columns'];
-                             $rows    = $config['rows'];
-                             $title   = isset( $config['title'] ) ? $config['title'] : '';
-
-                             if ( $title ) {
-
-                              echo '<div class="pricing-rates-table">';
-
-                              if ( $title ) {
-                               echo '<h3 class="table-title">' . esc_html( $title ) . '</h3>';
-                              }
-
-                              echo '<table class="lodging-rates-table">';
-
-                              for ( $r = 0; $r < $rows; $r ++ ) {
-                               echo '<tr>';
-                               for ( $c = 0; $c < $columns; $c ++ ) {
-                                $cell_value = isset( $data[ $r ][ $c ] ) ? esc_html( $data[ $r ][ $c ] ) : '';
-
-                                if ( $r == 0 ) {
-                                 // Header row
-                                 echo '<th>' . $cell_value . '</th>';
-                                } else {
-                                 // Data rows
-                                 echo '<td>' . $cell_value . '</td>';
-                                }
-                               }
-                               echo '</tr>';
-                              }
-
-                              echo '</table>';
-                              echo '</div>';
-                             }
-                            }
-                           }
-                           ?>
-
-                              <?php
-                              echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
-                              echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
-                              echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
-                              echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
-                              ?>
-                              <?php if (!empty($feature_1_readmore)) : ?>
-                                  <button type="button" class="btn destination btn-tfs"
-                                          data-target="inclusionsReadmore">Read more...
-                                  </button>
-                              <?php endif; ?>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_2_seasons_content . '&nbsp;' . $feature_2_seasons_readmore; ?></div>
                           </div>
                       </div>
-                  <?php endif ?>
-              </div>
 
-              <!-- Seasons Tab -->
-              <div class="tab-pane fade" id="seasons-pane" role="tabpanel" aria-labelledby="seasons-tab">
-                  <?php if ($travel_seasons_image !== '') : ?>
-                      <div class="tab-container-wrapper">
-                          <div id="seasonsReadmore" class="readmore-info">
-                              <div class="overlay-header">
-                                  <h3>Seasons Details</h3>
-                                  <button class="close-overlay">&times;</button>
+                      <!-- NEW: Image spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 2 (Seasons)
+                          $feature_2_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_2_video_url', true));
+                          $feature_2_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_2_video_id', true));
+                          $feature_2_video_src = '';
+
+                          if ($feature_2_video_url !== '') {
+                              $feature_2_video_src = esc_url($feature_2_video_url);
+                          } elseif ($feature_2_video_id !== '' && is_numeric($feature_2_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int) $feature_2_video_id);
+                              if ($tmp_src) {
+                                  $feature_2_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_2_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($travel_seasons_image); ?>">
+                                      <source src="<?php echo $feature_2_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
                               </div>
-                              <div class="overlay-content">
-                                  <div><?php echo $feature_2_seasons_content . '&nbsp;' . $feature_2_seasons_readmore; ?></div>
-                              </div>
-                          </div>
+                          <?php else: ?>
+                              <img class="img-fluid" src="<?php echo esc_url($travel_seasons_image); ?>" alt="The Fly Shop Travel Image">
+                          <?php endif; ?>
+                      </div>
 
-                          <!-- NEW: Image spans full width above content -->
-                          <div class="feature-image">
-                              <?php
-                              // Video support for Feature 2 (Seasons)
-                              $feature_2_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_2_video_url', true));
-                              $feature_2_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_2_video_id', true));
-                              $feature_2_video_src = '';
+                      <!-- Content below image -->
+                      <div class="feature-content">
+                          <h2><?php echo $feature_2_seasons_title ?></h2>
+                          <?php
+                          echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
 
-                              if ($feature_2_video_url !== '') {
-                                  $feature_2_video_src = esc_url($feature_2_video_url);
-                              } elseif ($feature_2_video_id !== '' && is_numeric($feature_2_video_id)) {
-                                  $tmp_src = wp_get_attachment_url((int) $feature_2_video_id);
-                                  if ($tmp_src) {
-                                      $feature_2_video_src = esc_url($tmp_src);
+                          // NEW MULTI-SEASON CALENDAR - This is ADDITIONAL functionality
+                          if ($monthly_range_checkbox === 'yes'):
+                              $hasActiveSeasons = false;
+                              foreach ($seasons as $season) {
+                                  if ($season['start_month'] > 0 && $season['end_month'] > 0) {
+                                      $hasActiveSeasons = true;
+                                      break;
                                   }
                               }
 
-                              if ($feature_2_video_src) :
+                              if ($hasActiveSeasons):
                                   ?>
-                                  <div class="ratio ratio-16x9">
-                                      <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($travel_seasons_image); ?>">
-                                          <source src="<?php echo $feature_2_video_src; ?>" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                      </video>
-                                  </div>
-                              <?php else: ?>
-                                  <img class="img-fluid" src="<?php echo esc_url($travel_seasons_image); ?>" alt="The Fly Shop Travel Image">
-                              <?php endif; ?>
-                          </div>
+                                  <div class="multi-season-calendar" style="margin: 20px 0;">
+                                      <h4><?php echo esc_html($multi_season_calendar_title); ?></h4>
+                                      <div class="month-display-grid">
+                                          <?php
+                                          $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-                          <!-- Content below image -->
-                          <div class="feature-content">
-                              <h2><?php echo $feature_2_seasons_title ?></h2>
-                              <?php
-                              echo '<div><p>' . $feature_2_seasons_content . '</p></div>';
+                                          for ($month = 1; $month <= 12; $month++):
+                                              echo '<div class="month-display-container">';
+                                              echo '<div class="month-label">' . $months[$month - 1] . '</div>';
+                                              echo '<div class="month-visual">';
 
-                              // NEW MULTI-SEASON CALENDAR - This is ADDITIONAL functionality
-                              if ($monthly_range_checkbox === 'yes'):
-                                  $hasActiveSeasons = false;
-                                  foreach ($seasons as $season) {
-                                      if ($season['start_month'] > 0 && $season['end_month'] > 0) {
-                                          $hasActiveSeasons = true;
-                                          break;
-                                      }
-                                  }
+                                              $periods = ['early', 'mid', 'late'];
+                                              foreach ($periods as $period):
+                                                  $contributors = [];
 
-                                  if ($hasActiveSeasons):
-                                      ?>
-                                      <div class="multi-season-calendar" style="margin: 20px 0;">
-                                          <h4><?php echo esc_html($multi_season_calendar_title); ?></h4>
-                                          <div class="month-display-grid">
-                                              <?php
-                                              $months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-                                              for ($month = 1; $month <= 12; $month++):
-                                                  echo '<div class="month-display-container">';
-                                                  echo '<div class="month-label">' . $months[$month - 1] . '</div>';
-                                                  echo '<div class="month-visual">';
-
-                                                  $periods = ['early', 'mid', 'late'];
-                                                  foreach ($periods as $period):
-                                                      $contributors = [];
-
-                                                      // Helper to determine if a given range colors this month/period
-                                                      $matchesRange = function($startMonth, $endMonth, $startPart, $endPart) use ($month, $period, $periods) {
-                                                          if (!($startMonth > 0 && $endMonth > 0)) return false;
-                                                          $inSeason = ($startMonth <= $endMonth)
+                                                  // Helper to determine if a given range colors this month/period
+                                                  $matchesRange = function($startMonth, $endMonth, $startPart, $endPart) use ($month, $period, $periods) {
+                                                      if (!($startMonth > 0 && $endMonth > 0)) return false;
+                                                      $inSeason = ($startMonth <= $endMonth)
                                                               ? ($month >= $startMonth && $month <= $endMonth)
                                                               : ($month >= $startMonth || $month <= $endMonth); // wrap
-                                                          if (!$inSeason) return false;
-                                                          if ($month === $startMonth && $month === $endMonth) {
-                                                              $startIdx = array_search($startPart, $periods);
-                                                              $endIdx   = array_search($endPart, $periods);
-                                                              $periodIdx= array_search($period, $periods);
-                                                              return ($periodIdx >= $startIdx && $periodIdx <= $endIdx);
-                                                          } elseif ($month === $startMonth) {
-                                                              if ($startPart === 'full') return true;
-                                                              $startIdx = array_search($startPart, $periods);
-                                                              $periodIdx= array_search($period, $periods);
-                                                              return ($periodIdx >= $startIdx);
-                                                          } elseif ($month === $endMonth) {
-                                                              if ($endPart === 'full') return true;
-                                                              $endIdx = array_search($endPart, $periods);
-                                                              $periodIdx= array_search($period, $periods);
-                                                              return ($periodIdx <= $endIdx);
-                                                          }
-                                                          return true; // full months in between
-                                                      };
+                                                      if (!$inSeason) return false;
+                                                      if ($month === $startMonth && $month === $endMonth) {
+                                                          $startIdx = array_search($startPart, $periods);
+                                                          $endIdx   = array_search($endPart, $periods);
+                                                          $periodIdx= array_search($period, $periods);
+                                                          return ($periodIdx >= $startIdx && $periodIdx <= $endIdx);
+                                                      } elseif ($month === $startMonth) {
+                                                          if ($startPart === 'full') return true;
+                                                          $startIdx = array_search($startPart, $periods);
+                                                          $periodIdx= array_search($period, $periods);
+                                                          return ($periodIdx >= $startIdx);
+                                                      } elseif ($month === $endMonth) {
+                                                          if ($endPart === 'full') return true;
+                                                          $endIdx = array_search($endPart, $periods);
+                                                          $periodIdx= array_search($period, $periods);
+                                                          return ($periodIdx <= $endIdx);
+                                                      }
+                                                      return true; // full months in between
+                                                  };
 
-                                                      // Priority order: S1R1, S1R2, S2R1, S2R2, S3R1, S3R2
-                                                      foreach ([1,2,3] as $sn) {
-                                                          $s = isset($seasons[$sn]) ? $seasons[$sn] : null;
-                                                          if (!$s) continue;
-                                                          // Range 1
-                                                          $sm = (int)($s['start_month'] ?? 0);
-                                                          $em = (int)($s['end_month'] ?? 0);
-                                                          $sp = $s['start_part'] ?: 'full';
-                                                          $ep = $s['end_part'] ?: 'full';
-                                                          if ($matchesRange($sm, $em, $sp, $ep)) {
-                                                              $contributors[] = [
+                                                  // Priority order: S1R1, S1R2, S2R1, S2R2, S3R1, S3R2
+                                                  foreach ([1,2,3] as $sn) {
+                                                      $s = isset($seasons[$sn]) ? $seasons[$sn] : null;
+                                                      if (!$s) continue;
+                                                      // Range 1
+                                                      $sm = (int)($s['start_month'] ?? 0);
+                                                      $em = (int)($s['end_month'] ?? 0);
+                                                      $sp = $s['start_part'] ?: 'full';
+                                                      $ep = $s['end_part'] ?: 'full';
+                                                      if ($matchesRange($sm, $em, $sp, $ep)) {
+                                                          $contributors[] = [
                                                                   'color' => ($s['color'] ?: '#28a745'),
                                                                   'name'  => ($s['name']  ?: 'Season ' . $sn),
-                                                              ];
-                                                          }
-                                                          // Range 2
-                                                          $sm2 = (int)($s['start_month_2'] ?? 0);
-                                                          $em2 = (int)($s['end_month_2'] ?? 0);
-                                                          $sp2 = $s['start_part_2'] ?: 'full';
-                                                          $ep2 = $s['end_part_2'] ?: 'full';
-                                                          if ($matchesRange($sm2, $em2, $sp2, $ep2)) {
-                                                              $contributors[] = [
+                                                          ];
+                                                      }
+                                                      // Range 2
+                                                      $sm2 = (int)($s['start_month_2'] ?? 0);
+                                                      $em2 = (int)($s['end_month_2'] ?? 0);
+                                                      $sp2 = $s['start_part_2'] ?: 'full';
+                                                      $ep2 = $s['end_part_2'] ?: 'full';
+                                                      if ($matchesRange($sm2, $em2, $sp2, $ep2)) {
+                                                          $contributors[] = [
                                                                   'color' => ($s['color_2'] ?: ($s['color'] ?: '#28a745')),
                                                                   'name'  => ($s['name_2']  ?: ($s['name'] ?: 'Season ' . $sn)),
-                                                              ];
-                                                          }
+                                                          ];
                                                       }
+                                                  }
 
-                                                      // Decide background and tooltip
-                                                      $bgStyle = 'background-color: #f8f8f8;';
-                                                      $titleText = ucfirst($period);
-                                                      if (count($contributors) === 1) {
-                                                          $bgStyle = 'background-color: ' . esc_attr($contributors[0]['color']) . ';';
-                                                          $titleText .= ' - ' . esc_attr($contributors[0]['name']);
-                                                      } elseif (count($contributors) >= 2) {
-                                                          $c1 = esc_attr($contributors[0]['color']);
-                                                          $c2 = esc_attr($contributors[1]['color']);
-                                                          $bgStyle = 'background: linear-gradient(90deg, ' . $c1 . ' 0%, ' . $c1 . ' 50%, ' . $c2 . ' 50%, ' . $c2 . ' 100%);';
-                                                          $titleText .= ' - ' . esc_attr($contributors[0]['name']) . ' + ' . esc_attr($contributors[1]['name']);
-                                                      }
+                                                  // Decide background and tooltip
+                                                  $bgStyle = 'background-color: #f8f8f8;';
+                                                  $titleText = ucfirst($period);
+                                                  if (count($contributors) === 1) {
+                                                      $bgStyle = 'background-color: ' . esc_attr($contributors[0]['color']) . ';';
+                                                      $titleText .= ' - ' . esc_attr($contributors[0]['name']);
+                                                  } elseif (count($contributors) >= 2) {
+                                                      $c1 = esc_attr($contributors[0]['color']);
+                                                      $c2 = esc_attr($contributors[1]['color']);
+                                                      $bgStyle = 'background: linear-gradient(90deg, ' . $c1 . ' 0%, ' . $c1 . ' 50%, ' . $c2 . ' 50%, ' . $c2 . ' 100%);';
+                                                      $titleText .= ' - ' . esc_attr($contributors[0]['name']) . ' + ' . esc_attr($contributors[1]['name']);
+                                                  }
 
-                                                      echo '<div class="period-' . $period . '" style="flex: 1; ' . $bgStyle . '" title="' . esc_attr($titleText) . '"></div>';
-                                                  endforeach;
+                                                  echo '<div class="period-' . $period . '" style="flex: 1; ' . $bgStyle . '" title="' . esc_attr($titleText) . '"></div>';
+                                              endforeach;
 
-                                                  echo '</div>';
-                                                  echo '</div>';
-                                              endfor;
-                                              ?>
-                                          </div>
-
-                                          <!-- Season Legend -->
-                                          <div class="season-legend"
-                                               style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center;">
-                                              <?php
-                                              foreach ($seasons as $seasonNum => $season):
-                                                  // Range 1 legend
-                                                  if (!empty($season['start_month']) && !empty($season['end_month']) && (int)$season['start_month'] > 0 && (int)$season['end_month'] > 0): ?>
-                                                      <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                                                          <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color'] ?: '#28a745'); ?>; border: 2px solid #333; border-radius: 3px;"></div>
-                                                          <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name'] ?: "Season {$seasonNum}"); ?></span>
-                                                      </div>
-                                                  <?php endif;
-                                                  // Range 2 legend: render only when a Name is provided (non-empty)
-                                                  if (!empty($season['name_2'])): ?>
-                                                      <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-                                                          <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color_2'] ?: ($season['color'] ?: '#28a745')); ?>; border: 2px solid #333; border-radius: 3px;"></div>
-                                                          <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name_2']); ?></span>
-                                                      </div>
-                                                  <?php endif;
-                                              endforeach; ?>
-                                          </div>
-
-                                          <div style="margin-top: 15px; font-size: 13px; color: #666; text-align: center;">
-                                              <!--<em>Each month is divided into early, mid, and late periods for precise
-                                                  season timing</em>-->
-                                          </div>
-
+                                              echo '</div>';
+                                              echo '</div>';
+                                          endfor;
+                                          ?>
                                       </div>
-                                  <?php endif; endif; ?>
 
-                           <?php
-                           $feature_2_seasons_readmore  = get_post_meta( get_the_ID(), 'feature-2-seasons-readmore', true );
-                           if (!empty($feature_2_seasons_readmore)) : ?>
+                                      <!-- Season Legend -->
+                                      <div class="season-legend"
+                                           style="display: flex; gap: 20px; margin-top: 15px; flex-wrap: wrap; justify-content: center;">
+                                          <?php
+                                          foreach ($seasons as $seasonNum => $season):
+                                              // Range 1 legend
+                                              if (!empty($season['start_month']) && !empty($season['end_month']) && (int)$season['start_month'] > 0 && (int)$season['end_month'] > 0): ?>
+                                                  <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                                      <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color'] ?: '#28a745'); ?>; border: 2px solid #333; border-radius: 3px;"></div>
+                                                      <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name'] ?: "Season {$seasonNum}"); ?></span>
+                                                  </div>
+                                              <?php endif;
+                                              // Range 2 legend: render only when a Name is provided (non-empty)
+                                              if (!empty($season['name_2'])): ?>
+                                                  <div class="legend-item" style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
+                                                      <div class="legend-color" style="width: 20px; height: 20px; background-color: <?php echo esc_attr($season['color_2'] ?: ($season['color'] ?: '#28a745')); ?>; border: 2px solid #333; border-radius: 3px;"></div>
+                                                      <span style="font-weight: 500;">&nbsp;<?php echo esc_html($season['name_2']); ?></span>
+                                                  </div>
+                                              <?php endif;
+                                          endforeach; ?>
+                                      </div>
+
+                                      <div style="margin-top: 15px; font-size: 13px; color: #666; text-align: center;">
+                                          <!--<em>Each month is divided into early, mid, and late periods for precise
+                                              season timing</em>-->
+                                      </div>
+
+                                  </div>
+                              <?php endif; endif; ?>
+
+                          <?php
+                          $feature_2_seasons_readmore  = get_post_meta( get_the_ID(), 'feature-2-seasons-readmore', true );
+                          if (!empty($feature_2_seasons_readmore)) : ?>
                               <button type="button" class="btn destination btn-tfs" data-target="seasonsReadmore">Read
                                   more...
                               </button>
-                           <?php endif; ?>
-                          </div>
+                          <?php endif; ?>
                       </div>
-                  <?php endif; ?>
-              </div>
-
-              <!-- Getting There Tab -->
-              <div class="tab-pane fade" id="getting-there-pane" role="tabpanel" aria-labelledby="getting-there-tab">
-                  <?php if ($feature_3_getting_to_image !== '') : ?>
-                      <div class="tab-container-wrapper">
-                          <div id="gettingToReadmore" class="readmore-info">
-                              <div class="overlay-header">
-                                  <h3>Getting There Details</h3>
-                                  <button class="close-overlay">&times;</button>
-                              </div>
-                              <div class="overlay-content">
-                                  <div><?php echo $feature_3_get_to_content . '&nbsp;' . $feature_3_get_to_readmore ?></div>
-                              </div>
-                          </div>
-
-                          <!-- NEW: Image spans full width above content -->
-                          <div class="feature-image">
-                              <?php
-                              // Video support for Feature 3 (Getting There)
-                              $feature_3_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_3_video_url', true));
-                              $feature_3_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_3_video_id', true));
-                              $feature_3_video_src = '';
-
-                              if ($feature_3_video_url !== '') {
-                                  $feature_3_video_src = esc_url($feature_3_video_url);
-                              } elseif ($feature_3_video_id !== '' && is_numeric($feature_3_video_id)) {
-                                  $tmp_src = wp_get_attachment_url((int) $feature_3_video_id);
-                                  if ($tmp_src) {
-                                      $feature_3_video_src = esc_url($tmp_src);
-                                  }
-                              }
-
-                              if ($feature_3_video_src) :
-                                  ?>
-                                  <div class="ratio ratio-16x9">
-                                      <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_3_getting_to_image); ?>">
-                                          <source src="<?php echo $feature_3_video_src; ?>" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                      </video>
-                                  </div>
-                              <?php else: ?>
-                                  <img class="img-fluid" src="<?php echo esc_url($feature_3_getting_to_image); ?>" alt="The Fly Shop Travel Image">
-                              <?php endif; ?>
-                          </div>
-
-                          <!-- Content below image -->
-                          <div class="feature-content">
-                              <h2><?php echo $feature_3_get_to_title ?></h2>
-                              <?php
-                              echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
-
-                              if (!empty($feature_3_get_to_readmore)) :
-                              echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
-                              endif;
-                              ?>
-                          </div>
-                      </div>
-                  <?php endif; ?>
-              </div>
-
-              <!-- Lodging Tab -->
-              <div class="tab-pane fade" id="lodging-pane" role="tabpanel" aria-labelledby="lodging-tab">
-                  <?php if ($feature_4_lodging_img !== '') : ?>
-                      <div class="tab-container-wrapper">
-                          <div id="lodgingReadmore" class="readmore-info">
-                              <div class="overlay-header">
-                                  <h3>Lodging Details</h3>
-                                  <button class="close-overlay">&times;</button>
-                              </div>
-                              <div class="overlay-content">
-                                  <div><?php echo $feature_4_lodging_content . '&nbsp;' . $feature_4_lodging_readmore ?></div>
-                              </div>
-                          </div>
-
-                          <!-- NEW: Image spans full width above content -->
-                          <div class="feature-image">
-                              <?php
-                              // Video support for Feature 4 (Lodging)
-                              $feature_4_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_4_video_url', true));
-                              $feature_4_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_4_video_id', true));
-                              $feature_4_video_src = '';
-
-                              if ($feature_4_video_url !== '') {
-                                  $feature_4_video_src = esc_url($feature_4_video_url);
-                              } elseif ($feature_4_video_id !== '' && is_numeric($feature_4_video_id)) {
-                                  $tmp_src = wp_get_attachment_url((int) $feature_4_video_id);
-                                  if ($tmp_src) {
-                                      $feature_4_video_src = esc_url($tmp_src);
-                                  }
-                              }
-
-                              if ($feature_4_video_src) :
-                                  ?>
-                                  <div class="ratio ratio-16x9">
-                                      <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_4_lodging_img); ?>">
-                                          <source src="<?php echo $feature_4_video_src; ?>" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                      </video>
-                                  </div>
-                              <?php else: ?>
-                                  <img class="img-fluid" src="<?php echo esc_url($feature_4_lodging_img); ?>"
-                                       alt="The Fly Shop Travel Image">
-                              <?php endif; ?>
-                          </div>
-
-                          <!-- Content below image -->
-                          <div class="feature-content">
-                              <h2><?php echo $feature_4_lodging_title ?></h2>
-                              <?php
-                              echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
-
-                              if (!empty($feature_4_lodging_readmore)) {
-                               echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
-                              }
-                              ?>
-                          </div>
-                      </div>
-                  <?php endif; ?>
-              </div>
-
-              <!-- Angling Tab -->
-              <div class="tab-pane fade" id="angling-pane" role="tabpanel" aria-labelledby="angling-tab">
-                  <?php if ($feature_5_angling_img !== '') : ?>
-                      <div class="tab-container-wrapper">
-                          <div id="anglingAtdestination" class="readmore-info">
-                              <div class="overlay-header">
-                                  <h3>Angling Details</h3>
-                                  <button class="close-overlay">&times;</button>
-                              </div>
-                              <div class="overlay-content">
-                                  <div><?php echo $feature_5_angling_content . '&nbsp;' . $feature_5_angling_readmore ?></div>
-                              </div>
-                          </div>
-
-                          <!-- NEW: Image spans full width above content -->
-                          <div class="feature-image">
-                              <?php
-                              // Video support for Feature 5 (Angling)
-                              $feature_5_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_5_video_url', true));
-                              $feature_5_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_5_video_id', true));
-                              $feature_5_video_src = '';
-
-                              if ($feature_5_video_url !== '') {
-                                  $feature_5_video_src = esc_url($feature_5_video_url);
-                              } elseif ($feature_5_video_id !== '' && is_numeric($feature_5_video_id)) {
-                                  $tmp_src = wp_get_attachment_url((int) $feature_5_video_id);
-                                  if ($tmp_src) {
-                                      $feature_5_video_src = esc_url($tmp_src);
-                                  }
-                              }
-
-                              if ($feature_5_video_src) :
-                                  ?>
-                                  <div class="ratio ratio-16x9">
-                                      <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_5_angling_img); ?>">
-                                          <source src="<?php echo $feature_5_video_src; ?>" type="video/mp4">
-                                          Your browser does not support the video tag.
-                                      </video>
-                                  </div>
-                              <?php else: ?>
-                                  <img class="img-fluid" src="<?php echo esc_url($feature_5_angling_img); ?>" alt="The Fly Shop Travel Image">
-                              <?php endif; ?>
-                          </div>
-
-                          <!-- Content below image -->
-                          <div class="feature-content">
-                              <h2><?php echo $feature_5_angling_title ?></h2>
-                              <?php
-                              echo '<div><p>' . $feature_5_angling_content . '</p></div>';
-
-                              if (!empty($feature_5_angling_readmore)) :
-                               echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
-                              endif;
-                              ?>
-                          </div>
-                      </div>
-                  <?php endif; ?>
-              </div>
-
-             <!-- Species Tab -->
-             <div class="tab-pane fade" id="species-pane" role="tabpanel" aria-labelledby="species-tab">
-              <?php if ($feature_6_species_img !== '') : ?>
-               <div class="tab-container-wrapper">
-                <div id="speciesReadmore" class="readmore-info">
-                 <div class="overlay-header">
-                  <h3>Species Details</h3>
-                  <button class="close-overlay">&times;</button>
-                 </div>
-                 <div class="overlay-content">
-                  <div><?php echo $feature_6_species_content . '&nbsp;' . $feature_6_species_readmore ?></div>
-                 </div>
-                </div>
-
-                <!-- NEW: Image spans full width above content -->
-                <div class="feature-image">
-                 <?php
-                 // Video support for Feature 6 (Species)
-                 $feature_6_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_url', true));
-                 $feature_6_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_id', true));
-                 $feature_6_video_src = '';
-
-                 if ($feature_6_video_url !== '') {
-                  $feature_6_video_src = esc_url($feature_6_video_url);
-                 } elseif ($feature_6_video_id !== '' && is_numeric($feature_6_video_id)) {
-                  $tmp_src = wp_get_attachment_url((int) $feature_6_video_id);
-                  if ($tmp_src) {
-                   $feature_6_video_src = esc_url($tmp_src);
-                  }
-                 }
-
-                 if ($feature_6_video_src) :
-                  ?>
-                  <div class="ratio ratio-16x9">
-                   <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_6_species_img); ?>">
-                    <source src="<?php echo $feature_6_video_src; ?>" type="video/mp4">
-                    Your browser does not support the video tag.
-                   </video>
                   </div>
-                 <?php else: ?>
-                  <img class="img-fluid" src="<?php echo esc_url($feature_6_species_img); ?>" alt="The Fly Shop Species Image">
-                 <?php endif; ?>
-                </div>
-
-                <!-- Content below image -->
-                <div class="feature-content">
-                 <h2><?php echo $feature_6_species_title ?></h2>
-                 <?php
-                 echo '<div><p>' . $feature_6_species_content . '</p></div>';
-
-                 if (!empty($feature_6_species_readmore)) :
-                  echo '<button type="button" class="btn destination btn-tfs" data-target="speciesReadmore">Read more...</button>';
-                 endif;
-                 ?>
-                </div>
-               </div>
               <?php endif; ?>
-             </div>
-
           </div>
+          <!-- Getting There Tab Content -->
+          <div class="tab-pane fade" id="getting-there-pane" role="tabpanel" aria-labelledby="getting-there-tab">
+              <?php if ($feature_3_getting_to_image !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="gettingToReadmore" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Getting There Details</h3>
+                              <button class="close-overlay">&times;</button>
+                          </div>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_3_get_to_content . '&nbsp;' . $feature_3_get_to_readmore ?></div>
+                          </div>
+                      </div>
+
+                      <!-- NEW: Image spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 3 (Getting There)
+                          $feature_3_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_3_video_url', true));
+                          $feature_3_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_3_video_id', true));
+                          $feature_3_video_src = '';
+
+                          if ($feature_3_video_url !== '') {
+                              $feature_3_video_src = esc_url($feature_3_video_url);
+                          } elseif ($feature_3_video_id !== '' && is_numeric($feature_3_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int) $feature_3_video_id);
+                              if ($tmp_src) {
+                                  $feature_3_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_3_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_3_getting_to_image); ?>">
+                                      <source src="<?php echo $feature_3_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
+                              </div>
+                          <?php else: ?>
+                              <img class="img-fluid" src="<?php echo esc_url($feature_3_getting_to_image); ?>" alt="The Fly Shop Travel Image">
+                          <?php endif; ?>
+                      </div>
+
+                      <!-- Content below image -->
+                      <div class="feature-content">
+                          <h2><?php echo $feature_3_get_to_title ?></h2>
+                          <?php
+                          echo '<div><p>' . $feature_3_get_to_content . '</p></div>';
+
+                          if (!empty($feature_3_get_to_readmore)) :
+                              echo '<button type="button" class="btn destination btn-tfs" data-target="gettingToReadmore">Read more...</button>';
+                          endif;
+                          ?>
+                      </div>
+                  </div>
+              <?php endif; ?>
+          </div>
+          <!-- Lodging Tab Content -->
+          <div class="tab-pane fade" id="lodging-pane" role="tabpanel" aria-labelledby="lodging-tab">
+              <?php if ($feature_4_lodging_img !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="lodgingReadmore" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Lodging Details</h3>
+                              <button class="close-overlay">&times;</button>
+                          </div>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_4_lodging_content . '&nbsp;' . $feature_4_lodging_readmore ?></div>
+                          </div>
+                      </div>
+
+                      <!-- NEW: Image spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 4 (Lodging)
+                          $feature_4_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_4_video_url', true));
+                          $feature_4_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_4_video_id', true));
+                          $feature_4_video_src = '';
+
+                          if ($feature_4_video_url !== '') {
+                              $feature_4_video_src = esc_url($feature_4_video_url);
+                          } elseif ($feature_4_video_id !== '' && is_numeric($feature_4_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int) $feature_4_video_id);
+                              if ($tmp_src) {
+                                  $feature_4_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_4_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_4_lodging_img); ?>">
+                                      <source src="<?php echo $feature_4_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
+                              </div>
+                          <?php else: ?>
+                              <img class="img-fluid" src="<?php echo esc_url($feature_4_lodging_img); ?>"
+                                   alt="The Fly Shop Travel Image">
+                          <?php endif; ?>
+                      </div>
+
+                      <!-- Content below image -->
+                      <div class="feature-content">
+                          <h2><?php echo $feature_4_lodging_title ?></h2>
+                          <?php
+                          echo '<div><p>' . $feature_4_lodging_content . '</p></div>';
+
+                          if (!empty($feature_4_lodging_readmore)) {
+                              echo '<button type="button" class="btn destination btn-tfs" data-target="lodgingReadmore">Read more...</button>';
+                          }
+                          ?>
+                      </div>
+                  </div>
+              <?php endif; ?>
+          </div>
+          <!-- Fishing Content Tab -->
+          <div class="tab-pane fade" id="angling-pane" role="tabpanel" aria-labelledby="angling-tab">
+              <?php if ($feature_5_angling_img !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="anglingAtdestination" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Angling Details</h3>
+                              <button class="close-overlay">&times;</button>
+                          </div>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_5_angling_content . '&nbsp;' . $feature_5_angling_readmore ?></div>
+                          </div>
+                      </div>
+
+                      <!-- NEW: Image spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 5 (Angling)
+                          $feature_5_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_5_video_url', true));
+                          $feature_5_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_5_video_id', true));
+                          $feature_5_video_src = '';
+
+                          if ($feature_5_video_url !== '') {
+                              $feature_5_video_src = esc_url($feature_5_video_url);
+                          } elseif ($feature_5_video_id !== '' && is_numeric($feature_5_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int) $feature_5_video_id);
+                              if ($tmp_src) {
+                                  $feature_5_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_5_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_5_angling_img); ?>">
+                                      <source src="<?php echo $feature_5_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
+                              </div>
+                          <?php else: ?>
+                              <img class="img-fluid" src="<?php echo esc_url($feature_5_angling_img); ?>" alt="The Fly Shop Travel Image">
+                          <?php endif; ?>
+                      </div>
+
+                      <!-- Content below image -->
+                      <div class="feature-content">
+                          <h2><?php echo $feature_5_angling_title ?></h2>
+                          <?php
+                          echo '<div><p>' . $feature_5_angling_content . '</p></div>';
+
+                          if (!empty($feature_5_angling_readmore)) :
+                              echo '<button type="button" class="btn destination btn-tfs" data-target="anglingAtdestination">Read more...</button>';
+                          endif;
+                          ?>
+                      </div>
+                  </div>
+              <?php endif; ?>
+          </div>
+          <!-- Species Content Tab -->
+          <div class="tab-pane fade" id="species-pane" role="tabpanel" aria-labelledby="species-tab">
+              <?php if ($feature_6_species_img !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="speciesReadmore" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Species Details</h3>
+                              <button class="close-overlay">&times;</button>
+                          </div>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_6_species_content . '&nbsp;' . $feature_6_species_readmore ?></div>
+                          </div>
+                      </div>
+
+                      <!-- NEW: Image spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 6 (Species)
+                          $feature_6_video_url = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_url', true));
+                          $feature_6_video_id  = trim((string) get_post_meta(get_the_ID(), 'feature_6_video_id', true));
+                          $feature_6_video_src = '';
+
+                          if ($feature_6_video_url !== '') {
+                              $feature_6_video_src = esc_url($feature_6_video_url);
+                          } elseif ($feature_6_video_id !== '' && is_numeric($feature_6_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int) $feature_6_video_id);
+                              if ($tmp_src) {
+                                  $feature_6_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_6_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata" poster="<?php echo esc_url($feature_6_species_img); ?>">
+                                      <source src="<?php echo $feature_6_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
+                              </div>
+                          <?php else: ?>
+                              <img class="img-fluid" src="<?php echo esc_url($feature_6_species_img); ?>" alt="The Fly Shop Species Image">
+                          <?php endif; ?>
+                      </div>
+
+                      <!-- Content below image -->
+                      <div class="feature-content">
+                          <h2><?php echo $feature_6_species_title ?></h2>
+                          <?php
+                          echo '<div><p>' . $feature_6_species_content . '</p></div>';
+
+                          if (!empty($feature_6_species_readmore)) :
+                              echo '<button type="button" class="btn destination btn-tfs" data-target="speciesReadmore">Read more...</button>';
+                          endif;
+                          ?>
+                      </div>
+                  </div>
+              <?php endif; ?>
+          </div>
+          <!-- Inclusions Tab -->
+          <div class="tab-pane fade" id="inclusions-pane" role="tabpanel"
+               aria-labelledby="inclusions-tab">
+              <?php if ($travel_costs_image !== '') : ?>
+                  <div class="tab-container-wrapper">
+                      <div id="inclusionsReadmore" class="readmore-info">
+                          <div class="overlay-header">
+                              <h3>Inclusions Details</h3>
+                              <button class="close-overlay">&times;</button>
+                          </div>
+                          <div class="overlay-content">
+                              <div><?php echo $feature_1_readmore; ?></div>
+                          </div>
+                      </div>
+
+                      <!-- NEW: Image and Video spans full width above content -->
+                      <div class="feature-image">
+                          <?php
+                          // Video support for Feature 1 (Inclusions)
+                          $feature_1_video_url = trim((string)get_post_meta(get_the_ID(), 'feature_1_video_url', true));
+                          $feature_1_video_id = trim((string)get_post_meta(get_the_ID(), 'feature_1_video_id', true));
+                          $feature_1_video_src = '';
+
+                          if ($feature_1_video_url !== '') {
+                              $feature_1_video_src = esc_url($feature_1_video_url);
+                          } elseif ($feature_1_video_id !== '' && is_numeric($feature_1_video_id)) {
+                              $tmp_src = wp_get_attachment_url((int)$feature_1_video_id);
+                              if ($tmp_src) {
+                                  $feature_1_video_src = esc_url($tmp_src);
+                              }
+                          }
+
+                          if ($feature_1_video_src) :
+                              ?>
+                              <div class="ratio ratio-16x9">
+                                  <video class="w-100" controls playsinline preload="metadata"
+                                         poster="<?php echo esc_url($travel_costs_image); ?>">
+                                      <source src="<?php echo $feature_1_video_src; ?>" type="video/mp4">
+                                      Your browser does not support the video tag.
+                                  </video>
+                              </div>
+                          <?php else: ?>
+                              <img class="img-fluid inclusions-image"
+                                   src="<?php echo esc_url($travel_costs_image); ?>"
+                                   alt="The Fly Shop Travel Image">
+                          <?php endif; ?>
+                      </div>
+
+                      <!-- Content below image -->
+                      <div class="feature-content inclusions-content">
+                          <h2><?php echo $feature_1_title ?></h2>
+
+                       <?php
+                       // Get the dynamic pricing table data
+                       $table_config = get_post_meta(get_the_ID(), 'pricing-table-config', true);
+                       $table_data = get_post_meta(get_the_ID(), 'pricing-table-data', true);
+
+                       if ($table_config && $table_data) {
+                        $config = json_decode( $table_config, true );
+                        $data   = json_decode( $table_data, true );
+
+                        if ( $config && $data ) {
+                         $columns = $config['columns'];
+                         $rows    = $config['rows'];
+                         $title   = isset( $config['title'] ) ? $config['title'] : '';
+
+                         if ( $title ) {
+
+                          echo '<div class="pricing-rates-table">';
+
+                          if ( $title ) {
+                           echo '<h3 class="table-title">' . esc_html( $title ) . '</h3>';
+                          }
+
+                          echo '<table class="lodging-rates-table">';
+
+                          for ( $r = 0; $r < $rows; $r ++ ) {
+                           echo '<tr>';
+                           for ( $c = 0; $c < $columns; $c ++ ) {
+                            $cell_value = isset( $data[ $r ][ $c ] ) ? esc_html( $data[ $r ][ $c ] ) : '';
+
+                            if ( $r == 0 ) {
+                             // Header row
+                             echo '<th>' . $cell_value . '</th>';
+                            } else {
+                             // Data rows
+                             echo '<td>' . $cell_value . '</td>';
+                            }
+                           }
+                           echo '</tr>';
+                          }
+
+                          echo '</table>';
+                          echo '</div>';
+                         }
+                        }
+                       }
+                       ?>
+
+                          <?php
+                          echo '<div><p>' . $feature_1_cost_textarea . '</p></div>';
+                          echo '<div><p><b>Inclusions:</b>&nbsp;' . $feature_1_inclusions_textarea . '</p></div>';
+                          echo '<div><p><b>Non-Inclusions:</b>&nbsp;' . $feature_1_noninclusions_textarea . '</p></div>';
+                          echo '<div><p><b>Travel Insurance:</b>&nbsp;' . $feature_1_travelins_textarea . '</p></div>';
+                          ?>
+                          <?php if (!empty($feature_1_readmore)) : ?>
+                              <button type="button" class="btn destination btn-tfs"
+                                      data-target="inclusionsReadmore">Read more...
+                              </button>
+                          <?php endif; ?>
+                      </div>
+                  </div>
+              <?php endif ?>
+          </div>
+
+
+
+
+
+
+
+         <!-- Species Tab -->
+
       </div>
-    </section>
+  </div>
+</section>
 
     <?php if (!empty($whywe_content_2)) : ?>
     <section id="set-the-hook-destination-template" class="mt-5 mb-5">
