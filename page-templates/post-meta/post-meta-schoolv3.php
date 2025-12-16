@@ -13,12 +13,20 @@ $monthly_range_checkbox = get_post_meta( get_the_ID(), 'monthly-range-checkbox',
 $seasons = array();
 for ($season = 1; $season <= 3; $season++) {
     $seasons[$season] = array(
+        // Range 1
         'start_month' => get_post_meta( get_the_ID(), "season{$season}-start-month", true ),
         'end_month'   => get_post_meta( get_the_ID(), "season{$season}-end-month", true ),
         'start_part'  => get_post_meta( get_the_ID(), "season{$season}-start-part", true ),
         'end_part'    => get_post_meta( get_the_ID(), "season{$season}-end-part", true ),
         'color'       => get_post_meta( get_the_ID(), "season{$season}-color", true ),
         'name'        => get_post_meta( get_the_ID(), "season{$season}-name", true ),
+        // Range 2 (optional)
+        'start_month_2' => get_post_meta( get_the_ID(), "season{$season}-start-month-2", true ),
+        'end_month_2'   => get_post_meta( get_the_ID(), "season{$season}-end-month-2", true ),
+        'start_part_2'  => get_post_meta( get_the_ID(), "season{$season}-start-part-2", true ),
+        'end_part_2'    => get_post_meta( get_the_ID(), "season{$season}-end-part-2", true ),
+        'color_2'       => get_post_meta( get_the_ID(), "season{$season}-color-2", true ),
+        'name_2'        => get_post_meta( get_the_ID(), "season{$season}-name-2", true ),
     );
 }
 
