@@ -4316,7 +4316,7 @@ html {
 #tabbed-destination-content .destination-tabs {
   position: sticky;
   top: 0;
-  z-index: 1055;
+  z-index: 15;
   background: #fff; }
 
 .logged-in.admin-bar #tabbed-destination-content .destination-tabs {
