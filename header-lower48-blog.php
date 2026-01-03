@@ -53,6 +53,13 @@ $tfs_metatags    = get_post_meta( $current_id, 'seotfs-meta-tags', true );
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <!-- Brand/Logo (Centered) -->
+                <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                    <img class="tfs-nav-logo scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
+                    <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
+                </a>
+
                 <span class="tel-number"><a class="tel-number-dial" href="tel:1-800-669-3474">1-800-669-3474</a></span>
 
                 <div class="collapse navbar-collapse" id="homepage">
@@ -72,11 +79,6 @@ $tfs_metatags    = get_post_meta( $current_id, 'seotfs-meta-tags', true );
                     ));
                     ?>
 
-                    <!-- Brand/Logo (Centered) - Hidden initially, shows on scroll -->
-                    <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-                        <img class="tfs-nav-logo scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2021/05/social_tfs_logo_og.png" alt="The Fly Shop 2025" />
-                        <img class="tfs-nav-logo no-scroll" loading="eager" src="https://tfs-spaces.sfo2.digitaloceanspaces.com/theflyshop/uploads/2017/06/TFSLogo.png" alt="The Fly Shop 2025" />
-                    </a>
 
                     <?php
                     // Right side menu
