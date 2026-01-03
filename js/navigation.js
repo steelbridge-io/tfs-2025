@@ -49,6 +49,13 @@
 		if ( ! isClickInside ) {
 			siteNavigation.classList.remove( 'toggled' );
 			button.setAttribute( 'aria-expanded', 'false' );
+
+			// Also close Bootstrap 5 collapse menu if it's open
+			const menuCollapse = document.getElementById('homepage');
+			if (menuCollapse && menuCollapse.classList.contains('show')) {
+				const bsCollapse = bootstrap.Collapse.getInstance(menuCollapse) || new bootstrap.Collapse(menuCollapse);
+				bsCollapse.hide();
+			}
 		}
 	} );
 
@@ -109,6 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			navbar.classList.add('scrolled');
 			return;
 		}
+
 		// If the page is scrolled down more than 50px, add the "scrolled" class
 		if (window.scrollY > 50) {
 			navbar.classList.add("scrolled");
@@ -138,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Function to handle scroll effects
 	function handleScroll() {
+		if (isArchive) return;
+
 		if (window.scrollY > 50) {
 			nav.classList.add('scrolled');
 		} else {
@@ -179,6 +189,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 		// Remove all stage classes first
 		navbar.classList.remove('scroll-stage-1', 'scroll-stage-2', 'scroll-stage-3', 'scrolled');
+
+		if (isArchive) {
+			navbar.classList.add('scrolled');
+			return;
+		}
+
+		if (window.innerWidth < 992) { if (scrollY > 50) { navbar.classList.add("scrolled"); }  
+			if (scrollY > 50) {
+				navbar.classList.add('scrolled');
+			}
+			return;
+		}
 
 		if (scrollY > 10 && scrollY <= 25) {
 			navbar.classList.add('scroll-stage-1');
