@@ -273,6 +273,11 @@ document.addEventListener("DOMContentLoaded", function () {
         // Remove all stage classes first
         navbar.classList.remove('scroll-stage-1', 'scroll-stage-2', 'scroll-stage-3', 'scrolled');
 
+        // Disable scroll effects on mobile (screens < 992px)
+        if (window.innerWidth < 992) { if (scrollY > 50) { navbar.classList.add("scrolled"); }  
+            return;
+        }
+
         if (scrollY > 10 && scrollY <= 25) {
             navbar.classList.add('scroll-stage-1');
         } else if (scrollY > 25 && scrollY <= 40) {
