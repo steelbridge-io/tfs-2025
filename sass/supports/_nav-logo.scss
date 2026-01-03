@@ -101,6 +101,12 @@
       }
     }
   }
+
+  &.toggled {
+      .navbar-brand {
+        display: none !important;
+      }
+  }
 }
 
 /* Animate below-nav logo during final scroll */
@@ -190,12 +196,38 @@
     }
   }
 
-  /* On mobile, always show the navbar logo and hide below-nav logo */
+  /* On mobile, handle navbar logo visibility */
   .navbar-brand {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
+    display: block !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 1.3s ease, visibility 1.3s ease;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+
+    .tfs-nav-logo {
+      width: 98px !important;
+      height: auto;
+    }
   }
+
+  .navbar.scrolled {
+    .navbar-brand {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+  }
+
+  /*.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }*/
 
   .below-nav-logo-container {
     display: none;
