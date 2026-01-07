@@ -7,10 +7,10 @@
  * @package The_Fly_Shop_2025
  */
 
-get_header();
+get_header('search');
 ?>
-
-	<main id="primary" class="site-main">
+    <div class="container pt-5">
+	<main id="primary" class="site-main mt-5">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -22,6 +22,8 @@ get_header();
 					?>
 				</h1>
 			</header><!-- .page-header -->
+
+
 
 			<?php
 			/* Start the Loop */
@@ -47,7 +49,7 @@ get_header();
 		?>
 
 	</main><!-- #main -->
+    </div>
 
 <?php
-get_sidebar();
 get_footer();
