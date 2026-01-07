@@ -43,7 +43,7 @@ $tfs_metatags    = get_post_meta( $current_id, 'seotfs-meta-tags', true );
 <?php wp_body_open(); ?>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-fly-shop-2025' ); ?></a>
-
+    <?php include(get_template_directory() . '/search/search-bar.php'); ?>
 	<header id="masthead" class="site-header">
 		 <!-- .site-branding -->
        <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
