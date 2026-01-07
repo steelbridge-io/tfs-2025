@@ -46,8 +46,8 @@ $tfs_metatags    = get_post_meta( $current_id, 'seotfs-meta-tags', true );
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-fly-shop-2025' ); ?></a>
 
     <header id="masthead" class="site-header">
-        <!-- .site-branding -->
-
+    <?php include(get_template_directory() . '/search/search-bar.php'); ?>
+    <!-- .site-branding -->
      <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light">
          <div class="container">
              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#homepage" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Toggle navigation', 'the-fly-shop-2025'); ?>">

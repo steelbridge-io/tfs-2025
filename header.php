@@ -57,6 +57,7 @@ if ( is_front_page() ) {
     <a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'the-fly-shop-2025' ); ?></a>
 
     <header id="masthead" class="site-header">
+        <?php include(get_template_directory() . '/search/search-bar.php'); ?>
         <!-- .site-branding -->
 
         <nav id="site-navigation" class="navbar fixed-top navbar-expand-lg navbar-light<?php echo is_archive() ? ' scrolled archive-static-logo' : ''; ?>">
