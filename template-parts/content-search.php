@@ -25,7 +25,7 @@
 
 	<?php the_fly_shop_2025_post_thumbnail(); ?>
 
-	<div class="entry-summary">
+	<div class="entry-summary container">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
