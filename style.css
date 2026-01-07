@@ -1389,6 +1389,48 @@ a {
 .admin-bar nav {
   margin-top: 32px; }
 
+#search-nav .navbar {
+  background: none;
+  transition: none;
+  height: 100px; }
+  #search-nav .navbar .navbar-brand .tfs-nav-logo.scroll {
+    display: none; }
+  #search-nav .navbar .navbar-brand .tfs-nav-logo.no-scroll {
+    display: initial; }
+  #search-nav .navbar:hover .nav-link {
+    color: #000; }
+  #search-nav .navbar:hover .navbar-nav .nav-item.active .nav-link {
+    color: #A21418;
+    font-weight: bold; }
+  #search-nav .navbar:hover .navbar-brand .tfs-nav-logo.scroll {
+    display: initial; }
+  #search-nav .navbar:hover .navbar-brand .tfs-nav-logo.no-scroll {
+    display: none; }
+  #search-nav .navbar.scrolled {
+    background: none;
+    background-color: #ffffff;
+    height: 60px; }
+    #search-nav .navbar.scrolled .nav-link {
+      color: #000; }
+      #search-nav .navbar.scrolled .nav-link.active {
+        color: #A21418;
+        font-weight: bold; }
+    #search-nav .navbar.scrolled .navbar-nav .nav-item.active .nav-link {
+      color: #A21418;
+      font-weight: bold; }
+    #search-nav .navbar.scrolled .navbar-brand .tfs-nav-logo.scroll {
+      display: initial; }
+    #search-nav .navbar.scrolled .navbar-brand .tfs-nav-logo.no-scroll {
+      display: none; }
+  #search-nav .navbar .nav-link {
+    color: #000000;
+    transition: color 0.3s ease;
+    font-family: "Arimo", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1rem; }
+
 /* Make the navbar background transparent by default */
 .navbar {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
